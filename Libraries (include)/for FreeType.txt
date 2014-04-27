@@ -1,0 +1,2 @@
+Link the libs and include in ide
+copy freetype6.dll in SYSWow64

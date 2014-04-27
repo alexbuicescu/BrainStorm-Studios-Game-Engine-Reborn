@@ -1,0 +1,6 @@
+	numarul de meniuri = "n"
+Urmeaza "n" blocuri(for = 0,n)
+
+	indexul meniului | numele meniului(fara spatii) | numarul de butoane = "nr"
+Urmeaza "nr" linii cu detaliile fiecarui buton
+	width | height | indexul meniului catre care duce

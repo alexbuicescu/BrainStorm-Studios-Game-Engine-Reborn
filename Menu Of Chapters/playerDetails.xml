@@ -1,0 +1,1225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Player_details name="" total_deaths="0" total_time="0">
+	<Level_details>
+		<Chapter_of_level>1</Chapter_of_level>
+		<Level_index>1</Level_index>
+		<Level_is_finished>1</Level_is_finished>
+		<Level_is_available>1</Level_is_available>
+		<Level_texture_name>level1Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>1</Chapter_of_level>
+		<Level_index>2</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>1</Level_is_available>
+		<Level_texture_name>level2Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>1</Chapter_of_level>
+		<Level_index>3</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>1</Level_is_available>
+		<Level_texture_name>level3Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>1</Chapter_of_level>
+		<Level_index>4</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>1</Level_is_available>
+		<Level_texture_name>level4Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>1</Chapter_of_level>
+		<Level_index>5</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>1</Level_is_available>
+		<Level_texture_name>level5Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>1</Chapter_of_level>
+		<Level_index>6</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>1</Level_is_available>
+		<Level_texture_name>level6Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>1</Chapter_of_level>
+		<Level_index>7</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>1</Level_is_available>
+		<Level_texture_name>level7Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>1</Chapter_of_level>
+		<Level_index>8</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level8Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>1</Chapter_of_level>
+		<Level_index>9</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level9Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>1</Chapter_of_level>
+		<Level_index>10</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level10Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>1</Chapter_of_level>
+		<Level_index>11</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level11Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>1</Chapter_of_level>
+		<Level_index>12</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level12Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>1</Chapter_of_level>
+		<Level_index>13</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level13Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>1</Chapter_of_level>
+		<Level_index>14</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level14Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>1</Chapter_of_level>
+		<Level_index>15</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level15Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>1</Chapter_of_level>
+		<Level_index>16</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level16Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>1</Chapter_of_level>
+		<Level_index>17</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level17Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>1</Chapter_of_level>
+		<Level_index>18</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level18Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>1</Chapter_of_level>
+		<Level_index>19</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level19Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>1</Chapter_of_level>
+		<Level_index>20</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level20Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>1</Chapter_of_level>
+		<Level_index>21</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level21Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>1</Chapter_of_level>
+		<Level_index>22</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level22Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>1</Chapter_of_level>
+		<Level_index>23</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level23Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>1</Chapter_of_level>
+		<Level_index>24</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level24Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>1</Chapter_of_level>
+		<Level_index>25</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level25Texture.png</Level_texture_name>
+	</Level_details>
+
+
+
+
+	<Level_details>
+		<Chapter_of_level>2</Chapter_of_level>
+		<Level_index>1</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level1Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>2</Chapter_of_level>
+		<Level_index>2</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level2Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>2</Chapter_of_level>
+		<Level_index>3</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level3Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>2</Chapter_of_level>
+		<Level_index>4</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level4Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>2</Chapter_of_level>
+		<Level_index>5</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level5Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>2</Chapter_of_level>
+		<Level_index>6</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level6Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>2</Chapter_of_level>
+		<Level_index>7</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level7Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>2</Chapter_of_level>
+		<Level_index>8</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level8Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>2</Chapter_of_level>
+		<Level_index>9</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level9Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>2</Chapter_of_level>
+		<Level_index>10</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level10Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>2</Chapter_of_level>
+		<Level_index>11</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level11Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>2</Chapter_of_level>
+		<Level_index>12</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level12Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>2</Chapter_of_level>
+		<Level_index>13</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level13Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>2</Chapter_of_level>
+		<Level_index>14</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level14Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>2</Chapter_of_level>
+		<Level_index>15</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level15Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>2</Chapter_of_level>
+		<Level_index>16</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level16Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>2</Chapter_of_level>
+		<Level_index>17</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level17Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>2</Chapter_of_level>
+		<Level_index>18</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level18Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>2</Chapter_of_level>
+		<Level_index>19</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level19Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>2</Chapter_of_level>
+		<Level_index>20</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level20Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>2</Chapter_of_level>
+		<Level_index>21</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level21Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>2</Chapter_of_level>
+		<Level_index>22</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level22Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>2</Chapter_of_level>
+		<Level_index>23</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level23Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>2</Chapter_of_level>
+		<Level_index>24</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level24Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>2</Chapter_of_level>
+		<Level_index>25</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level25Texture.png</Level_texture_name>
+	</Level_details>
+
+
+
+
+	<Level_details>
+		<Chapter_of_level>3</Chapter_of_level>
+		<Level_index>1</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level1Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>3</Chapter_of_level>
+		<Level_index>2</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level2Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>3</Chapter_of_level>
+		<Level_index>3</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level3Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>3</Chapter_of_level>
+		<Level_index>4</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level4Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>3</Chapter_of_level>
+		<Level_index>5</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level5Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>3</Chapter_of_level>
+		<Level_index>6</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level6Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>3</Chapter_of_level>
+		<Level_index>7</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level7Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>3</Chapter_of_level>
+		<Level_index>8</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level8Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>3</Chapter_of_level>
+		<Level_index>9</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level9Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>3</Chapter_of_level>
+		<Level_index>10</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level10Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>3</Chapter_of_level>
+		<Level_index>11</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level11Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>3</Chapter_of_level>
+		<Level_index>12</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level12Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>3</Chapter_of_level>
+		<Level_index>13</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level13Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>3</Chapter_of_level>
+		<Level_index>14</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level14Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>3</Chapter_of_level>
+		<Level_index>15</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level15Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>3</Chapter_of_level>
+		<Level_index>16</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level16Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>3</Chapter_of_level>
+		<Level_index>17</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level17Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>3</Chapter_of_level>
+		<Level_index>18</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level18Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>3</Chapter_of_level>
+		<Level_index>19</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level19Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>3</Chapter_of_level>
+		<Level_index>20</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level20Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>3</Chapter_of_level>
+		<Level_index>21</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level21Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>3</Chapter_of_level>
+		<Level_index>22</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level22Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>3</Chapter_of_level>
+		<Level_index>23</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level23Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>3</Chapter_of_level>
+		<Level_index>24</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level24Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>3</Chapter_of_level>
+		<Level_index>25</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level25Texture.png</Level_texture_name>
+	</Level_details>
+
+
+
+
+
+
+	<Level_details>
+		<Chapter_of_level>4</Chapter_of_level>
+		<Level_index>1</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level1Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>4</Chapter_of_level>
+		<Level_index>2</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level2Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>4</Chapter_of_level>
+		<Level_index>3</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level3Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>4</Chapter_of_level>
+		<Level_index>4</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level4Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>4</Chapter_of_level>
+		<Level_index>5</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level5Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>4</Chapter_of_level>
+		<Level_index>6</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level6Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>4</Chapter_of_level>
+		<Level_index>7</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level7Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>4</Chapter_of_level>
+		<Level_index>8</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level8Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>4</Chapter_of_level>
+		<Level_index>9</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level9Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>4</Chapter_of_level>
+		<Level_index>10</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level10Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>4</Chapter_of_level>
+		<Level_index>11</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level11Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>4</Chapter_of_level>
+		<Level_index>12</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level12Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>4</Chapter_of_level>
+		<Level_index>13</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level13Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>4</Chapter_of_level>
+		<Level_index>14</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level14Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>4</Chapter_of_level>
+		<Level_index>15</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level15Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>4</Chapter_of_level>
+		<Level_index>16</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level16Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>4</Chapter_of_level>
+		<Level_index>17</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level17Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>4</Chapter_of_level>
+		<Level_index>18</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level18Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>4</Chapter_of_level>
+		<Level_index>19</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level19Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>4</Chapter_of_level>
+		<Level_index>20</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level20Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>4</Chapter_of_level>
+		<Level_index>21</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level21Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>4</Chapter_of_level>
+		<Level_index>22</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level22Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>4</Chapter_of_level>
+		<Level_index>23</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level23Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>4</Chapter_of_level>
+		<Level_index>24</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level24Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>4</Chapter_of_level>
+		<Level_index>25</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level25Texture.png</Level_texture_name>
+	</Level_details>
+
+
+
+
+
+
+	<Level_details>
+		<Chapter_of_level>5</Chapter_of_level>
+		<Level_index>1</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level1Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>5</Chapter_of_level>
+		<Level_index>2</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level2Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>5</Chapter_of_level>
+		<Level_index>3</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level3Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>5</Chapter_of_level>
+		<Level_index>4</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level4Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>5</Chapter_of_level>
+		<Level_index>5</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level5Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>5</Chapter_of_level>
+		<Level_index>6</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level6Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>5</Chapter_of_level>
+		<Level_index>7</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level7Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>5</Chapter_of_level>
+		<Level_index>8</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level8Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>5</Chapter_of_level>
+		<Level_index>9</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level9Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>5</Chapter_of_level>
+		<Level_index>10</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level10Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>5</Chapter_of_level>
+		<Level_index>11</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level11Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>5</Chapter_of_level>
+		<Level_index>12</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level12Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>5</Chapter_of_level>
+		<Level_index>13</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level13Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>5</Chapter_of_level>
+		<Level_index>14</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level14Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>5</Chapter_of_level>
+		<Level_index>15</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level15Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>5</Chapter_of_level>
+		<Level_index>16</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level16Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>5</Chapter_of_level>
+		<Level_index>17</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level17Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>5</Chapter_of_level>
+		<Level_index>18</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level18Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>5</Chapter_of_level>
+		<Level_index>19</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level19Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>5</Chapter_of_level>
+		<Level_index>20</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level20Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>5</Chapter_of_level>
+		<Level_index>21</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level21Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>5</Chapter_of_level>
+		<Level_index>22</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level22Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>5</Chapter_of_level>
+		<Level_index>23</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level23Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>5</Chapter_of_level>
+		<Level_index>24</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level24Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>5</Chapter_of_level>
+		<Level_index>25</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level25Texture.png</Level_texture_name>
+	</Level_details>
+
+
+
+
+
+	<Level_details>
+		<Chapter_of_level>6</Chapter_of_level>
+		<Level_index>1</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level1Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>6</Chapter_of_level>
+		<Level_index>2</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level2Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>6</Chapter_of_level>
+		<Level_index>3</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level3Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>6</Chapter_of_level>
+		<Level_index>4</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level4Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>6</Chapter_of_level>
+		<Level_index>5</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level5Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>6</Chapter_of_level>
+		<Level_index>6</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level6Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>6</Chapter_of_level>
+		<Level_index>7</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level7Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>6</Chapter_of_level>
+		<Level_index>8</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level8Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>6</Chapter_of_level>
+		<Level_index>9</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level9Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>6</Chapter_of_level>
+		<Level_index>10</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level10Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>6</Chapter_of_level>
+		<Level_index>11</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level11Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>6</Chapter_of_level>
+		<Level_index>12</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level12Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>6</Chapter_of_level>
+		<Level_index>13</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level13Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>6</Chapter_of_level>
+		<Level_index>14</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level14Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>6</Chapter_of_level>
+		<Level_index>15</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level15Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>6</Chapter_of_level>
+		<Level_index>16</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level16Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>6</Chapter_of_level>
+		<Level_index>17</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level17Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>6</Chapter_of_level>
+		<Level_index>18</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level18Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>6</Chapter_of_level>
+		<Level_index>19</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level19Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>6</Chapter_of_level>
+		<Level_index>20</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level20Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>6</Chapter_of_level>
+		<Level_index>21</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level21Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>6</Chapter_of_level>
+		<Level_index>22</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level22Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>6</Chapter_of_level>
+		<Level_index>23</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level23Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>6</Chapter_of_level>
+		<Level_index>24</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level24Texture.png</Level_texture_name>
+	</Level_details>
+
+	<Level_details>
+		<Chapter_of_level>6</Chapter_of_level>
+		<Level_index>25</Level_index>
+		<Level_is_finished>0</Level_is_finished>
+		<Level_is_available>0</Level_is_available>
+		<Level_texture_name>level25Texture.png</Level_texture_name>
+	</Level_details>
+
+
+
+</Player_details>

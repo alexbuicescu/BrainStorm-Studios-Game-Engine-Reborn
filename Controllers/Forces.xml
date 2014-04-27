@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<the_forces nrOfGamepads="2">
+	
+	<force>
+		<gravity>-40</gravity>
+		<jump>17.7</jump>
+		<jump_to_another_wall>17</jump_to_another_wall>
+		<jump_to_the_same_wall>17.1</jump_to_the_same_wall>
+		<speed_jump_up_the_wall>21</speed_jump_up_the_wall>
+		<speed_walk_in_air>25</speed_walk_in_air>
+		<speed_walk_on_ground>25</speed_walk_on_ground>
+		<speed_run>1.2</speed_run>
+		<time_to_stay_on_wall>250</time_to_stay_on_wall>
+		<time_before_force_on_the_same_wall>175</time_before_force_on_the_same_wall>
+	</force>
+
+
+</the_forces>

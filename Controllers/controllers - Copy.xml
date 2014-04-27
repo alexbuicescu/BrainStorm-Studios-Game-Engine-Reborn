@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<the_controllers nrOfGamepads="2">
+	
+	<controller>
+		<gamepad_or_keyboard>keyboard</gamepad_or_keyboard>
+		<gamepad_index>0</gamepad_index>
+		<left_player>276</left_player>
+		<right_player>275</right_player>
+		<up_player>273</up_player>
+		<down_player>274</down_player>
+		<left_mouse>260</left_mouse>
+		<right_mouse>262</right_mouse>
+		<up_mouse>264</up_mouse>
+		<down_mouse>258</down_mouse>
+		<jump>32</jump>
+		<run>304</run>
+		<teleport>261</teleport>
+		<pause>27</pause>
+		<enter>13</enter>
+	</controller>
+
+	<controller>
+		<gamepad_or_keyboard>gamepad</gamepad_or_keyboard>
+		<gamepad_index>0</gamepad_index>
+		<left_player>hat left</left_player>
+		<right_player>hat right</right_player>
+		<up_player>hat up</up_player>
+		<down_player>hat down</down_player>
+		<left_mouse>joystick left</left_mouse>
+		<right_mouse>joystick right</right_mouse>
+		<up_mouse>joystick up</up_mouse>
+		<down_mouse>joystick down</down_mouse>
+		<jump>button 1</jump>
+		<run>button 5</run>
+		<teleport>button 2</teleport>
+		<pause>button 8</pause>
+		<enter>button 9</enter>
+	</controller>
+
+	<controller>
+		<gamepad_or_keyboard>gamepad</gamepad_or_keyboard>
+		<gamepad_index>1</gamepad_index>
+		<left_player>hat left</left_player>
+		<right_player>hat right</right_player>
+		<up_player>hat up</up_player>
+		<down_player>hat down</down_player>
+		<left_mouse>joystick left</left_mouse>
+		<right_mouse>joystick right</right_mouse>
+		<up_mouse>joystick up</up_mouse>
+		<down_mouse>joystick down</down_mouse>
+		<jump>button 1</jump>
+		<run>button 5</run>
+		<teleport>button 2</teleport>
+		<pause>button 8</pause>
+		<enter>button 9</enter>
+	</controller>
+	
+
+</the_controllers>

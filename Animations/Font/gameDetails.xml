@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Game_details nr_of_chapters="6">
+	
+	<Chapter_details>
+		<Chapter_name>Chapter1</Chapter_name>
+		<Chapter_nr_of_levels>25</Chapter_nr_of_levels>
+		<Chapter_is_finished>0</Chapter_is_finished>
+		<Chapter_is_available>1</Chapter_is_available>
+		<Chapter_x_coord>0.1</Chapter_x_coord>
+		<Chapter_y_coord>0.25</Chapter_y_coord>
+		<Chapter_width>2</Chapter_width>
+		<Chapter_height>2</Chapter_height>
+	</Chapter_details>
+
+	<Chapter_details>
+		<Chapter_name>Chapter2</Chapter_name>
+		<Chapter_nr_of_levels>25</Chapter_nr_of_levels>
+		<Chapter_is_finished>0</Chapter_is_finished>
+		<Chapter_is_available>1</Chapter_is_available>
+		<Chapter_x_coord>0.55</Chapter_x_coord>
+		<Chapter_y_coord>0.25</Chapter_y_coord>
+		<Chapter_width>2</Chapter_width>
+		<Chapter_height>2</Chapter_height>
+	</Chapter_details>
+
+	<Chapter_details>
+		<Chapter_name>Chapter3</Chapter_name>
+		<Chapter_nr_of_levels>25</Chapter_nr_of_levels>
+		<Chapter_is_finished>0</Chapter_is_finished>
+		<Chapter_is_available>1</Chapter_is_available>
+		<Chapter_x_coord>1</Chapter_x_coord>
+		<Chapter_y_coord>0.25</Chapter_y_coord>
+		<Chapter_width>2</Chapter_width>
+		<Chapter_height>2</Chapter_height>
+	</Chapter_details>
+
+	<Chapter_details>
+		<Chapter_name>Chapter4</Chapter_name>
+		<Chapter_nr_of_levels>25</Chapter_nr_of_levels>
+		<Chapter_is_finished>0</Chapter_is_finished>
+		<Chapter_is_available>1</Chapter_is_available>
+		<Chapter_x_coord>1</Chapter_x_coord>
+		<Chapter_y_coord>0.75</Chapter_y_coord>
+		<Chapter_width>2</Chapter_width>
+		<Chapter_height>2</Chapter_height>
+	</Chapter_details>
+
+	<Chapter_details>
+		<Chapter_name>Chapter5</Chapter_name>
+		<Chapter_nr_of_levels>25</Chapter_nr_of_levels>
+		<Chapter_is_finished>0</Chapter_is_finished>
+		<Chapter_is_available>1</Chapter_is_available>
+		<Chapter_x_coord>0.55</Chapter_x_coord>
+		<Chapter_y_coord>0.75</Chapter_y_coord>
+		<Chapter_width>2</Chapter_width>
+		<Chapter_height>2</Chapter_height>
+	</Chapter_details>
+
+	<Chapter_details>
+		<Chapter_name>Chapter6</Chapter_name>
+		<Chapter_nr_of_levels>25</Chapter_nr_of_levels>
+		<Chapter_is_finished>0</Chapter_is_finished>
+		<Chapter_is_available>1</Chapter_is_available>
+		<Chapter_x_coord>0.1</Chapter_x_coord>
+		<Chapter_y_coord>0.75</Chapter_y_coord>
+		<Chapter_width>2</Chapter_width>
+		<Chapter_height>2</Chapter_height>
+	</Chapter_details>
+
+</Game_details>

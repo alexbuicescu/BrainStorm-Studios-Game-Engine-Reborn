@@ -1,0 +1,10 @@
+4//number of animations
+3 7 3 100 100 100 0 1 0 right
+	//1st cycle number of textures, 2nd cycle, 3rd cycle, 
+	time Between 1st animations, time Between 2nd animations, time Between 3rd animations,
+	isOnLoop1, isOnLoop2, isOnLoop3, 
+	folder Name
+3 7 3 100 100 100 0 1 0 left
+3 7 3 100 100 100 0 1 0 up
+3 7 3 100 100 100 0 1 0 down
+3 0 0 100 0 0 1 0 0 stand

@@ -1,0 +1,859 @@
+# depslib dependency file v1.0
+1396963284 source:c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\bs_engine.cpp
+	"BS_Engine.h"
+
+1396989936 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\bs_engine.h
+
+1396990349 source:c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\bs_screen_menu.cpp
+
+1396986477 source:c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\bs_sound.cpp
+	"BS_Sound.h"
+
+1396989936 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\bs_sound.h
+	<iostream>
+	<stdio.h>
+	<AL/al.h>
+	<AL/alc.h>
+	<map>
+
+1165591858 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\libraries (include)\al\al.h
+
+1176476568 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\libraries (include)\al\alc.h
+
+1396986200 source:c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\bsactionstuff.cpp
+	"BSActionStuff.h"
+	"My_Values.h"
+
+1396989936 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\bsactionstuff.h
+	<iostream>
+	<fstream>
+	"BSValues.h"
+	"BSObstacles.h"
+	"BSTexture.h"
+	"BSUtilities.h"
+	<Box2D/Box2D.h>
+	<AL/al.h>
+	<AL/alc.h>
+
+1396989936 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\bsvalues.h
+	"BSOpenGL.h"
+	"BSRenderer.h"
+	<vector>
+	<sstream>
+
+1396989936 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\bsopengl.h
+	"Glew/glew.h"
+	"SDL/SDL_opengl.h"
+	<GL/gl.h>
+	<GL/glu.h>
+	<stdio.h>
+	<SDL/SDL.h>
+
+1361378962 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\glew\glew.h
+	<stddef.h>
+	<inttypes.h>
+	<stdint.h>
+	<inttypes.h>
+	<OpenGL/glu.h>
+	<GL/glu.h>
+
+1325742240 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\libraries (include)\sdl\sdl_opengl.h
+	"SDL_config.h"
+	<windows.h>
+	<OpenGL/gl.h>
+	<OpenGL/glu.h>
+	<gl.h>
+	<glu.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	<windows.h>
+	<stddef.h>
+
+1326114588 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\libraries (include)\sdl\sdl_config.h
+	"SDL_platform.h"
+	"SDL_config_dreamcast.h"
+	"SDL_config_macos.h"
+	"SDL_config_macosx.h"
+	"SDL_config_symbian.h"
+	"SDL_config_win32.h"
+	"SDL_config_os2.h"
+	"SDL_config_minimal.h"
+
+1325742240 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\libraries (include)\sdl\sdl_platform.h
+
+1326114594 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\libraries (include)\sdl\sdl_config_win32.h
+	"SDL_platform.h"
+
+1325742240 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\libraries (include)\sdl\sdl.h
+	"SDL_main.h"
+	"SDL_stdinc.h"
+	"SDL_audio.h"
+	"SDL_cdrom.h"
+	"SDL_cpuinfo.h"
+	"SDL_endian.h"
+	"SDL_error.h"
+	"SDL_events.h"
+	"SDL_loadso.h"
+	"SDL_mutex.h"
+	"SDL_rwops.h"
+	"SDL_thread.h"
+	"SDL_timer.h"
+	"SDL_video.h"
+	"SDL_version.h"
+	"begin_code.h"
+	"close_code.h"
+
+1325742240 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\libraries (include)\sdl\sdl_main.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+	"begin_code.h"
+	"close_code.h"
+
+1325742240 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\libraries (include)\sdl\sdl_stdinc.h
+	"SDL_config.h"
+	<sys/types.h>
+	<stdio.h>
+	<stdlib.h>
+	<stddef.h>
+	<stdarg.h>
+	<stdlib.h>
+	<malloc.h>
+	<stddef.h>
+	<stdarg.h>
+	<memory.h>
+	<string.h>
+	<strings.h>
+	<inttypes.h>
+	<stdint.h>
+	<ctype.h>
+	<iconv.h>
+	"begin_code.h"
+	<alloca.h>
+	<malloc.h>
+	<malloc.h>
+	<malloc.h>
+	<stdlib.h>
+	"close_code.h"
+
+1326114600 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\libraries (include)\sdl\begin_code.h
+
+1325742240 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\libraries (include)\sdl\close_code.h
+
+1325742240 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\libraries (include)\sdl\sdl_audio.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_endian.h"
+	"SDL_mutex.h"
+	"SDL_thread.h"
+	"SDL_rwops.h"
+	"begin_code.h"
+	"close_code.h"
+
+1325742240 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\libraries (include)\sdl\sdl_error.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1325742240 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\libraries (include)\sdl\sdl_endian.h
+	"SDL_stdinc.h"
+	<endian.h>
+	"begin_code.h"
+	"close_code.h"
+
+1325742240 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\libraries (include)\sdl\sdl_mutex.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1325742240 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\libraries (include)\sdl\sdl_thread.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_mutex.h"
+	"begin_code.h"
+	<process.h>
+	"close_code.h"
+
+1325742240 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\libraries (include)\sdl\sdl_rwops.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1325742240 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\libraries (include)\sdl\sdl_cdrom.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1325742240 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\libraries (include)\sdl\sdl_cpuinfo.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1325742240 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\libraries (include)\sdl\sdl_events.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_active.h"
+	"SDL_keyboard.h"
+	"SDL_mouse.h"
+	"SDL_joystick.h"
+	"SDL_quit.h"
+	"begin_code.h"
+	"close_code.h"
+
+1325742240 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\libraries (include)\sdl\sdl_active.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1325742240 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\libraries (include)\sdl\sdl_keyboard.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_keysym.h"
+	"begin_code.h"
+	"close_code.h"
+
+1325742240 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\libraries (include)\sdl\sdl_keysym.h
+
+1325742240 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\libraries (include)\sdl\sdl_mouse.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1325742240 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\libraries (include)\sdl\sdl_video.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_rwops.h"
+	"begin_code.h"
+	"close_code.h"
+
+1325742240 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\libraries (include)\sdl\sdl_joystick.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1325742240 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\libraries (include)\sdl\sdl_quit.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+
+1325742240 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\libraries (include)\sdl\sdl_loadso.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1325742240 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\libraries (include)\sdl\sdl_timer.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1325742240 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\libraries (include)\sdl\sdl_version.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1398628368 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\bsrenderer.h
+	"BSStructs.h"
+	"My_Values.h"
+	<SOIL/SOIL.h>
+	<iostream>
+	"BS_Available_Shaders.h"
+
+1396989936 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\bsstructs.h
+	"glm/glm.hpp"
+	"glm/gtx/transform.hpp"
+	"glm/gtc/type_ptr.hpp"
+	<Box2D/Box2D.h>
+
+1361378962 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\glm\glm.hpp
+	"core/_fixes.hpp"
+	<cmath>
+	<climits>
+	<cfloat>
+	<limits>
+	<cstdio>
+	"core/setup.hpp"
+	"./core/_detail.hpp"
+	"./core/_vectorize.hpp"
+	"./core/type.hpp"
+	"./core/func_trigonometric.hpp"
+	"./core/func_exponential.hpp"
+	"./core/func_common.hpp"
+	"./core/func_packing.hpp"
+	"./core/func_geometric.hpp"
+	"./core/func_matrix.hpp"
+	"./core/func_vector_relational.hpp"
+	"./core/func_integer.hpp"
+	"./core/func_noise.hpp"
+	"./core/_swizzle.hpp"
+
+1361378964 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\glm\core\_fixes.hpp
+	<cmath>
+
+1361378962 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\glm\core\setup.hpp
+	<intrin.h>
+	<immintrin.h>
+	<immintrin.h>
+	<smmintrin.h>
+	<pmmintrin.h>
+	<emmintrin.h>
+
+1361378964 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\glm\core\_detail.hpp
+	"setup.hpp"
+	<cassert>
+	<cstdint>
+
+1361378964 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\glm\core\_vectorize.hpp
+
+1361378962 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\glm\core\type.hpp
+	"type_half.hpp"
+	"type_float.hpp"
+	"type_int.hpp"
+	"type_gentype.hpp"
+	"type_vec1.hpp"
+	"type_vec2.hpp"
+	"type_vec3.hpp"
+	"type_vec4.hpp"
+	"type_mat2x2.hpp"
+	"type_mat2x3.hpp"
+	"type_mat2x4.hpp"
+	"type_mat3x2.hpp"
+	"type_mat3x3.hpp"
+	"type_mat3x4.hpp"
+	"type_mat4x2.hpp"
+	"type_mat4x3.hpp"
+	"type_mat4x4.hpp"
+
+1361378962 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\glm\core\type_half.hpp
+	<cstdlib>
+	"type_half.inl"
+
+1361378962 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\glm\core\type_half.inl
+	"_detail.hpp"
+
+1361378962 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\glm\core\type_float.hpp
+	"type_half.hpp"
+	"setup.hpp"
+
+1361378962 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\glm\core\type_int.hpp
+	"setup.hpp"
+	"_detail.hpp"
+
+1361378962 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\glm\core\type_gentype.hpp
+	"type_size.hpp"
+
+1361378964 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\glm\core\type_size.hpp
+	<cstdlib>
+
+1361378964 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\glm\core\type_vec1.hpp
+	"type_vec.hpp"
+	"type_float.hpp"
+	"type_int.hpp"
+	"type_size.hpp"
+	"_swizzle.hpp"
+	"type_vec1.inl"
+
+1361378964 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\glm\core\type_vec.hpp
+	"type_gentype.hpp"
+
+1361378964 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\glm\core\_swizzle.hpp
+	"_swizzle_func.hpp"
+
+1361378964 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\glm\core\_swizzle_func.hpp
+
+1361378964 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\glm\core\type_vec1.inl
+
+1361378964 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\glm\core\type_vec2.hpp
+	"type_vec.hpp"
+	"type_float.hpp"
+	"type_int.hpp"
+	"type_size.hpp"
+	"_swizzle.hpp"
+	"type_vec2.inl"
+
+1361378964 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\glm\core\type_vec2.inl
+
+1361378964 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\glm\core\type_vec3.hpp
+	"type_vec.hpp"
+	"type_float.hpp"
+	"type_int.hpp"
+	"type_size.hpp"
+	"_swizzle.hpp"
+	"type_vec3.inl"
+
+1361378964 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\glm\core\type_vec3.inl
+
+1361378964 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\glm\core\type_vec4.hpp
+	"type_vec.hpp"
+	"type_float.hpp"
+	"type_int.hpp"
+	"type_size.hpp"
+	"_swizzle.hpp"
+	"type_vec4.inl"
+
+1361378964 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\glm\core\type_vec4.inl
+
+1361378962 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\glm\core\type_mat2x2.hpp
+	"type_mat.hpp"
+	"type_mat2x2.inl"
+
+1361378962 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\glm\core\type_mat.hpp
+	"type_gentype.hpp"
+
+1361378962 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\glm\core\type_mat2x2.inl
+
+1361378962 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\glm\core\type_mat2x3.hpp
+	"type_mat.hpp"
+	"type_mat2x3.inl"
+
+1361378962 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\glm\core\type_mat2x3.inl
+
+1361378962 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\glm\core\type_mat2x4.hpp
+	"type_mat.hpp"
+	"type_mat2x4.inl"
+
+1361378962 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\glm\core\type_mat2x4.inl
+
+1361378962 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\glm\core\type_mat3x2.hpp
+	"type_mat.hpp"
+	"type_mat3x2.inl"
+
+1361378962 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\glm\core\type_mat3x2.inl
+
+1361378962 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\glm\core\type_mat3x3.hpp
+	"type_mat.hpp"
+	"type_mat3x3.inl"
+
+1361378962 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\glm\core\type_mat3x3.inl
+
+1361378962 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\glm\core\type_mat3x4.hpp
+	"type_mat.hpp"
+	"type_mat3x4.inl"
+
+1361378964 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\glm\core\type_mat3x4.inl
+
+1361378964 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\glm\core\type_mat4x2.hpp
+	"type_mat.hpp"
+	"type_mat4x2.inl"
+
+1361378964 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\glm\core\type_mat4x2.inl
+
+1361378964 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\glm\core\type_mat4x3.hpp
+	"type_mat.hpp"
+	"type_mat4x3.inl"
+
+1361378964 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\glm\core\type_mat4x3.inl
+
+1361378964 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\glm\core\type_mat4x4.hpp
+	"type_mat.hpp"
+	"type_mat4x4.inl"
+
+1361378964 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\glm\core\type_mat4x4.inl
+
+1361378962 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\glm\core\func_trigonometric.hpp
+	"func_trigonometric.inl"
+
+1361378962 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\glm\core\func_trigonometric.inl
+
+1361378962 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\glm\core\func_exponential.hpp
+	"func_exponential.inl"
+
+1361378962 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\glm\core\func_exponential.inl
+
+1361378962 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\glm\core\func_common.hpp
+	"_fixes.hpp"
+	"func_common.inl"
+
+1361378962 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\glm\core\func_common.inl
+
+1361378962 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\glm\core\func_packing.hpp
+	"func_packing.inl"
+
+1361378962 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\glm\core\func_packing.inl
+
+1361378962 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\glm\core\func_geometric.hpp
+	"func_geometric.inl"
+
+1361378962 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\glm\core\func_geometric.inl
+
+1361378962 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\glm\core\func_matrix.hpp
+	"func_matrix.inl"
+
+1361378962 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\glm\core\func_matrix.inl
+
+1361378962 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\glm\core\func_vector_relational.hpp
+	"_detail.hpp"
+	"func_vector_relational.inl"
+
+1361378962 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\glm\core\func_vector_relational.inl
+
+1361378962 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\glm\core\func_integer.hpp
+	"func_integer.inl"
+
+1361378962 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\glm\core\func_integer.inl
+	<intrin.h>
+
+1361378962 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\glm\core\func_noise.hpp
+	"func_noise.inl"
+
+1361378962 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\glm\core\func_noise.inl
+
+1361378966 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\glm\gtx\transform.hpp
+	"../glm.hpp"
+	"../gtc/matrix_transform.hpp"
+	"transform.inl"
+
+1361378964 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\glm\gtc\matrix_transform.hpp
+	"../glm.hpp"
+	"matrix_transform.inl"
+
+1361378964 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\glm\gtc\matrix_transform.inl
+
+1361378966 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\glm\gtx\transform.inl
+
+1361378964 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\glm\gtc\type_ptr.hpp
+	"../glm.hpp"
+	"../gtc/half_float.hpp"
+	"../gtc/quaternion.hpp"
+	<cstring>
+	"type_ptr.inl"
+
+1361378964 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\glm\gtc\half_float.hpp
+	"../glm.hpp"
+	"half_float.inl"
+
+1361378964 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\glm\gtc\half_float.inl
+
+1361378964 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\glm\gtc\quaternion.hpp
+	"../glm.hpp"
+	"../gtc/half_float.hpp"
+	"../gtc/constants.hpp"
+	"quaternion.inl"
+
+1361378964 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\glm\gtc\constants.hpp
+	"../glm.hpp"
+	"../gtc/half_float.hpp"
+	"constants.inl"
+
+1361378964 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\glm\gtc\constants.inl
+
+1361378964 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\glm\gtc\quaternion.inl
+	<limits>
+
+1361378964 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\glm\gtc\type_ptr.inl
+
+1315042738 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\libraries (include)\box2d\box2d.h
+	<Box2D/Common/b2Settings.h>
+	<Box2D/Common/b2Draw.h>
+	<Box2D/Common/b2Timer.h>
+	<Box2D/Collision/Shapes/b2CircleShape.h>
+	<Box2D/Collision/Shapes/b2EdgeShape.h>
+	<Box2D/Collision/Shapes/b2ChainShape.h>
+	<Box2D/Collision/Shapes/b2PolygonShape.h>
+	<Box2D/Collision/b2BroadPhase.h>
+	<Box2D/Collision/b2Distance.h>
+	<Box2D/Collision/b2DynamicTree.h>
+	<Box2D/Collision/b2TimeOfImpact.h>
+	<Box2D/Dynamics/b2Body.h>
+	<Box2D/Dynamics/b2Fixture.h>
+	<Box2D/Dynamics/b2WorldCallbacks.h>
+	<Box2D/Dynamics/b2TimeStep.h>
+	<Box2D/Dynamics/b2World.h>
+	<Box2D/Dynamics/Contacts/b2Contact.h>
+	<Box2D/Dynamics/Joints/b2DistanceJoint.h>
+	<Box2D/Dynamics/Joints/b2FrictionJoint.h>
+	<Box2D/Dynamics/Joints/b2GearJoint.h>
+	<Box2D/Dynamics/Joints/b2WheelJoint.h>
+	<Box2D/Dynamics/Joints/b2MouseJoint.h>
+	<Box2D/Dynamics/Joints/b2PrismaticJoint.h>
+	<Box2D/Dynamics/Joints/b2PulleyJoint.h>
+	<Box2D/Dynamics/Joints/b2RevoluteJoint.h>
+	<Box2D/Dynamics/Joints/b2RopeJoint.h>
+	<Box2D/Dynamics/Joints/b2WeldJoint.h>
+
+1315046961 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\libraries (include)\box2d\common\b2settings.h
+	<cassert>
+	<cmath>
+
+1301254300 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\libraries (include)\box2d\common\b2draw.h
+	<Box2D/Common/b2Math.h>
+
+1315104481 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\libraries (include)\box2d\common\b2math.h
+	<Box2D/Common/b2Settings.h>
+	<cmath>
+	<cfloat>
+	<cstddef>
+	<limits>
+
+1315813595 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\libraries (include)\box2d\common\b2timer.h
+	<Box2D/Common/b2Settings.h>
+
+1300990618 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\libraries (include)\box2d\collision\shapes\b2circleshape.h
+	<Box2D/Collision/Shapes/b2Shape.h>
+
+1313984992 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\libraries (include)\box2d\collision\shapes\b2shape.h
+	<Box2D/Common/b2BlockAllocator.h>
+	<Box2D/Common/b2Math.h>
+	<Box2D/Collision/b2Collision.h>
+
+1300990618 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\libraries (include)\box2d\common\b2blockallocator.h
+	<Box2D/Common/b2Settings.h>
+
+1307308961 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\libraries (include)\box2d\collision\b2collision.h
+	<Box2D/Common/b2Math.h>
+	<climits>
+
+1314863586 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\libraries (include)\box2d\collision\shapes\b2edgeshape.h
+	<Box2D/Collision/Shapes/b2Shape.h>
+
+1314862942 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\libraries (include)\box2d\collision\shapes\b2chainshape.h
+	<Box2D/Collision/Shapes/b2Shape.h>
+
+1300990618 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\libraries (include)\box2d\collision\shapes\b2polygonshape.h
+	<Box2D/Collision/Shapes/b2Shape.h>
+
+1301264602 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\libraries (include)\box2d\collision\b2broadphase.h
+	<Box2D/Common/b2Settings.h>
+	<Box2D/Collision/b2Collision.h>
+	<Box2D/Collision/b2DynamicTree.h>
+	<algorithm>
+
+1308991589 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\libraries (include)\box2d\collision\b2dynamictree.h
+	<Box2D/Collision/b2Collision.h>
+	<Box2D/Common/b2GrowableStack.h>
+
+1300990618 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\libraries (include)\box2d\common\b2growablestack.h
+	<Box2D/Common/b2Settings.h>
+	<cstring>
+
+1300990618 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\libraries (include)\box2d\collision\b2distance.h
+	<Box2D/Common/b2Math.h>
+
+1300990618 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\libraries (include)\box2d\collision\b2timeofimpact.h
+	<Box2D/Common/b2Math.h>
+	<Box2D/Collision/b2Distance.h>
+
+1315091542 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\libraries (include)\box2d\dynamics\b2body.h
+	<Box2D/Common/b2Math.h>
+	<Box2D/Collision/Shapes/b2Shape.h>
+	<memory>
+
+1315075941 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\libraries (include)\box2d\dynamics\b2fixture.h
+	<Box2D/Dynamics/b2Body.h>
+	<Box2D/Collision/b2Collision.h>
+	<Box2D/Collision/Shapes/b2Shape.h>
+
+1314077200 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\libraries (include)\box2d\dynamics\b2worldcallbacks.h
+	<Box2D/Common/b2Settings.h>
+
+1315812730 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\libraries (include)\box2d\dynamics\b2timestep.h
+	<Box2D/Common/b2Math.h>
+
+1315177596 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\libraries (include)\box2d\dynamics\b2world.h
+	<Box2D/Common/b2Math.h>
+	<Box2D/Common/b2BlockAllocator.h>
+	<Box2D/Common/b2StackAllocator.h>
+	<Box2D/Dynamics/b2ContactManager.h>
+	<Box2D/Dynamics/b2WorldCallbacks.h>
+	<Box2D/Dynamics/b2TimeStep.h>
+
+1300990618 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\libraries (include)\box2d\common\b2stackallocator.h
+	<Box2D/Common/b2Settings.h>
+
+1300990618 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\libraries (include)\box2d\dynamics\b2contactmanager.h
+	<Box2D/Collision/b2BroadPhase.h>
+
+1305790418 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\libraries (include)\box2d\dynamics\contacts\b2contact.h
+	<Box2D/Common/b2Math.h>
+	<Box2D/Collision/b2Collision.h>
+	<Box2D/Collision/Shapes/b2Shape.h>
+	<Box2D/Dynamics/b2Fixture.h>
+
+1315166582 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\libraries (include)\box2d\dynamics\joints\b2distancejoint.h
+	<Box2D/Dynamics/Joints/b2Joint.h>
+
+1315178798 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\libraries (include)\box2d\dynamics\joints\b2joint.h
+	<Box2D/Common/b2Math.h>
+
+1315177877 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\libraries (include)\box2d\dynamics\joints\b2frictionjoint.h
+	<Box2D/Dynamics/Joints/b2Joint.h>
+
+1315178132 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\libraries (include)\box2d\dynamics\joints\b2gearjoint.h
+	<Box2D/Dynamics/Joints/b2Joint.h>
+
+1315178750 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\libraries (include)\box2d\dynamics\joints\b2wheeljoint.h
+	<Box2D/Dynamics/Joints/b2Joint.h>
+
+1315178810 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\libraries (include)\box2d\dynamics\joints\b2mousejoint.h
+	<Box2D/Dynamics/Joints/b2Joint.h>
+
+1315369526 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\libraries (include)\box2d\dynamics\joints\b2prismaticjoint.h
+	<Box2D/Dynamics/Joints/b2Joint.h>
+
+1315178519 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\libraries (include)\box2d\dynamics\joints\b2pulleyjoint.h
+	<Box2D/Dynamics/Joints/b2Joint.h>
+
+1315175972 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\libraries (include)\box2d\dynamics\joints\b2revolutejoint.h
+	<Box2D/Dynamics/Joints/b2Joint.h>
+
+1315197813 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\libraries (include)\box2d\dynamics\joints\b2ropejoint.h
+	<Box2D/Dynamics/Joints/b2Joint.h>
+
+1315174263 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\libraries (include)\box2d\dynamics\joints\b2weldjoint.h
+	<Box2D/Dynamics/Joints/b2Joint.h>
+
+1396989936 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\my_values.h
+	"BS_Sound.h"
+	"BSTexturedPolygonProgram2D.h"
+
+1398626291 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\bstexturedpolygonprogram2d.h
+	"BSShaderProgram.h"
+	"glm/glm.hpp"
+	"glm/gtc/type_ptr.hpp"
+	"glm/gtx/transform.hpp"
+	<iostream>
+	<map>
+
+1396989936 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\bsshaderprogram.h
+	"BSOpenGL.h"
+	<stdio.h>
+	<string>
+
+1398626347 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\bs_available_shaders.h
+	<iostream>
+
+1396989936 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\bsobstacles.h
+	<iostream>
+	"BSValues.h"
+	"BSAnimationClass.h"
+	"BSXmlFiles.h"
+	<fstream>
+
+1396989936 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\bsanimationclass.h
+	"BSValues.h"
+	"BSRenderer.h"
+
+1396989936 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\bsxmlfiles.h
+	<iostream>
+	"BSValues.h"
+	<fstream>
+
+1396989936 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\bstexture.h
+	"BSOpenGL.h"
+	<stdio.h>
+	<string>
+	"BSValues.h"
+	"BSTexturedPolygonProgram2D.h"
+	<iostream>
+	<fstream>
+	"BSObstacles.h"
+	"BSLevelMenu.h"
+	"BSInputClass.h"
+
+1396989936 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\bslevelmenu.h
+	<iostream>
+	<fstream>
+	"BSValues.h"
+	"BSObstacles.h"
+
+1396989936 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\bsinputclass.h
+	<iostream>
+	<SDL/SDL.h>
+	"BSValues.h"
+	"BSObstacles.h"
+	"BSLevelMenu.h"
+	"BSXmlFiles.h"
+	"BSActionStuff.h"
+	"BSTexture.h"
+
+1396989936 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\bsutilities.h
+	"BSOpenGL.h"
+	<stdio.h>
+	<iostream>
+	"BSValues.h"
+	<fstream>
+	"BSObstacles.h"
+	"BSTexturedPolygonProgram2D.h"
+	"BSTexture.h"
+	"BSLevelMenu.h"
+	"BSXmlFiles.h"
+
+1397033231 source:c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\bsanimationclass.cpp
+	"BSAnimationClass.h"
+
+1383936834 source:c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\bsinputclass.cpp
+	"BSInputClass.h"
+
+1383937330 source:c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\bslevelmenu.cpp
+	"BSLevelMenu.h"
+
+1396988742 source:c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\bsobstacles.cpp
+	"BSObstacles.h"
+	"My_Values.h"
+
+1396986562 source:c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\bsshaderprogram.cpp
+	"BSShaderProgram.h"
+	"BSValues.h"
+	<fstream>
+
+1396988994 source:c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\bstexture.cpp
+	"BSTexture.h"
+	"My_Values.h"
+
+1398626382 source:c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\bstexturedpolygonprogram2d.cpp
+	"BSTexturedPolygonProgram2D.h"
+	"BS_Available_Shaders.h"
+
+1396989502 source:c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\bsutilities.cpp
+	"BSUtilities.h"
+	"My_Values.h"
+
+1383939643 source:c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\bsxmlfiles.cpp
+	"BSXmlFiles.h"
+
+1396990138 source:c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\glew\glew.c
+	"glew.h"
+	<GL/wglew.h>
+	<GL/glxew.h>
+	<dlfcn.h>
+	<stdio.h>
+	<stdlib.h>
+	<stdlib.h>
+	<string.h>
+	<AvailabilityMacros.h>
+	<dlfcn.h>
+	<mach-o/dyld.h>
+
+1398628324 source:c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\main.cpp
+	"BSValues.h"
+	"BSUtilities.h"
+	<iostream>
+	<string>
+	<SOIL/SOIL.h>
+	"BSObstacles.h"
+	"BSTexture.h"
+	"BSActionStuff.h"
+	"BSTexturedPolygonProgram2D.h"
+	<ctime>
+	"BSLevelMenu.h"
+	"BSInputClass.h"
+	"My_Values.h"
+	"BS_Screen_Menu.h"
+
+1397033087 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\bs_screen_menu.h
+	"BS_Renderer.h"
+
+1397033124 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\bs_renderer.h
+	<map>
+
+1368090184 source:c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\resources\resource.rc
+
+1215450808 c:\users\alexandru\desktop\brainstorm studios\#shaders\brainstorm studios game engine reborn\libraries (include)\soil\soil.h
+

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Level>
+	
+	<obstacle>
+		<Index>5</Index>
+		<xPower>0</xPower>
+		<yPower>7</yPower>
+		<xLength>0</xLength>
+		<yLength>6</yLength>
+		<xCoordinate>1</xCoordinate>
+		<yCoordinate>9.5</yCoordinate>
+	</obstacle>
+
+	<obstacle>
+		<Index>6</Index>
+		<xPower>7</xPower>
+		<yPower>0</yPower>
+		<xLength>6</xLength>
+		<yLength>0</yLength>
+		<xCoordinate>11.5</xCoordinate>
+		<yCoordinate>1</yCoordinate>
+	</obstacle>
+
+</Level>
+

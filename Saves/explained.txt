@@ -1,0 +1,2 @@
+n, m  || n = nr Capitolului, m= nr de nivele
+m randuri de forma: levelIndex, done, available

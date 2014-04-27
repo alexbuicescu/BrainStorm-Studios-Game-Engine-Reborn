@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<the_controllers nrOfGamepads="2">
+	
+	<controller>
+		<gamepad_or_keyboard>keyboard</gamepad_or_keyboard>
+		<gamepad_index>0</gamepad_index>
+		<left_player>276</left_player>
+		<right_player>275</right_player>
+		<up_player>273</up_player>
+		<down_player>274</down_player>
+		<left_mouse>260</left_mouse>
+		<right_mouse>262</right_mouse>
+		<up_mouse>264</up_mouse>
+		<down_mouse>258</down_mouse>
+		<jump>32</jump>
+		<run>304</run>
+		<teleport>261</teleport>
+		<pause>27</pause>
+		<enter>13</enter>
+	</controller>
+
+	<controller>
+		<gamepad_or_keyboard>gamepad</gamepad_or_keyboard>
+		<gamepad_index>0</gamepad_index>
+		<left_player>8</left_player>
+		<right_player>2</right_player>
+		<up_player>1</up_player>
+		<down_player>4</down_player>
+		<left_mouse expl="0=axis, -1=direction">0 -1</left_mouse>
+		<right_mouse>0 1</right_mouse>
+		<up_mouse>1 -1</up_mouse>
+		<down_mouse>1 1</down_mouse>
+		<jump>1</jump>
+		<run>5</run>
+		<teleport>2</teleport>
+		<pause>8</pause>
+		<enter>9</enter>
+	</controller>
+
+
+	<controller>
+		<gamepad_or_keyboard>gamepad</gamepad_or_keyboard>
+		<gamepad_index>0</gamepad_index>
+		<left_player>8</left_player>
+		<right_player>2</right_player>
+		<up_player>1</up_player>
+		<down_player>4</down_player>
+		<left_mouse expl="0=axis, -1=direction">0 -1</left_mouse>
+		<right_mouse>0 1</right_mouse>
+		<up_mouse>1 -1</up_mouse>
+		<down_mouse>1 1</down_mouse>
+		<jump>1</jump>
+		<run>5</run>
+		<teleport>2</teleport>
+		<pause>8</pause>
+		<enter>9</enter>
+	</controller>
+
+
+
+</the_controllers>
+
+
+
+

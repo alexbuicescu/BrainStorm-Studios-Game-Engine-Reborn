@@ -1,0 +1,19 @@
+18
+0 12 0 0 50 0 0 1 0 right
+0 12 0 0 50 0 0 1 0 left
+3 1 1 100 100 10 0 1 0 up-right
+3 1 1 100 100 10 0 1 0 up-left
+3 0 3 100 0 0 0 0 1 down-right
+3 0 3 100 0 0 0 0 1 down-left
+12 0 0 100 0 0 1 0 0 stand
+7 0 0 110 0 0 0 0 0 death-left
+7 0 0 110 0 0 0 0 0 death-right
+12 0 0 20 0 0 0 0 0 teleport-in
+12 0 0 20 0 0 0 0 0 teleport-out
+10 3 6 60 70 100 0 1 0 aura1
+10 3 6 60 50 100 0 1 0 aura2
+10 3 6 60 40 100 0 1 0 aura3
+0 12 0 0 80 0 0 1 0 aura-electricity
+1 10 0 0 80 0 0 1 0 wormHole
+1 0 0 0 1000 0 1 0 0 wall-left
+1 0 0 0 1000 0 1 0 0 wall-right

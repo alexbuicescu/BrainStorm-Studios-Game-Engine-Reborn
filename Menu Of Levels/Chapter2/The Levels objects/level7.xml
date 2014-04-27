@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Level name="level7Texture.png" boundary_Left="0" boundary_Down="0" boundary_Up="260.5" boundary_Right="300.5">
+	<obstacle>
+		<Body_Type>0</Body_Type>
+		<Texture_path>playerTexture.png</Texture_path>
+		<Kill_or_Next_Level>0</Kill_or_Next_Level>
+		<xCoordinate>3.054</xCoordinate>
+		<yCoordinate>1.515</yCoordinate>
+		<width>1</width>
+		<height>1</height>
+		<userName>hero</userName>
+		<Animation_name>playerAnimation</Animation_name>
+		<Index>0</Index>
+	</obstacle>
+
+	<obstacle>
+		<Body_Type>0</Body_Type>
+		<Texture_path>Animations/textureAnimation/texture.png</Texture_path>
+		<Kill_or_Next_Level>0</Kill_or_Next_Level>
+		<xCoordinate>0</xCoordinate>
+		<yCoordinate>0.5</yCoordinate>
+		<width>1300</width>
+		<height>1</height>
+		<userName>floor</userName>
+		<Animation_name>textureAnimation</Animation_name>
+		<Index>1</Index>
+	</obstacle>
+</Level>
