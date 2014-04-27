@@ -13,14 +13,14 @@ BSShaderProgram::BSShaderProgram()
 
 BSShaderProgram::~BSShaderProgram()
 {
-    //Free program if it exists
-    freeProgram();
+	//Free program if it exists
+	freeProgram();
 }
 
 void BSShaderProgram::freeProgram()
 {
-    //Delete program
-    glDeleteProgram( BSProgramID );
+	//Delete program
+	glDeleteProgram( BSProgramID );
 }
 
 bool BSShaderProgram::bind()
@@ -29,20 +29,20 @@ bool BSShaderProgram::bind()
 	glUseProgram( BSProgramID );
 
 	//Check for error
-    GLenum error = glGetError();
-    if( error != GL_NO_ERROR )
-    {
-        printf( "Error binding shader! %s\n", gluErrorString( error ) );
+	GLenum error = glGetError();
+	if( error != GL_NO_ERROR )
+	{
+		printf( "Error binding shader! %s\n", gluErrorString( error ) );
 		printProgramLog( BSProgramID );
-        return false;
-    }
+		return false;
+	}
 
 	return true;
 }
 
 void BSShaderProgram::unbind()
 {
-    //Use default program
+	//Use default program
 	glUseProgram( 0 );
 }
 
@@ -125,34 +125,34 @@ GLuint BSShaderProgram::loadShaderFromFile( std::string path, GLenum shaderType 
 	//Source file loaded
 	if( sourceFile )
 	{
-	    //Get shader source
+		//Get shader source
 		shaderString.assign( ( std::istreambuf_iterator< char >( sourceFile ) ), std::istreambuf_iterator< char >() );
 
 		//Create shader ID
 		shaderID = glCreateShader( shaderType );
 
-        //Set shader source
-        const GLchar* shaderSource = shaderString.c_str();
-        glShaderSource( shaderID, 1, (const GLchar**)&shaderSource, NULL );
+		//Set shader source
+		const GLchar* shaderSource = shaderString.c_str();
+		glShaderSource( shaderID, 1, (const GLchar**)&shaderSource, NULL );
 
-        //Compile shader source
-        glCompileShader( shaderID );
+		//Compile shader source
+		glCompileShader( shaderID );
 
-        //Check shader for errors
-        GLint shaderCompiled = GL_FALSE;
-        glGetShaderiv( shaderID, GL_COMPILE_STATUS, &shaderCompiled );
-        if( shaderCompiled != GL_TRUE )
-        {
-            printf( "Unable to compile shader %d!\n\nSource:\n%s\n", shaderID, shaderSource );
-            printShaderLog( shaderID );
-            glDeleteShader( shaderID );
-            shaderID = 0;
-        }
+		//Check shader for errors
+		GLint shaderCompiled = GL_FALSE;
+		glGetShaderiv( shaderID, GL_COMPILE_STATUS, &shaderCompiled );
+		if( shaderCompiled != GL_TRUE )
+		{
+			printf( "Unable to compile shader %d!\n\nSource:\n%s\n", shaderID, shaderSource );
+			printShaderLog( shaderID );
+			glDeleteShader( shaderID );
+			shaderID = 0;
+		}
 	}
-    else
-    {
-        printf( "Unable to open file %s\n", path.c_str() );
-    }
+	else
+	{
+		printf( "Unable to open file %s\n", path.c_str() );
+	}
 
 	return shaderID;
 }

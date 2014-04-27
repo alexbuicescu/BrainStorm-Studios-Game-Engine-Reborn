@@ -33,52 +33,52 @@ extern int gravityIsChanging, startAngle;
 
 struct BSTexCoord
 {
-    GLfloat s;
-    GLfloat t;
+	GLfloat s;
+	GLfloat t;
 };
 
 struct BSRectangle
 {
-    GLfloat x;
-    GLfloat y;
-    GLfloat w;
-    GLfloat h;
+	GLfloat x;
+	GLfloat y;
+	GLfloat w;
+	GLfloat h;
 };
 
 struct BSColorRGBA
 {
-    GLfloat r;
-    GLfloat g;
-    GLfloat b;
-    GLfloat a;
+	GLfloat r;
+	GLfloat g;
+	GLfloat b;
+	GLfloat a;
 
-    void setColor(GLfloat red, GLfloat green, GLfloat blue, GLfloat alpha)
-    {
-        r = red;
-        g = green;
-        b = blue;
-        a = alpha;
-    }
+	void setColor(GLfloat red, GLfloat green, GLfloat blue, GLfloat alpha)
+	{
+		r = red;
+		g = green;
+		b = blue;
+		a = alpha;
+	}
 
-    void setColorsTo1()
-    {
-        r = 1;
-        g = 1;
-        b = 1;
-        a = 1;
-    }
+	void setColorsTo1()
+	{
+		r = 1;
+		g = 1;
+		b = 1;
+		a = 1;
+	}
 };
 
 struct BSVertexPos2D
 {
-    GLfloat x;
-    GLfloat y;
-    GLfloat z;
+	GLfloat x;
+	GLfloat y;
+	GLfloat z;
 };
 
 struct BSTexturedVertex2D
 {
-    BSVertexPos2D position;
+	BSVertexPos2D position;
 	BSTexCoord texCoord;
 };
 

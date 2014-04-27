@@ -7,7 +7,7 @@ BSTexturedPolygonProgram2D::BSTexturedPolygonProgram2D()
 
 GLint BSTexturedPolygonProgram2D::get_location_from_shader(std::string _name)
 {
-    return locations_shader_values[_name];
+	return locations_shader_values[_name];
 }
 
 void BSTexturedPolygonProgram2D::set_uniform(std::string _value_shader_name, float _value)
@@ -38,13 +38,13 @@ bool BSTexturedPolygonProgram2D::loadProgram(std::string _path_vertex_shader, st
 	//Load vertex shader
 	GLuint vertexShader = loadShaderFromFile( _path_vertex_shader, GL_VERTEX_SHADER );
 
-    //Check for errors
-    if( vertexShader == 0 )
-    {
-        glDeleteProgram( BSProgramID );
-        BSProgramID = 0;
-        return false;
-    }
+	//Check for errors
+	if( vertexShader == 0 )
+	{
+		glDeleteProgram( BSProgramID );
+		BSProgramID = 0;
+		return false;
+	}
 
 	//Attach vertex shader to program
 	glAttachShader( BSProgramID, vertexShader );
@@ -52,48 +52,48 @@ bool BSTexturedPolygonProgram2D::loadProgram(std::string _path_vertex_shader, st
 	//Create fragment shader
 	GLuint fragmentShader = loadShaderFromFile( _path_fragment_shader, GL_FRAGMENT_SHADER );
 
-    //Check for errors
-    if( fragmentShader == 0 )
-    {
-        glDeleteProgram( BSProgramID );
-        BSProgramID = 0;
-        return false;
-    }
+	//Check for errors
+	if( fragmentShader == 0 )
+	{
+		glDeleteProgram( BSProgramID );
+		BSProgramID = 0;
+		return false;
+	}
 
 	//Attach fragment shader to program
 	glAttachShader( BSProgramID, fragmentShader );
 
 	//Link program
-    glLinkProgram( BSProgramID );
+	glLinkProgram( BSProgramID );
 
 	//Check for errors
 	GLint programSuccess = GL_TRUE;
 	glGetProgramiv( BSProgramID, GL_LINK_STATUS, &programSuccess );
 	if( programSuccess != GL_TRUE )
-    {
+	{
 		printf( "Error linking program %d!\n", BSProgramID );
 		printProgramLog( BSProgramID );
-        glDeleteProgram( BSProgramID );
-        BSProgramID = 0;
-        return false;
-    }
+		glDeleteProgram( BSProgramID );
+		BSProgramID = 0;
+		return false;
+	}
 
 	load_Shader_Attributes_Location(BS_Available_Shaders::vertex_position());
 	load_Shader_Attributes_Location(BS_Available_Shaders::texture_coordinates());
 
-    load_Shader_Uniforms_Location(BS_Available_Shaders::scale_size());
+	load_Shader_Uniforms_Location(BS_Available_Shaders::scale_size());
 
-    load_Shader_Uniforms_Location(BS_Available_Shaders::is_flake());
-    load_Shader_Uniforms_Location(BS_Available_Shaders::is_circle());
-    load_Shader_Uniforms_Location(BS_Available_Shaders::is_dark());
+	load_Shader_Uniforms_Location(BS_Available_Shaders::is_flake());
+	load_Shader_Uniforms_Location(BS_Available_Shaders::is_circle());
+	load_Shader_Uniforms_Location(BS_Available_Shaders::is_dark());
 
-    load_Shader_Uniforms_Location(BS_Available_Shaders::circle_radius());
+	load_Shader_Uniforms_Location(BS_Available_Shaders::circle_radius());
 
-    load_Shader_Uniforms_Location(BS_Available_Shaders::texture_color());
-    load_Shader_Uniforms_Location(BS_Available_Shaders::texture_unit());
+	load_Shader_Uniforms_Location(BS_Available_Shaders::texture_color());
+	load_Shader_Uniforms_Location(BS_Available_Shaders::texture_unit());
 
-    load_Shader_Uniforms_Location(BS_Available_Shaders::projection_matrix());
-    load_Shader_Uniforms_Location(BS_Available_Shaders::model_view_matrix());
+	load_Shader_Uniforms_Location(BS_Available_Shaders::projection_matrix());
+	load_Shader_Uniforms_Location(BS_Available_Shaders::model_view_matrix());
 
 	return true;
 }

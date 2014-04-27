@@ -2,15 +2,15 @@
 #ifndef BS_RENDERER_H_INCLUDED
 #define BS_RENDERER_H_INCLUDED
 
-#include <map>
+#include <unordered_map>
 
-class BS_Renderer
+class BS_Renderer22
 {
 public:
 
 	static void renderSomeBody(float coordX, float coordY, float coordZ, float angleX, float angleY, float angleZ,
-	                           GLuint theTextureIdToRender, BSColorRGBA theColorOfObstacle,
-	                           GLuint theVaoBuffer, float ScaleOnX, float ScaleOnY, float ScaleOnZ, bool canRotate)
+							   GLuint theTextureIdToRender, BSColorRGBA theColorOfObstacle,
+							   GLuint theVaoBuffer, float ScaleOnX, float ScaleOnY, float ScaleOnZ, bool canRotate)
 	{
 		glBindTexture(GL_TEXTURE_2D, theTextureIdToRender);
 
@@ -68,14 +68,14 @@ public:
 	{
 		if(!my_textures[name])
 		{
-		    GLuint theTextureId;
+			GLuint theTextureId;
 			theTextureId = SOIL_load_OGL_texture
-			               (
-			                   name.c_str(),
-			                   SOIL_LOAD_AUTO,
-			                   SOIL_CREATE_NEW_ID,
-			                   SOIL_FLAG_NTSC_SAFE_RGB | SOIL_FLAG_COMPRESS_TO_DXT
-			               );
+						   (
+							   name.c_str(),
+							   SOIL_LOAD_AUTO,
+							   SOIL_CREATE_NEW_ID,
+							   SOIL_FLAG_NTSC_SAFE_RGB | SOIL_FLAG_COMPRESS_TO_DXT
+						   );
 			glBindTexture(GL_TEXTURE_2D, theTextureId);
 //	glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT );
 //	glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT );
@@ -92,6 +92,10 @@ public:
 				my_textures[name] = theTextureId;
 			}
 		}
+		else
+		{
+			std::cout << "texture already loaded: " << name << '\n';
+		}
 	}
 
 	static GLuint get_texture(std::string _texture_name)
@@ -104,16 +108,16 @@ public:
 		int channels = 0;
 		SOIL_load_image
 		(
-		    name.c_str(),
-		    &width, &height, &channels,
-		    SOIL_LOAD_AUTO
+			name.c_str(),
+			&width, &height, &channels,
+			SOIL_LOAD_AUTO
 		);
 	}
 
 
 
 private:
-	static std::map<std::string, GLuint> my_textures;
+	static std::unordered_map<std::string, GLuint> my_textures;
 };
 
 #endif // BS_RENDERER_H_INCLUDED

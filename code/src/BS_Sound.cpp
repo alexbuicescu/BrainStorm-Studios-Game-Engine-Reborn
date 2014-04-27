@@ -10,33 +10,33 @@ BS_Sound::BS_Sound()
 
 BS_Sound::~BS_Sound()
 {
-    alcMakeContextCurrent(NULL);
-    alcDestroyContext(contextOpenAL);
-    alcCloseDevice(deviceOpenAL);
+	alcMakeContextCurrent(NULL);
+	alcDestroyContext(contextOpenAL);
+	alcCloseDevice(deviceOpenAL);
 }
 
 void BS_Sound::play_sound(std::string _sound)
 {
-    alSourcePlay(sounds[_sound]);
+	alSourcePlay(sounds[_sound]);
 }
 
 void BS_Sound::stop_playing_sound(std::string _sound)
 {
-    alSourceStop(sounds[_sound]);
+	alSourceStop(sounds[_sound]);
 }
 
 bool BS_Sound::isPlaying(std::string _sound)
 {
-    if(sounds[_sound])
+	if(sounds[_sound])
 	{
-	    ALenum state;
-        alGetSourcei(sounds[_sound], AL_SOURCE_STATE, &state);
-        return (state == AL_PLAYING);
+		ALenum state;
+		alGetSourcei(sounds[_sound], AL_SOURCE_STATE, &state);
+		return (state == AL_PLAYING);
 	}
 	else
-    {
-        return false;
-    }
+	{
+		return false;
+	}
 }
 
 bool BS_Sound::createOpenAlContext()
@@ -70,14 +70,14 @@ bool BS_Sound::get_OpenAL_status()
 bool BS_Sound::openTheWavfile(std::string _sound_path, ALuint &_sound_source, ALuint &_sound_buffer)
 {
 	//Loading of the WAVE file
-    //Create FILE pointer for the WAVE file
+	//Create FILE pointer for the WAVE file
 	FILE *my_file = NULL;
 	//Open the WAVE file
 	my_file = fopen(_sound_path.c_str(), "rb");
 	if(!my_file)
 	{
-	    std::cout<<"Failed to open file"<<'\n';
-	    return 0;
+		std::cout << "Failed to open file" << '\n';
+		return 0;
 	}
 
 	//Variables to store info about the WAVE file (all of them is not needed for OpenAL)
@@ -91,32 +91,32 @@ bool BS_Sound::openTheWavfile(std::string _sound_path, ALuint &_sound_source, AL
 	//Check that the WAVE file is OK
 	//Reads the first bytes in the file
 	fread(type, sizeof(char), 4, my_file);
-    //Should be "RIFF"
+	//Should be "RIFF"
 	if(type[0] != 'R' || type[1] != 'I' || type[2] != 'F' || type[3] != 'F')
-    {
-        std::cout<<"No RIFF"<<'\n';
-        return 0;
-    }
+	{
+		std::cout << "No RIFF" << '\n';
+		return 0;
+	}
 
-    //Continue to read the file
+	//Continue to read the file
 	fread(&size, sizeof(DWORD), 1, my_file);
 	//Continue to read the file
 	fread(type, sizeof(char), 4, my_file);
 	//This part should be "WAVE"
 	if(type[0] != 'W' || type[1] != 'A' || type[2] != 'V' || type[3] != 'E')
-    {
-        std::cout<<"not WAVE"<<'\n';
-        return 0;
-    }
+	{
+		std::cout << "not WAVE" << '\n';
+		return 0;
+	}
 
-    //Continue to read the file
+	//Continue to read the file
 	fread(type, sizeof(char), 4, my_file);
 	//This part should be "fmt "
 	if(type[0] != 'f' || type[1] != 'm' || type[2] != 't' || type[3] != ' ')
-    {
-        std::cout<<"not fmt "<<'\n';
-        return 0;
-    }
+	{
+		std::cout << "not fmt " << '\n';
+		return 0;
+	}
 
 	//Now we know that the file is a acceptable WAVE file
 	//Info about the WAVE data is now read and stored
@@ -131,15 +131,15 @@ bool BS_Sound::openTheWavfile(std::string _sound_path, ALuint &_sound_source, AL
 	fread(type, sizeof(char), 4, my_file);
 	//This part should be "data"
 	if(type[0] != 'd' || type[1] != 'a' || type[2] != 't' || type[3] != 'a')
-    {
-        std::cout<<"Missing DATA"<<'\n';
-        return 0;
-    }
+	{
+		std::cout << "Missing DATA" << '\n';
+		return 0;
+	}
 
-    //The size of the sound data is read
+	//The size of the sound data is read
 	fread(&dataSize, sizeof(DWORD), 1, my_file);
 
-    //Allocate memory for the sound data
+	//Allocate memory for the sound data
 	unsigned char* buf = new unsigned char[dataSize];
 	//Read the sound data and display the
 	std::cout << fread(buf, sizeof(BYTE), dataSize, my_file) << " bytes loaded\n";

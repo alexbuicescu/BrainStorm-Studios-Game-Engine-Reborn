@@ -59,7 +59,6 @@
 		<Unit filename="Shaders/BSTexturedPolygonProgram2D.glfs" />
 		<Unit filename="Shaders/BSTexturedPolygonProgram2D.glvs" />
 		<Unit filename="code/headers/BSActionStuff.h" />
-		<Unit filename="code/headers/BSActionStuffRound.h" />
 		<Unit filename="code/headers/BSAnimationClass.h" />
 		<Unit filename="code/headers/BSInputClass.h" />
 		<Unit filename="code/headers/BSLevelMenu.h" />

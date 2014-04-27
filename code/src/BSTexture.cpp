@@ -11,7 +11,7 @@ BSColorRGBA theColorToRender = { 1.f, 1.f, 1.f, 1.f }; //transparent color
 
 float colorOfDeadScene = 0;
 int colorGoesUpOrDown = 0; ///Este -1 pentru cand culoarea de la deadScene a ajuns un negru complet, si 1, cand abia a murit si incepe sa
-                            ///innegreasca ecranul
+///innegreasca ecranul
 
 float redSinForCoins = 0;
 
@@ -30,23 +30,23 @@ void BSTexture::loadTheLoadingImage()
 	m_position = glm::vec3(CameraPosition->xCord, CameraPosition->yCord, -CameraPosition->zCord);
 //	m_direction = glm::vec3(0, 0, -1);
 //	m_up = glm::vec3(0, 1, 0);
-    LookAtMatrix = glm::lookAt(m_position, m_position + m_direction, m_up);
+	LookAtMatrix = glm::lookAt(m_position, m_position + m_direction, m_up);
 
 	theLoadingImage->width = (float) SCREEN_WIDTH / cross_platform_scale + 1;
 	theLoadingImage->height = (float) SCREEN_HEIGHT / cross_platform_scale + 1;
 	addObstacle->setTheVaoData(theLoadingImage->vao, theLoadingImage->vbo, theLoadingImage->ibo,
-								theLoadingImage->data, theLoadingImage->width,theLoadingImage->height);
+							   theLoadingImage->data, theLoadingImage->width, theLoadingImage->height);
 
-	loadATexture("smb loading.png", theLoadingImage->texture);
+	BS_Renderer::loadATexture("smb loading.png", theLoadingImage->texture);
 	theLoadingImage->color.setColor(1, 1, 1, 1);
 
 }
 
 void BSTexture::renderTheLoadingImage(float alphaColor)
 {
-    _my_shader_program->set_uniform(BS_Available_Shaders::scale_size(), scaleSize);
-    _my_shader_program->set_uniform(BS_Available_Shaders::is_circle(), 0);
-    _my_shader_program->set_uniform(BS_Available_Shaders::circle_radius(), 0);
+	_my_shader_program->set_uniform(BS_Available_Shaders::scale_size(), scaleSize);
+	_my_shader_program->set_uniform(BS_Available_Shaders::is_circle(), 0);
+	_my_shader_program->set_uniform(BS_Available_Shaders::circle_radius(), 0);
 
 //	glUniform1f(ShaderScaleSize, scaleSize);
 //	glUniform1f(ShaderCameraExtremeLeft, 0);
@@ -62,14 +62,14 @@ void BSTexture::renderTheLoadingImage(float alphaColor)
 
 	theLoadingImage->color.a = alphaColor;
 
-    float scaleRatio = (float)(SCREEN_HEIGHT / 18.0f);
+	float scaleRatio = (float)(SCREEN_HEIGHT / 18.0f);
 
-    renderSomeBody((float)SCREEN_WIDTH / scaleRatio / 2.0f + CameraPosition->xCord - CameraExtremeLeft,
-									(float)SCREEN_HEIGHT / scaleRatio / 2.0f + CameraPosition->yCord - CameraExtremeDown,
-									scaleSizeInitial, 0, 0 ,0,
-									theLoadingImage->texture,
-									theLoadingImage->color,
-									theLoadingImage->vao, theLoadingImage->width, theLoadingImage->height, theLoadingImage->depth, false);
+	BS_Renderer::renderSomeBody((float)SCREEN_WIDTH / scaleRatio / 2.0f + CameraPosition->xCord - CameraExtremeLeft,
+								(float)SCREEN_HEIGHT / scaleRatio / 2.0f + CameraPosition->yCord - CameraExtremeDown,
+								scaleSizeInitial, 0, 0 , 0,
+								theLoadingImage->texture,
+								theLoadingImage->color,
+								theLoadingImage->vao, theLoadingImage->width, theLoadingImage->height, theLoadingImage->depth, false);
 }
 
 
@@ -82,7 +82,7 @@ void BSTexture::initMenuButtons()
 	std::ifstream citesteMeniurile("Menus/menus details.txt");
 	int nrMeniuri, nrButtons;
 	std::string namesOfMenus = "";
-	citesteMeniurile>>nrMeniuri;
+	citesteMeniurile >> nrMeniuri;
 
 	///Set the Menu Transparent Block
 	originalTransparentMenu->width = SCREEN_WIDTH / cross_platform_scale;
@@ -95,7 +95,7 @@ void BSTexture::initMenuButtons()
 //	mouseTexture->color.setColor(1, 1, 1, 1);
 //
 //	mouseTexture->nameOfTexture = "Animations/mouseImage.png";
-//	loadATexture(mouseTexture->nameOfTexture, mouseTexture->texture);
+//	BS_Renderer::loadATexture(mouseTexture->nameOfTexture, mouseTexture->texture);
 //	mouseTexture->width = Hero_size / 4.f;
 //	mouseTexture->height = Hero_size / 4.f;
 //	mouseTexture->xCord = hero->theBody->GetPosition().x;
@@ -106,17 +106,17 @@ void BSTexture::initMenuButtons()
 	for(int i = 0 ; i < nrMeniuri ; i++)
 	{
 		BSMenuStructure *newMenu = new BSMenuStructure;
-		citesteMeniurile>>newMenu->MenuIndex>>namesOfMenus>>nrButtons;
+		citesteMeniurile >> newMenu->MenuIndex >> namesOfMenus >> nrButtons;
 		newMenu->numberOfButtons = nrButtons;
 		newMenu->indexOfMenu = i;
 		///std::cout<<"The "<<namesOfMenus<<" is loading: index: "<<newMenu->MenuIndex<<"; number of buttons: "<<nrButtons<<'\n';
 
-		///loadATexture("Menus/first.png", newMenu->textureOfMenu);
+		///BS_Renderer::loadATexture("Menus/first.png", newMenu->textureOfMenu);
 
 		for(int j = 0 ; j < nrButtons ; j++)
 		{
 			BSButtonStructure *newButton = new BSButtonStructure;
-			citesteMeniurile>>width>>height>>newButton->NextMenuIndex;
+			citesteMeniurile >> width >> height >> newButton->NextMenuIndex;
 
 			newButton->indexOfButton = j;
 			newButton->value1 = 0;
@@ -135,7 +135,7 @@ void BSTexture::initMenuButtons()
 				lastH = height * 2;
 			}
 			else
-            ///Dau coordonatele urmatoarelor butoane
+				///Dau coordonatele urmatoarelor butoane
 			{
 				///Setez pozitia urmatorului buton, in functie de cel de dinainte
 				float theHeight = lastH + 0.3;
@@ -146,8 +146,8 @@ void BSTexture::initMenuButtons()
 			newButton->xCord = xCord;
 			newButton->yCord = yCord;
 
-			loadATexture("Button images/New Buttons/" + namesOfMenus + "/The Unnamed Buttons/picture" + BStoString(j) + ".png", newButton->textureOfButtons[0]);
-			loadATexture("Button images/New Buttons/" + namesOfMenus + "/The Unnamed Buttons/picture0" + BStoString(j) + ".png", newButton->textureOfButtons[1]);
+			BS_Renderer::loadATexture("Button images/New Buttons/" + namesOfMenus + "/The Unnamed Buttons/picture" + BStoString(j) + ".png", newButton->textureOfButtons[0]);
+			BS_Renderer::loadATexture("Button images/New Buttons/" + namesOfMenus + "/The Unnamed Buttons/picture0" + BStoString(j) + ".png", newButton->textureOfButtons[1]);
 
 			///Set the data for the menu buttons
 			addObstacle->setTheVaoData(newButton->vaoOfButtons[0], newButton->vbo[0], newButton->ibo[0], newButton->dataOfButtons[0], width * 2.0f, height * 2.0f);
@@ -177,8 +177,8 @@ void BSTexture::initMenuLevels()
 		{
 			///Set the Menu Levels
 			addObstacle->setTheVaoData(chaptere[i]->levelFromChapter[j]->vaoBufferOfLevel, chaptere[i]->levelFromChapter[j]->vboBufferOfLevel,
-										chaptere[i]->levelFromChapter[j]->iboBufferOfLevel, chaptere[i]->levelFromChapter[j]->dataOfLevel,
-										chaptere[i]->levelFromChapter[j]->width, chaptere[i]->levelFromChapter[j]->height);
+									   chaptere[i]->levelFromChapter[j]->iboBufferOfLevel, chaptere[i]->levelFromChapter[j]->dataOfLevel,
+									   chaptere[i]->levelFromChapter[j]->width, chaptere[i]->levelFromChapter[j]->height);
 		}
 
 		///Setez texturile de conexiune dintre nivele
@@ -188,57 +188,57 @@ void BSTexture::initMenuLevels()
 		chaptere[i]->levelFromChapter[0]->widthConnectionUpDownLevel = chaptere[i]->levelFromChapter[0]->width / 5;
 		chaptere[i]->levelFromChapter[0]->heightConnectionUpDownLevel = (chaptere[i]->levelFromChapter[0]->height / 1.4) * 2.0f;
 		addObstacle->setTheVaoData(chaptere[i]->levelFromChapter[0]->vaoBufferOfConnectionLeftRight, chaptere[i]->levelFromChapter[0]->vboBufferOfConnectionLeftRight,
-									chaptere[i]->levelFromChapter[0]->iboBufferOfConnectionLeftRight, chaptere[i]->levelFromChapter[0]->dataOfConnectionLeftRight,
-									(chaptere[i]->levelFromChapter[0]->width / 1.4) * 2.0f, chaptere[i]->levelFromChapter[0]->height / 5);
+								   chaptere[i]->levelFromChapter[0]->iboBufferOfConnectionLeftRight, chaptere[i]->levelFromChapter[0]->dataOfConnectionLeftRight,
+								   (chaptere[i]->levelFromChapter[0]->width / 1.4) * 2.0f, chaptere[i]->levelFromChapter[0]->height / 5);
 
 		addObstacle->setTheVaoData(chaptere[i]->levelFromChapter[0]->vaoBufferOfConnectionUpDown, chaptere[i]->levelFromChapter[0]->vboBufferOfConnectionUpDown,
-									chaptere[i]->levelFromChapter[0]->iboBufferOfConnectionUpDown, chaptere[i]->levelFromChapter[0]->dataOfConnectionUpDown,
-									chaptere[i]->levelFromChapter[0]->width / 5, (chaptere[i]->levelFromChapter[0]->height / 1.4) * 2.0f);
+								   chaptere[i]->levelFromChapter[0]->iboBufferOfConnectionUpDown, chaptere[i]->levelFromChapter[0]->dataOfConnectionUpDown,
+								   chaptere[i]->levelFromChapter[0]->width / 5, (chaptere[i]->levelFromChapter[0]->height / 1.4) * 2.0f);
 
 		///Setez textura pentru Finished Level
 		chaptere[i]->levelFromChapter[0]->widthFinishedLevel = chaptere[i]->levelFromChapter[0]->width;
 		chaptere[i]->levelFromChapter[0]->heightFinishedLevel = chaptere[i]->levelFromChapter[0]->height;
 		addObstacle->setTheVaoData(chaptere[i]->levelFromChapter[0]->vaoBufferOfFinishedLevel, chaptere[i]->levelFromChapter[0]->vboBufferOfFinishedLevel,
-									chaptere[i]->levelFromChapter[0]->iboBufferOfFinishedLevel, chaptere[i]->levelFromChapter[0]->dataOfFinishedLevel,
-									chaptere[i]->levelFromChapter[0]->width, chaptere[i]->levelFromChapter[0]->height);
+								   chaptere[i]->levelFromChapter[0]->iboBufferOfFinishedLevel, chaptere[i]->levelFromChapter[0]->dataOfFinishedLevel,
+								   chaptere[i]->levelFromChapter[0]->width, chaptere[i]->levelFromChapter[0]->height);
 
 	}
 
 	///Setez data si vao al animatiei cu care ma voi plimba prin nivele ca sa il aleg pe cel care vreau
 	addObstacle->setTheVaoData(levelChoserPlayer->vao, levelChoserPlayer->vbo, levelChoserPlayer->ibo,
-								levelChoserPlayer->data, levelChoserPlayer->width, levelChoserPlayer->height);
+							   levelChoserPlayer->data, levelChoserPlayer->width, levelChoserPlayer->height);
 
 	///Setez texturile de conexiune dintre chaptere
 	float sizeOfConnectionStringX = abs(chaptere[0]->xCord - chaptere[1]->xCord) - chaptere[0]->width / 2.0f;
 	float sizeOfConnectionStringY = abs(chaptere[0]->yCord - chaptere[4]->yCord) - chaptere[0]->height / 2.0f;
 
-		chaptere[0]->levelFromChapter[0]->widthConnectionLeftRightChapter = sizeOfConnectionStringX;
-		chaptere[0]->levelFromChapter[0]->heightConnectionLeftRightChapter = chaptere[0]->height / 4.0f;
+	chaptere[0]->levelFromChapter[0]->widthConnectionLeftRightChapter = sizeOfConnectionStringX;
+	chaptere[0]->levelFromChapter[0]->heightConnectionLeftRightChapter = chaptere[0]->height / 4.0f;
 
-		chaptere[0]->levelFromChapter[0]->widthConnectionUpDownChapter = chaptere[0]->width / 4.0f;
-		chaptere[0]->levelFromChapter[0]->heightConnectionUpDownChapter = sizeOfConnectionStringY;
+	chaptere[0]->levelFromChapter[0]->widthConnectionUpDownChapter = chaptere[0]->width / 4.0f;
+	chaptere[0]->levelFromChapter[0]->heightConnectionUpDownChapter = sizeOfConnectionStringY;
 
-		chaptere[0]->levelFromChapter[0]->widthFinishedChapter = chaptere[0]->levelFromChapter[0]->width;
-		chaptere[0]->levelFromChapter[0]->heightFinishedChapter = chaptere[0]->levelFromChapter[0]->height;
+	chaptere[0]->levelFromChapter[0]->widthFinishedChapter = chaptere[0]->levelFromChapter[0]->width;
+	chaptere[0]->levelFromChapter[0]->heightFinishedChapter = chaptere[0]->levelFromChapter[0]->height;
 
 
 	addObstacle->setTheVaoData(chaptere[0]->levelFromChapter[0]->vaoBufferOfConnectionLeftRightChapter,
-								  chaptere[0]->levelFromChapter[0]->vboBufferOfConnectionLeftRightChapter,
-								  chaptere[0]->levelFromChapter[0]->iboBufferOfConnectionLeftRightChapter,
-								  chaptere[0]->levelFromChapter[0]->dataOfConnectionLeftRightChapter,
-								  sizeOfConnectionStringX, chaptere[0]->height / 4.0f);
+							   chaptere[0]->levelFromChapter[0]->vboBufferOfConnectionLeftRightChapter,
+							   chaptere[0]->levelFromChapter[0]->iboBufferOfConnectionLeftRightChapter,
+							   chaptere[0]->levelFromChapter[0]->dataOfConnectionLeftRightChapter,
+							   sizeOfConnectionStringX, chaptere[0]->height / 4.0f);
 
 	addObstacle->setTheVaoData(chaptere[0]->levelFromChapter[0]->vaoBufferOfConnectionUpDownChapter,
-								  chaptere[0]->levelFromChapter[0]->vboBufferOfConnectionUpDownChapter,
-								  chaptere[0]->levelFromChapter[0]->iboBufferOfConnectionUpDownChapter,
-								  chaptere[0]->levelFromChapter[0]->dataOfConnectionUpDownChapter,
-								  chaptere[0]->width / 4.0f, sizeOfConnectionStringY);
+							   chaptere[0]->levelFromChapter[0]->vboBufferOfConnectionUpDownChapter,
+							   chaptere[0]->levelFromChapter[0]->iboBufferOfConnectionUpDownChapter,
+							   chaptere[0]->levelFromChapter[0]->dataOfConnectionUpDownChapter,
+							   chaptere[0]->width / 4.0f, sizeOfConnectionStringY);
 
 	addObstacle->setTheVaoData(chaptere[0]->levelFromChapter[0]->vaoBufferOfFinishedLevelChapter,
-								  chaptere[0]->levelFromChapter[0]->vboBufferOfFinishedLevelChapter,
-								  chaptere[0]->levelFromChapter[0]->iboBufferOfFinishedLevelChapter,
-								  chaptere[0]->levelFromChapter[0]->dataOfFinishedLevelChapter,
-							      chaptere[0]->width, chaptere[0]->height);
+							   chaptere[0]->levelFromChapter[0]->vboBufferOfFinishedLevelChapter,
+							   chaptere[0]->levelFromChapter[0]->iboBufferOfFinishedLevelChapter,
+							   chaptere[0]->levelFromChapter[0]->dataOfFinishedLevelChapter,
+							   chaptere[0]->width, chaptere[0]->height);
 }
 
 BSTexture::BSTexture()
@@ -247,7 +247,7 @@ BSTexture::BSTexture()
 
 void BSTexture::setTheValuesForShaders()
 {
-    _my_shader_program->set_uniform(BS_Available_Shaders::is_circle(), 0);
+	_my_shader_program->set_uniform(BS_Available_Shaders::is_circle(), 0);
 //	glUniform1f(ShaderPlayerCoordinatesX, 0);
 //	glUniform1f(ShaderPlayerCoordinatesY, 0);
 //	glUniform1f(ShaderRotationAngle, 0);
@@ -258,8 +258,8 @@ void BSTexture::setTheValuesForShaders()
 
 void rotates(float amount, glm::vec3& axis)
 {
-    ///glm::rotate()
-    float m_speed = 1.0f;
+	///glm::rotate()
+	float m_speed = 1.0f;
 //    m_direction = glm::rotate(amount * m_speed, axis) * m_direction;
 }
 void BSTexture::renderVboAndVao()
@@ -267,12 +267,12 @@ void BSTexture::renderVboAndVao()
 	setCameraPosition();
 
 	m_position = glm::vec3(CameraPosition->xCord, CameraPosition->yCord, -CameraPosition->zCord);
-    LookAtMatrix = glm::lookAt(m_position, m_position + m_direction, m_up);
+	LookAtMatrix = glm::lookAt(m_position, m_position + m_direction, m_up);
 
-    if(showBackgr)
-    {
-        renderBackgroundNo1();
-    }
+	if(showBackgr)
+	{
+		renderBackgroundNo1();
+	}
 
 	renderTheObstacles();
 	renderDustBodies();
@@ -305,18 +305,18 @@ void BSTexture::renderVboAndVao()
 
 //renderMouseTexture();
 
-    if(!DarkLevels)
-    {
-        BSColorRGBA cul = {0, 0, 0, 1};
-        renderMyFont(BStoString(coinsTotalNo + coinsThisLevel), originalCoin->xCord + CameraPosition->xCord - CameraExtremeLeft + 1,
-                        originalCoin->yCord + CameraPosition->yCord - CameraExtremeDown, 1, 1, cul, false);
-    }
-    else
-    {
-        BSColorRGBA cul = {0.8f, 0.8f, 0.8f, 1};
-        renderMyFont(BStoString(coinsTotalNo + coinsThisLevel), originalCoin->xCord + CameraPosition->xCord - CameraExtremeLeft + 1,
-                        originalCoin->yCord + CameraPosition->yCord - CameraExtremeDown, 1, 1, cul, false);
-    }
+	if(!DarkLevels)
+	{
+		BSColorRGBA cul = {0, 0, 0, 1};
+		renderMyFont(BStoString(coinsTotalNo + coinsThisLevel), originalCoin->xCord + CameraPosition->xCord - CameraExtremeLeft + 1,
+					 originalCoin->yCord + CameraPosition->yCord - CameraExtremeDown, 1, 1, cul, false);
+	}
+	else
+	{
+		BSColorRGBA cul = {0.8f, 0.8f, 0.8f, 1};
+		renderMyFont(BStoString(coinsTotalNo + coinsThisLevel), originalCoin->xCord + CameraPosition->xCord - CameraExtremeLeft + 1,
+					 originalCoin->yCord + CameraPosition->yCord - CameraExtremeDown, 1, 1, cul, false);
+	}
 	renderTheCoin();
 }
 
@@ -333,16 +333,16 @@ void BSTexture::buildRainDrops()
 	originalRainDrop->depth = 0;
 	addObstacle->setTheVaoData(originalRainDrop->vao, originalRainDrop->vbo, originalRainDrop->ibo, originalRainDrop->data, 1, 1);
 
-			float maximX = 50;
-			float minimX = -3.0f;
+	float maximX = 50;
+	float minimX = -3.0f;
 
-			float maximY = 40;
-			float minimY = 0.0f;
+	float maximY = 40;
+	float minimY = 0.0f;
 
-			float maximZ = 1;///-scaleSizeInitial + 1;
-			float minimZ = -0.5f;///2 * scaleSizeInitial;
+	float maximZ = 1;///-scaleSizeInitial + 1;
+	float minimZ = -0.5f;///2 * scaleSizeInitial;
 
-			float posX, posY, posZ, xSpeed, ySpeed;///, xSpeedMin, xSpeedMax, ySpeedMin, ySpeedMax;
+	float posX, posY, posZ, xSpeed, ySpeed;///, xSpeedMin, xSpeedMax, ySpeedMin, ySpeedMax;
 //			int leftOrRight = 0;
 
 	for(int i = 0 ; i < 1000; i++)
@@ -362,11 +362,11 @@ void BSTexture::resetRainDrops()
 {
 	for(int i = 0; i < listOfRainDrops.size(); i++)
 	{
-			float maximX = 50;
-			float minimX = -3.0f;
+		float maximX = 50;
+		float minimX = -3.0f;
 
-			float maximY = 40;
-			float minimY = 0.0f;
+		float maximY = 40;
+		float minimY = 0.0f;
 
 		listOfRainDrops[i]->xCord = ((float)rand() / ((float)RAND_MAX + 1.0)) * (maximX - minimX + 1) + minimX;
 		listOfRainDrops[i]->yCord = ((float)rand() / ((float)RAND_MAX + 1.0)) * (maximY - minimY + 1) + minimY;
@@ -403,7 +403,7 @@ void BSTexture::renderRainDrops()
 //    float maximX = 50;
 //    float minimX = -3.0f;
 
-    float maximY = 40;
+	float maximY = 40;
 //    float minimY = 0.0f;
 
 //    float posX, posY, posZ;
@@ -416,7 +416,7 @@ void BSTexture::renderRainDrops()
 	glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_LINEAR_MIPMAP_LINEAR);
 
 	m_position = glm::vec3(CameraPosition->xCord, CameraPosition->yCord, -CameraPosition->zCord);
-    LookAtMatrix = LookAtMatrix * glm::rotate( 10.0f, 0.0f, 0.0f, 1.0f );
+	LookAtMatrix = LookAtMatrix * glm::rotate( 10.0f, 0.0f, 0.0f, 1.0f );
 
 	for(int i = 0; i < listOfRainDrops.size(); i++)
 	{
@@ -433,7 +433,7 @@ void BSTexture::renderRainDrops()
 		}
 	}
 	m_position = glm::vec3(CameraPosition->xCord, CameraPosition->yCord, -CameraPosition->zCord);
-    LookAtMatrix = glm::lookAt(m_position, m_position + m_direction, m_up);
+	LookAtMatrix = glm::lookAt(m_position, m_position + m_direction, m_up);
 }
 
 
@@ -470,7 +470,7 @@ void BSTexture::renderCoins()
 				listOfCoins[it]->sinValue = 90;
 				listOfCoins[it]->sinValue2 = 0;
 				coinsThisLevel++;
-                _BS_sound_device->play_sound(BS_Available_Sounds::coin());
+				_my_sound_device->play_sound(BS_Available_Sounds::coin());
 			}
 		}
 		else
@@ -529,10 +529,10 @@ void BSTexture::renderFans()
 				}
 			}
 
-        listOfFans[it]->draw(originalFan->texture, originalFan->vao);
+		listOfFans[it]->draw(originalFan->texture, originalFan->vao);
 
 		if(listOfFans[it]->powerY)
-        {
+		{
 			_my_shader_program->set_uniform(BS_Available_Shaders::texture_color(), 0, 0, 0, 1 );
 
 			glBindVertexArray(originalFanParticleY->vao);
@@ -540,20 +540,20 @@ void BSTexture::renderFans()
 			glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_LINEAR_MIPMAP_LINEAR);
 			glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_LINEAR_MIPMAP_LINEAR);
 
-        	for(int i = 0; i < listOfFans[it]->particles.size(); i++)
+			for(int i = 0; i < listOfFans[it]->particles.size(); i++)
 			{
-			    if(!isPaused)
+				if(!isPaused)
 				{
-				    listOfFans[it]->particles[i]->yCord += listOfFans[it]->particles[i]->value2;
-                    if(listOfFans[it]->particles[i]->yCord > listOfFans[it]->yMax + 4)
-                    {
-                        listOfFans[it]->particles[i]->yCord = listOfFans[it]->yMin;
-                    }
+					listOfFans[it]->particles[i]->yCord += listOfFans[it]->particles[i]->value2;
+					if(listOfFans[it]->particles[i]->yCord > listOfFans[it]->yMax + 4)
+					{
+						listOfFans[it]->particles[i]->yCord = listOfFans[it]->yMin;
+					}
 				}
 				renderChuncksOfObjects(listOfFans[it]->particles[i]->xCord, listOfFans[it]->particles[i]->yCord, listOfFans[it]->particles[i]->zCord, 1, 1);
 			}
-        }
-        else
+		}
+		else
 			if(listOfFans[it]->powerX)
 			{
 				_my_shader_program->set_uniform(BS_Available_Shaders::texture_color(), 0, 0, 0, 1 );
@@ -578,9 +578,9 @@ void BSTexture::renderFans()
 
 void BSTexture::renderDarkLevel()
 {
-    _my_shader_program->set_uniform(BS_Available_Shaders::is_dark(), 1);
-    _my_shader_program->set_uniform(BS_Available_Shaders::is_circle(), 1);
-    _my_shader_program->set_uniform(BS_Available_Shaders::circle_radius(), Hero_size / 3.f);
+	_my_shader_program->set_uniform(BS_Available_Shaders::is_dark(), 1);
+	_my_shader_program->set_uniform(BS_Available_Shaders::is_circle(), 1);
+	_my_shader_program->set_uniform(BS_Available_Shaders::circle_radius(), Hero_size / 3.f);
 //	glUniform1f(ShaderDark, 1);
 //	glUniform1f(ShaderIsCircle, 1);
 //	glUniform1f(ShaderCircleRadius, Hero_size / 3.f);
@@ -598,13 +598,13 @@ void BSTexture::renderDarkLevel()
 //	yCordR = hero->theBody->GetPosition().y;
 
 	BSColorRGBA mainColor = {0.f, 0.f, 0.f, 1.f};
-	renderSomeBody(hero->theBody->GetPosition().x, hero->theBody->GetPosition().y, hero->zCord, 0, 0, 0,
-							blankTexture, mainColor, originalDarkMenu->vao, originalDarkMenu->width, originalDarkMenu->height, originalDarkMenu->depth, false);
-	renderSomeBody(hero->theBody->GetPosition().x, hero->theBody->GetPosition().y, hero->zCord, 0, 0, 0,
-							blankTexture, mainColor, originalDarkMenu->vao, originalDarkMenu->width, originalDarkMenu->height, originalDarkMenu->depth, false);
+	BS_Renderer::renderSomeBody(hero->theBody->GetPosition().x, hero->theBody->GetPosition().y, hero->zCord, 0, 0, 0,
+								blankTexture, mainColor, originalDarkMenu->vao, originalDarkMenu->width, originalDarkMenu->height, originalDarkMenu->depth, false);
+	BS_Renderer::renderSomeBody(hero->theBody->GetPosition().x, hero->theBody->GetPosition().y, hero->zCord, 0, 0, 0,
+								blankTexture, mainColor, originalDarkMenu->vao, originalDarkMenu->width, originalDarkMenu->height, originalDarkMenu->depth, false);
 
-    _my_shader_program->set_uniform(BS_Available_Shaders::is_dark(), 0);
-    _my_shader_program->set_uniform(BS_Available_Shaders::is_circle(), 0);
+	_my_shader_program->set_uniform(BS_Available_Shaders::is_dark(), 0);
+	_my_shader_program->set_uniform(BS_Available_Shaders::is_circle(), 0);
 //	glUniform1f(ShaderDark, 0);
 //	glUniform1f(ShaderIsCircle, 0);
 }
@@ -628,16 +628,16 @@ void BSTexture::renderTheSquareObstacles()
 				ListOfSquareBodies[i]->color.setColor(1, 1, 1, 1);
 			}
 
-        checkBodyScript(ListOfSquareBodies[i], NULL);
+		checkBodyScript(ListOfSquareBodies[i], NULL);
 
 		///Daca are textura sau culoare, il desenez
 		if((ListOfSquareBodies[i]->color.r != 1.0 || ListOfSquareBodies[i]->color.g != 1.0 || ListOfSquareBodies[i]->color.b != 1.0 || ListOfSquareBodies[i]->color.a != 1.0)
 				|| ListOfSquareBodies[i]->texture)
 		{
-		    ListOfSquareBodies[i]->xCord = ListOfSquareBodies[i]->theBody->GetPosition().x;
-		    ListOfSquareBodies[i]->yCord = ListOfSquareBodies[i]->theBody->GetPosition().y;
-		    ListOfSquareBodies[i]->draw();
-//			renderSomeBody((*i)->theBody->GetPosition().x, (*i)->theBody->GetPosition().y,
+			ListOfSquareBodies[i]->xCord = ListOfSquareBodies[i]->theBody->GetPosition().x;
+			ListOfSquareBodies[i]->yCord = ListOfSquareBodies[i]->theBody->GetPosition().y;
+			ListOfSquareBodies[i]->draw();
+//			BS_Renderer::renderSomeBody((*i)->theBody->GetPosition().x, (*i)->theBody->GetPosition().y,
 //                                    (*i)->zCord, 0, 0, 0,
 //									(*i)->texture, (*i)->color, (*i)->vao, (*i)->width, (*i)->height, (*i)->depth);
 		}
@@ -646,12 +646,12 @@ void BSTexture::renderTheSquareObstacles()
 
 void BSTexture::renderTheCircleObstacles()
 {
-    _my_shader_program->set_uniform(BS_Available_Shaders::is_circle(), 1);
+	_my_shader_program->set_uniform(BS_Available_Shaders::is_circle(), 1);
 //	glUniform1f(ShaderIsCircle, 1);
 
 	for(int i = 0; i < ListOfRoundBodies.size(); i++)
 	{
-        float theAngle = ListOfRoundBodies[i]->theBody->GetAngle();
+		float theAngle = ListOfRoundBodies[i]->theBody->GetAngle();
 		if(ListOfRoundBodies[i]->isRotating && !isPaused && !isTeleporting)
 		{
 			if((ListOfRoundBodies[i]->theBody->GetAngle() < 0 && ListOfRoundBodies[i]->theBody->GetAngle() <= -2 * 180) || (ListOfRoundBodies[i]->theBody->GetAngle() > 0 && ListOfRoundBodies[i]->theBody->GetAngle() >= 2 * 180))
@@ -667,7 +667,7 @@ void BSTexture::renderTheCircleObstacles()
 			theAngle -= 5.1 * (60 / theTimeHowFast);
 			ListOfRoundBodies[i]->theBody->SetTransform(b2Vec2(ListOfRoundBodies[i]->theBody->GetPosition().x, ListOfRoundBodies[i]->theBody->GetPosition().y), theAngle);
 		}
-        _my_shader_program->set_uniform(BS_Available_Shaders::circle_radius(), ListOfRoundBodies[i]->width);
+		_my_shader_program->set_uniform(BS_Available_Shaders::circle_radius(), ListOfRoundBodies[i]->width);
 //		glUniform1f(ShaderCircleRadius, ListOfRoundBodies[i]->width);
 
 		if(ListOfRoundBodies[i]->ObstacleCanKillHero)
@@ -680,255 +680,255 @@ void BSTexture::renderTheCircleObstacles()
 				ListOfRoundBodies[i]->color.setColor(0, 20, 0, 1);
 			}
 
-        checkBodyScript(NULL, ListOfRoundBodies[i]);
+		checkBodyScript(NULL, ListOfRoundBodies[i]);
 
 		///Daca are textura sau culoare, il desenez
 		if( (ListOfRoundBodies[i]->color.r != 1.0 || ListOfRoundBodies[i]->color.g != 1.0 || ListOfRoundBodies[i]->color.b != 1.0 || ListOfRoundBodies[i]->color.a != 1.0)
 				|| ListOfRoundBodies[i]->texture)
 		{
-		    ListOfRoundBodies[i]->xCord = ListOfRoundBodies[i]->theBody->GetPosition().x;
-		    ListOfRoundBodies[i]->yCord = ListOfRoundBodies[i]->theBody->GetPosition().y;
-		    ListOfRoundBodies[i]->xAngle = theAngle;
-            ListOfRoundBodies[i]->draw();
+			ListOfRoundBodies[i]->xCord = ListOfRoundBodies[i]->theBody->GetPosition().x;
+			ListOfRoundBodies[i]->yCord = ListOfRoundBodies[i]->theBody->GetPosition().y;
+			ListOfRoundBodies[i]->xAngle = theAngle;
+			ListOfRoundBodies[i]->draw();
 		}
 	}
-    _my_shader_program->set_uniform(BS_Available_Shaders::is_circle(), 0);
+	_my_shader_program->set_uniform(BS_Available_Shaders::is_circle(), 0);
 //	glUniform1f(ShaderIsCircle, 0);
 }
 
 
 void BSTexture::checkBodyScript(BSTheSquareBodies *square, BSTheRoundBodies *round)
 {
-    BSBodyScript *script = NULL;
-    float xCord = 0, yCord = 0;
-    float xSpeed = 0, ySpeed = 0;
-    float slowSpeed = 6;
+	BSBodyScript *script = NULL;
+	float xCord = 0, yCord = 0;
+	float xSpeed = 0, ySpeed = 0;
+	float slowSpeed = 6;
 
-    if(square)
-    {
-        script = square->script;
-        xCord = square->theBody->GetPosition().x;
-        yCord = square->theBody->GetPosition().y;
-    }
-    else
-        if(round)
-        {
-            script = round->script;
-            xCord = round->theBody->GetPosition().x;
-            yCord = round->theBody->GetPosition().y;
-        }
+	if(square)
+	{
+		script = square->script;
+		xCord = square->theBody->GetPosition().x;
+		yCord = square->theBody->GetPosition().y;
+	}
+	else
+		if(round)
+		{
+			script = round->script;
+			xCord = round->theBody->GetPosition().x;
+			yCord = round->theBody->GetPosition().y;
+		}
 
-    if(script)
-    {
-        float maxRight = (float) (script->xInitial + (script->xLength / 2));
-        float maxLeft = (float) (script->xInitial - (script->xLength / 2));
-        float maxUp = (float) (script->yInitial + (script->yLength / 2));
-        float maxDown = (float) (script->yInitial - (script->yLength / 2));
+	if(script)
+	{
+		float maxRight = (float) (script->xInitial + (script->xLength / 2));
+		float maxLeft = (float) (script->xInitial - (script->xLength / 2));
+		float maxUp = (float) (script->yInitial + (script->yLength / 2));
+		float maxDown = (float) (script->yInitial - (script->yLength / 2));
 
-        if(script->value2 >= 360)
-        {
-            script->value2 = script->value2 - 360;
-        }
+		if(script->value2 >= 360)
+		{
+			script->value2 = script->value2 - 360;
+		}
 
-        if(script->xPower)
-        {
-            ///if he is moving right and didn't reach the border
-            if(xCord < maxRight && script->value1 > 0)
-            {
-                ///daca mai are putin si ajunge la border, il incetinesc
-                if(xCord > maxRight - 1)
-                {
-                    ///ii las viteza mica (nu il opresc complet)
-                    if(script->value2 < 170)
-                    {
-                        script->value2 += slowSpeed;
-                    }
-                }
-                else
-                    ///daca tocmai a cotit la dreapta
-                    if(xCord < maxRight - 1)
-                    {
-                        ///ii las viteza mica (nu il opresc complet)
-                        if(script->value2 < 90)
-                        {
-                            script->value2 += slowSpeed;
-                        }
-                    }
-                    ///daca nu trebuie sa incetineasca sau sa accelereze
-                    else
-                    {
-                        if(sin(toRadians(script->value2)) > 0)
-                        {
-                            script->value2 = 90;
-                        }
-                        else
-                            if(sin(toRadians(script->value2)) < 0)
-                            {
-                                script->value2 = 270;
-                            }
-                    }
-            }
-            else
-                ///if he is moving left and didn't reach the border
-                if(xCord > maxLeft && script->value1 < 0)
-                {
-                    ///daca tocmai a cotit la stanga
-                    if(xCord > maxRight - 1)
-                    {
-                        ///ii las viteza mica (nu il opresc complet)
-                        if(script->value2 < 270)
-                        {
-                            script->value2 += slowSpeed;
-                        }
-                    }
-                    else
-                        ///daca mai are putin si ajunge la border, il incetinesc
-                        if(xCord < maxLeft + 1)
-                        {
-                            ///ii las viteza mica (nu il opresc complet)
-                            if(script->value2 < 350)
-                            {
-                                script->value2 += slowSpeed;
-                            }
-                        }
-                        ///daca nu trebuie sa incetineasca sau sa accelereze
-                        else
-                        {
-                            if(sin(toRadians(script->value2)) > 0)
-                            {
-                                script->value2 = 90;
-                            }
-                            else
-                                if(sin(toRadians(script->value2)) < 0)
-                                {
-                                    script->value2 = 270;
-                                }
-                        }
-                }
-                else
-                    ///if he got out of borders
-                    if(xCord >= maxRight)
-                    {
-                        script->value1 = -1;
-                        script->value2 = 190;
-                    }
-                    else
-                        if(xCord <= maxLeft)
-                        {
-                            script->value1 = 1;
-                            script->value2 = 10;
-                        }
+		if(script->xPower)
+		{
+			///if he is moving right and didn't reach the border
+			if(xCord < maxRight && script->value1 > 0)
+			{
+				///daca mai are putin si ajunge la border, il incetinesc
+				if(xCord > maxRight - 1)
+				{
+					///ii las viteza mica (nu il opresc complet)
+					if(script->value2 < 170)
+					{
+						script->value2 += slowSpeed;
+					}
+				}
+				else
+					///daca tocmai a cotit la dreapta
+					if(xCord < maxRight - 1)
+					{
+						///ii las viteza mica (nu il opresc complet)
+						if(script->value2 < 90)
+						{
+							script->value2 += slowSpeed;
+						}
+					}
+					///daca nu trebuie sa incetineasca sau sa accelereze
+					else
+					{
+						if(sin(toRadians(script->value2)) > 0)
+						{
+							script->value2 = 90;
+						}
+						else
+							if(sin(toRadians(script->value2)) < 0)
+							{
+								script->value2 = 270;
+							}
+					}
+			}
+			else
+				///if he is moving left and didn't reach the border
+				if(xCord > maxLeft && script->value1 < 0)
+				{
+					///daca tocmai a cotit la stanga
+					if(xCord > maxRight - 1)
+					{
+						///ii las viteza mica (nu il opresc complet)
+						if(script->value2 < 270)
+						{
+							script->value2 += slowSpeed;
+						}
+					}
+					else
+						///daca mai are putin si ajunge la border, il incetinesc
+						if(xCord < maxLeft + 1)
+						{
+							///ii las viteza mica (nu il opresc complet)
+							if(script->value2 < 350)
+							{
+								script->value2 += slowSpeed;
+							}
+						}
+						///daca nu trebuie sa incetineasca sau sa accelereze
+						else
+						{
+							if(sin(toRadians(script->value2)) > 0)
+							{
+								script->value2 = 90;
+							}
+							else
+								if(sin(toRadians(script->value2)) < 0)
+								{
+									script->value2 = 270;
+								}
+						}
+				}
+				else
+					///if he got out of borders
+					if(xCord >= maxRight)
+					{
+						script->value1 = -1;
+						script->value2 = 190;
+					}
+					else
+						if(xCord <= maxLeft)
+						{
+							script->value1 = 1;
+							script->value2 = 10;
+						}
 
-            xSpeed = script->xPower * sin(toRadians(script->value2));
-        }
-        else
-            if(script->yPower)
-            {
-                ///if he is moving right and didn't reach the border
-                if(yCord < maxUp && script->value1 > 0)
-                {
-                    ///daca mai are putin si ajunge la border, il incetinesc
-                    if(yCord > maxUp - 1)
-                    {
-                        ///ii las viteza mica (nu il opresc complet)
-                        if(script->value2 < 170)
-                        {
-                            script->value2 += slowSpeed;
-                        }
-                    }
-                    else
-                        ///daca tocmai a cotit la dreapta
-                        if(yCord < maxUp - 1)
-                        {
-                            ///ii las viteza mica (nu il opresc complet)
-                            if(script->value2 < 90)
-                            {
-                                script->value2 += slowSpeed;
-                            }
-                        }
-                        ///daca nu trebuie sa incetineasca sau sa accelereze
-                        else
-                        {
-                            if(sin(toRadians(script->value2)) > 0)
-                            {
-                                script->value2 = 90;
-                            }
-                            else
-                                if(sin(toRadians(script->value2)) < 0)
-                                {
-                                    script->value2 = 270;
-                                }
-                        }
-                }
-                else
-                    ///if he is moving left and didn't reach the border
-                    if(yCord > maxDown && script->value1 < 0)
-                    {
-                        ///daca tocmai a cotit la stanga
-                        if(yCord > maxUp - 1)
-                        {
-                            ///ii las viteza mica (nu il opresc complet)
-                            if(script->value2 < 270)
-                            {
-                                script->value2 += slowSpeed;
-                            }
-                        }
-                        else
-                            ///daca mai are putin si ajunge la border, il incetinesc
-                            if(yCord < maxDown + 1)
-                            {
-                                ///ii las viteza mica (nu il opresc complet)
-                                if(script->value2 < 350)
-                                {
-                                    script->value2 += slowSpeed;
-                                }
-                            }
-                            ///daca nu trebuie sa incetineasca sau sa accelereze
-                            else
-                            {
-                                if(sin(toRadians(script->value2)) > 0)
-                                {
-                                    script->value2 = 90;
-                                }
-                                else
-                                    if(sin(toRadians(script->value2)) < 0)
-                                    {
-                                        script->value2 = 270;
-                                    }
-                            }
-                    }
-                    else
-                        ///if he got out of borders
-                        if(yCord >= maxUp)
-                        {
-                            script->value1 = -1;
-                            script->value2 = 190;
-                        }
-                        else
-                            if(yCord <= maxDown)
-                            {
-                                script->value1 = 1;
-                                script->value2 = 10;
-                            }
+			xSpeed = script->xPower * sin(toRadians(script->value2));
+		}
+		else
+			if(script->yPower)
+			{
+				///if he is moving right and didn't reach the border
+				if(yCord < maxUp && script->value1 > 0)
+				{
+					///daca mai are putin si ajunge la border, il incetinesc
+					if(yCord > maxUp - 1)
+					{
+						///ii las viteza mica (nu il opresc complet)
+						if(script->value2 < 170)
+						{
+							script->value2 += slowSpeed;
+						}
+					}
+					else
+						///daca tocmai a cotit la dreapta
+						if(yCord < maxUp - 1)
+						{
+							///ii las viteza mica (nu il opresc complet)
+							if(script->value2 < 90)
+							{
+								script->value2 += slowSpeed;
+							}
+						}
+						///daca nu trebuie sa incetineasca sau sa accelereze
+						else
+						{
+							if(sin(toRadians(script->value2)) > 0)
+							{
+								script->value2 = 90;
+							}
+							else
+								if(sin(toRadians(script->value2)) < 0)
+								{
+									script->value2 = 270;
+								}
+						}
+				}
+				else
+					///if he is moving left and didn't reach the border
+					if(yCord > maxDown && script->value1 < 0)
+					{
+						///daca tocmai a cotit la stanga
+						if(yCord > maxUp - 1)
+						{
+							///ii las viteza mica (nu il opresc complet)
+							if(script->value2 < 270)
+							{
+								script->value2 += slowSpeed;
+							}
+						}
+						else
+							///daca mai are putin si ajunge la border, il incetinesc
+							if(yCord < maxDown + 1)
+							{
+								///ii las viteza mica (nu il opresc complet)
+								if(script->value2 < 350)
+								{
+									script->value2 += slowSpeed;
+								}
+							}
+							///daca nu trebuie sa incetineasca sau sa accelereze
+							else
+							{
+								if(sin(toRadians(script->value2)) > 0)
+								{
+									script->value2 = 90;
+								}
+								else
+									if(sin(toRadians(script->value2)) < 0)
+									{
+										script->value2 = 270;
+									}
+							}
+					}
+					else
+						///if he got out of borders
+						if(yCord >= maxUp)
+						{
+							script->value1 = -1;
+							script->value2 = 190;
+						}
+						else
+							if(yCord <= maxDown)
+							{
+								script->value1 = 1;
+								script->value2 = 10;
+							}
 
-                ySpeed = script->yPower * sin(toRadians(script->value2));
-            }
-    }
+				ySpeed = script->yPower * sin(toRadians(script->value2));
+			}
+	}
 
-    if(square)
-    {
-        square->theBody->SetLinearVelocity(b2Vec2(xSpeed, ySpeed));
-    }
-    else
-        if(round)
-        {
-            round->theBody->SetLinearVelocity(b2Vec2(xSpeed, ySpeed));
-        }
+	if(square)
+	{
+		square->theBody->SetLinearVelocity(b2Vec2(xSpeed, ySpeed));
+	}
+	else
+		if(round)
+		{
+			round->theBody->SetLinearVelocity(b2Vec2(xSpeed, ySpeed));
+		}
 }
 
 void BSTexture::renderOnlyTheTextures()
 {
-// 	renderSomeBody(mouseTexture->xCord + CameraPosition->xCord - CameraExtremeLeft,
+// 	BS_Renderer::renderSomeBody(mouseTexture->xCord + CameraPosition->xCord - CameraExtremeLeft,
 //                            mouseTexture->yCord + CameraPosition->yCord - CameraExtremeDown,
 //                            scaleSizeInitial, 0, 0, 0,
 //							mouseTexture->texture, mouseTexture->color, mouseTexture->vao,
@@ -936,19 +936,19 @@ void BSTexture::renderOnlyTheTextures()
 
 	for(int i = 0; i < ListOfSquareTextures.size(); i++)
 	{
-	    ListOfSquareTextures[i]->draw();
+		ListOfSquareTextures[i]->draw();
 	}
 
-    _my_shader_program->set_uniform(BS_Available_Shaders::is_circle(), 1);
+	_my_shader_program->set_uniform(BS_Available_Shaders::is_circle(), 1);
 //	glUniform1f(ShaderIsCircle, 1);
 //	glUniform1f(ShaderRotated, 1);
 
 	for(int i = 0; i < ListOfRoundTextures.size(); i++)
 	{
-	    ListOfRoundTextures[i]->draw();
+		ListOfRoundTextures[i]->draw();
 	}
 
-    _my_shader_program->set_uniform(BS_Available_Shaders::is_circle(), 0);
+	_my_shader_program->set_uniform(BS_Available_Shaders::is_circle(), 0);
 //	glUniform1f(ShaderIsCircle, 0);
 //	glUniform1f(ShaderRotated, 0);
 }
@@ -974,23 +974,23 @@ void BSTexture::renderTheObstacles()
 		{
 
 			ListOfParticles[i]->theBodyOfParticle->SetTransform(b2Vec2(ListOfParticles[i]->theBodyOfParticle->GetPosition().x, ListOfParticles[i]->theBodyOfParticle->GetPosition().y),
-                                                        ListOfParticles[i]->theBodyOfParticle->GetAngle() * 1.2);
+					ListOfParticles[i]->theBodyOfParticle->GetAngle() * 1.2);
 
 			if(ListOfParticles[i]->BumTime < SDL_GetTicks() + 50)
 			{
 				ListOfParticles[i]->color.setColor(ListOfParticles[i]->color.r + 0.15f, ListOfParticles[i]->color.g + 0.15f, 0, 1);
 			}
-            ListOfParticles[i]->xCord = ListOfParticles[i]->theBodyOfParticle->GetPosition().x;
-            ListOfParticles[i]->yCord = ListOfParticles[i]->theBodyOfParticle->GetPosition().y;
-            ListOfParticles[i]->width = originalParticle->width;
-            ListOfParticles[i]->height = originalParticle->height;
+			ListOfParticles[i]->xCord = ListOfParticles[i]->theBodyOfParticle->GetPosition().x;
+			ListOfParticles[i]->yCord = ListOfParticles[i]->theBodyOfParticle->GetPosition().y;
+			ListOfParticles[i]->width = originalParticle->width;
+			ListOfParticles[i]->height = originalParticle->height;
 			ListOfParticles[i]->draw(blankTexture, originalParticle->vao);
 
 			if(ListOfParticles[i]->BumTime <= SDL_GetTicks())
 			{
 				ListOfParticles[i]->isDestroyed = true;
 				ListOfParticles[i]->theBodyOfParticle->SetTransform(b2Vec2(ListOfParticles[i]->theBodyOfParticle->GetPosition().x,
-                                                                        ListOfParticles[i]->theBodyOfParticle->GetPosition().y), 0);
+						ListOfParticles[i]->theBodyOfParticle->GetPosition().y), 0);
 			}
 		}
 	}
@@ -1000,35 +1000,35 @@ void BSTexture::setCameraPosition()
 {
 	if(hero->theBody->GetPosition().x <= CameraExtremeLeft)
 	{
-       CameraPosition->xCord = CameraExtremeLeft;
+		CameraPosition->xCord = CameraExtremeLeft;
 	}
 	else
 		if(hero->theBody->GetPosition().x > CameraExtremeLeft && hero->theBody->GetPosition().x < CameraExtremeRight)
 		{
-            CameraPosition->xCord = hero->theBody->GetPosition().x;
+			CameraPosition->xCord = hero->theBody->GetPosition().x;
 		}
 		else
 			if(hero->theBody->GetPosition().x >= CameraExtremeRight)
 			{
-                CameraPosition->xCord = CameraExtremeRight;
+				CameraPosition->xCord = CameraExtremeRight;
 			}
 
 	if(hero->theBody->GetPosition().y <= CameraExtremeDown)
 	{
-        CameraPosition->yCord = CameraExtremeDown;
+		CameraPosition->yCord = CameraExtremeDown;
 	}
 	else
 		if(hero->theBody->GetPosition().y > CameraExtremeDown && hero->theBody->GetPosition().y < CameraExtremeUp)
 		{
-            CameraPosition->yCord = hero->theBody->GetPosition().y;
+			CameraPosition->yCord = hero->theBody->GetPosition().y;
 		}
 		else
 			if(hero->theBody->GetPosition().y >= CameraExtremeUp)
 			{
-                CameraPosition->yCord = CameraExtremeUp;
+				CameraPosition->yCord = CameraExtremeUp;
 			}
-    CameraPosition->xCord = hero->theBody->GetPosition().x;
-    CameraPosition->yCord = hero->theBody->GetPosition().y;
+	CameraPosition->xCord = hero->theBody->GetPosition().x;
+	CameraPosition->yCord = hero->theBody->GetPosition().y;
 }
 
 void BSTexture::renderDeadSceneChange()
@@ -1038,53 +1038,53 @@ void BSTexture::renderDeadSceneChange()
 		deadScene->SinValueColorOfTheScene += 0.9f;
 	}
 	else
-		if(deadScene->SinValueColorOfTheScene >=90 && deadScene->colorGoesUpOrDown == 1)
+		if(deadScene->SinValueColorOfTheScene >= 90 && deadScene->colorGoesUpOrDown == 1)
 		{
-            _BS_sound_device->play_sound(BS_Available_Sounds::melody_beginning_game());
+			_my_sound_device->play_sound(BS_Available_Sounds::melody_beginning_game());
 
-	for(int i = 0; i < listOfCoins.size(); i++)
-	{
-		if(listOfCoins[i]->alreadyHadIt == false)
-		{
-			coinsThisLevel = 0;
-            listOfCoins[i]->available = true;
-			listOfCoins[i]->deleteIt = false;
-            listOfCoins[i]->sinValue = 90;
-            listOfCoins[i]->sinValue2 = 0;
-            listOfCoins[i]->color.a = 1.0f;
-            listOfCoins[i]->xCord = listOfCoins[i]->xInit;
-            listOfCoins[i]->yCord = listOfCoins[i]->yInit;
-		}
-	}
+			for(int i = 0; i < listOfCoins.size(); i++)
+			{
+				if(listOfCoins[i]->alreadyHadIt == false)
+				{
+					coinsThisLevel = 0;
+					listOfCoins[i]->available = true;
+					listOfCoins[i]->deleteIt = false;
+					listOfCoins[i]->sinValue = 90;
+					listOfCoins[i]->sinValue2 = 0;
+					listOfCoins[i]->color.a = 1.0f;
+					listOfCoins[i]->xCord = listOfCoins[i]->xInit;
+					listOfCoins[i]->yCord = listOfCoins[i]->yInit;
+				}
+			}
 
-    deadScene->colorGoesUpOrDown = -1;
-    deadScene->SinValueColorOfTheScene -= 1.9f;
-    hero->theBody->SetTransform(b2Vec2(HeroInitialX, HeroInitialY), 0);
-    hero->heroIsDead = false;
-    hero->texture = playerTexture;
-    canJumpHorizontally = false;
-    canJumpVertically = false;
-    isOnGround = false;
-    isInAir = true;
-    isOnLeftWall = false;
-    isOnRightWall = false;
+			deadScene->colorGoesUpOrDown = -1;
+			deadScene->SinValueColorOfTheScene -= 1.9f;
+			hero->theBody->SetTransform(b2Vec2(HeroInitialX, HeroInitialY), 0);
+			hero->heroIsDead = false;
+			hero->texture = playerTexture;
+			canJumpHorizontally = false;
+			canJumpVertically = false;
+			isOnGround = false;
+			isInAir = true;
+			isOnLeftWall = false;
+			isOnRightWall = false;
 
-    hero->theBody->SetTransform(b2Vec2(HeroInitialX, HeroInitialY), 0);
-    world->Step((float) 1/theTimeHowFast , 8, 3);
-    world->ClearForces();
-    actionObj->heroTouchesObjects();
+			hero->theBody->SetTransform(b2Vec2(HeroInitialX, HeroInitialY), 0);
+			world->Step((float) 1 / theTimeHowFast , 8, 3);
+			world->ClearForces();
+			actionObj->heroTouchesObjects();
 
-				hero->heroIsBerserk1 = false;
-				hero->heroIsBerserk2 = false;
-				hero->heroIsBerserk3 = false;
+			hero->heroIsBerserk1 = false;
+			hero->heroIsBerserk2 = false;
+			hero->heroIsBerserk3 = false;
 
-            hero->animationIndexCurrentAnimation = hero->animationIndexPlayerStand;
-            hero->IsAtStepOfAnimation1 = true;
+			hero->animationIndexCurrentAnimation = hero->animationIndexPlayerStand;
+			hero->IsAtStepOfAnimation1 = true;
 			hero->IsAtStepOfAnimation2 = false;
 			hero->IsAtStepOfAnimation3 = false;
 
 			std::ofstream coinsAndDeaths("coinsAndDeaths");
-			coinsAndDeaths<<coinsTotalNo<<' '<<deathsTotalNo;
+			coinsAndDeaths << coinsTotalNo << ' ' << deathsTotalNo;
 		}
 		else
 			if(deadScene->SinValueColorOfTheScene > 0 && deadScene->colorGoesUpOrDown == -1)
@@ -1121,27 +1121,27 @@ void BSTexture::renderNextLevelSceneChange()
 		deadScene->CosValueColorOfTheScene += 0.9f;
 	}
 	else
-		if(deadScene->CosValueColorOfTheScene >=90 && deadScene->colorGoesUpOrDown == 1)
+		if(deadScene->CosValueColorOfTheScene >= 90 && deadScene->colorGoesUpOrDown == 1)
 		{
 			consoleSalveazaHarta();
 			coinsTotalNo += coinsThisLevel;
 			coinsThisLevel = 0;
 			std::ofstream fout("coinsAndDeaths");
-			fout<<coinsTotalNo<<' '<<deathsTotalNo;
+			fout << coinsTotalNo << ' ' << deathsTotalNo;
 
-            _BS_sound_device->play_sound(BS_Available_Sounds::melody_beginning_game());
+			_my_sound_device->play_sound(BS_Available_Sounds::melody_beginning_game());
 
 			deadScene->colorGoesUpOrDown = -1;
 			deadScene->CosValueColorOfTheScene -= 1.9f;
 
-            std::cout<<"next level"<<'\n';
+			std::cout << "next level" << '\n';
 			///Vad daca a terminat nivelul
 			levelChoserPlayer->justFinished = false;
 			levelChoserPlayer->indexOfLevelThatItIsOn++;
 
 			addObstacle->destroyLevel();
 			addObstacle->incarcaHarta("Menu Of Levels/Chapter" + BStoString(levelChoserPlayer->indexOfChapterThatItIsOn + 1) + "/The Levels objects/level" +
-                                        BStoString(levelChoserPlayer->indexOfLevelThatItIsOn + 1) + ".xml");
+									  BStoString(levelChoserPlayer->indexOfLevelThatItIsOn + 1) + ".xml");
 			levelChoserPlayer->xCord = chaptere[levelChoserPlayer->indexOfChapterThatItIsOn]->levelFromChapter[levelChoserPlayer->indexOfLevelThatItIsOn]->xCord;
 			levelChoserPlayer->yCord = chaptere[levelChoserPlayer->indexOfChapterThatItIsOn]->levelFromChapter[levelChoserPlayer->indexOfLevelThatItIsOn]->yCord;
 
@@ -1180,9 +1180,9 @@ void BSTexture::renderLevelSceneChangeFromMenuLevels()
 		deadScene->CosValueColorOfTheScene += 0.9f;
 	}
 	else
-		if(deadScene->CosValueColorOfTheScene >=90 && deadScene->colorGoesUpOrDown == 1)
+		if(deadScene->CosValueColorOfTheScene >= 90 && deadScene->colorGoesUpOrDown == 1)
 		{
-            _BS_sound_device->play_sound(BS_Available_Sounds::melody_beginning_game());
+			_my_sound_device->play_sound(BS_Available_Sounds::melody_beginning_game());
 
 			deadScene->colorGoesUpOrDown = -1;
 			deadScene->CosValueColorOfTheScene -= 1.9f;
@@ -1193,7 +1193,7 @@ void BSTexture::renderLevelSceneChangeFromMenuLevels()
 			addObstacle->destroyLevel();
 
 			addObstacle->incarcaHarta("Menu Of Levels/Chapter" + BStoString(levelChoserPlayer->indexOfChapterThatItIsOn + 1) + "/The Levels objects/level" +
-                                        BStoString(levelChoserPlayer->indexOfLevelThatItIsOn + 1) + ".xml");
+									  BStoString(levelChoserPlayer->indexOfLevelThatItIsOn + 1) + ".xml");
 
 			hero->theBody->SetTransform(b2Vec2(HeroInitialX, HeroInitialY), 0);
 
@@ -1205,14 +1205,14 @@ void BSTexture::renderLevelSceneChangeFromMenuLevels()
 			std::ifstream citesteLevelulCurent(nameOfLevel.c_str());
 			float a1, a2, l, d, u, r;
 			std::string cacat;
-			citesteLevelulCurent>>a1>>a2>>cacat>>l>>d>>u>>r;
+			citesteLevelulCurent >> a1 >> a2 >> cacat >> l >> d >> u >> r;
 
 			CameraExtremeDown = d + SCREEN_HEIGHT / 2.f / scaleSize;
 			CameraExtremeLeft = l + SCREEN_WIDTH / 2.f / scaleSize;
 			CameraExtremeUp = u - SCREEN_HEIGHT / 2.f / scaleSize;
 			CameraExtremeRight = r - SCREEN_WIDTH / 2.f / scaleSize;
 
-			std::cout<<"extremes: "<<l<<" "<<d<<" "<<u<<" "<<r<<'\n';
+			std::cout << "extremes: " << l << " " << d << " " << u << " " << r << '\n';
 		}
 		else
 			if(deadScene->CosValueColorOfTheScene > 0 && deadScene->colorGoesUpOrDown == -1)
@@ -1236,7 +1236,7 @@ void BSTexture::renderLevelSceneChangeFromMenuLevels()
 	deadScene->yCord = CameraPosition->yCord - CameraExtremeDown;
 	deadScene->zCord = scaleSizeInitial;
 
-    deadScene->draw();
+	deadScene->draw();
 }
 
 
@@ -1244,241 +1244,241 @@ void BSTexture::renderLevelSceneChangeFromMenuLevels()
 ///This is deep wizzardry, do NOT touch, unless you have a staff, a grey pointy hat and your name is Gandalf
 void BSTexture::renderAllAnimations()
 {
-    for(int i = 0; i < 5; i++)
-    {
-        int indexOfAnimation = listOfActiveAnimations[i]->indexOfAnimation,
-            indexOfTexture = listOfActiveAnimations[i]->indexOfTexture,
-            nr1 = listOfLoadedAnimations[indexOfAnimation]->nr1,
-            nr2 = listOfLoadedAnimations[indexOfAnimation]->nr2,
-            nr3 = listOfLoadedAnimations[indexOfAnimation]->nr3;
+	for(int i = 0; i < 5; i++)
+	{
+		int indexOfAnimation = listOfActiveAnimations[i]->indexOfAnimation,
+			indexOfTexture = listOfActiveAnimations[i]->indexOfTexture,
+			nr1 = listOfLoadedAnimations[indexOfAnimation]->nr1,
+			nr2 = listOfLoadedAnimations[indexOfAnimation]->nr2,
+			nr3 = listOfLoadedAnimations[indexOfAnimation]->nr3;
 
-        ///if we can play the animation
-        if(listOfActiveAnimations[i]->canPlayIt)
-        {
-            ///if it is time to show a new texture
-            if(SDL_GetTicks() > listOfActiveAnimations[i]->timeToShow && !isPaused && gravityIsChanging == 0)
-            {
-                ///if we don't need to finish the animation
-                if(!listOfActiveAnimations[i]->finish)
-                {
-                    ///if the first part is on loop, then when it gets to the second part of the animation, we restart the animation
-                    if(listOfLoadedAnimations[indexOfAnimation]->loop1 == true && indexOfTexture == nr1 - 1)
-                    {
-                        indexOfTexture = 0;
-                    }
-                    else
-                        ///if the second part is on loop, then when it gets to the third part of the animation, we restart the animation
-                        if(listOfLoadedAnimations[indexOfAnimation]->loop2 == true && indexOfTexture == nr1 + nr2 - 1)
-                        {
-                            indexOfTexture = nr1;
-                        }
-                        else
-                            ///if the third part is on loop, then when it finishes the animation, we restart the animation
-                            ///beware if he animation has its 3rd part on a loop, the animation will loop to infinity, until the end of time and the hell will freeze over
-                            if(listOfLoadedAnimations[indexOfAnimation]->loop3 == true && indexOfTexture == nr1 + nr2 + nr3 - 1)
-                            {
-                                indexOfTexture = nr1 + nr2;
-                            }
-                            ///we just iterate through the animations
-                            else
-                            {
-                                indexOfTexture++;
-                            }
-                }
-                ///if we need to finish the animation
-                else
-                    if(listOfActiveAnimations[i]->finish)
-                    {
-                        ///if we didn't get to the 3rd part of the animation, or if we got the 1st or 2nd parts on loop, then we get to the first texture of the 3rd part
-                        if(indexOfTexture < nr1 + nr2)
-                        {
-                            indexOfTexture = nr1 + nr2;
-                        }
-                        else
-                        {
-                            indexOfTexture++;
-                        }
-                    }
-                if(indexOfTexture != nr1 + nr2 + nr3)
-                {
-                    listOfActiveAnimations[i]->timeToShow = listOfLoadedAnimations[indexOfAnimation]->animation[indexOfTexture]->timeUntilNext + SDL_GetTicks();
-                }
-            }
+		///if we can play the animation
+		if(listOfActiveAnimations[i]->canPlayIt)
+		{
+			///if it is time to show a new texture
+			if(SDL_GetTicks() > listOfActiveAnimations[i]->timeToShow && !isPaused && gravityIsChanging == 0)
+			{
+				///if we don't need to finish the animation
+				if(!listOfActiveAnimations[i]->finish)
+				{
+					///if the first part is on loop, then when it gets to the second part of the animation, we restart the animation
+					if(listOfLoadedAnimations[indexOfAnimation]->loop1 == true && indexOfTexture == nr1 - 1)
+					{
+						indexOfTexture = 0;
+					}
+					else
+						///if the second part is on loop, then when it gets to the third part of the animation, we restart the animation
+						if(listOfLoadedAnimations[indexOfAnimation]->loop2 == true && indexOfTexture == nr1 + nr2 - 1)
+						{
+							indexOfTexture = nr1;
+						}
+						else
+							///if the third part is on loop, then when it finishes the animation, we restart the animation
+							///beware if he animation has its 3rd part on a loop, the animation will loop to infinity, until the end of time and the hell will freeze over
+							if(listOfLoadedAnimations[indexOfAnimation]->loop3 == true && indexOfTexture == nr1 + nr2 + nr3 - 1)
+							{
+								indexOfTexture = nr1 + nr2;
+							}
+							///we just iterate through the animations
+							else
+							{
+								indexOfTexture++;
+							}
+				}
+				///if we need to finish the animation
+				else
+					if(listOfActiveAnimations[i]->finish)
+					{
+						///if we didn't get to the 3rd part of the animation, or if we got the 1st or 2nd parts on loop, then we get to the first texture of the 3rd part
+						if(indexOfTexture < nr1 + nr2)
+						{
+							indexOfTexture = nr1 + nr2;
+						}
+						else
+						{
+							indexOfTexture++;
+						}
+					}
+				if(indexOfTexture != nr1 + nr2 + nr3)
+				{
+					listOfActiveAnimations[i]->timeToShow = listOfLoadedAnimations[indexOfAnimation]->animation[indexOfTexture]->timeUntilNext + SDL_GetTicks();
+				}
+			}
 
-            ///if the index of the current texture is out of bounds (it is bigger than > nr1 + nr2 + nr3), it means the animation ended, so we set it to unplayable
-            if(indexOfTexture == nr1 + nr2 + nr3)
-            {
-                listOfActiveAnimations[i]->setPlayableStatus(false);
-            }
-            ///else we render the current texture
-            else
-            {
-                listOfActiveAnimations[i]->indexOfTexture = indexOfTexture;
-                listOfLoadedAnimations[indexOfAnimation]->animation[indexOfTexture]->xCord = listOfActiveAnimations[i]->xCord;
-                listOfLoadedAnimations[indexOfAnimation]->animation[indexOfTexture]->yCord = listOfActiveAnimations[i]->yCord;
-                listOfLoadedAnimations[indexOfAnimation]->animation[indexOfTexture]->xAngle = hero->xAngle;
-                listOfLoadedAnimations[indexOfAnimation]->animation[indexOfTexture]->draw();
-            }
-        }
-    }
+			///if the index of the current texture is out of bounds (it is bigger than > nr1 + nr2 + nr3), it means the animation ended, so we set it to unplayable
+			if(indexOfTexture == nr1 + nr2 + nr3)
+			{
+				listOfActiveAnimations[i]->setPlayableStatus(false);
+			}
+			///else we render the current texture
+			else
+			{
+				listOfActiveAnimations[i]->indexOfTexture = indexOfTexture;
+				listOfLoadedAnimations[indexOfAnimation]->animation[indexOfTexture]->xCord = listOfActiveAnimations[i]->xCord;
+				listOfLoadedAnimations[indexOfAnimation]->animation[indexOfTexture]->yCord = listOfActiveAnimations[i]->yCord;
+				listOfLoadedAnimations[indexOfAnimation]->animation[indexOfTexture]->xAngle = hero->xAngle;
+				listOfLoadedAnimations[indexOfAnimation]->animation[indexOfTexture]->draw();
+			}
+		}
+	}
 }
 
 
 void BSTexture::renderDustBodies()
 {
-    for(int i = 0; i < ListOfSquareDustBodies.size(); i++)
-    {
-        BSColorRGBA color = {1, 1, 1, 0};
-        float decal = 0;
-        USERDATA *userData = NULL;
-        if(ListOfSquareDustBodies[i]->theBody)
-        {
-            userData = (USERDATA*)ListOfSquareDustBodies[i]->theBody->GetUserData();
-        }
-            if(userData && !userData->isDust)
-            {
-                color.a = 1.f;
-            }
-            else
-            {
-                ///if it's not invisible
-                if(ListOfSquareDustBodies[i]->value1 < 90)
-                {
-                    ListOfSquareDustBodies[i]->value1 += 1.f;
+	for(int i = 0; i < ListOfSquareDustBodies.size(); i++)
+	{
+		BSColorRGBA color = {1, 1, 1, 0};
+		float decal = 0;
+		USERDATA *userData = NULL;
+		if(ListOfSquareDustBodies[i]->theBody)
+		{
+			userData = (USERDATA*)ListOfSquareDustBodies[i]->theBody->GetUserData();
+		}
+		if(userData && !userData->isDust)
+		{
+			color.a = 1.f;
+		}
+		else
+		{
+			///if it's not invisible
+			if(ListOfSquareDustBodies[i]->value1 < 90)
+			{
+				ListOfSquareDustBodies[i]->value1 += 1.f;
 
-                    ///destroy the body
-                    if(ListOfSquareDustBodies[i]->value1 > 30 && ListOfSquareDustBodies[i]->theBody)
-                    {
-                        world->DestroyBody(ListOfSquareDustBodies[i]->theBody);
-                        ListOfSquareDustBodies[i]->theBody = NULL;
-                    }
-                }
-                else
-                {
-                    ListOfSquareDustBodies[i]->value1 = 90;
-                }
+				///destroy the body
+				if(ListOfSquareDustBodies[i]->value1 > 30 && ListOfSquareDustBodies[i]->theBody)
+				{
+					world->DestroyBody(ListOfSquareDustBodies[i]->theBody);
+					ListOfSquareDustBodies[i]->theBody = NULL;
+				}
+			}
+			else
+			{
+				ListOfSquareDustBodies[i]->value1 = 90;
+			}
 
-                if(ListOfSquareDustBodies[i]->value1 > 30)
-                {
-                    decal = 2 * sin(toRadians(ListOfSquareDustBodies[i]->value1 - 30));
-                }
-                color.a = cos(toRadians(ListOfSquareDustBodies[i]->value1));
-            }
+			if(ListOfSquareDustBodies[i]->value1 > 30)
+			{
+				decal = 2 * sin(toRadians(ListOfSquareDustBodies[i]->value1 - 30));
+			}
+			color.a = cos(toRadians(ListOfSquareDustBodies[i]->value1));
+		}
 
-        if(color.a > 0)
-        {
-            renderSomeBody(ListOfSquareDustBodies[i]->xCord, ListOfSquareDustBodies[i]->yCord - decal, originalCoin->zCord, 0, 0, 0,
-                                    originalDustBody->texture, color, originalDustBody->vao,
-                                    originalDustBody->width, originalDustBody->height, originalDustBody->depth, true);
-        }
-    }
+		if(color.a > 0)
+		{
+			BS_Renderer::renderSomeBody(ListOfSquareDustBodies[i]->xCord, ListOfSquareDustBodies[i]->yCord - decal, originalCoin->zCord, 0, 0, 0,
+										originalDustBody->texture, color, originalDustBody->vao,
+										originalDustBody->width, originalDustBody->height, originalDustBody->depth, true);
+		}
+	}
 }
 
 void BSTexture::resetDustBodies()
 {
-    for(int i = 0; i < ListOfSquareDustBodies.size(); i++)
-    {
-        if(ListOfSquareDustBodies[i]->theBody == NULL)
-        {
-            ListOfSquareDustBodies[i]->theBody = addObstacle->createBodies(b2_staticBody, ListOfSquareDustBodies[i]->xInit, ListOfSquareDustBodies[i]->yInit,
-                                                                           ListOfSquareDustBodies[i]->width, ListOfSquareDustBodies[i]->height, "object",
-                                                                           nrBodies, 0, false);
-        }
+	for(int i = 0; i < ListOfSquareDustBodies.size(); i++)
+	{
+		if(ListOfSquareDustBodies[i]->theBody == NULL)
+		{
+			ListOfSquareDustBodies[i]->theBody = addObstacle->createBodies(b2_staticBody, ListOfSquareDustBodies[i]->xInit, ListOfSquareDustBodies[i]->yInit,
+												 ListOfSquareDustBodies[i]->width, ListOfSquareDustBodies[i]->height, "object",
+												 nrBodies, 0, false);
+		}
 
-        ListOfSquareDustBodies[i]->value1 = 0;
-        ListOfSquareDustBodies[i]->value2 = 0;
+		ListOfSquareDustBodies[i]->value1 = 0;
+		ListOfSquareDustBodies[i]->value2 = 0;
 
-        USERDATA* dataForUser = new USERDATA;
+		USERDATA* dataForUser = new USERDATA;
 
-        dataForUser->isDustAble = 1;
-        dataForUser->isDust = 0;
+		dataForUser->isDustAble = 1;
+		dataForUser->isDust = 0;
 
-        dataForUser->canKillHero = false;
-        dataForUser->isToNextLevel = false;
+		dataForUser->canKillHero = false;
+		dataForUser->isToNextLevel = false;
 
-        dataForUser->name = "object";
-        ListOfSquareDustBodies[i]->theBody->SetUserData(dataForUser);
-    }
+		dataForUser->name = "object";
+		ListOfSquareDustBodies[i]->theBody->SetUserData(dataForUser);
+	}
 }
 
 void BSTexture::renderTheCoin()
 {
-    BSColorRGBA color = {1, 1, 1, 1};
-	renderSomeBody(originalCoin->xCord + CameraPosition->xCord - CameraExtremeLeft, originalCoin->yCord + CameraPosition->yCord - CameraExtremeDown,
-                            originalCoin->zCord, 0, 0, 0, originalCoin->texture, color, originalCoin->vao, originalCoin->width, originalCoin->height, originalCoin->depth, false);
+	BSColorRGBA color = {1, 1, 1, 1};
+	BS_Renderer::renderSomeBody(originalCoin->xCord + CameraPosition->xCord - CameraExtremeLeft, originalCoin->yCord + CameraPosition->yCord - CameraExtremeDown,
+								originalCoin->zCord, 0, 0, 0, originalCoin->texture, color, originalCoin->vao, originalCoin->width, originalCoin->height, originalCoin->depth, false);
 }
 
 
 void BSTexture::renderWormHoles()
 {
-    BSColorRGBA color = {1, 1, 1, 1};
+	BSColorRGBA color = {1, 1, 1, 1};
 	checkCollisionsWormHoles();
 
-    if(!listOfWormHoles.empty())
-    {
-        for(int i = 0; i < listOfWormHoles.size(); i++)
-        {
-            if(!isPaused)
-            {
-                listOfWormHoles[i]->value1-=4;
-            }
+	if(!listOfWormHoles.empty())
+	{
+		for(int i = 0; i < listOfWormHoles.size(); i++)
+		{
+			if(!isPaused)
+			{
+				listOfWormHoles[i]->value1 -= 4;
+			}
 
-            if(listOfWormHoles[i]->value1 < -360)
-            {
-                listOfWormHoles[i]->value1 = listOfWormHoles[i]->value1 + 360;
-            }
-            renderSomeBody(listOfWormHoles[i]->xCord, listOfWormHoles[i]->yCord, listOfWormHoles[i]->zCord, listOfWormHoles[i]->value1, 0, 0,
-                                    originalWormHole->texture, color, originalWormHole->vao,
-                                    originalWormHole->width, originalWormHole->height, originalWormHole->depth, true);
-        }
-    }
-    else
-    {
-        listOfActiveAnimations[3]->canPlayIt = false;
-    }
+			if(listOfWormHoles[i]->value1 < -360)
+			{
+				listOfWormHoles[i]->value1 = listOfWormHoles[i]->value1 + 360;
+			}
+			BS_Renderer::renderSomeBody(listOfWormHoles[i]->xCord, listOfWormHoles[i]->yCord, listOfWormHoles[i]->zCord, listOfWormHoles[i]->value1, 0, 0,
+										originalWormHole->texture, color, originalWormHole->vao,
+										originalWormHole->width, originalWormHole->height, originalWormHole->depth, true);
+		}
+	}
+	else
+	{
+		listOfActiveAnimations[3]->canPlayIt = false;
+	}
 }
 
 void BSTexture::checkCollisionsWormHoles()
 {
-    ///daca nu se teleporteaza, si nici nu a terminat de rematerializat la destinatie
-    if(!isTeleporting && lastWorm == NULL)
-    {
-        for(int i = 0; i < listOfWormHoles.size(); i++)
-        {
-            ///daca a intra intr-o gaura neagra, ii caut destinatia
-            if( hero->theBody->GetPosition().x - (hero->width / 8.0f) > listOfWormHoles[i]->xCord - (originalWormHole->width / 2.0f) && ///collision body left - worm left
-                hero->theBody->GetPosition().x + (hero->width / 8.0f) < listOfWormHoles[i]->xCord + (originalWormHole->width / 2.0f) && ///collision body right - worm right
-                hero->theBody->GetPosition().y - (hero->height / 8.0f) > listOfWormHoles[i]->yCord - (originalWormHole->height / 2.0f) && ///collision body down - worm down
-                hero->theBody->GetPosition().y + (hero->height / 8.0f) < listOfWormHoles[i]->yCord + (originalWormHole->height / 2.0f)) ///collision body up - worm up
-            {
-                ///look for destination
-                for(int j = 0; j < listOfWormHoles.size(); j++)
-                {
-                    if(listOfWormHoles[j]->indexOfWorm == listOfWormHoles[i]->connectionIndex)
-                    {
-                        _BS_sound_device->play_sound(BS_Available_Sounds::player_teleport());
-                        actionObj->ActionFuncTeleportHero(listOfWormHoles[j]->xCord, listOfWormHoles[j]->yCord);
-                        lastWorm = listOfWormHoles[j];
-                    }
-                }
-            }
-        }
-    }
-    else
-        ///daca a inceput rematerializarea, verifica daca a iesit din worm hole pentru a nu se teleporta la nesfarsit intre cele 2
-        if(lastWorm != NULL && hero->animationIndexCurrentAnimation != hero->animationIndexPlayerTeleportedIn)
-        {
-            if( hero->theBody->GetPosition().x - (hero->width / 8.0f) > lastWorm->xCord - (originalWormHole->width / 2.0f) && ///collision body left - worm left
-                hero->theBody->GetPosition().x + (hero->width / 8.0f) < lastWorm->xCord + (originalWormHole->width / 2.0f) && ///collision body right - worm right
-                hero->theBody->GetPosition().y - (hero->height / 8.0f) > lastWorm->yCord - (originalWormHole->height / 2.0f) && ///collision body down - worm down
-                hero->theBody->GetPosition().y + (hero->height / 8.0f) < lastWorm->yCord + (originalWormHole->height / 2.0f)) ///collision body up - worm up
-            {
-            }
-            else
-            {
-                lastWorm = NULL;
-            }
-        }
+	///daca nu se teleporteaza, si nici nu a terminat de rematerializat la destinatie
+	if(!isTeleporting && lastWorm == NULL)
+	{
+		for(int i = 0; i < listOfWormHoles.size(); i++)
+		{
+			///daca a intra intr-o gaura neagra, ii caut destinatia
+			if( hero->theBody->GetPosition().x - (hero->width / 8.0f) > listOfWormHoles[i]->xCord - (originalWormHole->width / 2.0f) && ///collision body left - worm left
+					hero->theBody->GetPosition().x + (hero->width / 8.0f) < listOfWormHoles[i]->xCord + (originalWormHole->width / 2.0f) && ///collision body right - worm right
+					hero->theBody->GetPosition().y - (hero->height / 8.0f) > listOfWormHoles[i]->yCord - (originalWormHole->height / 2.0f) && ///collision body down - worm down
+					hero->theBody->GetPosition().y + (hero->height / 8.0f) < listOfWormHoles[i]->yCord + (originalWormHole->height / 2.0f)) ///collision body up - worm up
+			{
+				///look for destination
+				for(int j = 0; j < listOfWormHoles.size(); j++)
+				{
+					if(listOfWormHoles[j]->indexOfWorm == listOfWormHoles[i]->connectionIndex)
+					{
+						_my_sound_device->play_sound(BS_Available_Sounds::player_teleport());
+						actionObj->ActionFuncTeleportHero(listOfWormHoles[j]->xCord, listOfWormHoles[j]->yCord);
+						lastWorm = listOfWormHoles[j];
+					}
+				}
+			}
+		}
+	}
+	else
+		///daca a inceput rematerializarea, verifica daca a iesit din worm hole pentru a nu se teleporta la nesfarsit intre cele 2
+		if(lastWorm != NULL && hero->animationIndexCurrentAnimation != hero->animationIndexPlayerTeleportedIn)
+		{
+			if( hero->theBody->GetPosition().x - (hero->width / 8.0f) > lastWorm->xCord - (originalWormHole->width / 2.0f) && ///collision body left - worm left
+					hero->theBody->GetPosition().x + (hero->width / 8.0f) < lastWorm->xCord + (originalWormHole->width / 2.0f) && ///collision body right - worm right
+					hero->theBody->GetPosition().y - (hero->height / 8.0f) > lastWorm->yCord - (originalWormHole->height / 2.0f) && ///collision body down - worm down
+					hero->theBody->GetPosition().y + (hero->height / 8.0f) < lastWorm->yCord + (originalWormHole->height / 2.0f)) ///collision body up - worm up
+			{
+			}
+			else
+			{
+				lastWorm = NULL;
+			}
+		}
 }
 
 void BSTexture::renderMenuLevels(int nrOfLevels, ChapterLevelsStructure* theLevelsToRender[])
@@ -1509,11 +1509,11 @@ void BSTexture::renderMenuLevels(int nrOfLevels, ChapterLevelsStructure* theLeve
 			{
 				theLevelsToRender[i + 1]->color.r = 1.f;
 			}
-			renderSomeBody(theLevelsToRender[i]->xCord + CameraPosition->xCord - CameraExtremeLeft + theLevelsToRender[i]->width / 2.f + theLevelsToRender[i]->width / 2.f,
-									theLevelsToRender[i]->yCord + CameraPosition->yCord - CameraExtremeDown,
-									scaleSizeInitial, 0, 0, 0, theLevelsToRender[0]->textureOfConnectionLeftRight,
-									theLevelsToRender[i + 1]->color, theLevelsToRender[0]->vaoBufferOfConnectionLeftRight,
-									theLevelsToRender[0]->widthConnectionLeftRightLevel, theLevelsToRender[0]->heightConnectionLeftRightLevel, theLevelsToRender[0]->depth, false);
+			BS_Renderer::renderSomeBody(theLevelsToRender[i]->xCord + CameraPosition->xCord - CameraExtremeLeft + theLevelsToRender[i]->width / 2.f + theLevelsToRender[i]->width / 2.f,
+										theLevelsToRender[i]->yCord + CameraPosition->yCord - CameraExtremeDown,
+										scaleSizeInitial, 0, 0, 0, theLevelsToRender[0]->textureOfConnectionLeftRight,
+										theLevelsToRender[i + 1]->color, theLevelsToRender[0]->vaoBufferOfConnectionLeftRight,
+										theLevelsToRender[0]->widthConnectionLeftRightLevel, theLevelsToRender[0]->heightConnectionLeftRightLevel, theLevelsToRender[0]->depth, false);
 		}
 
 		if(i < 20)
@@ -1526,12 +1526,12 @@ void BSTexture::renderMenuLevels(int nrOfLevels, ChapterLevelsStructure* theLeve
 			{
 				theLevelsToRender[i + 5]->color.r = 1.f;
 			}
-			renderSomeBody(theLevelsToRender[i]->xCord + CameraPosition->xCord - CameraExtremeLeft,
-									theLevelsToRender[i]->yCord - theLevelsToRender[i]->height / 2.f - theLevelsToRender[i]->height / 2.f + CameraPosition->yCord - CameraExtremeDown,
-                                    scaleSizeInitial, 0, 0, 0, theLevelsToRender[0]->textureOfConnectionUpDown,
-									theLevelsToRender[i + 5]->color, theLevelsToRender[0]->vaoBufferOfConnectionUpDown,
-									theLevelsToRender[0]->widthConnectionUpDownLevel,
-									theLevelsToRender[0]->heightConnectionUpDownLevel, theLevelsToRender[0]->depth, false);
+			BS_Renderer::renderSomeBody(theLevelsToRender[i]->xCord + CameraPosition->xCord - CameraExtremeLeft,
+										theLevelsToRender[i]->yCord - theLevelsToRender[i]->height / 2.f - theLevelsToRender[i]->height / 2.f + CameraPosition->yCord - CameraExtremeDown,
+										scaleSizeInitial, 0, 0, 0, theLevelsToRender[0]->textureOfConnectionUpDown,
+										theLevelsToRender[i + 5]->color, theLevelsToRender[0]->vaoBufferOfConnectionUpDown,
+										theLevelsToRender[0]->widthConnectionUpDownLevel,
+										theLevelsToRender[0]->heightConnectionUpDownLevel, theLevelsToRender[0]->depth, false);
 		}
 	}
 
@@ -1547,22 +1547,22 @@ void BSTexture::renderMenuLevels(int nrOfLevels, ChapterLevelsStructure* theLeve
 		{
 			theLevelsToRender[i]->color.r = 1.f;
 		}
-		renderSomeBody(theLevelsToRender[i]->xCord + CameraPosition->xCord - CameraExtremeLeft,
-                                theLevelsToRender[i]->yCord + CameraPosition->yCord - CameraExtremeDown,
-                                scaleSizeInitial, 0, 0, 0,
-								theLevelsToRender[0]->textureOfLevel,
-								theLevelsToRender[i]->color, theLevelsToRender[i]->vaoBufferOfLevel,
-								theLevelsToRender[0]->width, theLevelsToRender[0]->height, theLevelsToRender[0]->depth, false);
+		BS_Renderer::renderSomeBody(theLevelsToRender[i]->xCord + CameraPosition->xCord - CameraExtremeLeft,
+									theLevelsToRender[i]->yCord + CameraPosition->yCord - CameraExtremeDown,
+									scaleSizeInitial, 0, 0, 0,
+									theLevelsToRender[0]->textureOfLevel,
+									theLevelsToRender[i]->color, theLevelsToRender[i]->vaoBufferOfLevel,
+									theLevelsToRender[0]->width, theLevelsToRender[0]->height, theLevelsToRender[0]->depth, false);
 
 		if(i < 9)
 		{
 			renderMyFont(theLevelsToRender[i]->textOnLevel, theLevelsToRender[i]->xCord + CameraPosition->xCord - CameraExtremeLeft,
-					theLevelsToRender[i]->yCord + CameraPosition->yCord - CameraExtremeDown, 1.2f, 1.25f, theLevelsToRender[i]->color, false);
+						 theLevelsToRender[i]->yCord + CameraPosition->yCord - CameraExtremeDown, 1.2f, 1.25f, theLevelsToRender[i]->color, false);
 		}
 		else
 		{
 			renderMyFont(theLevelsToRender[i]->textOnLevel, theLevelsToRender[i]->xCord + CameraPosition->xCord - CameraExtremeLeft - 0.4f,
-					theLevelsToRender[i]->yCord + CameraPosition->yCord - CameraExtremeDown, 1.2f, 1.25f, theLevelsToRender[i]->color, false);
+						 theLevelsToRender[i]->yCord + CameraPosition->yCord - CameraExtremeDown, 1.2f, 1.25f, theLevelsToRender[i]->color, false);
 			//theLevelsToRender[i]->xCord + CameraPosition->xCord - CameraExtremeLeft - letters[char((i + 1) / 10 % 10)]->widthOfLetterOnScreen / 2 * 1.2f,
 		}
 
@@ -1576,22 +1576,22 @@ void BSTexture::renderMenuLevels(int nrOfLevels, ChapterLevelsStructure* theLeve
 			{
 				theLevelsToRender[0]->color.r = 1.f;
 			}
-			renderSomeBody(theLevelsToRender[i]->xCord+ CameraPosition->xCord - CameraExtremeLeft,
-                                    theLevelsToRender[i]->yCord + CameraPosition->yCord - CameraExtremeDown,
-                                    scaleSizeInitial, 0, 0, 0,
-									theLevelsToRender[0]->textureOfFinishedLevel,
-									theLevelsToRender[0]->color, theLevelsToRender[0]->vaoBufferOfFinishedLevel,
-									theLevelsToRender[0]->width, theLevelsToRender[0]->height, theLevelsToRender[0]->depth, false);
+			BS_Renderer::renderSomeBody(theLevelsToRender[i]->xCord + CameraPosition->xCord - CameraExtremeLeft,
+										theLevelsToRender[i]->yCord + CameraPosition->yCord - CameraExtremeDown,
+										scaleSizeInitial, 0, 0, 0,
+										theLevelsToRender[0]->textureOfFinishedLevel,
+										theLevelsToRender[0]->color, theLevelsToRender[0]->vaoBufferOfFinishedLevel,
+										theLevelsToRender[0]->width, theLevelsToRender[0]->height, theLevelsToRender[0]->depth, false);
 		}
 	}
 
 
 	///Randez animatia cu care ma voi misca prin nivele
-	renderSomeBody(levelChoserPlayer->xCord+ CameraPosition->xCord - CameraExtremeLeft,
-                         levelChoserPlayer->yCord + CameraPosition->yCord - CameraExtremeDown,
-                         scaleSizeInitial, 0, 0, 0, levelChoserPlayer->texture, levelChoserPlayer->color,
-                         levelChoserPlayer->vao, levelChoserPlayer->width, levelChoserPlayer->height,
-                         levelChoserPlayer->depth, false);
+	BS_Renderer::renderSomeBody(levelChoserPlayer->xCord + CameraPosition->xCord - CameraExtremeLeft,
+								levelChoserPlayer->yCord + CameraPosition->yCord - CameraExtremeDown,
+								scaleSizeInitial, 0, 0, 0, levelChoserPlayer->texture, levelChoserPlayer->color,
+								levelChoserPlayer->vao, levelChoserPlayer->width, levelChoserPlayer->height,
+								levelChoserPlayer->depth, false);
 
 	theLevelMenuPlayer->walkThroughLevels(0, 0, theLevelsToRender);
 }
@@ -1614,8 +1614,8 @@ void BSTexture::renderMenuChapters()
 		if(i + 1 < nrOfChapters)
 		{
 			indexulUrmatoruluiNivel = i + 1;
-			sizeOfConnectionStringX = abs(chaptere[i]->xCord - chaptere[i+1]->xCord) - chaptere[i]->width;
-			sizeOfConnectionStringY = abs(chaptere[i]->yCord - chaptere[i+1]->yCord) - chaptere[i]->height;
+			sizeOfConnectionStringX = abs(chaptere[i]->xCord - chaptere[i + 1]->xCord) - chaptere[i]->width;
+			sizeOfConnectionStringY = abs(chaptere[i]->yCord - chaptere[i + 1]->yCord) - chaptere[i]->height;
 		}
 		else
 		{
@@ -1627,51 +1627,51 @@ void BSTexture::renderMenuChapters()
 		///Daca este mai la dreapta
 		if(chaptere[indexulUrmatoruluiNivel]->xCord > chaptere[i]->xCord)
 		{
-			renderSomeBody(chaptere[i]->xCord + CameraPosition->xCord - CameraExtremeLeft + chaptere[i]->width / 2.f + sizeOfConnectionStringX / 2.f + 0.1,
-									chaptere[i]->yCord + CameraPosition->yCord - CameraExtremeDown,
-									scaleSizeInitial, 0, 0, 0, chaptere[0]->levelFromChapter[0]->textureOfConnectionLeftRightChapter,
-									chaptere[indexulUrmatoruluiNivel]->color, chaptere[0]->levelFromChapter[0]->vaoBufferOfConnectionLeftRightChapter,
-									chaptere[0]->levelFromChapter[0]->widthConnectionLeftRightChapter,
-									chaptere[0]->levelFromChapter[0]->heightConnectionLeftRightChapter, 0, false);
+			BS_Renderer::renderSomeBody(chaptere[i]->xCord + CameraPosition->xCord - CameraExtremeLeft + chaptere[i]->width / 2.f + sizeOfConnectionStringX / 2.f + 0.1,
+										chaptere[i]->yCord + CameraPosition->yCord - CameraExtremeDown,
+										scaleSizeInitial, 0, 0, 0, chaptere[0]->levelFromChapter[0]->textureOfConnectionLeftRightChapter,
+										chaptere[indexulUrmatoruluiNivel]->color, chaptere[0]->levelFromChapter[0]->vaoBufferOfConnectionLeftRightChapter,
+										chaptere[0]->levelFromChapter[0]->widthConnectionLeftRightChapter,
+										chaptere[0]->levelFromChapter[0]->heightConnectionLeftRightChapter, 0, false);
 		}
 		else
 			///Daca este mai la stanga
 			if(chaptere[indexulUrmatoruluiNivel]->xCord < chaptere[i]->xCord)
 			{
-				renderSomeBody(chaptere[i]->xCord + CameraPosition->xCord - CameraExtremeLeft - chaptere[i]->width / 2.f - sizeOfConnectionStringX / 2.f - 0.12,
-										chaptere[i]->yCord + CameraPosition->yCord - CameraExtremeDown,
-										scaleSizeInitial, 0, 0, 0,
-										chaptere[0]->levelFromChapter[0]->textureOfConnectionLeftRightChapter,
-										chaptere[indexulUrmatoruluiNivel]->color,
-										chaptere[0]->levelFromChapter[0]->vaoBufferOfConnectionLeftRightChapter,
-										chaptere[0]->levelFromChapter[0]->widthConnectionLeftRightChapter,
-										chaptere[0]->levelFromChapter[0]->heightConnectionLeftRightChapter, 0, false);
+				BS_Renderer::renderSomeBody(chaptere[i]->xCord + CameraPosition->xCord - CameraExtremeLeft - chaptere[i]->width / 2.f - sizeOfConnectionStringX / 2.f - 0.12,
+											chaptere[i]->yCord + CameraPosition->yCord - CameraExtremeDown,
+											scaleSizeInitial, 0, 0, 0,
+											chaptere[0]->levelFromChapter[0]->textureOfConnectionLeftRightChapter,
+											chaptere[indexulUrmatoruluiNivel]->color,
+											chaptere[0]->levelFromChapter[0]->vaoBufferOfConnectionLeftRightChapter,
+											chaptere[0]->levelFromChapter[0]->widthConnectionLeftRightChapter,
+											chaptere[0]->levelFromChapter[0]->heightConnectionLeftRightChapter, 0, false);
 			}
 			else
 				///Daca este mai jos
 				if(chaptere[indexulUrmatoruluiNivel]->yCord < chaptere[i]->yCord)
 				{
-					renderSomeBody(chaptere[i]->xCord + CameraPosition->xCord - CameraExtremeLeft,
-											chaptere[i]->yCord + chaptere[i]->height / 2.f - sizeOfConnectionStringY / 2.f + 0.2 + CameraPosition->yCord - CameraExtremeDown,
-											scaleSizeInitial, 0, 0, 0,
-											chaptere[0]->levelFromChapter[0]->textureOfConnectionUpDownChapter,
-											chaptere[indexulUrmatoruluiNivel]->color,
-											chaptere[0]->levelFromChapter[0]->vaoBufferOfConnectionUpDownChapter,
-											chaptere[0]->levelFromChapter[0]->widthConnectionUpDownChapter,
-											chaptere[0]->levelFromChapter[0]->heightConnectionUpDownChapter, 0, false);
-				}
-				else
-					///Daca este mai sus
-					if(chaptere[indexulUrmatoruluiNivel]->yCord > chaptere[i]->yCord)
-					{
-						renderSomeBody(chaptere[i]->xCord + CameraPosition->xCord - CameraExtremeLeft,
-												chaptere[i]->yCord + chaptere[i]->height / 2.f + sizeOfConnectionStringY / 2.f + CameraPosition->yCord - CameraExtremeDown,
+					BS_Renderer::renderSomeBody(chaptere[i]->xCord + CameraPosition->xCord - CameraExtremeLeft,
+												chaptere[i]->yCord + chaptere[i]->height / 2.f - sizeOfConnectionStringY / 2.f + 0.2 + CameraPosition->yCord - CameraExtremeDown,
 												scaleSizeInitial, 0, 0, 0,
 												chaptere[0]->levelFromChapter[0]->textureOfConnectionUpDownChapter,
 												chaptere[indexulUrmatoruluiNivel]->color,
 												chaptere[0]->levelFromChapter[0]->vaoBufferOfConnectionUpDownChapter,
 												chaptere[0]->levelFromChapter[0]->widthConnectionUpDownChapter,
 												chaptere[0]->levelFromChapter[0]->heightConnectionUpDownChapter, 0, false);
+				}
+				else
+					///Daca este mai sus
+					if(chaptere[indexulUrmatoruluiNivel]->yCord > chaptere[i]->yCord)
+					{
+						BS_Renderer::renderSomeBody(chaptere[i]->xCord + CameraPosition->xCord - CameraExtremeLeft,
+													chaptere[i]->yCord + chaptere[i]->height / 2.f + sizeOfConnectionStringY / 2.f + CameraPosition->yCord - CameraExtremeDown,
+													scaleSizeInitial, 0, 0, 0,
+													chaptere[0]->levelFromChapter[0]->textureOfConnectionUpDownChapter,
+													chaptere[indexulUrmatoruluiNivel]->color,
+													chaptere[0]->levelFromChapter[0]->vaoBufferOfConnectionUpDownChapter,
+													chaptere[0]->levelFromChapter[0]->widthConnectionUpDownChapter,
+													chaptere[0]->levelFromChapter[0]->heightConnectionUpDownChapter, 0, false);
 					}
 
 	}
@@ -1680,31 +1680,31 @@ void BSTexture::renderMenuChapters()
 	for(int i = 0 ; i < nrOfChapters ; i++)
 	{
 		///Second, render the level images
-		renderSomeBody(chaptere[i]->xCord + CameraPosition->xCord - CameraExtremeLeft,
-								chaptere[i]->yCord + CameraPosition->yCord - CameraExtremeDown,
-								scaleSizeInitial, 0, 0, 0,
-								chaptere[i]->texture,
-								chaptere[i]->color,
-								chaptere[i]->vao,
-								chaptere[i]->width, chaptere[i]->height, chaptere[i]->depth, false);
+		BS_Renderer::renderSomeBody(chaptere[i]->xCord + CameraPosition->xCord - CameraExtremeLeft,
+									chaptere[i]->yCord + CameraPosition->yCord - CameraExtremeDown,
+									scaleSizeInitial, 0, 0, 0,
+									chaptere[i]->texture,
+									chaptere[i]->color,
+									chaptere[i]->vao,
+									chaptere[i]->width, chaptere[i]->height, chaptere[i]->depth, false);
 
 		if(chaptere[i]->isFinishedChapter)
 		{
-			renderSomeBody(chaptere[i]->xCord+ CameraPosition->xCord - CameraExtremeLeft,
-                           chaptere[i]->yCord + CameraPosition->yCord - CameraExtremeDown,
-                           scaleSizeInitial, 0, 0, 0,
-									chaptere[0]->levelFromChapter[0]->textureOfFinishedLevel,
-									chaptere[0]->levelFromChapter[0]->color,
-									chaptere[0]->levelFromChapter[0]->vaoBufferOfFinishedLevel, 0, 0, 0, false);
+			BS_Renderer::renderSomeBody(chaptere[i]->xCord + CameraPosition->xCord - CameraExtremeLeft,
+										chaptere[i]->yCord + CameraPosition->yCord - CameraExtremeDown,
+										scaleSizeInitial, 0, 0, 0,
+										chaptere[0]->levelFromChapter[0]->textureOfFinishedLevel,
+										chaptere[0]->levelFromChapter[0]->color,
+										chaptere[0]->levelFromChapter[0]->vaoBufferOfFinishedLevel, 0, 0, 0, false);
 		}
 	}
 
 	///Randez animatia cu care ma voi misca prin nivele
-	renderSomeBody(levelChoserPlayer->xCord + CameraPosition->xCord - CameraExtremeLeft,
-							levelChoserPlayer->yCord + CameraPosition->yCord - CameraExtremeDown,
-							scaleSizeInitial, 0, 0, 0,
-							levelChoserPlayer->texture, levelChoserPlayer->color, levelChoserPlayer->vao,
-							levelChoserPlayer->width, levelChoserPlayer->height, levelChoserPlayer->depth, false);
+	BS_Renderer::renderSomeBody(levelChoserPlayer->xCord + CameraPosition->xCord - CameraExtremeLeft,
+								levelChoserPlayer->yCord + CameraPosition->yCord - CameraExtremeDown,
+								scaleSizeInitial, 0, 0, 0,
+								levelChoserPlayer->texture, levelChoserPlayer->color, levelChoserPlayer->vao,
+								levelChoserPlayer->width, levelChoserPlayer->height, levelChoserPlayer->depth, false);
 
 	theLevelMenuPlayer->walkThroughChapters(0, 0);
 }
@@ -1722,9 +1722,9 @@ void BSTexture::renderMessages()
 		for(int i = 0; i < listOfMessages.size(); i++)
 		{
 			///Randez semnul
-			renderSomeBody(listOfMessages[i]->xCord, listOfMessages[i]->yCord, scaleSizeInitial, 0, 0, 0,
-									listOfMessages[i]->textureOfSign, listOfMessages[i]->colorOfSign,
-									listOfMessages[i]->vaoBufferOfSign, listOfMessages[i]->widthOfSign, listOfMessages[i]->heightOfSign, 0, true);
+			BS_Renderer::renderSomeBody(listOfMessages[i]->xCord, listOfMessages[i]->yCord, scaleSizeInitial, 0, 0, 0,
+										listOfMessages[i]->textureOfSign, listOfMessages[i]->colorOfSign,
+										listOfMessages[i]->vaoBufferOfSign, listOfMessages[i]->widthOfSign, listOfMessages[i]->heightOfSign, 0, true);
 
 			///Randez mesajul daca este afisat
 			if(listOfMessages[i]->isShownTheMessage)
@@ -1739,10 +1739,10 @@ void BSTexture::renderMessages()
 					listOfMessages[i]->colorOfMessage.a = 0.9f;
 				}
 
-				renderSomeBody(listOfMessages[i]->xCord + listOfMessages[i]->widthOfMessage / 2.f,
-										listOfMessages[i]->yCord + listOfMessages[i]->heightOfMessage / 2.f + listOfMessages[i]->heightOfSign / 2.f + 0.2f,
-										scaleSizeInitial, 0, 0, 0, listOfMessages[i]->textureOfMessage, listOfMessages[i]->colorOfMessage,
-										listOfMessages[i]->vaoBufferOfMessage, listOfMessages[i]->widthOfMessage, listOfMessages[i]->heightOfMessage, 0, true);
+				BS_Renderer::renderSomeBody(listOfMessages[i]->xCord + listOfMessages[i]->widthOfMessage / 2.f,
+											listOfMessages[i]->yCord + listOfMessages[i]->heightOfMessage / 2.f + listOfMessages[i]->heightOfSign / 2.f + 0.2f,
+											scaleSizeInitial, 0, 0, 0, listOfMessages[i]->textureOfMessage, listOfMessages[i]->colorOfMessage,
+											listOfMessages[i]->vaoBufferOfMessage, listOfMessages[i]->widthOfMessage, listOfMessages[i]->heightOfMessage, 0, true);
 			}
 			else
 			{
@@ -1751,10 +1751,10 @@ void BSTexture::renderMessages()
 				{
 					listOfMessages[i]->colorOfMessage.a -= 0.02;
 
-					renderSomeBody(listOfMessages[i]->xCord + listOfMessages[i]->widthOfMessage / 2.f,
-											listOfMessages[i]->yCord + listOfMessages[i]->heightOfMessage / 2.f + listOfMessages[i]->heightOfSign / 2.f + 0.2f,
-                                            scaleSizeInitial, 0, 0, 0, listOfMessages[i]->textureOfMessage, listOfMessages[i]->colorOfMessage,
-											listOfMessages[i]->vaoBufferOfMessage, listOfMessages[i]->widthOfMessage, listOfMessages[i]->heightOfMessage, 0, true);
+					BS_Renderer::renderSomeBody(listOfMessages[i]->xCord + listOfMessages[i]->widthOfMessage / 2.f,
+												listOfMessages[i]->yCord + listOfMessages[i]->heightOfMessage / 2.f + listOfMessages[i]->heightOfSign / 2.f + 0.2f,
+												scaleSizeInitial, 0, 0, 0, listOfMessages[i]->textureOfMessage, listOfMessages[i]->colorOfMessage,
+												listOfMessages[i]->vaoBufferOfMessage, listOfMessages[i]->widthOfMessage, listOfMessages[i]->heightOfMessage, 0, true);
 				}
 				else
 				{
@@ -1794,13 +1794,13 @@ void BSTexture::ifCollideWithMessage()
 
 void BSTexture::renderTransparentSquare(BSColorRGBA theColorToRenders, float coordinateX, float coordinateY)
 {
-    theColorToRenders.r = 0;
-    theColorToRenders.g = 0;
-    theColorToRenders.b = 0;
+	theColorToRenders.r = 0;
+	theColorToRenders.g = 0;
+	theColorToRenders.b = 0;
 
-	renderSomeBody(coordinateX, coordinateY, scaleSizeInitial, 0, 0, 0, whiteTexture,
-							theColorToRenders, originalTransparentMenu->vao,
-							originalTransparentMenu->width, originalTransparentMenu->height, originalTransparentMenu->depth, false);
+	BS_Renderer::renderSomeBody(coordinateX, coordinateY, scaleSizeInitial, 0, 0, 0, whiteTexture,
+								theColorToRenders, originalTransparentMenu->vao,
+								originalTransparentMenu->width, originalTransparentMenu->height, originalTransparentMenu->depth, false);
 }
 
 void BSTexture::renderAnyButtons(BSMenuStructure *theMenu)
@@ -1814,36 +1814,36 @@ void BSTexture::renderAnyButtons(BSMenuStructure *theMenu)
 
 	for(int i = 0; i < theMenu->listOfButtons.size(); i++)
 	{
-        float whRatio = (float)(currentButton->height / currentButton->width);
-        float newW = (float) currentButton->width + 1 + sin(toRadians(currentButton->value1));
-        float newH = (float) currentButton->height + (1 + sin(toRadians(currentButton->value2))) * whRatio;
-        if(theMenu->listOfButtons[i] == currentButton && (currentMenu->indexOfMenu != 2 ||
-            (currentMenu->indexOfMenu == 2 && currentButton->indexOfButton != 0 && currentButton->indexOfButton != 1)))
-        {
-            currentButton->value1 += 5;
-		    currentButton->value2 += 5;
+		float whRatio = (float)(currentButton->height / currentButton->width);
+		float newW = (float) currentButton->width + 1 + sin(toRadians(currentButton->value1));
+		float newH = (float) currentButton->height + (1 + sin(toRadians(currentButton->value2))) * whRatio;
+		if(theMenu->listOfButtons[i] == currentButton && (currentMenu->indexOfMenu != 2 ||
+				(currentMenu->indexOfMenu == 2 && currentButton->indexOfButton != 0 && currentButton->indexOfButton != 1)))
+		{
+			currentButton->value1 += 5;
+			currentButton->value2 += 5;
 
-		    if(currentButton->value1 > 360 && currentButton->value2 > 360)
-            {
-                currentButton->value1 = currentButton->value1 - 360;
-                currentButton->value2 = currentButton->value2 - 360;
-            }
-        }
+			if(currentButton->value1 > 360 && currentButton->value2 > 360)
+			{
+				currentButton->value1 = currentButton->value1 - 360;
+				currentButton->value2 = currentButton->value2 - 360;
+			}
+		}
 
 		if(theMenu->listOfButtons[i] == currentButton)
 		{
-			renderSomeBody(currentButton->xCord + CameraPosition->xCord - CameraExtremeLeft,
-                                    currentButton->yCord + CameraPosition->yCord - CameraExtremeDown,
-                                    scaleSizeInitial, 0, 0, 0, currentButton->textureOfButtons[1], currentButton->color, currentButton->vaoOfButtons[1],
-									newW, newH, currentButton->depth, false);
+			BS_Renderer::renderSomeBody(currentButton->xCord + CameraPosition->xCord - CameraExtremeLeft,
+										currentButton->yCord + CameraPosition->yCord - CameraExtremeDown,
+										scaleSizeInitial, 0, 0, 0, currentButton->textureOfButtons[1], currentButton->color, currentButton->vaoOfButtons[1],
+										newW, newH, currentButton->depth, false);
 		}
 		else
 		{
-			renderSomeBody(theMenu->listOfButtons[i]->xCord + CameraPosition->xCord - CameraExtremeLeft,
-									theMenu->listOfButtons[i]->yCord + CameraPosition->yCord - CameraExtremeDown,
-                                    scaleSizeInitial, 0, 0, 0, theMenu->listOfButtons[i]->textureOfButtons[0], theMenu->listOfButtons[i]->color,
-                                    theMenu->listOfButtons[i]->vaoOfButtons[0], theMenu->listOfButtons[i]->width,
-                                    theMenu->listOfButtons[i]->height, theMenu->listOfButtons[i]->depth, false);
+			BS_Renderer::renderSomeBody(theMenu->listOfButtons[i]->xCord + CameraPosition->xCord - CameraExtremeLeft,
+										theMenu->listOfButtons[i]->yCord + CameraPosition->yCord - CameraExtremeDown,
+										scaleSizeInitial, 0, 0, 0, theMenu->listOfButtons[i]->textureOfButtons[0], theMenu->listOfButtons[i]->color,
+										theMenu->listOfButtons[i]->vaoOfButtons[0], theMenu->listOfButtons[i]->width,
+										theMenu->listOfButtons[i]->height, theMenu->listOfButtons[i]->depth, false);
 		}
 
 		if(currentMenu->indexOfMenu == 2)
@@ -1872,48 +1872,48 @@ void BSTexture::renderSoundAnimation(float yCord, float theVolume)
 {
 	for(int i = 0 ; i < theVolume * 10 ; i++)
 	{
-		renderSomeBody(SoundButtonTexture->xCord + CameraPosition->xCord - CameraExtremeLeft + Hero_size * i + 0.25 * i - 3.2,
-								yCord + CameraPosition->yCord - CameraExtremeDown,
-								scaleSizeInitial, 0, 0, 0, SoundButtonTexture->texture, SoundButtonTexture->color,
-								SoundButtonTexture->vao, SoundButtonTexture->width, SoundButtonTexture->height, SoundButtonTexture->depth, false);
+		BS_Renderer::renderSomeBody(SoundButtonTexture->xCord + CameraPosition->xCord - CameraExtremeLeft + Hero_size * i + 0.25 * i - 3.2,
+									yCord + CameraPosition->yCord - CameraExtremeDown,
+									scaleSizeInitial, 0, 0, 0, SoundButtonTexture->texture, SoundButtonTexture->color,
+									SoundButtonTexture->vao, SoundButtonTexture->width, SoundButtonTexture->height, SoundButtonTexture->depth, false);
 	}
 }
 
 void BSTexture::renderBackgroundNo1()
 {
-    float val1 = 25, val2 = 25, val3 = 3, val4 = 47;
-    backgroundSky->xCord = val1;
-    backgroundMountain->xCord = val2;
-    backgroundBush->xCord = val3;
-    backgroundHighField->xCord = val4;
+	float val1 = 25, val2 = 25, val3 = 3, val4 = 47;
+	backgroundSky->xCord = val1;
+	backgroundMountain->xCord = val2;
+	backgroundBush->xCord = val3;
+	backgroundHighField->xCord = val4;
 
-    float val11 = 20, val21 = 18, val31 = 12, val41 = 14;
-    backgroundSky->yCord = val11;
-    backgroundMountain->yCord = val21;
-    backgroundBush->yCord = val31;
-    backgroundHighField->yCord = val41;
+	float val11 = 20, val21 = 18, val31 = 12, val41 = 14;
+	backgroundSky->yCord = val11;
+	backgroundMountain->yCord = val21;
+	backgroundBush->yCord = val31;
+	backgroundHighField->yCord = val41;
 
-	renderSomeBody(backgroundSky->xCord - 1, backgroundSky->yCord - 2, -40, 0, 0, 0,
-							backgroundSky->texture, backgroundSky->color, backgroundSky->vao,
-							2.4f * backgroundSky->width, 3 * backgroundSky->height + 10, 0, true);
+	BS_Renderer::renderSomeBody(backgroundSky->xCord - 1, backgroundSky->yCord - 2, -40, 0, 0, 0,
+								backgroundSky->texture, backgroundSky->color, backgroundSky->vao,
+								2.4f * backgroundSky->width, 3 * backgroundSky->height + 10, 0, true);
 
-	renderSomeBody(backgroundMountain->xCord, backgroundMountain->yCord, -35, 0, 0, 0,
-							backgroundMountain->texture, backgroundMountain->color, backgroundMountain->vao,
-							2 * backgroundMountain->width, 3 * backgroundMountain->height, 0, true);
+	BS_Renderer::renderSomeBody(backgroundMountain->xCord, backgroundMountain->yCord, -35, 0, 0, 0,
+								backgroundMountain->texture, backgroundMountain->color, backgroundMountain->vao,
+								2 * backgroundMountain->width, 3 * backgroundMountain->height, 0, true);
 
-	renderSomeBody(backgroundBush->xCord, backgroundBush->yCord, -30, 0, 0, 0,
-							backgroundBush->texture, backgroundBush->color, backgroundBush->vao,
-							2 * backgroundBush->width, 2 * backgroundBush->height, 0, true);
+	BS_Renderer::renderSomeBody(backgroundBush->xCord, backgroundBush->yCord, -30, 0, 0, 0,
+								backgroundBush->texture, backgroundBush->color, backgroundBush->vao,
+								2 * backgroundBush->width, 2 * backgroundBush->height, 0, true);
 
-	renderSomeBody(backgroundHighField->xCord - 10, backgroundHighField->yCord, -23, 0, 0, 0,
-							backgroundHighField->texture, backgroundHighField->color, backgroundHighField->vao,
-							2 * backgroundHighField->width, 2 * backgroundHighField->height, 0, true);
+	BS_Renderer::renderSomeBody(backgroundHighField->xCord - 10, backgroundHighField->yCord, -23, 0, 0, 0,
+								backgroundHighField->texture, backgroundHighField->color, backgroundHighField->vao,
+								2 * backgroundHighField->width, 2 * backgroundHighField->height, 0, true);
 }
 
 void BSTexture::renderChuncksOfObjects(float coordX, float coordY, float coordZ, float ScaleOnX, float ScaleOnY)
 {
 	BSModelViewMatrix = glm::translate( coordX, coordY, coordZ ) * LookAtMatrix * glm::scale( ScaleOnX, ScaleOnY, 0.0f );
-    BSModelViewMatrix = glm::rotate( worldAngle, 0.0f, 0.0f, 1.0f ) * BSModelViewMatrix;
+	BSModelViewMatrix = glm::rotate( worldAngle, 0.0f, 0.0f, 1.0f ) * BSModelViewMatrix;
 
 	glUniformMatrix4fv( _my_shader_program->get_location_from_shader(BS_Available_Shaders::model_view_matrix()), 1, GL_FALSE, glm::value_ptr( BSModelViewMatrix ) );
 
@@ -1924,20 +1924,20 @@ void BSTexture::renderChuncksOfObjects(float coordX, float coordY, float coordZ,
 
 void BSTexture::loadTextures()
 {
-    loadATexture("texture.png", texture);
-    loadATexture("whiteImage.png", whiteTexture);
-	loadATexture("Animations/roundAnimation/windmillPropeller.png", textureMill);
-	loadATexture("playerTexture.png", playerTexture);
-	loadATexture("playerTexture round.png", playerTextureRound);
-	loadATexture("playerTexture Dead.png", playerTextureDead);
-	loadATexture("background.png", backgroundTexture);
+	BS_Renderer::loadATexture("texture.png", texture);
+	BS_Renderer::loadATexture("whiteImage.png", whiteTexture);
+	BS_Renderer::loadATexture("Animations/roundAnimation/windmillPropeller.png", textureMill);
+	BS_Renderer::loadATexture("playerTexture.png", playerTexture);
+	BS_Renderer::loadATexture("playerTexture round.png", playerTextureRound);
+	BS_Renderer::loadATexture("playerTexture Dead.png", playerTextureDead);
+	BS_Renderer::loadATexture("background.png", backgroundTexture);
 }
 
 void BSTexture::loadMenuButtonsTexture(int numberOfButtons, std::string pathAndName, GLuint theButtonsTexture[])
 {
 	for(int  i = 0 ; i < numberOfButtons ; i ++)
 	{
-		std::string TextureName = pathAndName + BStoString(i+1) +".png";
+		std::string TextureName = pathAndName + BStoString(i + 1) + ".png";
 
 		theButtonsTexture[i] = SOIL_load_OGL_texture
 							   (
@@ -1952,7 +1952,7 @@ void BSTexture::loadMenuButtonsTexture(int numberOfButtons, std::string pathAndN
 float BSTexture::toRadians(float x)
 {
 	float pi = 3.1415;
-	return (float) (pi/2 * x)/90;
+	return (float) (pi / 2 * x) / 90;
 }
 
 void BSTexture::initTheFont()
@@ -1989,8 +1989,8 @@ void BSTexture::initTheFont()
 	{
 //		char let = levelDetailsNew[i]->theCharArray2D[0][0];
 		char let = levelDetailsNew[i]->theCharArray2D[0][levelDetailsNew[i]->theCharArray2D[0].size() - 5];
-		std::cout<<let<<" '"<<levelDetailsNew[i]->theCharArray2D[0]<<"' "<<levelDetailsNew[i]->theCharArray2D[1]
-		<<' '<<levelDetailsNew[i]->theCharArray2D[2]<<' '<<levelDetailsNew[i]->theCharArray2D[3]<<' '<<levelDetailsNew[i]->theCharArray2D[4]<<'\n';
+		std::cout << let << " '" << levelDetailsNew[i]->theCharArray2D[0] << "' " << levelDetailsNew[i]->theCharArray2D[1]
+				  << ' ' << levelDetailsNew[i]->theCharArray2D[2] << ' ' << levelDetailsNew[i]->theCharArray2D[3] << ' ' << levelDetailsNew[i]->theCharArray2D[4] << '\n';
 
 		letters[let] = new BSTheFontLetters;
 
@@ -2008,21 +2008,21 @@ void BSTexture::initTheFont()
 
 		if(!i)
 		{
-			loadATexture("Animations/Font/dataOfFont.png", letters[0]->texture);
+			BS_Renderer::loadATexture("Animations/Font/dataOfFont.png", letters[0]->texture);
 		}
 
-        letters[let]->color.setColor(0, 0, 0, 1);
+		letters[let]->color.setColor(0, 0, 0, 1);
 
 		addObstacle->setTheVaoDataForFont(letters[let]->data, letters[let]->widthOfLetterInImage, letters[let]->heightOfLetterInImage, letters[let]->xCordInImage, letters[let]->yCordInImage, letters[let]->vao, letters[let]->vbo, letters[let]->ibo);
 
 		delete levelDetailsNew[i];
 
-        i++;
-    }
-    delete doc;
+		i++;
+	}
+	delete doc;
 
 	NrOfTotalLetters = i;
-	std::cout<<"initialized font"<<'\n';
+	std::cout << "initialized font" << '\n';
 }
 
 void BSTexture::renderMyFont(std::string theStringToRenderString, float xCord, float yCord, float FontSizeX, float FontSizeY,
@@ -2077,18 +2077,18 @@ void BSTexture::renderMyFont(std::string theStringToRenderString, float xCord, f
 								newWidth = letters[theStringToRenderString[i]]->widthOfLetterOnScreen / 2.0f;
 								newY = yCord - FontSizeY / 2.0f + 0.1f;
 							}
-				if(!i)
-				{
-					pozNou = xCord;
-				}
-				else
-				{
-					pozNou = (float) lastX + (newWidth + lastWidth ) * FontSizeX / 2.f + 0.1f;
-				}
-				lastX = pozNou;
-				lastWidth = newWidth;
+			if(!i)
+			{
+				pozNou = xCord;
+			}
+			else
+			{
+				pozNou = (float) lastX + (newWidth + lastWidth ) * FontSizeX / 2.f + 0.1f;
+			}
+			lastX = pozNou;
+			lastWidth = newWidth;
 
-				renderSomeBody(pozNou, newY, scaleSizeInitial, 0, 0, 0, letters[0]->texture, newColor, letters[let]->vao, xSize, ySize, 0, can);
+			BS_Renderer::renderSomeBody(pozNou, newY, scaleSizeInitial, 0, 0, 0, letters[0]->texture, newColor, letters[let]->vao, xSize, ySize, 0, can);
 		}
 	}
 }
@@ -2104,10 +2104,10 @@ bool BSTexture::coinIsInBounds(BSCoins *theCoin)
 			  hero->theBody->GetPosition().y + hero->height / 2.f <= theCoin->yCord + theCoin->height / 2.f) ||
 			 (hero->theBody->GetPosition().y - hero->height / 2.f <= theCoin->yCord + theCoin->height / 2.f &&
 			  hero->theBody->GetPosition().y - hero->height / 2.f >= theCoin->yCord - theCoin->height / 2.f)))
-	  {
+	{
 		return true;
-	  }
-  return false;
+	}
+	return false;
 }
 
 
@@ -2137,9 +2137,9 @@ void BSTexture::renderSnowFlakes()
 	float maximY = gameBoundUp;
 	float minimY = gameBoundDown;
 
-    _my_shader_program->set_uniform(BS_Available_Shaders::is_flake(), 1);
-    _my_shader_program->set_uniform(BS_Available_Shaders::is_circle(), 1);
-    _my_shader_program->set_uniform(BS_Available_Shaders::circle_radius(), 1);
+	_my_shader_program->set_uniform(BS_Available_Shaders::is_flake(), 1);
+	_my_shader_program->set_uniform(BS_Available_Shaders::is_circle(), 1);
+	_my_shader_program->set_uniform(BS_Available_Shaders::circle_radius(), 1);
 //	glUniform1f(ShaderFlake, 1);
 //	glUniform1f(ShaderIsCircle, 1);
 //	glUniform1f(ShaderCircleRadius, 1);
@@ -2168,20 +2168,20 @@ void BSTexture::renderSnowFlakes()
 			listOfSnowFlakes[i]->yCord = ((float)rand() / ((float)RAND_MAX + 1.0)) * (maximY - minimY + 1) + minimY;
 		}
 	}
-    _my_shader_program->set_uniform(BS_Available_Shaders::is_flake(), 0);
-    _my_shader_program->set_uniform(BS_Available_Shaders::is_circle(), 0);
+	_my_shader_program->set_uniform(BS_Available_Shaders::is_flake(), 0);
+	_my_shader_program->set_uniform(BS_Available_Shaders::is_circle(), 0);
 //	glUniform1f(ShaderFlake, 0);
 //	glUniform1f(ShaderIsCircle, 0);
 }
 
 void BSTexture::renderMouseTexture()
 {
-    _my_shader_program->set_uniform(BS_Available_Shaders::is_circle(), 1);
+	_my_shader_program->set_uniform(BS_Available_Shaders::is_circle(), 1);
 //	glUniform1f(ShaderIsCircle, 1);
 	BSColorRGBA color = {0, 0, 0, 1};
 	for(int i = 0; i < listOfMouseCircles.size(); i++)
 	{
-        _my_shader_program->set_uniform(BS_Available_Shaders::circle_radius(), listOfMouseCircles[i]->width);
+		_my_shader_program->set_uniform(BS_Available_Shaders::circle_radius(), listOfMouseCircles[i]->width);
 //		glUniform1f(ShaderCircleRadius, listOfMouseCircles[i]->width);
 		listOfMouseCircles[i]->color = color;
 		listOfMouseCircles[i]->zCord = scaleSizeInitial;
@@ -2189,7 +2189,7 @@ void BSTexture::renderMouseTexture()
 		listOfMouseCircles[i]->height = 1;
 		listOfMouseCircles[i]->draw(blankTexture);
 	}
-    _my_shader_program->set_uniform(BS_Available_Shaders::is_circle(), 0);
+	_my_shader_program->set_uniform(BS_Available_Shaders::is_circle(), 0);
 //	glUniform1f(ShaderIsCircle, 0);
 }
 
@@ -2203,269 +2203,269 @@ void BSTexture::renderTheCloudyParticles()
 		listOfCloudyParticles[i]->yCord = hero->theBody->GetPosition().y;
 		listOfCloudyParticles[i]->zCord = scaleSizeInitial;
 
-        listOfCloudyParticles[i]->draw();
+		listOfCloudyParticles[i]->draw();
 	}
 }
 
 void BSTexture::consoleSalveazaHarta()
 {
-    salveazaFinishedLevel();
+	salveazaFinishedLevel();
 
-		int nrOfLinesSave = 0;/// pauze = 0, indexNumeHarta = 0;
+	int nrOfLinesSave = 0;/// pauze = 0, indexNumeHarta = 0;
 //		char nodesName[100][100], attributesName[100][100], attributesValues[100][100];
 //		ListaDeCaractere *nodesForXML[1000];
-        std::vector<std::string> theNodes;
-        std::vector<std::string> attributesName;
-        std::vector<std::string> attributesValues;
-        std::vector<ListaDeCaractere*> nodesForXML;
+	std::vector<std::string> theNodes;
+	std::vector<std::string> attributesName;
+	std::vector<std::string> attributesValues;
+	std::vector<ListaDeCaractere*> nodesForXML;
 
-		std::string theNameOfMap = "Menu Of Levels/Chapter" + BStoString(levelChoserPlayer->indexOfChapterThatItIsOn + 1)
-											+ "/The Levels objects/level" + BStoString(levelChoserPlayer->indexOfLevelThatItIsOn + 1)
-											+ ".xml";
-		///Salvez jucatorul
-		ListaDeCaractere *heroLine = new ListaDeCaractere;
+	std::string theNameOfMap = "Menu Of Levels/Chapter" + BStoString(levelChoserPlayer->indexOfChapterThatItIsOn + 1)
+							   + "/The Levels objects/level" + BStoString(levelChoserPlayer->indexOfLevelThatItIsOn + 1)
+							   + ".xml";
+	///Salvez jucatorul
+	ListaDeCaractere *heroLine = new ListaDeCaractere;
 
-		heroLine->theCharArray2D[0] = "0";
-		heroLine->theCharArray2D[1] = "playerTexture.png";
-		heroLine->theCharArray2D[2] = "0";
-		heroLine->theCharArray2D[3] = BStoString(HeroInitialX);
-		heroLine->theCharArray2D[4] = BStoString(HeroInitialY);
-		heroLine->theCharArray2D[5] = BStoString(Hero_size);
-		heroLine->theCharArray2D[6] = BStoString(Hero_size);
-		heroLine->theCharArray2D[7] = "hero";
-		heroLine->theCharArray2D[8] = "playerAnimation";
-		heroLine->theCharArray2D[9] = "0";
+	heroLine->theCharArray2D[0] = "0";
+	heroLine->theCharArray2D[1] = "playerTexture.png";
+	heroLine->theCharArray2D[2] = "0";
+	heroLine->theCharArray2D[3] = BStoString(HeroInitialX);
+	heroLine->theCharArray2D[4] = BStoString(HeroInitialY);
+	heroLine->theCharArray2D[5] = BStoString(Hero_size);
+	heroLine->theCharArray2D[6] = BStoString(Hero_size);
+	heroLine->theCharArray2D[7] = "hero";
+	heroLine->theCharArray2D[8] = "playerAnimation";
+	heroLine->theCharArray2D[9] = "0";
 
-		nodesForXML.push_back(heroLine);
+	nodesForXML.push_back(heroLine);
 
-		std::cout<<'\n'<<"Salveaza harta: "<<theNameOfMap<<'\n';
+	std::cout << '\n' << "Salveaza harta: " << theNameOfMap << '\n';
 
-		//Parcurg toate corpurile si le salvez
-		for(int i = 0; i < ListOfRoundBodies.size(); i++)
+	//Parcurg toate corpurile si le salvez
+	for(int i = 0; i < ListOfRoundBodies.size(); i++)
+	{
+		ListaDeCaractere *line = new ListaDeCaractere;
+		//extrag userData-ul
+		USERDATA *salveazaUserData = (USERDATA*)ListOfRoundBodies[i]->theBody->GetUserData();
+
+		if(ListOfRoundBodies[i]->script)
 		{
-			ListaDeCaractere *line = new ListaDeCaractere;
-			//extrag userData-ul
-			USERDATA *salveazaUserData = (USERDATA*)ListOfRoundBodies[i]->theBody->GetUserData();
+			line->theCharArray2D[0] = "9";
+			line->theCharArray2D[3] = BStoString(ListOfRoundBodies[i]->script->xInitial);
+			line->theCharArray2D[4] = BStoString(ListOfRoundBodies[i]->script->yInitial);;
+		}
+		else
+		{
+			line->theCharArray2D[0] = "1";
+			line->theCharArray2D[3] = BStoString(ListOfRoundBodies[i]->theBody->GetPosition().x);
+			line->theCharArray2D[4] = BStoString(ListOfRoundBodies[i]->theBody->GetPosition().y);
+		}
+		line->theCharArray2D[1] = ListOfRoundBodies[i]->nameOfTexture;
 
-			if(ListOfRoundBodies[i]->script)
-			{
-			    line->theCharArray2D[0] = "9";
-                line->theCharArray2D[3] = BStoString(ListOfRoundBodies[i]->script->xInitial);
-                line->theCharArray2D[4] = BStoString(ListOfRoundBodies[i]->script->yInitial);;
-			}
-			else
-            {
-			    line->theCharArray2D[0] = "1";
-                line->theCharArray2D[3] = BStoString(ListOfRoundBodies[i]->theBody->GetPosition().x);
-                line->theCharArray2D[4] = BStoString(ListOfRoundBodies[i]->theBody->GetPosition().y);
-            }
-			line->theCharArray2D[1] = ListOfRoundBodies[i]->nameOfTexture;
+		line->theCharArray2D[5] = BStoString(ListOfRoundBodies[i]->width);
+		line->theCharArray2D[6] = BStoString(ListOfRoundBodies[i]->width);
+		line->theCharArray2D[7] = salveazaUserData->name;
+		line->theCharArray2D[8] = "roundAnimation";
+		line->theCharArray2D[9] = BStoString(ListOfRoundBodies[i]->index);
 
-			line->theCharArray2D[5] = BStoString(ListOfRoundBodies[i]->width);
-			line->theCharArray2D[6] = BStoString(ListOfRoundBodies[i]->width);
-			line->theCharArray2D[7] = salveazaUserData->name;
-			line->theCharArray2D[8] = "roundAnimation";
-            line->theCharArray2D[9] = BStoString(ListOfRoundBodies[i]->index);
+		if(ListOfRoundBodies[i]->ObstacleFinishesLevel == true)
+		{
+			line->theCharArray2D[2] = "2";
+		}
+		else
+		{
+			line->theCharArray2D[2] = BStoString(ListOfRoundBodies[i]->ObstacleCanKillHero);
+		}
+		nodesForXML.push_back(line);
+		delete salveazaUserData;
+	}
 
-			if(ListOfRoundBodies[i]->ObstacleFinishesLevel == true)
-			{
-				line->theCharArray2D[2] = "2";
-			}
-			else
-			{
-				line->theCharArray2D[2] = BStoString(ListOfRoundBodies[i]->ObstacleCanKillHero);
-			}
-            nodesForXML.push_back(line);
-			delete salveazaUserData;
+	for(int i = 0; i < ListOfSquareBodies.size(); i++)
+	{
+		ListaDeCaractere *line = new ListaDeCaractere;
+		USERDATA *salveazaUserData = (USERDATA*)ListOfSquareBodies[i]->theBody->GetUserData();
+
+		if(ListOfSquareBodies[i]->script)
+		{
+			line->theCharArray2D[0] = "8";
+			line->theCharArray2D[3] = BStoString(ListOfSquareBodies[i]->script->xInitial);
+			line->theCharArray2D[4] = BStoString(ListOfSquareBodies[i]->script->yInitial);
+		}
+		else
+		{
+			line->theCharArray2D[0] = "0";
+			line->theCharArray2D[3] = BStoString(ListOfSquareBodies[i]->theBody->GetPosition().x);
+			line->theCharArray2D[4] = BStoString(ListOfSquareBodies[i]->theBody->GetPosition().y);
 		}
 
-		for(int i = 0; i < ListOfSquareBodies.size(); i++)
+		line->theCharArray2D[1] = ListOfSquareBodies[i]->nameOfTexture;
+		line->theCharArray2D[5] = BStoString(ListOfSquareBodies[i]->width);
+		line->theCharArray2D[6] = BStoString(ListOfSquareBodies[i]->height);
+		line->theCharArray2D[7] = salveazaUserData->name;
+		line->theCharArray2D[8] = "textureAnimation";
+		line->theCharArray2D[9] = BStoString(ListOfSquareBodies[i]->index);
+
+		///Vad daca obstacolul va fi cel care il va trece pe jucator la nivelul urmator
+		if(ListOfSquareBodies[i]->ObstacleFinishesLevel == true)
 		{
-			ListaDeCaractere *line = new ListaDeCaractere;
-			USERDATA *salveazaUserData = (USERDATA*)ListOfSquareBodies[i]->theBody->GetUserData();
-
-			if(ListOfSquareBodies[i]->script)
-			{
-			    line->theCharArray2D[0] = "8";
-                line->theCharArray2D[3] = BStoString(ListOfSquareBodies[i]->script->xInitial);
-                line->theCharArray2D[4] = BStoString(ListOfSquareBodies[i]->script->yInitial);
-			}
-			else
-            {
-			    line->theCharArray2D[0] = "0";
-                line->theCharArray2D[3] = BStoString(ListOfSquareBodies[i]->theBody->GetPosition().x);
-                line->theCharArray2D[4] = BStoString(ListOfSquareBodies[i]->theBody->GetPosition().y);
-            }
-
-			line->theCharArray2D[1] = ListOfSquareBodies[i]->nameOfTexture;
-			line->theCharArray2D[5] = BStoString(ListOfSquareBodies[i]->width);
-			line->theCharArray2D[6] = BStoString(ListOfSquareBodies[i]->height);
-			line->theCharArray2D[7] = salveazaUserData->name;
-			line->theCharArray2D[8] = "textureAnimation";
-            line->theCharArray2D[9] = BStoString(ListOfSquareBodies[i]->index);
-
-			///Vad daca obstacolul va fi cel care il va trece pe jucator la nivelul urmator
-			if(ListOfSquareBodies[i]->ObstacleFinishesLevel == true)
-			{
-				line->theCharArray2D[2] = "2";
-			}
-			else
-			{
-				line->theCharArray2D[2] = BStoString(ListOfSquareBodies[i]->ObstacleCanKillHero);
-			}
-			nodesForXML.push_back(line);
+			line->theCharArray2D[2] = "2";
 		}
-
-		for(int i = 0; i < listOfMessages.size(); i++)
+		else
 		{
-			ListaDeCaractere *line = new ListaDeCaractere;
-
-			line->theCharArray2D[0] = "2";
-			line->theCharArray2D[1] = listOfMessages[i]->nameOfTextureMessage;
-			line->theCharArray2D[2] = "0";
-			line->theCharArray2D[3] = BStoString(listOfMessages[i]->xCord);
-			line->theCharArray2D[4] = BStoString(listOfMessages[i]->yCord);
-			line->theCharArray2D[5] = "0";
-			line->theCharArray2D[6] = "0";
-			line->theCharArray2D[7] = "message";
-			line->theCharArray2D[8] = "messageAnimation";
-            line->theCharArray2D[9] = BStoString(listOfMessages[i]->index);
-
-			nodesForXML.push_back(line);
+			line->theCharArray2D[2] = BStoString(ListOfSquareBodies[i]->ObstacleCanKillHero);
 		}
+		nodesForXML.push_back(line);
+	}
 
-		for(int i = 0; i < listOfCoins.size(); i++)
-		{
-			ListaDeCaractere *line = new ListaDeCaractere;
+	for(int i = 0; i < listOfMessages.size(); i++)
+	{
+		ListaDeCaractere *line = new ListaDeCaractere;
 
-			line->theCharArray2D[0] = "5";
-			line->theCharArray2D[1] = "Animations/coin.png";
-			line->theCharArray2D[2] = "0";
-			line->theCharArray2D[3] = BStoString(listOfCoins[i]->xInit);
-			line->theCharArray2D[4] = BStoString(listOfCoins[i]->yInit);
-			line->theCharArray2D[5] = "1";
-			line->theCharArray2D[6] = "1";
-			line->theCharArray2D[7] = "coin";
-			line->theCharArray2D[8] = BStoString(listOfCoins[i]->available);
-            line->theCharArray2D[9] = BStoString(listOfCoins[i]->index);
+		line->theCharArray2D[0] = "2";
+		line->theCharArray2D[1] = listOfMessages[i]->nameOfTextureMessage;
+		line->theCharArray2D[2] = "0";
+		line->theCharArray2D[3] = BStoString(listOfMessages[i]->xCord);
+		line->theCharArray2D[4] = BStoString(listOfMessages[i]->yCord);
+		line->theCharArray2D[5] = "0";
+		line->theCharArray2D[6] = "0";
+		line->theCharArray2D[7] = "message";
+		line->theCharArray2D[8] = "messageAnimation";
+		line->theCharArray2D[9] = BStoString(listOfMessages[i]->index);
 
-			nodesForXML.push_back(line);
-		}
+		nodesForXML.push_back(line);
+	}
 
-		for(int i = 0; i < listOfFans.size(); i++)
-		{
-			ListaDeCaractere *line = new ListaDeCaractere;
+	for(int i = 0; i < listOfCoins.size(); i++)
+	{
+		ListaDeCaractere *line = new ListaDeCaractere;
 
-			line->theCharArray2D[0] = "6";
-			line->theCharArray2D[1] = "Animations/fan.png";
-			line->theCharArray2D[2] = "0";
-			line->theCharArray2D[3] = BStoString(listOfFans[i]->xCord);
-			line->theCharArray2D[4] = BStoString(listOfFans[i]->yCord);
-			line->theCharArray2D[5] = BStoString(listOfFans[i]->width);
-			line->theCharArray2D[6] = BStoString(listOfFans[i]->height);
-			line->theCharArray2D[7] = BStoString(listOfFans[i]->lenthOfPower) + " " + BStoString(listOfFans[i]->powerX) + " " + BStoString(listOfFans[i]->powerY);
-			line->theCharArray2D[8] = "none";
-            line->theCharArray2D[9] = BStoString(listOfFans[i]->index);
+		line->theCharArray2D[0] = "5";
+		line->theCharArray2D[1] = "Animations/coin.png";
+		line->theCharArray2D[2] = "0";
+		line->theCharArray2D[3] = BStoString(listOfCoins[i]->xInit);
+		line->theCharArray2D[4] = BStoString(listOfCoins[i]->yInit);
+		line->theCharArray2D[5] = "1";
+		line->theCharArray2D[6] = "1";
+		line->theCharArray2D[7] = "coin";
+		line->theCharArray2D[8] = BStoString(listOfCoins[i]->available);
+		line->theCharArray2D[9] = BStoString(listOfCoins[i]->index);
 
-			nodesForXML.push_back(line);
-		}
+		nodesForXML.push_back(line);
+	}
 
-		for(int i = 0; i < listOfWormHoles.size(); i++)
-		{
-			ListaDeCaractere *line = new ListaDeCaractere;
+	for(int i = 0; i < listOfFans.size(); i++)
+	{
+		ListaDeCaractere *line = new ListaDeCaractere;
 
-			line->theCharArray2D[0] = "7";
-			line->theCharArray2D[1] = "Animations/wormHole.png";
-			line->theCharArray2D[2] = "0";
-			line->theCharArray2D[3] = BStoString(listOfWormHoles[i]->xCord);
-			line->theCharArray2D[4] = BStoString(listOfWormHoles[i]->yCord);
-			line->theCharArray2D[5] = "0";
-			line->theCharArray2D[6] = "0";
-			line->theCharArray2D[7] = BStoString(listOfWormHoles[i]->indexOfWorm);
-			line->theCharArray2D[8] = BStoString(listOfWormHoles[i]->connectionIndex);
-            line->theCharArray2D[9] = BStoString(listOfWormHoles[i]->index);
+		line->theCharArray2D[0] = "6";
+		line->theCharArray2D[1] = "Animations/fan.png";
+		line->theCharArray2D[2] = "0";
+		line->theCharArray2D[3] = BStoString(listOfFans[i]->xCord);
+		line->theCharArray2D[4] = BStoString(listOfFans[i]->yCord);
+		line->theCharArray2D[5] = BStoString(listOfFans[i]->width);
+		line->theCharArray2D[6] = BStoString(listOfFans[i]->height);
+		line->theCharArray2D[7] = BStoString(listOfFans[i]->lenthOfPower) + " " + BStoString(listOfFans[i]->powerX) + " " + BStoString(listOfFans[i]->powerY);
+		line->theCharArray2D[8] = "none";
+		line->theCharArray2D[9] = BStoString(listOfFans[i]->index);
 
-			nodesForXML.push_back(line);
-		}
+		nodesForXML.push_back(line);
+	}
 
-		for(int i = 0; i < ListOfSquareDustBodies.size(); i++)
-		{
-			ListaDeCaractere *line = new ListaDeCaractere;
+	for(int i = 0; i < listOfWormHoles.size(); i++)
+	{
+		ListaDeCaractere *line = new ListaDeCaractere;
 
-			    line->theCharArray2D[0] = "10";
-                line->theCharArray2D[3] = BStoString(ListOfSquareDustBodies[i]->xInit);
-                line->theCharArray2D[4] = BStoString(ListOfSquareDustBodies[i]->yInit);
+		line->theCharArray2D[0] = "7";
+		line->theCharArray2D[1] = "Animations/wormHole.png";
+		line->theCharArray2D[2] = "0";
+		line->theCharArray2D[3] = BStoString(listOfWormHoles[i]->xCord);
+		line->theCharArray2D[4] = BStoString(listOfWormHoles[i]->yCord);
+		line->theCharArray2D[5] = "0";
+		line->theCharArray2D[6] = "0";
+		line->theCharArray2D[7] = BStoString(listOfWormHoles[i]->indexOfWorm);
+		line->theCharArray2D[8] = BStoString(listOfWormHoles[i]->connectionIndex);
+		line->theCharArray2D[9] = BStoString(listOfWormHoles[i]->index);
+
+		nodesForXML.push_back(line);
+	}
+
+	for(int i = 0; i < ListOfSquareDustBodies.size(); i++)
+	{
+		ListaDeCaractere *line = new ListaDeCaractere;
+
+		line->theCharArray2D[0] = "10";
+		line->theCharArray2D[3] = BStoString(ListOfSquareDustBodies[i]->xInit);
+		line->theCharArray2D[4] = BStoString(ListOfSquareDustBodies[i]->yInit);
 
 
-			line->theCharArray2D[1] = ListOfSquareDustBodies[i]->nameOfTexture;
-			line->theCharArray2D[5] = BStoString(ListOfSquareDustBodies[i]->width);
-			line->theCharArray2D[6] = BStoString(ListOfSquareDustBodies[i]->height);
-			line->theCharArray2D[7] = "object";
-			line->theCharArray2D[8] = "dust";
-            line->theCharArray2D[9] = BStoString(ListOfSquareDustBodies[i]->index);
+		line->theCharArray2D[1] = ListOfSquareDustBodies[i]->nameOfTexture;
+		line->theCharArray2D[5] = BStoString(ListOfSquareDustBodies[i]->width);
+		line->theCharArray2D[6] = BStoString(ListOfSquareDustBodies[i]->height);
+		line->theCharArray2D[7] = "object";
+		line->theCharArray2D[8] = "dust";
+		line->theCharArray2D[9] = BStoString(ListOfSquareDustBodies[i]->index);
 
-            line->theCharArray2D[2] = "0";
+		line->theCharArray2D[2] = "0";
 
-			nodesForXML.push_back(line);
-		}
+		nodesForXML.push_back(line);
+	}
 
-		BSXmlFiles *saveTheMap = new BSXmlFiles();
-		theNodes.push_back("Body_Type");
-		theNodes.push_back("Texture_path");
-		theNodes.push_back("Kill_or_Next_Level");
-		theNodes.push_back("xCoordinate");
-		theNodes.push_back("yCoordinate");
-		theNodes.push_back("width");
-		theNodes.push_back("height");
-		theNodes.push_back("userName");
-		theNodes.push_back("Animation_name");
-		theNodes.push_back("Index");
+	BSXmlFiles *saveTheMap = new BSXmlFiles();
+	theNodes.push_back("Body_Type");
+	theNodes.push_back("Texture_path");
+	theNodes.push_back("Kill_or_Next_Level");
+	theNodes.push_back("xCoordinate");
+	theNodes.push_back("yCoordinate");
+	theNodes.push_back("width");
+	theNodes.push_back("height");
+	theNodes.push_back("userName");
+	theNodes.push_back("Animation_name");
+	theNodes.push_back("Index");
 
-		attributesName.push_back("name");
-		attributesName.push_back("boundary_Left");
-		attributesName.push_back("boundary_Down");
-		attributesName.push_back("boundary_Up");
-		attributesName.push_back("boundary_Right");
-		attributesName.push_back("script");
+	attributesName.push_back("name");
+	attributesName.push_back("boundary_Left");
+	attributesName.push_back("boundary_Down");
+	attributesName.push_back("boundary_Up");
+	attributesName.push_back("boundary_Right");
+	attributesName.push_back("script");
 
-		attributesValues.push_back(theNameOfMap);
-		attributesValues.push_back(BStoString(gameBoundLeft));
-		attributesValues.push_back(BStoString(gameBoundDown));
-		attributesValues.push_back(BStoString(gameBoundUp));
-		attributesValues.push_back(BStoString(gameBoundRight));
-		attributesValues.push_back(BStoString(levelHasScript));
+	attributesValues.push_back(theNameOfMap);
+	attributesValues.push_back(BStoString(gameBoundLeft));
+	attributesValues.push_back(BStoString(gameBoundDown));
+	attributesValues.push_back(BStoString(gameBoundUp));
+	attributesValues.push_back(BStoString(gameBoundRight));
+	attributesValues.push_back(BStoString(levelHasScript));
 
 //		saveTheMap->writeAnyXML(theNameOfMap, "Level", "obstacle", nodesName, nodesForXML, attributesName, attributesValues);
-		delete saveTheMap;
-		aSalvatHarta = true;
+	delete saveTheMap;
+	aSalvatHarta = true;
 }
 
 
 void BSTexture::salveazaFinishedLevel()
 {
-    std::string file = "Saves/playerData" + BStoString(levelChoserPlayer->indexOfChapterThatItIsOn + 1) + ".txt";
-    std::ifstream fin(file.c_str());
+	std::string file = "Saves/playerData" + BStoString(levelChoserPlayer->indexOfChapterThatItIsOn + 1) + ".txt";
+	std::ifstream fin(file.c_str());
 
-    int chpNr, lvlNr, cuv[25][3];
-    fin>>chpNr>>lvlNr;
+	int chpNr, lvlNr, cuv[25][3];
+	fin >> chpNr >> lvlNr;
 
-    int sw = levelChoserPlayer->indexOfLevelThatItIsOn;
-    for(int i = 0 ; i < levelChoserPlayer->indexOfLevelThatItIsOn; i++)
-    {
-        fin>>cuv[i][0]>>cuv[i][1]>>cuv[i][2];
-    }
-    fin>>cuv[sw][0]>>cuv[sw][1]>>cuv[sw][2];
-    cuv[sw][1] = 1;
+	int sw = levelChoserPlayer->indexOfLevelThatItIsOn;
+	for(int i = 0 ; i < levelChoserPlayer->indexOfLevelThatItIsOn; i++)
+	{
+		fin >> cuv[i][0] >> cuv[i][1] >> cuv[i][2];
+	}
+	fin >> cuv[sw][0] >> cuv[sw][1] >> cuv[sw][2];
+	cuv[sw][1] = 1;
 
-    for(int i = sw + 1; i < 25; i++)
-    {
-        fin>>cuv[i][0]>>cuv[i][1]>>cuv[i][2];
-    }
+	for(int i = sw + 1; i < 25; i++)
+	{
+		fin >> cuv[i][0] >> cuv[i][1] >> cuv[i][2];
+	}
 
-    std::ofstream fout(file.c_str());
-    fout<<chpNr<<' '<<lvlNr<<'\n';
-    for(int i = 0 ; i < 25; i ++)
-    {
-        fout<<cuv[i][0]<<' '<<cuv[i][1]<<' '<<cuv[i][2]<<'\n';
-    }
+	std::ofstream fout(file.c_str());
+	fout << chpNr << ' ' << lvlNr << '\n';
+	for(int i = 0 ; i < 25; i ++)
+	{
+		fout << cuv[i][0] << ' ' << cuv[i][1] << ' ' << cuv[i][2] << '\n';
+	}
 }

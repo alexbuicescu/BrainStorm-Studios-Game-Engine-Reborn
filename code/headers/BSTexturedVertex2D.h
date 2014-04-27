@@ -6,7 +6,7 @@
 
 struct BSTexturedVertex2D
 {
-    BSVertexPos2D position;
+	BSVertexPos2D position;
 	BSTexCoord texCoord;
 };
 

@@ -46,19 +46,20 @@ b2Body* BSObstacles::createBodies(b2BodyType Type, float LocationX, float Locati
 		box->SetFixedRotation(false);
 		myFixtureDef.filter.groupIndex = BinaryParticles;
 	}
-	else if(userData == "hero")
-	{
-		myFixtureDef.filter.groupIndex = BinaryPlayer;
-	}
 	else
-	{
-		myFixtureDef.filter.groupIndex = BinaryScenery;
-	}
+		if(userData == "hero")
+		{
+			myFixtureDef.filter.groupIndex = BinaryPlayer;
+		}
+		else
+		{
+			myFixtureDef.filter.groupIndex = BinaryScenery;
+		}
 
 
 	box->CreateFixture(&myFixtureDef);
 
-        ///This lets you change the precalculated mass of a body to a fixed one, added by you
+	///This lets you change the precalculated mass of a body to a fixed one, added by you
 //            b2MassData massData;
 //            box->GetMassData(&massData);
 //
@@ -115,14 +116,15 @@ b2Body* BSObstacles::createCircleBodies(b2BodyType Type, float LocationX, float 
 		box->SetFixedRotation(false);
 		myFixtureDef.filter.groupIndex = BinaryParticles;
 	}
-	else if(userData == "hero")
-	{
-		myFixtureDef.filter.groupIndex = BinaryPlayer;
-	}
 	else
-	{
-		myFixtureDef.filter.groupIndex = BinaryScenery;
-	}
+		if(userData == "hero")
+		{
+			myFixtureDef.filter.groupIndex = BinaryPlayer;
+		}
+		else
+		{
+			myFixtureDef.filter.groupIndex = BinaryScenery;
+		}
 
 
 	if(userData == "Hero2nd" || userData == "hero")
@@ -237,24 +239,36 @@ void BSObstacles::setVaoForChunckObjects(GLuint &vaoBuffer, GLuint &vboBuffer, G
 	GLfloat quadHeight = heightToSet / 2.0f;
 
 	//Texture coordinates
-	dataToSet[0].texCoord.s = texLeft;	dataToSet[0].texCoord.t = texTop;
-	dataToSet[1].texCoord.s = texLeft;	dataToSet[1].texCoord.t = texBottom;
-	dataToSet[2].texCoord.s = texRight;	dataToSet[2].texCoord.t = texBottom;
-	dataToSet[3].texCoord.s = texRight;	dataToSet[3].texCoord.t = texTop;
+	dataToSet[0].texCoord.s = texLeft;
+	dataToSet[0].texCoord.t = texTop;
+	dataToSet[1].texCoord.s = texLeft;
+	dataToSet[1].texCoord.t = texBottom;
+	dataToSet[2].texCoord.s = texRight;
+	dataToSet[2].texCoord.t = texBottom;
+	dataToSet[3].texCoord.s = texRight;
+	dataToSet[3].texCoord.t = texTop;
 
 	//Vertex positions
-	dataToSet[0].position.x = -quadWidth;	dataToSet[0].position.y = -quadHeight;	dataToSet[0].position.z = scaleSizeInitial;
-	dataToSet[1].position.x = -quadWidth;	dataToSet[1].position.y = quadHeight;	dataToSet[1].position.z = scaleSizeInitial;
-	dataToSet[2].position.x = quadWidth;	dataToSet[2].position.y = quadHeight;	dataToSet[2].position.z = scaleSizeInitial;
-	dataToSet[3].position.x = quadWidth;	dataToSet[3].position.y = -quadHeight;	dataToSet[3].position.z = scaleSizeInitial;
+	dataToSet[0].position.x = -quadWidth;
+	dataToSet[0].position.y = -quadHeight;
+	dataToSet[0].position.z = scaleSizeInitial;
+	dataToSet[1].position.x = -quadWidth;
+	dataToSet[1].position.y = quadHeight;
+	dataToSet[1].position.z = scaleSizeInitial;
+	dataToSet[2].position.x = quadWidth;
+	dataToSet[2].position.y = quadHeight;
+	dataToSet[2].position.z = scaleSizeInitial;
+	dataToSet[3].position.x = quadWidth;
+	dataToSet[3].position.y = -quadHeight;
+	dataToSet[3].position.z = scaleSizeInitial;
 
 	setTheVao(vaoBuffer, dataToSet, vboBuffer, iboBuffer);
 }
 
 void BSObstacles::setTheVaoDataForFont(BSTexturedVertex2D dataTSet[4], GLfloat widthToSet, GLfloat heightToSet, float xCord, float yCord, GLuint &vaoBuffer, GLuint &vboBuffer, GLuint &iboBuffer)
 {
-    glGenVertexArrays(1, &vaoBuffer);
-    glBindVertexArray(vaoBuffer);
+	glGenVertexArrays(1, &vaoBuffer);
+	glBindVertexArray(vaoBuffer);
 
 	BSTexturedVertex2D data[4];
 	float texBottom = yCord / 1024.f;
@@ -269,38 +283,50 @@ void BSObstacles::setTheVaoDataForFont(BSTexturedVertex2D dataTSet[4], GLfloat w
 
 
 	//Texture coordinates
-	data[0].texCoord.s = texLeft;	data[0].texCoord.t = texTop;
-	data[1].texCoord.s = texLeft;	data[1].texCoord.t = texBottom;
-	data[2].texCoord.s = texRight;	data[2].texCoord.t = texBottom;
-	data[3].texCoord.s = texRight;	data[3].texCoord.t = texTop;
+	data[0].texCoord.s = texLeft;
+	data[0].texCoord.t = texTop;
+	data[1].texCoord.s = texLeft;
+	data[1].texCoord.t = texBottom;
+	data[2].texCoord.s = texRight;
+	data[2].texCoord.t = texBottom;
+	data[3].texCoord.s = texRight;
+	data[3].texCoord.t = texTop;
 
 	//Vertex positions
-	data[0].position.x = -quadWidth;	data[0].position.y = -quadHeight;	data[0].position.z = scaleSizeInitial;
-	data[1].position.x = -quadWidth;	data[1].position.y = quadHeight;	data[1].position.z = scaleSizeInitial;
-	data[2].position.x = quadWidth;		data[2].position.y = quadHeight;	data[2].position.z = scaleSizeInitial;
-	data[3].position.x = quadWidth;		data[3].position.y = -quadHeight;	data[3].position.z = scaleSizeInitial;
+	data[0].position.x = -quadWidth;
+	data[0].position.y = -quadHeight;
+	data[0].position.z = scaleSizeInitial;
+	data[1].position.x = -quadWidth;
+	data[1].position.y = quadHeight;
+	data[1].position.z = scaleSizeInitial;
+	data[2].position.x = quadWidth;
+	data[2].position.y = quadHeight;
+	data[2].position.z = scaleSizeInitial;
+	data[3].position.x = quadWidth;
+	data[3].position.y = -quadHeight;
+	data[3].position.z = scaleSizeInitial;
 
 
 
 
-    glGenBuffers(1, &vboBuffer);
-    glBindBuffer(GL_ARRAY_BUFFER, vboBuffer);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(data), data, GL_DYNAMIC_DRAW);
+	glGenBuffers(1, &vboBuffer);
+	glBindBuffer(GL_ARRAY_BUFFER, vboBuffer);
+	glBufferData(GL_ARRAY_BUFFER, sizeof(data), data, GL_DYNAMIC_DRAW);
 
-    glGenBuffers(1, &iboBuffer);
-    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, iboBuffer);
-    glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(iData), iData, GL_DYNAMIC_DRAW);
+	glGenBuffers(1, &iboBuffer);
+	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, iboBuffer);
+	glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(iData), iData, GL_DYNAMIC_DRAW);
 
-    glEnableVertexAttribArray(_my_shader_program->get_location_from_shader(BS_Available_Shaders::vertex_position()));//locationBSVertexPosition3D);
-    glVertexAttribPointer(_my_shader_program->get_location_from_shader(BS_Available_Shaders::vertex_position()), 3, GL_FLOAT, GL_FALSE, sizeof(BSTexturedVertex2D), 0);
+	glEnableVertexAttribArray(_my_shader_program->get_location_from_shader(BS_Available_Shaders::vertex_position()));//locationBSVertexPosition3D);
+	glVertexAttribPointer(_my_shader_program->get_location_from_shader(BS_Available_Shaders::vertex_position()), 3, GL_FLOAT, GL_FALSE, sizeof(BSTexturedVertex2D), 0);
 
-    glEnableVertexAttribArray(_my_shader_program->get_location_from_shader(BS_Available_Shaders::texture_coordinates()));//locationBSTextureCoordinate);
-    glVertexAttribPointer(_my_shader_program->get_location_from_shader(BS_Available_Shaders::texture_coordinates()), 2, GL_FLOAT, GL_FALSE, sizeof(BSTexturedVertex2D), (GLvoid*) (sizeof(float) * 3));
+	glEnableVertexAttribArray(_my_shader_program->get_location_from_shader(BS_Available_Shaders::texture_coordinates()));//locationBSTextureCoordinate);
+	glVertexAttribPointer(_my_shader_program->get_location_from_shader(BS_Available_Shaders::texture_coordinates()), 2, GL_FLOAT, GL_FALSE, sizeof(BSTexturedVertex2D), (GLvoid*) (sizeof(float) * 3));
 
-    //Unbind VAO
-    glBindVertexArray( 0 );
-    glBindBuffer( GL_ARRAY_BUFFER, 0 );
-    glBindBuffer( GL_ELEMENT_ARRAY_BUFFER, 0 );
+	//Unbind VAO
+	glBindVertexArray( 0 );
+	glBindBuffer( GL_ARRAY_BUFFER, 0 );
+	glBindBuffer( GL_ELEMENT_ARRAY_BUFFER, 0 );
 }
 
 
@@ -315,9 +341,9 @@ void BSObstacles::setUpBodies()
 
 void BSObstacles::setUpOriginals()
 {
-    for(int i = 0 ; i < 5; i++)
-    {
-        BsActiveAnimations *p = new BsActiveAnimations;
+	for(int i = 0 ; i < 5; i++)
+	{
+		BsActiveAnimations *p = new BsActiveAnimations;
 //        listOfActiveAnimations[i]->indexOfAnimation = 0;
 //        listOfActiveAnimations[i]->isAtStepOfAnimation1 = false;
 //        listOfActiveAnimations[i]->isAtStepOfAnimation2 = false;
@@ -325,12 +351,12 @@ void BSObstacles::setUpOriginals()
 //        listOfActiveAnimations[i]->canPlayAnimation1 = false;
 //        listOfActiveAnimations[i]->canPlayAnimation2 = false;
 //        listOfActiveAnimations[i]->canPlayAnimation3 = false;
-        p->canPlayIt = false;
+		p->canPlayIt = false;
 
-        p->width = 2;
-        p->height = 2;
-        listOfActiveAnimations.push_back(p);
-    }//0-hero, 1-berserk, 2-electricity, 3-wormHole, 4-last power up
+		p->width = 2;
+		p->height = 2;
+		listOfActiveAnimations.push_back(p);
+	}//0-hero, 1-berserk, 2-electricity, 3-wormHole, 4-last power up
 
 	///Set the particle data !!!!!!!! Need initialization only once, vaoBuffer too
 	originalParticle->width = 1 / 8.f;
@@ -359,7 +385,7 @@ void BSObstacles::setUpOriginals()
 
 
 	///Set the coin
-	loadATexture("Animations/coin.png", originalCoin->texture);
+	BS_Renderer::loadATexture("Animations/coin.png", originalCoin->texture);
 	originalCoin->width = Hero_size;
 	originalCoin->height = Hero_size;
 	originalCoin->xCord = 2;
@@ -368,7 +394,7 @@ void BSObstacles::setUpOriginals()
 
 
 	///Set the dust bodies
-	loadATexture("Animations/dust.png", originalDustBody->texture);
+	BS_Renderer::loadATexture("Animations/dust.png", originalDustBody->texture);
 	originalDustBody->width = 1;
 	originalDustBody->height = 1;
 	originalDustBody->xCord = 0;
@@ -377,7 +403,7 @@ void BSObstacles::setUpOriginals()
 
 
 	///Set the fans
-	loadATexture("Animations/fan.png", originalFan->texture);
+	BS_Renderer::loadATexture("Animations/fan.png", originalFan->texture);
 	originalFan->width = Hero_size * 10;
 	originalFan->height = Hero_size;
 	setTheVaoData(originalFan->vao, originalFan->vbo, originalFan->ibo, originalFan->data, 1, 1);
@@ -386,7 +412,7 @@ void BSObstacles::setUpOriginals()
 
 
 	///Set the dark level light
-	loadATexture("Animations/dark.png", mainDarkTexture);
+	BS_Renderer::loadATexture("Animations/dark.png", mainDarkTexture);
 	originalDarkMenu->width = (float) (SCREEN_WIDTH / scaleRatio + 2) * 2;
 	originalDarkMenu->height = (float) (SCREEN_HEIGHT / scaleRatio + 2) * 2;
 	setTheVaoData(originalDarkMenu->vao, originalDarkMenu->vbo, originalDarkMenu->ibo, originalDarkMenu->data, 1, 1);
@@ -400,7 +426,7 @@ void BSObstacles::setUpOriginals()
 	originalWormHole->width = 2;
 	originalWormHole->height = 2;
 	setTheVaoData(originalWormHole->vao, originalWormHole->vbo, originalWormHole->ibo, originalWormHole->data, 1, 1);
-	loadATexture("Animations/wormHole.png", originalWormHole->texture);
+	BS_Renderer::loadATexture("Animations/wormHole.png", originalWormHole->texture);
 	BSColorRGBA color = {1.0f, 1.0f, 1.0f, 1.0f};
 	originalWormHole->color = color;
 
@@ -454,16 +480,28 @@ void BSObstacles::incarcaHarta(std::string cale)
 	std::vector<ListaDeCaractere*> levelDetails;
 	std::vector<std::string> levelDetailsAttributes;
 
-	theNodes.push_back("Body_Type"); theNodes.push_back("Texture_path"); theNodes.push_back("Kill_or_Next_Level"); theNodes.push_back("xCoordinate"); theNodes.push_back("yCoordinate");
-	theNodes.push_back("width"); theNodes.push_back("height"); theNodes.push_back("userName"); theNodes.push_back("Animation_name"); theNodes.push_back("Index");
+	theNodes.push_back("Body_Type");
+	theNodes.push_back("Texture_path");
+	theNodes.push_back("Kill_or_Next_Level");
+	theNodes.push_back("xCoordinate");
+	theNodes.push_back("yCoordinate");
+	theNodes.push_back("width");
+	theNodes.push_back("height");
+	theNodes.push_back("userName");
+	theNodes.push_back("Animation_name");
+	theNodes.push_back("Index");
 
-	theAttributes.push_back("name"); theAttributes.push_back("boundary_Left");
-	theAttributes.push_back("boundary_Down"); theAttributes.push_back("boundary_Up"); theAttributes.push_back("boundary_Right"); theAttributes.push_back("script");
+	theAttributes.push_back("name");
+	theAttributes.push_back("boundary_Left");
+	theAttributes.push_back("boundary_Down");
+	theAttributes.push_back("boundary_Up");
+	theAttributes.push_back("boundary_Right");
+	theAttributes.push_back("script");
 
 	doc->readAnyXML(cale, "Level", "obstacle", theNodes, theAttributes, levelDetails, levelDetailsAttributes);
 
 
-    scaleRatio = cross_platform_scale;
+	scaleRatio = cross_platform_scale;
 
 	CameraExtremeLeft = atof(levelDetailsAttributes[1].c_str()) + SCREEN_WIDTH / 2.f / scaleRatio;
 	CameraExtremeDown = atof(levelDetailsAttributes[2].c_str()) + SCREEN_HEIGHT / 2.f / scaleRatio;
@@ -476,19 +514,19 @@ void BSObstacles::incarcaHarta(std::string cale)
 	gameBoundRight = atof(levelDetailsAttributes[4].c_str());
 
 
-    ///in case that the level is not big (e.g. the camera doesn't have to move, because all the objects are in the frame)
+	///in case that the level is not big (e.g. the camera doesn't have to move, because all the objects are in the frame)
 	if(CameraExtremeUp < CameraExtremeDown)
-    {
-        CameraExtremeUp = CameraExtremeDown;
-    }
-    if(CameraExtremeRight < CameraExtremeLeft)
-    {
-        CameraExtremeRight = CameraExtremeLeft;
-    }
+	{
+		CameraExtremeUp = CameraExtremeDown;
+	}
+	if(CameraExtremeRight < CameraExtremeLeft)
+	{
+		CameraExtremeRight = CameraExtremeLeft;
+	}
 
 	levelHasScript = atof(levelDetailsAttributes[5].c_str());
 
-	std::cout<<'\n';
+	std::cout << '\n';
 
 	HeroInitialX = atof(levelDetails[0]->theCharArray2D[3].c_str());
 	HeroInitialY = atof(levelDetails[0]->theCharArray2D[4].c_str());
@@ -520,7 +558,7 @@ void BSObstacles::incarcaHarta(std::string cale)
 
 	std::ifstream playerSize("playerSize.txt");
 	float width, height;
-	playerSize>>width>>height;
+	playerSize >> width >> height;
 
 	if(hero->width != Hero_size && hero->height != Hero_size)
 	{
@@ -557,7 +595,7 @@ void BSObstacles::incarcaHarta(std::string cale)
 							 levelDetails[currentInWhile]->theCharArray2D[1], 0, levelDetails[currentInWhile]->theCharArray2D[7],
 							 b2_staticBody, atof(levelDetails[currentInWhile]->theCharArray2D[2].c_str()), 0);
 
-             ListOfSquareBodies.back()->index = atof(levelDetails[currentInWhile]->theCharArray2D[9].c_str());
+			ListOfSquareBodies.back()->index = atof(levelDetails[currentInWhile]->theCharArray2D[9].c_str());
 		}
 		else
 			///Daca e cerc
@@ -568,7 +606,7 @@ void BSObstacles::incarcaHarta(std::string cale)
 								0, levelDetails[currentInWhile]->theCharArray2D[7],
 								b2_staticBody, atof(levelDetails[currentInWhile]->theCharArray2D[5].c_str()));
 
-                ListOfRoundBodies.back()->index = atof(levelDetails[currentInWhile]->theCharArray2D[9].c_str());
+				ListOfRoundBodies.back()->index = atof(levelDetails[currentInWhile]->theCharArray2D[9].c_str());
 			}
 			else
 				///Daca e mesaj
@@ -578,7 +616,7 @@ void BSObstacles::incarcaHarta(std::string cale)
 									  atof(levelDetails[currentInWhile]->theCharArray2D[5].c_str()), atof(levelDetails[currentInWhile]->theCharArray2D[6].c_str()),
 									  levelDetails[currentInWhile]->theCharArray2D[1]);
 
-                    listOfMessages.back()->index = atof(levelDetails[currentInWhile]->theCharArray2D[9].c_str());
+					listOfMessages.back()->index = atof(levelDetails[currentInWhile]->theCharArray2D[9].c_str());
 				}
 				else
 					///Daca e texture square
@@ -590,7 +628,7 @@ void BSObstacles::incarcaHarta(std::string cale)
 									   atof(levelDetails[currentInWhile]->theCharArray2D[6].c_str()),
 									   levelDetails[currentInWhile]->theCharArray2D[1]);
 
-                        ListOfSquareTextures.back()->index = atof(levelDetails[currentInWhile]->theCharArray2D[9].c_str());
+						ListOfSquareTextures.back()->index = atof(levelDetails[currentInWhile]->theCharArray2D[9].c_str());
 					}
 					else
 						///Daca e texture circle
@@ -602,7 +640,7 @@ void BSObstacles::incarcaHarta(std::string cale)
 										   atof(levelDetails[currentInWhile]->theCharArray2D[6].c_str()),
 										   levelDetails[currentInWhile]->theCharArray2D[1].c_str());
 
-                            ListOfRoundTextures.back()->index = atof(levelDetails[currentInWhile]->theCharArray2D[9].c_str());
+							ListOfRoundTextures.back()->index = atof(levelDetails[currentInWhile]->theCharArray2D[9].c_str());
 						}
 						else
 							///Daca e coin
@@ -612,7 +650,7 @@ void BSObstacles::incarcaHarta(std::string cale)
 										atof(levelDetails[currentInWhile]->theCharArray2D[4].c_str()),
 										atof(levelDetails[currentInWhile]->theCharArray2D[8].c_str()));
 
-                                listOfCoins.back()->index = atof(levelDetails[currentInWhile]->theCharArray2D[9].c_str());
+								listOfCoins.back()->index = atof(levelDetails[currentInWhile]->theCharArray2D[9].c_str());
 							}
 							else
 								///Daca e fan
@@ -659,61 +697,61 @@ void BSObstacles::incarcaHarta(std::string cale)
 										   atof(levelDetails[currentInWhile]->theCharArray2D[6].c_str()),
 										   atof(length), atof(powerX), atof(powerY));
 
-                                    listOfFans.back()->index = atof(levelDetails[currentInWhile]->theCharArray2D[9].c_str());
+									listOfFans.back()->index = atof(levelDetails[currentInWhile]->theCharArray2D[9].c_str());
 								}
 								else
 									///Daca e worm hole
 									if(atof(levelDetails[currentInWhile]->theCharArray2D[0].c_str()) == 7)
 									{
 										addWormHole(atof(levelDetails[currentInWhile]->theCharArray2D[7].c_str()),
-                                                      atof(levelDetails[currentInWhile]->theCharArray2D[8].c_str()),
-                                                      atof(levelDetails[currentInWhile]->theCharArray2D[3].c_str()),
-                                                      atof(levelDetails[currentInWhile]->theCharArray2D[4].c_str()));
+													atof(levelDetails[currentInWhile]->theCharArray2D[8].c_str()),
+													atof(levelDetails[currentInWhile]->theCharArray2D[3].c_str()),
+													atof(levelDetails[currentInWhile]->theCharArray2D[4].c_str()));
 
-                                        listOfWormHoles.back()->index = atof(levelDetails[currentInWhile]->theCharArray2D[9].c_str());
+										listOfWormHoles.back()->index = atof(levelDetails[currentInWhile]->theCharArray2D[9].c_str());
 									}
-                                    else
-                                        ///Daca e kinematic square
-                                        if(atof(levelDetails[currentInWhile]->theCharArray2D[0].c_str()) == 8)
-                                        {
-                                            addDinamicSquare(atof(levelDetails[currentInWhile]->theCharArray2D[3].c_str()),
-                                                             atof(levelDetails[currentInWhile]->theCharArray2D[4].c_str()),
-                                                             atof(levelDetails[currentInWhile]->theCharArray2D[5].c_str()),
-                                                             atof(levelDetails[currentInWhile]->theCharArray2D[6].c_str()),
-                                                             levelDetails[currentInWhile]->theCharArray2D[1], 0,
-                                                             levelDetails[currentInWhile]->theCharArray2D[7],
-                                                             b2_kinematicBody, atof(levelDetails[currentInWhile]->theCharArray2D[2].c_str()), 0);
+									else
+										///Daca e kinematic square
+										if(atof(levelDetails[currentInWhile]->theCharArray2D[0].c_str()) == 8)
+										{
+											addDinamicSquare(atof(levelDetails[currentInWhile]->theCharArray2D[3].c_str()),
+															 atof(levelDetails[currentInWhile]->theCharArray2D[4].c_str()),
+															 atof(levelDetails[currentInWhile]->theCharArray2D[5].c_str()),
+															 atof(levelDetails[currentInWhile]->theCharArray2D[6].c_str()),
+															 levelDetails[currentInWhile]->theCharArray2D[1], 0,
+															 levelDetails[currentInWhile]->theCharArray2D[7],
+															 b2_kinematicBody, atof(levelDetails[currentInWhile]->theCharArray2D[2].c_str()), 0);
 
-                                             ListOfSquareBodies.back()->index = atof(levelDetails[currentInWhile]->theCharArray2D[9].c_str());
-                                        }
-                                        else
-                                            ///Daca e kinematic circle
-                                            if(atof(levelDetails[currentInWhile]->theCharArray2D[0].c_str()) == 9)
-                                            {
-                                                addDinamicRound(atof(levelDetails[currentInWhile]->theCharArray2D[3].c_str()),
-                                                                atof(levelDetails[currentInWhile]->theCharArray2D[4].c_str()),
-                                                                atof(levelDetails[currentInWhile]->theCharArray2D[5].c_str()),
-                                                                levelDetails[currentInWhile]->theCharArray2D[1],
-                                                                0, levelDetails[currentInWhile]->theCharArray2D[7],
-                                                                b2_kinematicBody, atof(levelDetails[currentInWhile]->theCharArray2D[2].c_str()));
+											ListOfSquareBodies.back()->index = atof(levelDetails[currentInWhile]->theCharArray2D[9].c_str());
+										}
+										else
+											///Daca e kinematic circle
+											if(atof(levelDetails[currentInWhile]->theCharArray2D[0].c_str()) == 9)
+											{
+												addDinamicRound(atof(levelDetails[currentInWhile]->theCharArray2D[3].c_str()),
+																atof(levelDetails[currentInWhile]->theCharArray2D[4].c_str()),
+																atof(levelDetails[currentInWhile]->theCharArray2D[5].c_str()),
+																levelDetails[currentInWhile]->theCharArray2D[1],
+																0, levelDetails[currentInWhile]->theCharArray2D[7],
+																b2_kinematicBody, atof(levelDetails[currentInWhile]->theCharArray2D[2].c_str()));
 
-                                                ListOfRoundBodies.back()->index = atof(levelDetails[currentInWhile]->theCharArray2D[9].c_str());
-                                            }
-                                            else
-                                                ///Daca e dust body
-                                                if(atof(levelDetails[currentInWhile]->theCharArray2D[0].c_str()) == 10)
-                                                {
-                                                    addDinamicSquare(atof(levelDetails[currentInWhile]->theCharArray2D[3].c_str()),
-                                                                     atof(levelDetails[currentInWhile]->theCharArray2D[4].c_str()),
-                                                                     atof(levelDetails[currentInWhile]->theCharArray2D[5].c_str()),
-                                                                     atof(levelDetails[currentInWhile]->theCharArray2D[6].c_str()),
-                                                                     levelDetails[currentInWhile]->theCharArray2D[1], 0,
-                                                                     levelDetails[currentInWhile]->theCharArray2D[7],
-                                                                     b2_staticBody, atof(levelDetails[currentInWhile]->theCharArray2D[2].c_str()), 1);
+												ListOfRoundBodies.back()->index = atof(levelDetails[currentInWhile]->theCharArray2D[9].c_str());
+											}
+											else
+												///Daca e dust body
+												if(atof(levelDetails[currentInWhile]->theCharArray2D[0].c_str()) == 10)
+												{
+													addDinamicSquare(atof(levelDetails[currentInWhile]->theCharArray2D[3].c_str()),
+																	 atof(levelDetails[currentInWhile]->theCharArray2D[4].c_str()),
+																	 atof(levelDetails[currentInWhile]->theCharArray2D[5].c_str()),
+																	 atof(levelDetails[currentInWhile]->theCharArray2D[6].c_str()),
+																	 levelDetails[currentInWhile]->theCharArray2D[1], 0,
+																	 levelDetails[currentInWhile]->theCharArray2D[7],
+																	 b2_staticBody, atof(levelDetails[currentInWhile]->theCharArray2D[2].c_str()), 1);
 
-                                                     ListOfSquareDustBodies.back()->index = atof(levelDetails[currentInWhile]->theCharArray2D[9].c_str());
-                                                }
-            delete levelDetails[currentInWhile];
+													ListOfSquareDustBodies.back()->index = atof(levelDetails[currentInWhile]->theCharArray2D[9].c_str());
+												}
+		delete levelDetails[currentInWhile];
 		currentInWhile++;
 	}
 
@@ -721,15 +759,15 @@ void BSObstacles::incarcaHarta(std::string cale)
 	hero->theBody->ApplyLinearImpulse(b2Vec2(0.1, 0.1), hero->theBody->GetWorldCenter());
 
 	delete doc;
-    levelDetailsAttributes.clear();
-    theNodes.clear();
-    theAttributes.clear();
-    levelDetails.clear();
+	levelDetailsAttributes.clear();
+	theNodes.clear();
+	theAttributes.clear();
+	levelDetails.clear();
 
 	if(levelHasScript)
-    {
-        addScript(cale);///change nume- add "-script" in its name!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!(do it in the function)
-    }
+	{
+		addScript(cale);///change nume- add "-script" in its name!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!(do it in the function)
+	}
 
 	backgroundSky->xInit = (CameraExtremeRight + CameraExtremeLeft) / 2.0f ;
 	backgroundSky->yInit = (CameraExtremeUp + CameraExtremeDown) / 2.0f ;
@@ -743,20 +781,20 @@ void BSObstacles::incarcaHarta(std::string cale)
 	backgroundHighField->xInit = (CameraExtremeRight + SCREEN_WIDTH / 2.0 / 64) - backgroundHighField->width / 2.0f;
 	backgroundHighField->yInit = CameraExtremeDown - SCREEN_HEIGHT / 64 / 2.0f ;
 
-	std::cout<<'\n'<<"added objects"<<'\n';
+	std::cout << '\n' << "added objects" << '\n';
 }
 
 
 void BSObstacles::addScript(std::string Path)
 {
-    ///set the actual path of the script.
-    ///if the path of the level is: Level/level1.xml then the path of the script is: Level/level1-script.xml
-    std::string newPath = "";
-    for(unsigned int i = 0; i < Path.size() - 4; i++)
-    {
-        newPath += Path[i];
-    }
-    Path = newPath + "-script.xml";
+	///set the actual path of the script.
+	///if the path of the level is: Level/level1.xml then the path of the script is: Level/level1-script.xml
+	std::string newPath = "";
+	for(unsigned int i = 0; i < Path.size() - 4; i++)
+	{
+		newPath += Path[i];
+	}
+	Path = newPath + "-script.xml";
 
 	BSXmlFiles *doc = new BSXmlFiles();
 //	char theNodes[7][100];
@@ -777,68 +815,68 @@ void BSObstacles::addScript(std::string Path)
 	int i = 0;
 
 	while(i < levelDetails.size() && levelDetails[i])
-    {
-        int index = atof(levelDetails[i]->theCharArray2D[0].c_str());
-        bool founded = false;
-        ///search the scripted body in the squareBody list
-        for(int j = 0; j < ListOfSquareBodies.size(); j++)
-        {
-            if(ListOfSquareBodies[j]->index == index)
-            {
-                founded = true;
+	{
+		int index = atof(levelDetails[i]->theCharArray2D[0].c_str());
+		bool founded = false;
+		///search the scripted body in the squareBody list
+		for(int j = 0; j < ListOfSquareBodies.size(); j++)
+		{
+			if(ListOfSquareBodies[j]->index == index)
+			{
+				founded = true;
 
-                BSBodyScript *newScript = new BSBodyScript;
-                newScript->xCord = atof(levelDetails[i]->theCharArray2D[5].c_str());
-                newScript->xInitial = newScript->xCord;
-                newScript->yCord = atof(levelDetails[i]->theCharArray2D[6].c_str());
-                newScript->yInitial = newScript->yCord;
-                newScript->xPower = atof(levelDetails[i]->theCharArray2D[1].c_str());
-                newScript->yPower = atof(levelDetails[i]->theCharArray2D[2].c_str());
-                newScript->xLength = atof(levelDetails[i]->theCharArray2D[3].c_str());
-                newScript->yLength = atof(levelDetails[i]->theCharArray2D[4].c_str());
-                newScript->value1 = 1;
-                newScript->value2 = 90;
+				BSBodyScript *newScript = new BSBodyScript;
+				newScript->xCord = atof(levelDetails[i]->theCharArray2D[5].c_str());
+				newScript->xInitial = newScript->xCord;
+				newScript->yCord = atof(levelDetails[i]->theCharArray2D[6].c_str());
+				newScript->yInitial = newScript->yCord;
+				newScript->xPower = atof(levelDetails[i]->theCharArray2D[1].c_str());
+				newScript->yPower = atof(levelDetails[i]->theCharArray2D[2].c_str());
+				newScript->xLength = atof(levelDetails[i]->theCharArray2D[3].c_str());
+				newScript->yLength = atof(levelDetails[i]->theCharArray2D[4].c_str());
+				newScript->value1 = 1;
+				newScript->value2 = 90;
 
-                ListOfSquareBodies[j]->script = newScript;
+				ListOfSquareBodies[j]->script = newScript;
 
-                break;
-            }
-        }
-        ///daca nu l-a gasit in lista de squareBody atunci e in cea de roundBodies
-        if(!founded)
-        {
-            for(int j = 0; j < ListOfRoundBodies.size(); j++)
-            {
-                if(ListOfRoundBodies[j]->index == index)
-                {
-                    founded = true;
+				break;
+			}
+		}
+		///daca nu l-a gasit in lista de squareBody atunci e in cea de roundBodies
+		if(!founded)
+		{
+			for(int j = 0; j < ListOfRoundBodies.size(); j++)
+			{
+				if(ListOfRoundBodies[j]->index == index)
+				{
+					founded = true;
 
-                    BSBodyScript *newScript = new BSBodyScript;
-                    newScript->xCord = atof(levelDetails[i]->theCharArray2D[5].c_str());
-                    newScript->xInitial = newScript->xCord;
-                    newScript->yCord = atof(levelDetails[i]->theCharArray2D[6].c_str());
-                    newScript->yInitial = newScript->yCord;
-                    newScript->xPower = atof(levelDetails[i]->theCharArray2D[1].c_str());
-                    newScript->yPower = atof(levelDetails[i]->theCharArray2D[2].c_str());
-                    newScript->xLength = atof(levelDetails[i]->theCharArray2D[3].c_str());
-                    newScript->yLength = atof(levelDetails[i]->theCharArray2D[4].c_str());
-                    newScript->value1 = 1;
-                    newScript->value2 = 90;
+					BSBodyScript *newScript = new BSBodyScript;
+					newScript->xCord = atof(levelDetails[i]->theCharArray2D[5].c_str());
+					newScript->xInitial = newScript->xCord;
+					newScript->yCord = atof(levelDetails[i]->theCharArray2D[6].c_str());
+					newScript->yInitial = newScript->yCord;
+					newScript->xPower = atof(levelDetails[i]->theCharArray2D[1].c_str());
+					newScript->yPower = atof(levelDetails[i]->theCharArray2D[2].c_str());
+					newScript->xLength = atof(levelDetails[i]->theCharArray2D[3].c_str());
+					newScript->yLength = atof(levelDetails[i]->theCharArray2D[4].c_str());
+					newScript->value1 = 1;
+					newScript->value2 = 90;
 
-                    ListOfRoundBodies[j]->script = newScript;
+					ListOfRoundBodies[j]->script = newScript;
 
-                    break;
-                }
-            }
-        }
+					break;
+				}
+			}
+		}
 
-        std::cout<<"new script: "<<index<<' '<<levelDetails[i]->theCharArray2D[5]<<' '<<
-                                                    levelDetails[i]->theCharArray2D[6]<<'\n';
+		std::cout << "new script: " << index << ' ' << levelDetails[i]->theCharArray2D[5] << ' ' <<
+				  levelDetails[i]->theCharArray2D[6] << '\n';
 
 		delete levelDetails[i];
-        i++;
-    }
-    delete doc;
+		i++;
+	}
+	delete doc;
 }
 
 
@@ -896,72 +934,72 @@ void BSObstacles::addFan(float x, float y, float width, float height, float leng
 	listOfFans.push_back(newFan);
 
 	for(int i = 0; i < newFan->nrOfParticles; i++)
-    {
-        BSBody *newPart = new BSBody;
-        BSColorRGBA black = {0, 0, 0, 1};
-        newPart->color = black;
-        float maximX, minimX, maximY, minimY;
+	{
+		BSBody *newPart = new BSBody;
+		BSColorRGBA black = {0, 0, 0, 1};
+		newPart->color = black;
+		float maximX, minimX, maximY, minimY;
 
-        ///daca e pe orizontala
-        if(powerX)
-        {
-            newPart->width = 1;
-            newPart->height = 0.05f;
-            ///daca bate vantul spre dreapta
-            if(powerX > 0)
-            {
-                maximX = x + length;
-                minimX = x;
-                ///salvez viteza particulelor pozitiva pe orizontala
-                newPart->value1 = (rand()%3 + 1 ) / 10.0f;
-            }
-            else
-            {
-                maximX = x;
-                minimX = x - length;
-                ///salvez viteza particulelor negativa pe orizontala
-                newPart->value1 = (rand()%3 + 1) * (-1) / 10.0f;
-            }
+		///daca e pe orizontala
+		if(powerX)
+		{
+			newPart->width = 1;
+			newPart->height = 0.05f;
+			///daca bate vantul spre dreapta
+			if(powerX > 0)
+			{
+				maximX = x + length;
+				minimX = x;
+				///salvez viteza particulelor pozitiva pe orizontala
+				newPart->value1 = (rand() % 3 + 1 ) / 10.0f;
+			}
+			else
+			{
+				maximX = x;
+				minimX = x - length;
+				///salvez viteza particulelor negativa pe orizontala
+				newPart->value1 = (rand() % 3 + 1) * (-1) / 10.0f;
+			}
 
-            maximY = y + (height / 2.0f);
-            minimY = y - (height / 2.0f);
-            ///viteza pe verticala este 0
-            newPart->value2 = 0;
-        }
-        else
-        {
-            newPart->width = 0.1f;
-            newPart->height = 1;
-            maximX = x + (width / 2.0f);
-            minimX = x - (width / 2.0f);
+			maximY = y + (height / 2.0f);
+			minimY = y - (height / 2.0f);
+			///viteza pe verticala este 0
+			newPart->value2 = 0;
+		}
+		else
+		{
+			newPart->width = 0.1f;
+			newPart->height = 1;
+			maximX = x + (width / 2.0f);
+			minimX = x - (width / 2.0f);
 
-            if(powerY > 0)
-            {
-                maximY = y + length;
-                minimY = y;
-                newPart->value2 = (rand()%3 + 1 ) / 10.0f;
-            }
-            else
-            {
-                maximY = y;
-                minimY = y - length;
-                newPart->value2 = (rand()%3 + 1) * (-1) / 10.0f;
-            }
-            newPart->value1 = 0;
-        }
+			if(powerY > 0)
+			{
+				maximY = y + length;
+				minimY = y;
+				newPart->value2 = (rand() % 3 + 1 ) / 10.0f;
+			}
+			else
+			{
+				maximY = y;
+				minimY = y - length;
+				newPart->value2 = (rand() % 3 + 1) * (-1) / 10.0f;
+			}
+			newPart->value1 = 0;
+		}
 
-        float posX = ((float)rand() / ((float)RAND_MAX + 1.0)) * (maximX - minimX + 1) + minimX;
-        float posY = ((float)rand() / ((float)RAND_MAX + 1.0)) * (maximY - minimY + 1) + minimY;
+		float posX = ((float)rand() / ((float)RAND_MAX + 1.0)) * (maximX - minimX + 1) + minimX;
+		float posY = ((float)rand() / ((float)RAND_MAX + 1.0)) * (maximY - minimY + 1) + minimY;
 
-        newFan->xMax = maximX;
-        newFan->yMax = maximY;
-        newFan->xMin = minimX;
-        newFan->yMin = minimY;
+		newFan->xMax = maximX;
+		newFan->yMax = maximY;
+		newFan->xMin = minimX;
+		newFan->yMin = minimY;
 
-        newPart->xCord = posX;
-        newPart->yCord = posY;
-        newFan->particles.push_back(newPart);
-    }
+		newPart->xCord = posX;
+		newPart->yCord = posY;
+		newFan->particles.push_back(newPart);
+	}
 }
 
 
@@ -988,11 +1026,11 @@ void BSObstacles::addTheAnimationsForMap(std::string theLocationOfAnimation)
 	std::ifstream animationsDetails(newAnimationDetailPath.c_str());
 	int totalNrAnimations, total1, total2, total3, totalTime1, totalTime2, totalTime3, totalLoop1, totalLoop2, totalLoop3;
 
-	animationsDetails>>totalNrAnimations;
+	animationsDetails >> totalNrAnimations;
 
 	for(int i = 0 ; i < totalNrAnimations ; i++)
 	{
-		animationsDetails>>total1>>total2>>total3>>totalTime1>>totalTime2>>totalTime3>>totalLoop1>>totalLoop2>>totalLoop3>>detailName;
+		animationsDetails >> total1 >> total2 >> total3 >> totalTime1 >> totalTime2 >> totalTime3 >> totalLoop1 >> totalLoop2 >> totalLoop3 >> detailName;
 
 		std::string newAnimationCale = "Animations/" + theLocationOfAnimation + "/" + detailName + "/playerTexture";
 
@@ -1000,7 +1038,7 @@ void BSObstacles::addTheAnimationsForMap(std::string theLocationOfAnimation)
 
 		animationsObstacleClass->addAnimation(total1, total2, total3, totalTime1, totalTime2, totalTime3, totalLoop1, totalLoop2, totalLoop3, i, newAnimationCale);
 	}
-    nrOfListOfAnimations = 1;
+	nrOfListOfAnimations = 1;
 }
 
 void BSObstacles::loadAnimationList(std::string path, int firstPart, int secondPart, int thirdPart)
@@ -1017,7 +1055,7 @@ void BSObstacles::addDinamicSquare(float BodyX, float BodyY, float BodyW, float 
 								   std::string textureName, GLuint vao, std::string userData,
 								   b2BodyType tipulCorpului, int canKillHero, int isDust)
 {
-	std::cout<<"new square Body: "<<canKillHero<<" "<<BodyX<<" "<<BodyY<<" "<<BodyW<<" "<<BodyH<<" "<<userData<<'\n';
+	std::cout << "new square Body: " << canKillHero << " " << BodyX << " " << BodyY << " " << BodyW << " " << BodyH << " " << userData << '\n';
 	BSTheSquareBodies *p = new BSTheSquareBodies;
 
 	p->theBody = createBodies(tipulCorpului, BodyX, BodyY, BodyW, BodyH, userData, nrBodies, 0, false);
@@ -1033,17 +1071,17 @@ void BSObstacles::addDinamicSquare(float BodyX, float BodyY, float BodyW, float 
 	p->script = NULL;
 	p->nameOfTexture = textureName;
 
-	loadATexture(textureName, p->texture);
+	BS_Renderer::loadATexture(textureName, p->texture);
 
 	p->color.setColor(1, 1, 1, 1);
 
-    p->value1 = 0;
-    p->value2 = 0;
+	p->value1 = 0;
+	p->value2 = 0;
 
 	USERDATA* dataForUser = new USERDATA;
 
-    dataForUser->isDustAble = isDust;
-    dataForUser->isDust = 0;
+	dataForUser->isDustAble = isDust;
+	dataForUser->isDust = 0;
 
 	if(canKillHero == 2)
 	{
@@ -1063,21 +1101,21 @@ void BSObstacles::addDinamicSquare(float BodyX, float BodyY, float BodyW, float 
 	dataForUser->name = userData;
 	p->theBody->SetUserData(dataForUser);
 
-    if(!isDust)
+	if(!isDust)
 	{
-	    ListOfSquareBodies.push_back(p);
+		ListOfSquareBodies.push_back(p);
 	}
 	else
-    {
-	    ListOfSquareDustBodies.push_back(p);
-    }
+	{
+		ListOfSquareDustBodies.push_back(p);
+	}
 }
 
 void BSObstacles::addDinamicRound(float BodyX, float BodyY, float BodyR,
 								  std::string textureName, GLuint vao, std::string userData,
 								  b2BodyType tipulCorpului, int canKillHero)
 {
-	std::cout<<"new round Body: "<<canKillHero<<" "<<BodyX<<" "<<BodyY<<" "<<BodyR<<" "<<userData<<'\n';
+	std::cout << "new round Body: " << canKillHero << " " << BodyX << " " << BodyY << " " << BodyR << " " << userData << '\n';
 	BSTheRoundBodies *p = new BSTheRoundBodies;
 
 	p->theBody = createCircleBodies(tipulCorpului, BodyX, BodyY, BodyR / 2, userData, nrBodies, 0, false);
@@ -1087,7 +1125,7 @@ void BSObstacles::addDinamicRound(float BodyX, float BodyY, float BodyR,
 	p->nameOfTexture = textureName;
 	p->script = NULL;
 
-	loadATexture(textureName, p->texture);
+	BS_Renderer::loadATexture(textureName, p->texture);
 
 	p->color.setColor(1, 1, 1, 1);
 	p->isRotating = true;
@@ -1136,28 +1174,29 @@ void BSObstacles::addOnlyTexture(int squareOrCirlce, float xCoord, float yCoord,
 
 		char textureCharPath[100] = "";
 		strcpy(textureCharPath, texturePath.c_str());
-		loadATexture(textureCharPath, p->texture);
+		BS_Renderer::loadATexture(textureCharPath, p->texture);
 
 		///Salvez primul corp din lista inlantuita
 		ListOfSquareTextures.push_back(p);
 	}
-	else if(squareOrCirlce == -1)
-	{
-		std::cout<<"from obstacles: added a round"<<'\n';
-		BSTextureRound *p = new BSTextureRound;
-		setTheVaoData(p->vao, p->vbo, p->ibo, p->data, width, width);
-		p->width = width;
-		p->height = width;
-		p->xCord = xCoord;
-		p->yCord = yCoord;
-		p->nameOfTexture = texturePath;
-		p->color.setColor(1, 1, 1, 1);
+	else
+		if(squareOrCirlce == -1)
+		{
+			std::cout << "from obstacles: added a round" << '\n';
+			BSTextureRound *p = new BSTextureRound;
+			setTheVaoData(p->vao, p->vbo, p->ibo, p->data, width, width);
+			p->width = width;
+			p->height = width;
+			p->xCord = xCoord;
+			p->yCord = yCoord;
+			p->nameOfTexture = texturePath;
+			p->color.setColor(1, 1, 1, 1);
 
-		loadATexture(texturePath.c_str(), p->texture);
+			BS_Renderer::loadATexture(texturePath.c_str(), p->texture);
 
-		///Salvez primul corp din lista inlantuita
-		ListOfRoundTextures.push_back(p);
-	}
+			///Salvez primul corp din lista inlantuita
+			ListOfRoundTextures.push_back(p);
+		}
 }
 
 
@@ -1166,12 +1205,12 @@ void BSObstacles::addOnlyTexture(int squareOrCirlce, float xCoord, float yCoord,
 void BSObstacles::addMessageTexture(float xCoord, float yCoord, float width, float height, std::string textureName)
 {
 	BSTheMessages* newMessage = new BSTheMessages;
-	std::cout<<"animation added: "<<textureName<<'\n';
+	std::cout << "animation added: " << textureName << '\n';
 	///Load the message texture
 
-	loadATexture(textureName, newMessage->textureOfMessage);
+	BS_Renderer::loadATexture(textureName, newMessage->textureOfMessage);
 	int newWidth, newHeight;
-	getTextureWidthAndHeight(textureName, newWidth, newHeight);
+	BS_Renderer::getTextureWidthAndHeight(textureName, newWidth, newHeight);
 	newMessage->widthOfMessage = newWidth / scaleRatio;
 	newMessage->heightOfMessage = newHeight / scaleRatio;
 
@@ -1189,7 +1228,7 @@ void BSObstacles::addMessageTexture(float xCoord, float yCoord, float width, flo
 	///Load the message sign texture
 	std::string fullTextureName = "Animations/messageAnimation/theMessageSign.png";
 
-	loadATexture(fullTextureName.c_str(), newMessage->textureOfSign);
+	BS_Renderer::loadATexture(fullTextureName.c_str(), newMessage->textureOfSign);
 	setTheVaoData(newMessage->vaoBufferOfSign, newMessage->vboBufferOfSign, newMessage->iboBufferOfSign,
 				  newMessage->dataOfSign, Hero_size, Hero_size * 2.0f);
 
@@ -1274,35 +1313,35 @@ void BSObstacles::addBackgrounds()
 	backgroundSky->height = (float) SCREEN_HEIGHT / scaleRatio;
 	backgroundSky->width = (float) backgroundSky->height * ratioImage;
 	backgroundSky->color = color;
-	loadATexture("Background images/sky.png", backgroundSky->texture);
+	BS_Renderer::loadATexture("Background images/sky.png", backgroundSky->texture);
 	setTheVaoData(backgroundSky->vao, backgroundSky->vbo, backgroundSky->ibo,
 				  backgroundSky->data, backgroundSky->width, backgroundSky->height);
 
 	backgroundMountain->height = (float) SCREEN_HEIGHT / scaleRatio;
 	backgroundMountain->width = (float) backgroundMountain->height * ratioImage;
 	backgroundMountain->color = color;
-	loadATexture("Background images/mountains.png", backgroundMountain->texture);
+	BS_Renderer::loadATexture("Background images/mountains.png", backgroundMountain->texture);
 	setTheVaoData(backgroundMountain->vao, backgroundMountain->vbo, backgroundMountain->ibo,
 				  backgroundMountain->data, backgroundMountain->width, backgroundMountain->height);
 
 	backgroundBush->height = (float) SCREEN_HEIGHT / scaleRatio;
 	backgroundBush->width = (float) backgroundBush->height * ratioImage;
 	backgroundBush->color = color;
-	loadATexture("Background images/bush.png", backgroundBush->texture);
+	BS_Renderer::loadATexture("Background images/bush.png", backgroundBush->texture);
 	setTheVaoData(backgroundBush->vao, backgroundBush->vbo, backgroundBush->ibo,
 				  backgroundBush->data, backgroundBush->width, backgroundBush->height);
 
 	backgroundField->height = (float) SCREEN_HEIGHT / scaleRatio;
 	backgroundField->width = (float) backgroundField->height * ratioImage;
 	backgroundField->color = color;
-	loadATexture("Background images/field.png", backgroundField->texture);
+	BS_Renderer::loadATexture("Background images/field.png", backgroundField->texture);
 	setTheVaoData(backgroundField->vao, backgroundField->vbo, backgroundField->ibo,
 				  backgroundField->data, backgroundField->width, backgroundField->height);
 
 	backgroundHighField->height = (float) SCREEN_HEIGHT / scaleRatio;
 	backgroundHighField->width = (float) backgroundHighField->height * ratioImage;
 	backgroundHighField->color = color;
-	loadATexture("Background images/high field.png", backgroundHighField->texture);
+	BS_Renderer::loadATexture("Background images/high field.png", backgroundHighField->texture);
 	setTheVaoData(backgroundHighField->vao, backgroundHighField->vbo, backgroundHighField->ibo,
 				  backgroundHighField->data, backgroundHighField->width, backgroundHighField->height);
 }
@@ -1310,7 +1349,7 @@ void BSObstacles::addBackgrounds()
 
 void BSObstacles::addCloudyParticles()
 {
-    addTheTexturesOfCloudyParticles();
+	addTheTexturesOfCloudyParticles();
 
 
 	float minimSize = 3;
@@ -1350,7 +1389,7 @@ void BSObstacles::addCloudyParticles()
 
 void BSObstacles::addWormHole(int index, int connectionIndex, float x, float y)
 {
-	std::cout<<"new worm hole: "<<x<<" "<<y<<" "<<index<<" "<<connectionIndex<<'\n';
+	std::cout << "new worm hole: " << x << " " << y << " " << index << " " << connectionIndex << '\n';
 	BSWormHole *newWorm = new BSWormHole;
 	newWorm->value1 = 0;
 	newWorm->xCord = x;
@@ -1378,7 +1417,7 @@ void BSObstacles::addTheTexturesOfCloudyParticles()
 {
 	for(int i = 1; i <= 5; i++)
 	{
-		loadATexture("Background images/cloud" + BStoString(i) + ".png", clouds[i]);
+		BS_Renderer::loadATexture("Background images/cloud" + BStoString(i) + ".png", clouds[i]);
 	}
 }
 
@@ -1410,9 +1449,9 @@ void BSObstacles::destroyAllBodiesDustSquare()
 		glDeleteTextures(1, &deletedBody->texture);
 		glDeleteVertexArrays(1, &deletedBody->vao);
 
-        if(deletedBody->theBody)
+		if(deletedBody->theBody)
 		{
-		    world->DestroyBody(deletedBody->theBody);
+			world->DestroyBody(deletedBody->theBody);
 		}
 
 		delete ListOfSquareDustBodies.back();
@@ -1435,9 +1474,9 @@ void BSObstacles::destroyAllBodiesSquare()
 
 		world->DestroyBody(deletedBody->theBody);
 
-        if(deletedBody->script)
+		if(deletedBody->script)
 		{
-		    delete deletedBody->script;
+			delete deletedBody->script;
 		}
 
 		delete deletedBody;
@@ -1460,9 +1499,9 @@ void BSObstacles::destroyAllBodiesRound()
 
 		world->DestroyBody(deletedBody->theBody);
 
-        if(deletedBody->script)
+		if(deletedBody->script)
 		{
-		    delete deletedBody->script;
+			delete deletedBody->script;
 		}
 
 		delete ListOfRoundBodies.back();
@@ -1511,12 +1550,12 @@ void BSObstacles::destroyAllFans()
 {
 	while(!listOfFans.empty())
 	{
-	    std::vector<BSBody*> theList = ((BSFans*)(listOfFans.back()))->particles;
-        while(!theList.empty())
-        {
-            delete theList.back();
-            theList.pop_back();
-        }
+		std::vector<BSBody*> theList = ((BSFans*)(listOfFans.back()))->particles;
+		while(!theList.empty())
+		{
+			delete theList.back();
+			theList.pop_back();
+		}
 		delete listOfFans.back();
 		listOfFans.pop_back();
 	}

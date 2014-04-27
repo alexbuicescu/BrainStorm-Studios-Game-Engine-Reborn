@@ -5,7 +5,7 @@
 #include "BS_Sound.h"
 #include "BSTexturedPolygonProgram2D.h"
 
-extern BS_Sound *_BS_sound_device;
+extern BS_Sound *_my_sound_device;
 extern BSTexturedPolygonProgram2D *_my_shader_program;
 
 

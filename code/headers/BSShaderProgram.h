@@ -9,30 +9,30 @@
 
 class BSShaderProgram
 {
-	public:
-		BSShaderProgram();
+public:
+	BSShaderProgram();
 
-        virtual ~BSShaderProgram();
+	virtual ~BSShaderProgram();
 
-		virtual bool loadProgram(std::string _path_vertex_shader, std::string _path_fragment_shader) = 0;
+	virtual bool loadProgram(std::string _path_vertex_shader, std::string _path_fragment_shader) = 0;
 
-		virtual void freeProgram();
+	virtual void freeProgram();
 
-		bool bind();
+	bool bind();
 
-		void unbind();
+	void unbind();
 
-		GLuint getProgramID();
+	GLuint getProgramID();
 
 
-	protected:
-	    GLuint BSProgramID;
+protected:
+	GLuint BSProgramID;
 
-		void printProgramLog( GLuint program );
+	void printProgramLog( GLuint program );
 
-		void printShaderLog( GLuint shader );
+	void printShaderLog( GLuint shader );
 
-		GLuint loadShaderFromFile( std::string path, GLenum shaderType );
+	GLuint loadShaderFromFile( std::string path, GLenum shaderType );
 
 };
 
