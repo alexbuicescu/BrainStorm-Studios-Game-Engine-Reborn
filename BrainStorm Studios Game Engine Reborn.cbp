@@ -34,47 +34,14 @@
 		<Compiler>
 			<Add option="-std=c++11" />
 			<Add directory="Libraries (include)" />
+			<Add directory="code/headers" />
+			<Add directory="code/headers/Glew" />
 		</Compiler>
 		<Linker>
 			<Add option="-lmingw32 -lSOIL -lopengl32 -lglu32 -lSDLmain -lSDL -lBox2D -lOpenAL32" />
 			<Add directory="Libraries (lib)" />
 			<Add directory="Libraries (lib)/libs OpenAl/Win32" />
 		</Linker>
-		<Unit filename="BSActionStuff.cpp" />
-		<Unit filename="BSActionStuff.h" />
-		<Unit filename="BSAnimationClass.cpp" />
-		<Unit filename="BSAnimationClass.h" />
-		<Unit filename="BSInputClass.cpp" />
-		<Unit filename="BSInputClass.h" />
-		<Unit filename="BSLevelMenu.cpp" />
-		<Unit filename="BSLevelMenu.h" />
-		<Unit filename="BSObstacles.cpp" />
-		<Unit filename="BSObstacles.h" />
-		<Unit filename="BSOpenGL.h" />
-		<Unit filename="BSRenderer.h" />
-		<Unit filename="BSShaderProgram.cpp" />
-		<Unit filename="BSShaderProgram.h" />
-		<Unit filename="BSStructs.h" />
-		<Unit filename="BSTexture.cpp" />
-		<Unit filename="BSTexture.h" />
-		<Unit filename="BSTexturedPolygonProgram2D.cpp" />
-		<Unit filename="BSTexturedPolygonProgram2D.h" />
-		<Unit filename="BSUtilities.cpp" />
-		<Unit filename="BSUtilities.h" />
-		<Unit filename="BSValues.h" />
-		<Unit filename="BSXmlFiles.cpp" />
-		<Unit filename="BSXmlFiles.h" />
-		<Unit filename="BS_Available_Shaders.h" />
-		<Unit filename="BS_Engine.cpp" />
-		<Unit filename="BS_Engine.h" />
-		<Unit filename="BS_Screen_Menu.cpp" />
-		<Unit filename="BS_Screen_Menu.h" />
-		<Unit filename="BS_Sound.cpp" />
-		<Unit filename="BS_Sound.h" />
-		<Unit filename="Glew/glew.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="Glew/glew.h" />
 		<Unit filename="Levels/last level textures.txt" />
 		<Unit filename="Levels/last level.txt" />
 		<Unit filename="Levels/level new.txt" />
@@ -89,10 +56,50 @@
 		<Unit filename="Levels/pozitii obstacole.txt" />
 		<Unit filename="Levels/the newsest level.txt" />
 		<Unit filename="Levels/ultimul nivel.txt" />
-		<Unit filename="My_Values.h" />
 		<Unit filename="Shaders/BSTexturedPolygonProgram2D.glfs" />
 		<Unit filename="Shaders/BSTexturedPolygonProgram2D.glvs" />
-		<Unit filename="main.cpp" />
+		<Unit filename="code/headers/BSActionStuff.h" />
+		<Unit filename="code/headers/BSActionStuffRound.h" />
+		<Unit filename="code/headers/BSAnimationClass.h" />
+		<Unit filename="code/headers/BSInputClass.h" />
+		<Unit filename="code/headers/BSLevelMenu.h" />
+		<Unit filename="code/headers/BSObstacles.h" />
+		<Unit filename="code/headers/BSOpenGL.h" />
+		<Unit filename="code/headers/BSRenderer.h" />
+		<Unit filename="code/headers/BSShaderProgram.h" />
+		<Unit filename="code/headers/BSStructs.h" />
+		<Unit filename="code/headers/BSTexture.h" />
+		<Unit filename="code/headers/BSTexturedPolygonProgram2D.h" />
+		<Unit filename="code/headers/BSTexturedVertex2D.h" />
+		<Unit filename="code/headers/BSUtilities.h" />
+		<Unit filename="code/headers/BSValues.h" />
+		<Unit filename="code/headers/BSXmlFiles.h" />
+		<Unit filename="code/headers/BS_Available_Shaders.h" />
+		<Unit filename="code/headers/BS_Engine.h" />
+		<Unit filename="code/headers/BS_Renderer.h" />
+		<Unit filename="code/headers/BS_Screen_Menu.h" />
+		<Unit filename="code/headers/BS_Sound.h" />
+		<Unit filename="code/headers/Glew/glew.h" />
+		<Unit filename="code/headers/Glew/glxew.h" />
+		<Unit filename="code/headers/Glew/wglew.h" />
+		<Unit filename="code/headers/My_Values.h" />
+		<Unit filename="code/src/BSActionStuff.cpp" />
+		<Unit filename="code/src/BSAnimationClass.cpp" />
+		<Unit filename="code/src/BSInputClass.cpp" />
+		<Unit filename="code/src/BSLevelMenu.cpp" />
+		<Unit filename="code/src/BSObstacles.cpp" />
+		<Unit filename="code/src/BSShaderProgram.cpp" />
+		<Unit filename="code/src/BSTexture.cpp" />
+		<Unit filename="code/src/BSTexturedPolygonProgram2D.cpp" />
+		<Unit filename="code/src/BSUtilities.cpp" />
+		<Unit filename="code/src/BSXmlFiles.cpp" />
+		<Unit filename="code/src/BS_Engine.cpp" />
+		<Unit filename="code/src/BS_Screen_Menu.cpp" />
+		<Unit filename="code/src/BS_Sound.cpp" />
+		<Unit filename="code/src/Glew/glew.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="code/src/main.cpp" />
 		<Unit filename="resources/resource.rc">
 			<Option compilerVar="WINDRES" />
 		</Unit>
