@@ -11,7 +11,6 @@
 				<Option object_output="obj/Debug/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
-				<Option use_console_runner="0" />
 				<Compiler>
 					<Add option="-g" />
 					<Add directory="include" />
@@ -56,7 +55,6 @@
 		<Unit filename="Levels/pozitii obstacole.txt" />
 		<Unit filename="Levels/the newsest level.txt" />
 		<Unit filename="Levels/ultimul nivel.txt" />
-		<Unit filename="Shaders/BSTexturedPolygonProgram2D.glfs" />
 		<Unit filename="Shaders/BSTexturedPolygonProgram2D.glvs" />
 		<Unit filename="code/headers/BSActionStuff.h" />
 		<Unit filename="code/headers/BSAnimationClass.h" />
@@ -64,7 +62,6 @@
 		<Unit filename="code/headers/BSLevelMenu.h" />
 		<Unit filename="code/headers/BSObstacles.h" />
 		<Unit filename="code/headers/BSOpenGL.h" />
-		<Unit filename="code/headers/BSRenderer.h" />
 		<Unit filename="code/headers/BSShaderProgram.h" />
 		<Unit filename="code/headers/BSStructs.h" />
 		<Unit filename="code/headers/BSTexture.h" />
@@ -75,6 +72,7 @@
 		<Unit filename="code/headers/BSXmlFiles.h" />
 		<Unit filename="code/headers/BS_Audio.h" />
 		<Unit filename="code/headers/BS_Available_Shaders.h" />
+		<Unit filename="code/headers/BS_Camera.h" />
 		<Unit filename="code/headers/BS_Engine.h" />
 		<Unit filename="code/headers/BS_Game_Demo.h" />
 		<Unit filename="code/headers/BS_Object.h" />
@@ -95,9 +93,11 @@
 		<Unit filename="code/src/BSUtilities.cpp" />
 		<Unit filename="code/src/BSXmlFiles.cpp" />
 		<Unit filename="code/src/BS_Audio.cpp" />
+		<Unit filename="code/src/BS_Camera.cpp" />
 		<Unit filename="code/src/BS_Engine.cpp" />
 		<Unit filename="code/src/BS_Game_Demo.cpp" />
 		<Unit filename="code/src/BS_Object.cpp" />
+		<Unit filename="code/src/BS_Renderer.cpp" />
 		<Unit filename="code/src/BS_Screen_Menu.cpp" />
 		<Unit filename="code/src/Glew/glew.c">
 			<Option compilerVar="CC" />
