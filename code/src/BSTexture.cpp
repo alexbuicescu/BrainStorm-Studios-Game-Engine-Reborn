@@ -34,7 +34,7 @@ void BSTexture::loadTheLoadingImage()
 
 	theLoadingImage->width = (float) SCREEN_WIDTH / cross_platform_scale + 1;
 	theLoadingImage->height = (float) SCREEN_HEIGHT / cross_platform_scale + 1;
-	addObstacle->setTheVaoData(theLoadingImage->vao, theLoadingImage->vbo, theLoadingImage->ibo,
+	BS_Renderer::set_vao_data(theLoadingImage->vao, theLoadingImage->vbo, theLoadingImage->ibo,
 							   theLoadingImage->data, theLoadingImage->width, theLoadingImage->height);
 
 	BS_Renderer::loadATexture("smb loading.png", theLoadingImage->texture);
@@ -150,9 +150,9 @@ void BSTexture::initMenuButtons()
 			BS_Renderer::loadATexture("Button images/New Buttons/" + namesOfMenus + "/The Unnamed Buttons/picture0" + BStoString(j) + ".png", newButton->textureOfButtons[1]);
 
 			///Set the data for the menu buttons
-			addObstacle->setTheVaoData(newButton->vaoOfButtons[0], newButton->vbo[0], newButton->ibo[0], newButton->dataOfButtons[0], width * 2.0f, height * 2.0f);
+			BS_Renderer::set_vao_data(newButton->vaoOfButtons[0], newButton->vbo[0], newButton->ibo[0], newButton->dataOfButtons[0], width * 2.0f, height * 2.0f);
 			///Set the data for the menu buttons
-			addObstacle->setTheVaoData(newButton->vaoOfButtons[1], newButton->vbo[1], newButton->ibo[1], newButton->dataOfButtons[1], (width + 0.1f) * 2.0f, (height + 0.1f) * 2.0f);
+			BS_Renderer::set_vao_data(newButton->vaoOfButtons[1], newButton->vbo[1], newButton->ibo[1], newButton->dataOfButtons[1], (width + 0.1f) * 2.0f, (height + 0.1f) * 2.0f);
 
 			newMenu->listOfButtons.push_back(newButton);
 
@@ -171,12 +171,12 @@ void BSTexture::initMenuLevels()
 	for(int i = 0 ; i < nrOfChapters; i++)
 	{
 		///Set the Menu Chapters
-		addObstacle->setTheVaoData(chaptere[i]->vao, chaptere[i]->vbo, chaptere[i]->ibo, chaptere[i]->data, chaptere[i]->width, chaptere[i]->height);
+		BS_Renderer::set_vao_data(chaptere[i]->vao, chaptere[i]->vbo, chaptere[i]->ibo, chaptere[i]->data, chaptere[i]->width, chaptere[i]->height);
 
 		for(int j = 0 ; j < chaptere[i]->nrOfLevels ; j++)
 		{
 			///Set the Menu Levels
-			addObstacle->setTheVaoData(chaptere[i]->levelFromChapter[j]->vaoBufferOfLevel, chaptere[i]->levelFromChapter[j]->vboBufferOfLevel,
+			BS_Renderer::set_vao_data(chaptere[i]->levelFromChapter[j]->vaoBufferOfLevel, chaptere[i]->levelFromChapter[j]->vboBufferOfLevel,
 									   chaptere[i]->levelFromChapter[j]->iboBufferOfLevel, chaptere[i]->levelFromChapter[j]->dataOfLevel,
 									   chaptere[i]->levelFromChapter[j]->width, chaptere[i]->levelFromChapter[j]->height);
 		}
@@ -187,25 +187,25 @@ void BSTexture::initMenuLevels()
 
 		chaptere[i]->levelFromChapter[0]->widthConnectionUpDownLevel = chaptere[i]->levelFromChapter[0]->width / 5;
 		chaptere[i]->levelFromChapter[0]->heightConnectionUpDownLevel = (chaptere[i]->levelFromChapter[0]->height / 1.4) * 2.0f;
-		addObstacle->setTheVaoData(chaptere[i]->levelFromChapter[0]->vaoBufferOfConnectionLeftRight, chaptere[i]->levelFromChapter[0]->vboBufferOfConnectionLeftRight,
+		BS_Renderer::set_vao_data(chaptere[i]->levelFromChapter[0]->vaoBufferOfConnectionLeftRight, chaptere[i]->levelFromChapter[0]->vboBufferOfConnectionLeftRight,
 								   chaptere[i]->levelFromChapter[0]->iboBufferOfConnectionLeftRight, chaptere[i]->levelFromChapter[0]->dataOfConnectionLeftRight,
 								   (chaptere[i]->levelFromChapter[0]->width / 1.4) * 2.0f, chaptere[i]->levelFromChapter[0]->height / 5);
 
-		addObstacle->setTheVaoData(chaptere[i]->levelFromChapter[0]->vaoBufferOfConnectionUpDown, chaptere[i]->levelFromChapter[0]->vboBufferOfConnectionUpDown,
+		BS_Renderer::set_vao_data(chaptere[i]->levelFromChapter[0]->vaoBufferOfConnectionUpDown, chaptere[i]->levelFromChapter[0]->vboBufferOfConnectionUpDown,
 								   chaptere[i]->levelFromChapter[0]->iboBufferOfConnectionUpDown, chaptere[i]->levelFromChapter[0]->dataOfConnectionUpDown,
 								   chaptere[i]->levelFromChapter[0]->width / 5, (chaptere[i]->levelFromChapter[0]->height / 1.4) * 2.0f);
 
 		///Setez textura pentru Finished Level
 		chaptere[i]->levelFromChapter[0]->widthFinishedLevel = chaptere[i]->levelFromChapter[0]->width;
 		chaptere[i]->levelFromChapter[0]->heightFinishedLevel = chaptere[i]->levelFromChapter[0]->height;
-		addObstacle->setTheVaoData(chaptere[i]->levelFromChapter[0]->vaoBufferOfFinishedLevel, chaptere[i]->levelFromChapter[0]->vboBufferOfFinishedLevel,
+		BS_Renderer::set_vao_data(chaptere[i]->levelFromChapter[0]->vaoBufferOfFinishedLevel, chaptere[i]->levelFromChapter[0]->vboBufferOfFinishedLevel,
 								   chaptere[i]->levelFromChapter[0]->iboBufferOfFinishedLevel, chaptere[i]->levelFromChapter[0]->dataOfFinishedLevel,
 								   chaptere[i]->levelFromChapter[0]->width, chaptere[i]->levelFromChapter[0]->height);
 
 	}
 
 	///Setez data si vao al animatiei cu care ma voi plimba prin nivele ca sa il aleg pe cel care vreau
-	addObstacle->setTheVaoData(levelChoserPlayer->vao, levelChoserPlayer->vbo, levelChoserPlayer->ibo,
+	BS_Renderer::set_vao_data(levelChoserPlayer->vao, levelChoserPlayer->vbo, levelChoserPlayer->ibo,
 							   levelChoserPlayer->data, levelChoserPlayer->width, levelChoserPlayer->height);
 
 	///Setez texturile de conexiune dintre chaptere
@@ -222,19 +222,19 @@ void BSTexture::initMenuLevels()
 	chaptere[0]->levelFromChapter[0]->heightFinishedChapter = chaptere[0]->levelFromChapter[0]->height;
 
 
-	addObstacle->setTheVaoData(chaptere[0]->levelFromChapter[0]->vaoBufferOfConnectionLeftRightChapter,
+	BS_Renderer::set_vao_data(chaptere[0]->levelFromChapter[0]->vaoBufferOfConnectionLeftRightChapter,
 							   chaptere[0]->levelFromChapter[0]->vboBufferOfConnectionLeftRightChapter,
 							   chaptere[0]->levelFromChapter[0]->iboBufferOfConnectionLeftRightChapter,
 							   chaptere[0]->levelFromChapter[0]->dataOfConnectionLeftRightChapter,
 							   sizeOfConnectionStringX, chaptere[0]->height / 4.0f);
 
-	addObstacle->setTheVaoData(chaptere[0]->levelFromChapter[0]->vaoBufferOfConnectionUpDownChapter,
+	BS_Renderer::set_vao_data(chaptere[0]->levelFromChapter[0]->vaoBufferOfConnectionUpDownChapter,
 							   chaptere[0]->levelFromChapter[0]->vboBufferOfConnectionUpDownChapter,
 							   chaptere[0]->levelFromChapter[0]->iboBufferOfConnectionUpDownChapter,
 							   chaptere[0]->levelFromChapter[0]->dataOfConnectionUpDownChapter,
 							   chaptere[0]->width / 4.0f, sizeOfConnectionStringY);
 
-	addObstacle->setTheVaoData(chaptere[0]->levelFromChapter[0]->vaoBufferOfFinishedLevelChapter,
+	BS_Renderer::set_vao_data(chaptere[0]->levelFromChapter[0]->vaoBufferOfFinishedLevelChapter,
 							   chaptere[0]->levelFromChapter[0]->vboBufferOfFinishedLevelChapter,
 							   chaptere[0]->levelFromChapter[0]->iboBufferOfFinishedLevelChapter,
 							   chaptere[0]->levelFromChapter[0]->dataOfFinishedLevelChapter,
@@ -331,7 +331,7 @@ void BSTexture::buildRainDrops()
 	originalRainDrop->width = 1;
 	originalRainDrop->height = 1;
 	originalRainDrop->depth = 0;
-	addObstacle->setTheVaoData(originalRainDrop->vao, originalRainDrop->vbo, originalRainDrop->ibo, originalRainDrop->data, 1, 1);
+	BS_Renderer::set_vao_data(originalRainDrop->vao, originalRainDrop->vbo, originalRainDrop->ibo, originalRainDrop->data, 1, 1);
 
 	float maximX = 50;
 	float minimX = -3.0f;
@@ -2013,7 +2013,7 @@ void BSTexture::initTheFont()
 
 		letters[let]->color.setColor(0, 0, 0, 1);
 
-		addObstacle->setTheVaoDataForFont(letters[let]->data, letters[let]->widthOfLetterInImage, letters[let]->heightOfLetterInImage, letters[let]->xCordInImage, letters[let]->yCordInImage, letters[let]->vao, letters[let]->vbo, letters[let]->ibo);
+		addObstacle->set_vao_data_font(letters[let]->data, letters[let]->widthOfLetterInImage, letters[let]->heightOfLetterInImage, letters[let]->xCordInImage, letters[let]->yCordInImage, letters[let]->vao, letters[let]->vbo, letters[let]->ibo);
 
 		delete levelDetailsNew[i];
 

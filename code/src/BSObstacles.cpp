@@ -143,90 +143,6 @@ b2Body* BSObstacles::createCircleBodies(b2BodyType Type, float LocationX, float 
 	return box;
 }
 
-
-
-void BSObstacles::setTheVao( GLuint &theVaoBuffer, BSTexturedVertex2D dataToBind[4], GLuint &theVboToBind, GLuint &theIbotoBind)
-{
-	//Generate VAO buffer
-	glGenVertexArrays( 1, &theVaoBuffer );
-
-	//Bind vertex array
-	glBindVertexArray( theVaoBuffer );
-
-	//bind the VBO
-	bindVBO(dataToBind, theVboToBind, theIbotoBind);
-
-	glEnableVertexAttribArray(_my_shader_program->get_location_from_shader(BS_Available_Shaders::vertex_position()));// locationBSVertexPosition3D);
-	glVertexAttribPointer( _my_shader_program->get_location_from_shader(BS_Available_Shaders::vertex_position()), 3, GL_FLOAT, GL_FALSE, sizeof(BSTexturedVertex2D), (GLvoid*)offsetof( BSTexturedVertex2D, position ) );
-
-	glEnableVertexAttribArray(_my_shader_program->get_location_from_shader(BS_Available_Shaders::texture_coordinates()));//locationBSTextureCoordinate);
-	glVertexAttribPointer( _my_shader_program->get_location_from_shader(BS_Available_Shaders::texture_coordinates()), 2, GL_FLOAT, GL_FALSE, sizeof(BSTexturedVertex2D), (GLvoid*)offsetof( BSTexturedVertex2D, texCoord ) );
-
-	//Unbind VAO
-	glBindVertexArray( 0 );
-	glBindBuffer( GL_ARRAY_BUFFER, 0 );
-	glBindBuffer( GL_ELEMENT_ARRAY_BUFFER, 0 );
-}
-
-
-void BSObstacles::bindVBO(BSTexturedVertex2D dataToBind[4], GLuint &theVboToBind, GLuint &theIbotoBind)
-{
-	//Create VBO
-	glGenBuffers( 1, &theVboToBind );
-	glBindBuffer( GL_ARRAY_BUFFER, theVboToBind );
-	glBufferData( GL_ARRAY_BUFFER, 4 * sizeof(BSTexturedVertex2D), dataToBind, GL_DYNAMIC_DRAW );
-
-	//Create IBO
-	glGenBuffers( 1, &theIbotoBind );
-	glBindBuffer( GL_ELEMENT_ARRAY_BUFFER, theIbotoBind );
-	glBufferData( GL_ELEMENT_ARRAY_BUFFER, 4 * sizeof(GLuint), iData, GL_DYNAMIC_DRAW );
-}
-
-
-void BSObstacles::setTheVaoData(GLuint &vaoBuffer, GLuint &vboBuffer, GLuint &iboBuffer,
-								BSTexturedVertex2D dataToSet[4], GLfloat widthToSet, GLfloat heightToSet)
-{
-	widthToSet = 1 / 2.0f;
-	heightToSet = 1 / 2.0f;
-
-
-	GLfloat texTop = 1;
-	GLfloat texBottom = 0;
-	GLfloat texLeft = 0;
-	GLfloat texRight = 1;
-
-	//Vertex coordinates
-	GLfloat quadWidth = widthToSet;
-	GLfloat quadHeight = heightToSet;
-
-	//Texture coordinates
-	dataToSet[0].texCoord.s = texLeft;
-	dataToSet[0].texCoord.t = texTop;
-	dataToSet[1].texCoord.s = texLeft;
-	dataToSet[1].texCoord.t = texBottom;
-	dataToSet[2].texCoord.s = texRight;
-	dataToSet[2].texCoord.t = texBottom;
-	dataToSet[3].texCoord.s = texRight;
-	dataToSet[3].texCoord.t = texTop;
-
-	//Vertex positions
-	dataToSet[0].position.x = -quadWidth;
-	dataToSet[0].position.y = -quadHeight;
-	dataToSet[0].position.z = scaleSizeInitial;
-	dataToSet[1].position.x = -quadWidth;
-	dataToSet[1].position.y = quadHeight;
-	dataToSet[1].position.z = scaleSizeInitial;
-	dataToSet[2].position.x = quadWidth;
-	dataToSet[2].position.y = quadHeight;
-	dataToSet[2].position.z = scaleSizeInitial;
-	dataToSet[3].position.x = quadWidth;
-	dataToSet[3].position.y = -quadHeight;
-	dataToSet[3].position.z = scaleSizeInitial;
-
-	setTheVao(vaoBuffer, dataToSet, vboBuffer, iboBuffer);
-}
-
-
 void BSObstacles::setVaoForChunckObjects(GLuint &vaoBuffer, GLuint &vboBuffer, GLuint &iboBuffer, BSTexturedVertex2D dataToSet[4], GLfloat widthToSet, GLfloat heightToSet)
 {
 	GLfloat texTop = 1;
@@ -262,10 +178,10 @@ void BSObstacles::setVaoForChunckObjects(GLuint &vaoBuffer, GLuint &vboBuffer, G
 	dataToSet[3].position.y = -quadHeight;
 	dataToSet[3].position.z = scaleSizeInitial;
 
-	setTheVao(vaoBuffer, dataToSet, vboBuffer, iboBuffer);
+	BS_Renderer::set_vao(vaoBuffer, dataToSet, vboBuffer, iboBuffer);
 }
 
-void BSObstacles::setTheVaoDataForFont(BSTexturedVertex2D dataTSet[4], GLfloat widthToSet, GLfloat heightToSet, float xCord, float yCord, GLuint &vaoBuffer, GLuint &vboBuffer, GLuint &iboBuffer)
+void BSObstacles::set_vao_data_font(BSTexturedVertex2D dataTSet[4], GLfloat widthToSet, GLfloat heightToSet, float xCord, float yCord, GLuint &vaoBuffer, GLuint &vboBuffer, GLuint &iboBuffer)
 {
 	glGenVertexArrays(1, &vaoBuffer);
 	glBindVertexArray(vaoBuffer);
@@ -361,7 +277,7 @@ void BSObstacles::setUpOriginals()
 	///Set the particle data !!!!!!!! Need initialization only once, vaoBuffer too
 	originalParticle->width = 1 / 8.f;
 	originalParticle->height = 1 / 8.f;
-	setTheVaoData(originalParticle->vao, originalParticle->vbo, originalParticle->ibo, originalParticle->data, 1  / 16.0f, 1  / 16.0f);
+	BS_Renderer::set_vao_data(originalParticle->vao, originalParticle->vbo, originalParticle->ibo, originalParticle->data, 1  / 16.0f, 1  / 16.0f);
 
 	///Hero2nd
 	Hero2nd->theBody = createCircleBodies(b2_dynamicBody, 6, 4, Hero_size, "Hero2nd", nrBodies, 0, false);
@@ -369,7 +285,7 @@ void BSObstacles::setUpOriginals()
 	Hero2nd->height = Hero_size + 0.15;
 	Hero2nd->texture = playerTexture;
 	Hero2nd->color.setColor(1, 1, 1, 1);
-	setTheVaoData(Hero2nd->vao, Hero2nd->vbo, Hero2nd->ibo, Hero2nd->data, Hero2nd->width, Hero2nd->height);
+	BS_Renderer::set_vao_data(Hero2nd->vao, Hero2nd->vbo, Hero2nd->ibo, Hero2nd->data, Hero2nd->width, Hero2nd->height);
 
 
 	///SoundButton texture
@@ -379,7 +295,7 @@ void BSObstacles::setUpOriginals()
 	SoundButtonTexture->color.setColor(1, 1, 1, 1);
 	SoundButtonTexture->xCord = (float) SCREEN_WIDTH / scaleRatio / 2;
 	SoundButtonTexture->yCord = (float) SCREEN_HEIGHT / scaleRatio / 2;
-	setTheVaoData(SoundButtonTexture->vao, SoundButtonTexture->vbo, SoundButtonTexture->ibo,
+	BS_Renderer::set_vao_data(SoundButtonTexture->vao, SoundButtonTexture->vbo, SoundButtonTexture->ibo,
 				  SoundButtonTexture->data, SoundButtonTexture->width, SoundButtonTexture->height);
 
 
@@ -390,7 +306,7 @@ void BSObstacles::setUpOriginals()
 	originalCoin->height = Hero_size;
 	originalCoin->xCord = 2;
 	originalCoin->yCord = (float) SCREEN_HEIGHT / scaleRatio - 1;
-	setTheVaoData(originalCoin->vao, originalCoin->vbo, originalCoin->ibo, originalCoin->data, 1, 1);
+	BS_Renderer::set_vao_data(originalCoin->vao, originalCoin->vbo, originalCoin->ibo, originalCoin->data, 1, 1);
 
 
 	///Set the dust bodies
@@ -399,14 +315,14 @@ void BSObstacles::setUpOriginals()
 	originalDustBody->height = 1;
 	originalDustBody->xCord = 0;
 	originalDustBody->yCord = 0;
-	setTheVaoData(originalDustBody->vao, originalDustBody->vbo, originalDustBody->ibo, originalDustBody->data, 1, 1);
+	BS_Renderer::set_vao_data(originalDustBody->vao, originalDustBody->vbo, originalDustBody->ibo, originalDustBody->data, 1, 1);
 
 
 	///Set the fans
 	BS_Renderer::loadATexture("Animations/fan.png", originalFan->texture);
 	originalFan->width = Hero_size * 10;
 	originalFan->height = Hero_size;
-	setTheVaoData(originalFan->vao, originalFan->vbo, originalFan->ibo, originalFan->data, 1, 1);
+	BS_Renderer::set_vao_data(originalFan->vao, originalFan->vbo, originalFan->ibo, originalFan->data, 1, 1);
 	setVaoForChunckObjects(originalFanParticleX->vao, originalFanParticleX->vbo, originalFanParticleX->ibo, originalFanParticleX->data, 1, 0.05f);
 	setVaoForChunckObjects(originalFanParticleY->vao, originalFanParticleY->vbo, originalFanParticleY->ibo, originalFanParticleY->data, 0.05f, 1);
 
@@ -415,17 +331,17 @@ void BSObstacles::setUpOriginals()
 	BS_Renderer::loadATexture("Animations/dark.png", mainDarkTexture);
 	originalDarkMenu->width = (float) (SCREEN_WIDTH / scaleRatio + 2) * 2;
 	originalDarkMenu->height = (float) (SCREEN_HEIGHT / scaleRatio + 2) * 2;
-	setTheVaoData(originalDarkMenu->vao, originalDarkMenu->vbo, originalDarkMenu->ibo, originalDarkMenu->data, 1, 1);
+	BS_Renderer::set_vao_data(originalDarkMenu->vao, originalDarkMenu->vbo, originalDarkMenu->ibo, originalDarkMenu->data, 1, 1);
 
 
 	originalDarkLevel->width = (float) SCREEN_WIDTH / scaleRatio - Hero_size * 6.f;
 	originalDarkLevel->height = (float) SCREEN_HEIGHT / scaleRatio - Hero_size * 6.f;
-	setTheVaoData(originalDarkLevel->vao, originalDarkLevel->vbo, originalDarkLevel->ibo, originalDarkLevel->data, 1, 1);
+	BS_Renderer::set_vao_data(originalDarkLevel->vao, originalDarkLevel->vbo, originalDarkLevel->ibo, originalDarkLevel->data, 1, 1);
 
 
 	originalWormHole->width = 2;
 	originalWormHole->height = 2;
-	setTheVaoData(originalWormHole->vao, originalWormHole->vbo, originalWormHole->ibo, originalWormHole->data, 1, 1);
+	BS_Renderer::set_vao_data(originalWormHole->vao, originalWormHole->vbo, originalWormHole->ibo, originalWormHole->data, 1, 1);
 	BS_Renderer::loadATexture("Animations/wormHole.png", originalWormHole->texture);
 	BSColorRGBA color = {1.0f, 1.0f, 1.0f, 1.0f};
 	originalWormHole->color = color;
@@ -439,14 +355,14 @@ void BSObstacles::setUpOriginals()
 	theRenderedObstacleSquare->height = hero->height;
 	theRenderedObstacleSquare->color.setColor(1, 0.8f, 0, 0.5f); //transparent yellowish
 	theRenderedObstacleSquare->texture = blankTexture;
-	setTheVaoData(theRenderedObstacleSquare->vao, theRenderedObstacleSquare->vbo, theRenderedObstacleSquare->ibo,
+	BS_Renderer::set_vao_data(theRenderedObstacleSquare->vao, theRenderedObstacleSquare->vbo, theRenderedObstacleSquare->ibo,
 				  theRenderedObstacleSquare->data, 1, 1);
 
 	originalTransparentMenu->width = (float) SCREEN_WIDTH / scaleRatio;
 	originalTransparentMenu->height = (float) SCREEN_HEIGHT / scaleRatio;
 	originalTransparentMenu->color.setColor(1, 0.8f, 0, 0.5f); //transparent yellowish
 	originalTransparentMenu->texture = blankTexture;
-	setTheVaoData(originalTransparentMenu->vao, originalTransparentMenu->vbo, originalTransparentMenu->ibo,
+	BS_Renderer::set_vao_data(originalTransparentMenu->vao, originalTransparentMenu->vbo, originalTransparentMenu->ibo,
 				  originalTransparentMenu->data, 1, 1);
 
 	///The rendered Circle
@@ -454,7 +370,7 @@ void BSObstacles::setUpOriginals()
 	theRenderedObstacleCircle->height = hero->height;
 	theRenderedObstacleCircle->color.setColor(1, 0.8f, 0, 0.5f); //transparent yellowish
 	theRenderedObstacleCircle->texture = blankTexture;
-	setTheVaoData(theRenderedObstacleCircle->vao, theRenderedObstacleCircle->vbo, theRenderedObstacleCircle->ibo,
+	BS_Renderer::set_vao_data(theRenderedObstacleCircle->vao, theRenderedObstacleCircle->vbo, theRenderedObstacleCircle->ibo,
 				  theRenderedObstacleCircle->data, 1, 1);
 
 
@@ -463,7 +379,7 @@ void BSObstacles::setUpOriginals()
 	deadScene->height = SCREEN_HEIGHT * 1.5f / scaleRatio * 2;
 	deadScene->color.setColor(0.f, 0.f, 0.f, 0.f);
 	deadScene->texture = blankTexture;
-	setTheVaoData(deadScene->vao, deadScene->vbo, deadScene->ibo, deadScene->data, 1, 1);
+	BS_Renderer::set_vao_data(deadScene->vao, deadScene->vbo, deadScene->ibo, deadScene->data, 1, 1);
 }
 
 
@@ -569,7 +485,7 @@ void BSObstacles::incarcaHarta(std::string cale)
 		playerAnimWidth = Hero_size;
 		playerAnimHeight = Hero_size;
 
-		setTheVaoData(hero->vao, hero->vbo, hero->ibo, hero->data, playerAnimWidth, playerAnimHeight);
+		BS_Renderer::set_vao_data(hero->vao, hero->vbo, hero->ibo, hero->data, playerAnimWidth, playerAnimHeight);
 
 		hero->width = Hero_size;
 		hero->height = Hero_size;
@@ -1011,7 +927,7 @@ void BSObstacles::setTheMenuButtons(BSButtonStructure* theButtonToSet, BSTexture
 									float coordinateX, float coordinateY, float ToWidth, float ToHeight,
 									GLuint vaoData, GLuint vboData, GLuint iboData)
 {
-	setTheVaoData(vaoData, vboData, iboData, dataToSet, ToWidth, ToHeight);
+	BS_Renderer::set_vao_data(vaoData, vboData, iboData, dataToSet, ToWidth, ToHeight);
 }
 
 
@@ -1059,7 +975,7 @@ void BSObstacles::addDinamicSquare(float BodyX, float BodyY, float BodyW, float 
 	BSTheSquareBodies *p = new BSTheSquareBodies;
 
 	p->theBody = createBodies(tipulCorpului, BodyX, BodyY, BodyW, BodyH, userData, nrBodies, 0, false);
-	setTheVaoData(p->vao, p->vbo, p->ibo, p->data, BodyW, BodyH);
+	BS_Renderer::set_vao_data(p->vao, p->vbo, p->ibo, p->data, BodyW, BodyH);
 
 	p->xCord = BodyX;
 	p->xInit = BodyX;
@@ -1119,7 +1035,7 @@ void BSObstacles::addDinamicRound(float BodyX, float BodyY, float BodyR,
 	BSTheRoundBodies *p = new BSTheRoundBodies;
 
 	p->theBody = createCircleBodies(tipulCorpului, BodyX, BodyY, BodyR / 2, userData, nrBodies, 0, false);
-	setTheVaoData(p->vao, p->vbo, p->ibo, p->data, BodyR, BodyR);
+	BS_Renderer::set_vao_data(p->vao, p->vbo, p->ibo, p->data, BodyR, BodyR);
 	p->width = BodyR;
 	p->height = BodyR;
 	p->nameOfTexture = textureName;
@@ -1164,7 +1080,7 @@ void BSObstacles::addOnlyTexture(int squareOrCirlce, float xCoord, float yCoord,
 	if(squareOrCirlce == 1)
 	{
 		BSTextureSquare *p = new BSTextureSquare;
-		setTheVaoData(p->vao, p->vbo, p->ibo, p->data, width, height);
+		BS_Renderer::set_vao_data(p->vao, p->vbo, p->ibo, p->data, width, height);
 		p->width = width;
 		p->height = height;
 		p->xCord = xCoord;
@@ -1184,7 +1100,7 @@ void BSObstacles::addOnlyTexture(int squareOrCirlce, float xCoord, float yCoord,
 		{
 			std::cout << "from obstacles: added a round" << '\n';
 			BSTextureRound *p = new BSTextureRound;
-			setTheVaoData(p->vao, p->vbo, p->ibo, p->data, width, width);
+			BS_Renderer::set_vao_data(p->vao, p->vbo, p->ibo, p->data, width, width);
 			p->width = width;
 			p->height = width;
 			p->xCord = xCoord;
@@ -1214,7 +1130,7 @@ void BSObstacles::addMessageTexture(float xCoord, float yCoord, float width, flo
 	newMessage->widthOfMessage = newWidth / scaleRatio;
 	newMessage->heightOfMessage = newHeight / scaleRatio;
 
-	setTheVaoData(newMessage->vaoBufferOfMessage, newMessage->vboBufferOfMessage, newMessage->iboBufferOfMessage,
+	BS_Renderer::set_vao_data(newMessage->vaoBufferOfMessage, newMessage->vboBufferOfMessage, newMessage->iboBufferOfMessage,
 				  newMessage->dataOfMessage, newMessage->widthOfMessage, newMessage->heightOfMessage);
 
 	newMessage->colorOfMessage.setColor(1, 1, 1, 0);
@@ -1229,7 +1145,7 @@ void BSObstacles::addMessageTexture(float xCoord, float yCoord, float width, flo
 	std::string fullTextureName = "Animations/messageAnimation/theMessageSign.png";
 
 	BS_Renderer::loadATexture(fullTextureName.c_str(), newMessage->textureOfSign);
-	setTheVaoData(newMessage->vaoBufferOfSign, newMessage->vboBufferOfSign, newMessage->iboBufferOfSign,
+	BS_Renderer::set_vao_data(newMessage->vaoBufferOfSign, newMessage->vboBufferOfSign, newMessage->iboBufferOfSign,
 				  newMessage->dataOfSign, Hero_size, Hero_size * 2.0f);
 
 	newMessage->widthOfSign = Hero_size;
@@ -1298,7 +1214,7 @@ void BSObstacles::createMouseCircles()
 		circ->height = lastR;
 		circ->xCord = 0;
 		circ->yCord = 0;
-		setTheVaoData(circ->vao, circ->vbo, circ->ibo, circ->data, circ->width, circ->width);
+		BS_Renderer::set_vao_data(circ->vao, circ->vbo, circ->ibo, circ->data, circ->width, circ->width);
 		listOfMouseCircles.push_back(circ);
 
 		lastR += 0.03f;
@@ -1314,35 +1230,35 @@ void BSObstacles::addBackgrounds()
 	backgroundSky->width = (float) backgroundSky->height * ratioImage;
 	backgroundSky->color = color;
 	BS_Renderer::loadATexture("Background images/sky.png", backgroundSky->texture);
-	setTheVaoData(backgroundSky->vao, backgroundSky->vbo, backgroundSky->ibo,
+	BS_Renderer::set_vao_data(backgroundSky->vao, backgroundSky->vbo, backgroundSky->ibo,
 				  backgroundSky->data, backgroundSky->width, backgroundSky->height);
 
 	backgroundMountain->height = (float) SCREEN_HEIGHT / scaleRatio;
 	backgroundMountain->width = (float) backgroundMountain->height * ratioImage;
 	backgroundMountain->color = color;
 	BS_Renderer::loadATexture("Background images/mountains.png", backgroundMountain->texture);
-	setTheVaoData(backgroundMountain->vao, backgroundMountain->vbo, backgroundMountain->ibo,
+	BS_Renderer::set_vao_data(backgroundMountain->vao, backgroundMountain->vbo, backgroundMountain->ibo,
 				  backgroundMountain->data, backgroundMountain->width, backgroundMountain->height);
 
 	backgroundBush->height = (float) SCREEN_HEIGHT / scaleRatio;
 	backgroundBush->width = (float) backgroundBush->height * ratioImage;
 	backgroundBush->color = color;
 	BS_Renderer::loadATexture("Background images/bush.png", backgroundBush->texture);
-	setTheVaoData(backgroundBush->vao, backgroundBush->vbo, backgroundBush->ibo,
+	BS_Renderer::set_vao_data(backgroundBush->vao, backgroundBush->vbo, backgroundBush->ibo,
 				  backgroundBush->data, backgroundBush->width, backgroundBush->height);
 
 	backgroundField->height = (float) SCREEN_HEIGHT / scaleRatio;
 	backgroundField->width = (float) backgroundField->height * ratioImage;
 	backgroundField->color = color;
 	BS_Renderer::loadATexture("Background images/field.png", backgroundField->texture);
-	setTheVaoData(backgroundField->vao, backgroundField->vbo, backgroundField->ibo,
+	BS_Renderer::set_vao_data(backgroundField->vao, backgroundField->vbo, backgroundField->ibo,
 				  backgroundField->data, backgroundField->width, backgroundField->height);
 
 	backgroundHighField->height = (float) SCREEN_HEIGHT / scaleRatio;
 	backgroundHighField->width = (float) backgroundHighField->height * ratioImage;
 	backgroundHighField->color = color;
 	BS_Renderer::loadATexture("Background images/high field.png", backgroundHighField->texture);
-	setTheVaoData(backgroundHighField->vao, backgroundHighField->vbo, backgroundHighField->ibo,
+	BS_Renderer::set_vao_data(backgroundHighField->vao, backgroundHighField->vbo, backgroundHighField->ibo,
 				  backgroundHighField->data, backgroundHighField->width, backgroundHighField->height);
 }
 
@@ -1378,7 +1294,7 @@ void BSObstacles::addCloudyParticles()
 		part->xPower = float (rand() % 4 + 2) / 1000 * leftOrRight;
 		part->yPower = float (rand() % 10 + 2) / 1000 * (-1);
 
-		setTheVaoData(part->vao, part->vbo, part->ibo, part->data, part->width, part->height);
+		BS_Renderer::set_vao_data(part->vao, part->vbo, part->ibo, part->data, part->width, part->height);
 
 		listOfCloudyParticles.push_back(part);
 	}

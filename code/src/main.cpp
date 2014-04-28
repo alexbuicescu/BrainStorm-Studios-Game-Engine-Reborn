@@ -204,10 +204,6 @@ int main( int argc, char* args[] )
 {
 	std::ifstream fin("date.txt");
 	fin >> showBackgr >> isFullScreen;
-	iData[0] = 0;
-	iData[1] = 1;
-	iData[2] = 2;
-	iData[3] = 3;
 
 	scaleSize = 11.34;
 	CameraPosition->xCord = 0;
@@ -588,7 +584,6 @@ void renderTheMenuBeforeItBecomesFullyVisible()
 			randareMenu->renderVboAndVao();
 			randareMenu->renderMenuLevels(chaptere[levelChoserPlayer->indexOfChapterThatItIsOn]->nrOfLevels,
 										  chaptere[levelChoserPlayer->indexOfChapterThatItIsOn]->levelFromChapter);
-
 		}
 		else
 			if(currentMenu->indexOfMenu == 5)
