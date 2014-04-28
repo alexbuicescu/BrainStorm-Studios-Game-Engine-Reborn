@@ -880,13 +880,16 @@
 
 1368090184 source:c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\resources\resource.rc
 
-1398630993 source:c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\src\bs_engine.cpp
+1398645278 source:c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\src\bs_engine.cpp
 	"BS_Engine.h"
+	"BSOpenGL.h"
+	"My_Values.h"
 
 1396990349 source:c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\src\bs_screen_menu.cpp
 
-1398630993 source:c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\src\bs_sound.cpp
+1398646943 source:c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\src\bs_sound.cpp
 	"BS_Sound.h"
+	<stdio.h>
 
 1396990138 source:c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glew\glew.c
 	"glew.h"
@@ -928,14 +931,13 @@
 	<AGL/agl.h>
 	<GL/glxew.h>
 
-1398630993 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\bs_engine.h
+1398645242 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\bs_engine.h
 
-1398630993 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\bs_sound.h
+1398647047 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\bs_sound.h
 	<iostream>
-	<stdio.h>
 	<AL/al.h>
 	<AL/alc.h>
-	<map>
+	<unordered_map>
 
 1165591858 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\al\al.h
 
@@ -962,12 +964,11 @@
 	<vector>
 	<sstream>
 
-1396989936 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\bsopengl.h
+1398644097 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\bsopengl.h
 	"Glew/glew.h"
 	"SDL/SDL_opengl.h"
 	<GL/gl.h>
 	<GL/glu.h>
-	<stdio.h>
 	<SDL/SDL.h>
 
 1325742240 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\sdl\sdl_opengl.h
@@ -1172,7 +1173,7 @@
 	"begin_code.h"
 	"close_code.h"
 
-1398630638 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\bsrenderer.h
+1398643723 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\bsrenderer.h
 	"BSStructs.h"
 	"My_Values.h"
 	<SOIL/SOIL.h>
@@ -1622,8 +1623,8 @@
 1315174263 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\box2d\dynamics\joints\b2weldjoint.h
 	<Box2D/Dynamics/Joints/b2Joint.h>
 
-1398630412 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\my_values.h
-	"BS_Sound.h"
+1398647432 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\my_values.h
+	"BS_Audio.h"
 	"BSTexturedPolygonProgram2D.h"
 
 1398630993 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\bstexturedpolygonprogram2d.h
@@ -1688,7 +1689,7 @@
 	"BSActionStuff.h"
 	"BSTexture.h"
 
-1398630993 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\bsutilities.h
+1398644319 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\bsutilities.h
 	"BSOpenGL.h"
 	<stdio.h>
 	<iostream>
@@ -1726,14 +1727,14 @@
 	"BSTexturedPolygonProgram2D.h"
 	"BS_Available_Shaders.h"
 
-1398630993 source:c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\src\bsutilities.cpp
+1398644045 source:c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\src\bsutilities.cpp
 	"BSUtilities.h"
 	"My_Values.h"
 
-1383939643 source:c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\src\bsxmlfiles.cpp
+1398631529 source:c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\src\bsxmlfiles.cpp
 	"BSXmlFiles.h"
 
-1398630993 source:c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\src\main.cpp
+1398647226 source:c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\src\main.cpp
 	"BSValues.h"
 	"BSUtilities.h"
 	<iostream>
@@ -1748,6 +1749,7 @@
 	"BSInputClass.h"
 	"My_Values.h"
 	"BS_Screen_Menu.h"
+	"BS_Engine.h"
 
 1398630993 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\bs_screen_menu.h
 	"BS_Renderer.h"
@@ -1767,4 +1769,10 @@
 	<AvailabilityMacros.h>
 	<dlfcn.h>
 	<mach-o/dyld.h>
+
+1398647432 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\bs_audio.h
+	<iostream>
+	<AL/al.h>
+	<AL/alc.h>
+	<unordered_map>
 

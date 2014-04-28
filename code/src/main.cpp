@@ -15,8 +15,8 @@
 #include "My_Values.h"
 
 #include "BS_Screen_Menu.h"
+#include "BS_Engine.h"
 
-BS_Sound *_my_sound_device;
 BSTexturedPolygonProgram2D *_my_shader_program;
 
 float worldAngle = 0;
@@ -226,33 +226,30 @@ int main( int argc, char* args[] )
 
 
 
-	_my_sound_device = new BS_Sound();
-	if(!_my_sound_device->get_OpenAL_status())
-	{
-		printf( "Unable to initialize audio library!\n" );
-		//return 1;
-	}
-
-//	pthread_t threadInput;
-//	pthread_create(&threadInput, NULL, &VideoAndInput, &objBSUtils);
-//	pthread_exit(NULL);
 
 	_my_shader_program = new BSTexturedPolygonProgram2D();
-	if( !objBSUtils->initGL())
+
+	if(BS_Engine::initialize_audio() == false)
 	{
-		printf( "Unable to initialize graphics library!\n" );
-		//return 1;
+		printf("Unable to initialize audio library!\n");
+		///return 1;
+	}
+
+	if(BS_Engine::initialize_graphics() == false)
+	{
+		printf("Unable to initialize graphics library!\n");
+		return 1;
 	}
 	//Load graphics programs
 	if( !objBSUtils->loadGP() )
 	{
-		printf( "Unable to load shader programs!\n" );
+		printf("Unable to load shader programs!\n");
 		//return 1;
 	}
 	//objObstacles->setUpBodies();
 	if( !objBSUtils->loadMedia() )
 	{
-		printf( "Unable to load media!\n" );
+		printf("Unable to load media!\n");
 		//return 2;
 	}
 

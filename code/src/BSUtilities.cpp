@@ -14,48 +14,48 @@ BSColorRGBA gTextureColor = { 1.f, 1.f, 1.f, 1.f };
 
 
 
-
-bool BSUtilities::initGL()
-{
-	//Initialize GLEW
-	GLenum glewError = glewInit();
-
-	if( glewError != GLEW_OK )
-	{
-		printf( "Error initializing GLEW! %s\n", glewGetErrorString( glewError ) );
-		return false;
-	}
-
-	//Make sure OpenGL 2.1 is supported
-	if( !GLEW_VERSION_2_1 )
-	{
-		printf( "OpenGL 2.1 not supported!\n" );
-		return false;
-	}
-
-	//Initialize clear color
-	glClearColor( 1.f, 1.f, 1.f, 1.f );
-
-	//Enable texturing
-	glEnable( GL_BLEND );
-	glEnable( GL_DEPTH_TEST );
-
-	glDepthFunc(GL_LEQUAL);
-	glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST);
-	glBlendFunc( GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA );
-
-	//Check for error
-	GLenum error = glGetError();
-
-	if( error != GL_NO_ERROR )
-	{
-		printf( "Error initializing OpenGL! %s\n", gluErrorString( error ) );
-		return false;
-	}
-
-	return true;
-}
-
+//
+//bool BSUtilities::initGL()
+//{
+//	//Initialize GLEW
+//	GLenum glewError = glewInit();
+//
+//	if( glewError != GLEW_OK )
+//	{
+//		printf( "Error initializing GLEW! %s\n", glewGetErrorString( glewError ) );
+//		return false;
+//	}
+//
+//	//Make sure OpenGL 2.1 is supported
+//	if( !GLEW_VERSION_2_1 )
+//	{
+//		printf( "OpenGL 2.1 not supported!\n" );
+//		return false;
+//	}
+//
+//	//Initialize clear color
+//	glClearColor( 1.f, 1.f, 1.f, 1.f );
+//
+//	//Enable texturing
+//	glEnable( GL_BLEND );
+//	glEnable( GL_DEPTH_TEST );
+//
+//	glDepthFunc(GL_LEQUAL);
+//	glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST);
+//	glBlendFunc( GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA );
+//
+//	//Check for error
+//	GLenum error = glGetError();
+//
+//	if( error != GL_NO_ERROR )
+//	{
+//		printf( "Error initializing OpenGL! %s\n", gluErrorString( error ) );
+//		return false;
+//	}
+//
+//	return true;
+//}
+//
 bool BSUtilities::loadGP()
 {
 	//Load textured shader program

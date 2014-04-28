@@ -17,9 +17,6 @@
 class BSUtilities
 {
 public:
-
-	bool initGL();
-
 	bool loadGP();
 
 	bool loadMedia();
