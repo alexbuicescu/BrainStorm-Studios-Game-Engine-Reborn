@@ -1,5 +1,6 @@
 #include "BSTexture.h"
 #include "My_Values.h"
+#include <SOIL/SOIL.h>
 
 BSLevelMenu *theLevelMenuPlayer = new BSLevelMenu();
 BSInputClass *theInputForMouse = new BSInputClass();
@@ -37,7 +38,7 @@ void BSTexture::loadTheLoadingImage()
 	BS_Renderer::set_vao_data(theLoadingImage->vao, theLoadingImage->vbo, theLoadingImage->ibo,
 							   theLoadingImage->data, theLoadingImage->width, theLoadingImage->height);
 
-	BS_Renderer::loadATexture("smb loading.png", theLoadingImage->texture);
+	BS_Renderer::load_texture("smb loading.png", theLoadingImage->texture);
 	theLoadingImage->color.setColor(1, 1, 1, 1);
 
 }
@@ -64,7 +65,7 @@ void BSTexture::renderTheLoadingImage(float alphaColor)
 
 	float scaleRatio = (float)(SCREEN_HEIGHT / 18.0f);
 
-	BS_Renderer::renderSomeBody((float)SCREEN_WIDTH / scaleRatio / 2.0f + CameraPosition->xCord - CameraExtremeLeft,
+	BS_Renderer::render_object((float)SCREEN_WIDTH / scaleRatio / 2.0f + CameraPosition->xCord - CameraExtremeLeft,
 								(float)SCREEN_HEIGHT / scaleRatio / 2.0f + CameraPosition->yCord - CameraExtremeDown,
 								scaleSizeInitial, 0, 0 , 0,
 								theLoadingImage->texture,
@@ -146,8 +147,8 @@ void BSTexture::initMenuButtons()
 			newButton->xCord = xCord;
 			newButton->yCord = yCord;
 
-			BS_Renderer::loadATexture("Button images/New Buttons/" + namesOfMenus + "/The Unnamed Buttons/picture" + BStoString(j) + ".png", newButton->textureOfButtons[0]);
-			BS_Renderer::loadATexture("Button images/New Buttons/" + namesOfMenus + "/The Unnamed Buttons/picture0" + BStoString(j) + ".png", newButton->textureOfButtons[1]);
+			BS_Renderer::load_texture("Button images/New Buttons/" + namesOfMenus + "/The Unnamed Buttons/picture" + BStoString(j) + ".png", newButton->textureOfButtons[0]);
+			BS_Renderer::load_texture("Button images/New Buttons/" + namesOfMenus + "/The Unnamed Buttons/picture0" + BStoString(j) + ".png", newButton->textureOfButtons[1]);
 
 			///Set the data for the menu buttons
 			BS_Renderer::set_vao_data(newButton->vaoOfButtons[0], newButton->vbo[0], newButton->ibo[0], newButton->dataOfButtons[0], width * 2.0f, height * 2.0f);
@@ -598,9 +599,9 @@ void BSTexture::renderDarkLevel()
 //	yCordR = hero->theBody->GetPosition().y;
 
 	BSColorRGBA mainColor = {0.f, 0.f, 0.f, 1.f};
-	BS_Renderer::renderSomeBody(hero->theBody->GetPosition().x, hero->theBody->GetPosition().y, hero->zCord, 0, 0, 0,
+	BS_Renderer::render_object(hero->theBody->GetPosition().x, hero->theBody->GetPosition().y, hero->zCord, 0, 0, 0,
 								blankTexture, mainColor, originalDarkMenu->vao, originalDarkMenu->width, originalDarkMenu->height, originalDarkMenu->depth, false);
-	BS_Renderer::renderSomeBody(hero->theBody->GetPosition().x, hero->theBody->GetPosition().y, hero->zCord, 0, 0, 0,
+	BS_Renderer::render_object(hero->theBody->GetPosition().x, hero->theBody->GetPosition().y, hero->zCord, 0, 0, 0,
 								blankTexture, mainColor, originalDarkMenu->vao, originalDarkMenu->width, originalDarkMenu->height, originalDarkMenu->depth, false);
 
 	_my_shader_program->set_uniform(BS_Available_Shaders::is_dark(), 0);
@@ -1367,7 +1368,7 @@ void BSTexture::renderDustBodies()
 
 		if(color.a > 0)
 		{
-			BS_Renderer::renderSomeBody(ListOfSquareDustBodies[i]->xCord, ListOfSquareDustBodies[i]->yCord - decal, originalCoin->zCord, 0, 0, 0,
+			BS_Renderer::render_object(ListOfSquareDustBodies[i]->xCord, ListOfSquareDustBodies[i]->yCord - decal, originalCoin->zCord, 0, 0, 0,
 										originalDustBody->texture, color, originalDustBody->vao,
 										originalDustBody->width, originalDustBody->height, originalDustBody->depth, true);
 		}
@@ -1404,7 +1405,7 @@ void BSTexture::resetDustBodies()
 void BSTexture::renderTheCoin()
 {
 	BSColorRGBA color = {1, 1, 1, 1};
-	BS_Renderer::renderSomeBody(originalCoin->xCord + CameraPosition->xCord - CameraExtremeLeft, originalCoin->yCord + CameraPosition->yCord - CameraExtremeDown,
+	BS_Renderer::render_object(originalCoin->xCord + CameraPosition->xCord - CameraExtremeLeft, originalCoin->yCord + CameraPosition->yCord - CameraExtremeDown,
 								originalCoin->zCord, 0, 0, 0, originalCoin->texture, color, originalCoin->vao, originalCoin->width, originalCoin->height, originalCoin->depth, false);
 }
 
@@ -1427,7 +1428,7 @@ void BSTexture::renderWormHoles()
 			{
 				listOfWormHoles[i]->value1 = listOfWormHoles[i]->value1 + 360;
 			}
-			BS_Renderer::renderSomeBody(listOfWormHoles[i]->xCord, listOfWormHoles[i]->yCord, listOfWormHoles[i]->zCord, listOfWormHoles[i]->value1, 0, 0,
+			BS_Renderer::render_object(listOfWormHoles[i]->xCord, listOfWormHoles[i]->yCord, listOfWormHoles[i]->zCord, listOfWormHoles[i]->value1, 0, 0,
 										originalWormHole->texture, color, originalWormHole->vao,
 										originalWormHole->width, originalWormHole->height, originalWormHole->depth, true);
 		}
@@ -1509,7 +1510,7 @@ void BSTexture::renderMenuLevels(int nrOfLevels, ChapterLevelsStructure* theLeve
 			{
 				theLevelsToRender[i + 1]->color.r = 1.f;
 			}
-			BS_Renderer::renderSomeBody(theLevelsToRender[i]->xCord + CameraPosition->xCord - CameraExtremeLeft + theLevelsToRender[i]->width / 2.f + theLevelsToRender[i]->width / 2.f,
+			BS_Renderer::render_object(theLevelsToRender[i]->xCord + CameraPosition->xCord - CameraExtremeLeft + theLevelsToRender[i]->width / 2.f + theLevelsToRender[i]->width / 2.f,
 										theLevelsToRender[i]->yCord + CameraPosition->yCord - CameraExtremeDown,
 										scaleSizeInitial, 0, 0, 0, theLevelsToRender[0]->textureOfConnectionLeftRight,
 										theLevelsToRender[i + 1]->color, theLevelsToRender[0]->vaoBufferOfConnectionLeftRight,
@@ -1526,7 +1527,7 @@ void BSTexture::renderMenuLevels(int nrOfLevels, ChapterLevelsStructure* theLeve
 			{
 				theLevelsToRender[i + 5]->color.r = 1.f;
 			}
-			BS_Renderer::renderSomeBody(theLevelsToRender[i]->xCord + CameraPosition->xCord - CameraExtremeLeft,
+			BS_Renderer::render_object(theLevelsToRender[i]->xCord + CameraPosition->xCord - CameraExtremeLeft,
 										theLevelsToRender[i]->yCord - theLevelsToRender[i]->height / 2.f - theLevelsToRender[i]->height / 2.f + CameraPosition->yCord - CameraExtremeDown,
 										scaleSizeInitial, 0, 0, 0, theLevelsToRender[0]->textureOfConnectionUpDown,
 										theLevelsToRender[i + 5]->color, theLevelsToRender[0]->vaoBufferOfConnectionUpDown,
@@ -1547,7 +1548,7 @@ void BSTexture::renderMenuLevels(int nrOfLevels, ChapterLevelsStructure* theLeve
 		{
 			theLevelsToRender[i]->color.r = 1.f;
 		}
-		BS_Renderer::renderSomeBody(theLevelsToRender[i]->xCord + CameraPosition->xCord - CameraExtremeLeft,
+		BS_Renderer::render_object(theLevelsToRender[i]->xCord + CameraPosition->xCord - CameraExtremeLeft,
 									theLevelsToRender[i]->yCord + CameraPosition->yCord - CameraExtremeDown,
 									scaleSizeInitial, 0, 0, 0,
 									theLevelsToRender[0]->textureOfLevel,
@@ -1576,7 +1577,7 @@ void BSTexture::renderMenuLevels(int nrOfLevels, ChapterLevelsStructure* theLeve
 			{
 				theLevelsToRender[0]->color.r = 1.f;
 			}
-			BS_Renderer::renderSomeBody(theLevelsToRender[i]->xCord + CameraPosition->xCord - CameraExtremeLeft,
+			BS_Renderer::render_object(theLevelsToRender[i]->xCord + CameraPosition->xCord - CameraExtremeLeft,
 										theLevelsToRender[i]->yCord + CameraPosition->yCord - CameraExtremeDown,
 										scaleSizeInitial, 0, 0, 0,
 										theLevelsToRender[0]->textureOfFinishedLevel,
@@ -1587,7 +1588,7 @@ void BSTexture::renderMenuLevels(int nrOfLevels, ChapterLevelsStructure* theLeve
 
 
 	///Randez animatia cu care ma voi misca prin nivele
-	BS_Renderer::renderSomeBody(levelChoserPlayer->xCord + CameraPosition->xCord - CameraExtremeLeft,
+	BS_Renderer::render_object(levelChoserPlayer->xCord + CameraPosition->xCord - CameraExtremeLeft,
 								levelChoserPlayer->yCord + CameraPosition->yCord - CameraExtremeDown,
 								scaleSizeInitial, 0, 0, 0, levelChoserPlayer->texture, levelChoserPlayer->color,
 								levelChoserPlayer->vao, levelChoserPlayer->width, levelChoserPlayer->height,
@@ -1627,7 +1628,7 @@ void BSTexture::renderMenuChapters()
 		///Daca este mai la dreapta
 		if(chaptere[indexulUrmatoruluiNivel]->xCord > chaptere[i]->xCord)
 		{
-			BS_Renderer::renderSomeBody(chaptere[i]->xCord + CameraPosition->xCord - CameraExtremeLeft + chaptere[i]->width / 2.f + sizeOfConnectionStringX / 2.f + 0.1,
+			BS_Renderer::render_object(chaptere[i]->xCord + CameraPosition->xCord - CameraExtremeLeft + chaptere[i]->width / 2.f + sizeOfConnectionStringX / 2.f + 0.1,
 										chaptere[i]->yCord + CameraPosition->yCord - CameraExtremeDown,
 										scaleSizeInitial, 0, 0, 0, chaptere[0]->levelFromChapter[0]->textureOfConnectionLeftRightChapter,
 										chaptere[indexulUrmatoruluiNivel]->color, chaptere[0]->levelFromChapter[0]->vaoBufferOfConnectionLeftRightChapter,
@@ -1638,7 +1639,7 @@ void BSTexture::renderMenuChapters()
 			///Daca este mai la stanga
 			if(chaptere[indexulUrmatoruluiNivel]->xCord < chaptere[i]->xCord)
 			{
-				BS_Renderer::renderSomeBody(chaptere[i]->xCord + CameraPosition->xCord - CameraExtremeLeft - chaptere[i]->width / 2.f - sizeOfConnectionStringX / 2.f - 0.12,
+				BS_Renderer::render_object(chaptere[i]->xCord + CameraPosition->xCord - CameraExtremeLeft - chaptere[i]->width / 2.f - sizeOfConnectionStringX / 2.f - 0.12,
 											chaptere[i]->yCord + CameraPosition->yCord - CameraExtremeDown,
 											scaleSizeInitial, 0, 0, 0,
 											chaptere[0]->levelFromChapter[0]->textureOfConnectionLeftRightChapter,
@@ -1651,7 +1652,7 @@ void BSTexture::renderMenuChapters()
 				///Daca este mai jos
 				if(chaptere[indexulUrmatoruluiNivel]->yCord < chaptere[i]->yCord)
 				{
-					BS_Renderer::renderSomeBody(chaptere[i]->xCord + CameraPosition->xCord - CameraExtremeLeft,
+					BS_Renderer::render_object(chaptere[i]->xCord + CameraPosition->xCord - CameraExtremeLeft,
 												chaptere[i]->yCord + chaptere[i]->height / 2.f - sizeOfConnectionStringY / 2.f + 0.2 + CameraPosition->yCord - CameraExtremeDown,
 												scaleSizeInitial, 0, 0, 0,
 												chaptere[0]->levelFromChapter[0]->textureOfConnectionUpDownChapter,
@@ -1664,7 +1665,7 @@ void BSTexture::renderMenuChapters()
 					///Daca este mai sus
 					if(chaptere[indexulUrmatoruluiNivel]->yCord > chaptere[i]->yCord)
 					{
-						BS_Renderer::renderSomeBody(chaptere[i]->xCord + CameraPosition->xCord - CameraExtremeLeft,
+						BS_Renderer::render_object(chaptere[i]->xCord + CameraPosition->xCord - CameraExtremeLeft,
 													chaptere[i]->yCord + chaptere[i]->height / 2.f + sizeOfConnectionStringY / 2.f + CameraPosition->yCord - CameraExtremeDown,
 													scaleSizeInitial, 0, 0, 0,
 													chaptere[0]->levelFromChapter[0]->textureOfConnectionUpDownChapter,
@@ -1680,7 +1681,7 @@ void BSTexture::renderMenuChapters()
 	for(int i = 0 ; i < nrOfChapters ; i++)
 	{
 		///Second, render the level images
-		BS_Renderer::renderSomeBody(chaptere[i]->xCord + CameraPosition->xCord - CameraExtremeLeft,
+		BS_Renderer::render_object(chaptere[i]->xCord + CameraPosition->xCord - CameraExtremeLeft,
 									chaptere[i]->yCord + CameraPosition->yCord - CameraExtremeDown,
 									scaleSizeInitial, 0, 0, 0,
 									chaptere[i]->texture,
@@ -1690,7 +1691,7 @@ void BSTexture::renderMenuChapters()
 
 		if(chaptere[i]->isFinishedChapter)
 		{
-			BS_Renderer::renderSomeBody(chaptere[i]->xCord + CameraPosition->xCord - CameraExtremeLeft,
+			BS_Renderer::render_object(chaptere[i]->xCord + CameraPosition->xCord - CameraExtremeLeft,
 										chaptere[i]->yCord + CameraPosition->yCord - CameraExtremeDown,
 										scaleSizeInitial, 0, 0, 0,
 										chaptere[0]->levelFromChapter[0]->textureOfFinishedLevel,
@@ -1700,7 +1701,7 @@ void BSTexture::renderMenuChapters()
 	}
 
 	///Randez animatia cu care ma voi misca prin nivele
-	BS_Renderer::renderSomeBody(levelChoserPlayer->xCord + CameraPosition->xCord - CameraExtremeLeft,
+	BS_Renderer::render_object(levelChoserPlayer->xCord + CameraPosition->xCord - CameraExtremeLeft,
 								levelChoserPlayer->yCord + CameraPosition->yCord - CameraExtremeDown,
 								scaleSizeInitial, 0, 0, 0,
 								levelChoserPlayer->texture, levelChoserPlayer->color, levelChoserPlayer->vao,
@@ -1722,7 +1723,7 @@ void BSTexture::renderMessages()
 		for(int i = 0; i < listOfMessages.size(); i++)
 		{
 			///Randez semnul
-			BS_Renderer::renderSomeBody(listOfMessages[i]->xCord, listOfMessages[i]->yCord, scaleSizeInitial, 0, 0, 0,
+			BS_Renderer::render_object(listOfMessages[i]->xCord, listOfMessages[i]->yCord, scaleSizeInitial, 0, 0, 0,
 										listOfMessages[i]->textureOfSign, listOfMessages[i]->colorOfSign,
 										listOfMessages[i]->vaoBufferOfSign, listOfMessages[i]->widthOfSign, listOfMessages[i]->heightOfSign, 0, true);
 
@@ -1739,7 +1740,7 @@ void BSTexture::renderMessages()
 					listOfMessages[i]->colorOfMessage.a = 0.9f;
 				}
 
-				BS_Renderer::renderSomeBody(listOfMessages[i]->xCord + listOfMessages[i]->widthOfMessage / 2.f,
+				BS_Renderer::render_object(listOfMessages[i]->xCord + listOfMessages[i]->widthOfMessage / 2.f,
 											listOfMessages[i]->yCord + listOfMessages[i]->heightOfMessage / 2.f + listOfMessages[i]->heightOfSign / 2.f + 0.2f,
 											scaleSizeInitial, 0, 0, 0, listOfMessages[i]->textureOfMessage, listOfMessages[i]->colorOfMessage,
 											listOfMessages[i]->vaoBufferOfMessage, listOfMessages[i]->widthOfMessage, listOfMessages[i]->heightOfMessage, 0, true);
@@ -1751,7 +1752,7 @@ void BSTexture::renderMessages()
 				{
 					listOfMessages[i]->colorOfMessage.a -= 0.02;
 
-					BS_Renderer::renderSomeBody(listOfMessages[i]->xCord + listOfMessages[i]->widthOfMessage / 2.f,
+					BS_Renderer::render_object(listOfMessages[i]->xCord + listOfMessages[i]->widthOfMessage / 2.f,
 												listOfMessages[i]->yCord + listOfMessages[i]->heightOfMessage / 2.f + listOfMessages[i]->heightOfSign / 2.f + 0.2f,
 												scaleSizeInitial, 0, 0, 0, listOfMessages[i]->textureOfMessage, listOfMessages[i]->colorOfMessage,
 												listOfMessages[i]->vaoBufferOfMessage, listOfMessages[i]->widthOfMessage, listOfMessages[i]->heightOfMessage, 0, true);
@@ -1798,7 +1799,7 @@ void BSTexture::renderTransparentSquare(BSColorRGBA theColorToRenders, float coo
 	theColorToRenders.g = 0;
 	theColorToRenders.b = 0;
 
-	BS_Renderer::renderSomeBody(coordinateX, coordinateY, scaleSizeInitial, 0, 0, 0, whiteTexture,
+	BS_Renderer::render_object(coordinateX, coordinateY, scaleSizeInitial, 0, 0, 0, whiteTexture,
 								theColorToRenders, originalTransparentMenu->vao,
 								originalTransparentMenu->width, originalTransparentMenu->height, originalTransparentMenu->depth, false);
 }
@@ -1832,14 +1833,14 @@ void BSTexture::renderAnyButtons(BSMenuStructure *theMenu)
 
 		if(theMenu->listOfButtons[i] == currentButton)
 		{
-			BS_Renderer::renderSomeBody(currentButton->xCord + CameraPosition->xCord - CameraExtremeLeft,
+			BS_Renderer::render_object(currentButton->xCord + CameraPosition->xCord - CameraExtremeLeft,
 										currentButton->yCord + CameraPosition->yCord - CameraExtremeDown,
 										scaleSizeInitial, 0, 0, 0, currentButton->textureOfButtons[1], currentButton->color, currentButton->vaoOfButtons[1],
 										newW, newH, currentButton->depth, false);
 		}
 		else
 		{
-			BS_Renderer::renderSomeBody(theMenu->listOfButtons[i]->xCord + CameraPosition->xCord - CameraExtremeLeft,
+			BS_Renderer::render_object(theMenu->listOfButtons[i]->xCord + CameraPosition->xCord - CameraExtremeLeft,
 										theMenu->listOfButtons[i]->yCord + CameraPosition->yCord - CameraExtremeDown,
 										scaleSizeInitial, 0, 0, 0, theMenu->listOfButtons[i]->textureOfButtons[0], theMenu->listOfButtons[i]->color,
 										theMenu->listOfButtons[i]->vaoOfButtons[0], theMenu->listOfButtons[i]->width,
@@ -1872,7 +1873,7 @@ void BSTexture::renderSoundAnimation(float yCord, float theVolume)
 {
 	for(int i = 0 ; i < theVolume * 10 ; i++)
 	{
-		BS_Renderer::renderSomeBody(SoundButtonTexture->xCord + CameraPosition->xCord - CameraExtremeLeft + Hero_size * i + 0.25 * i - 3.2,
+		BS_Renderer::render_object(SoundButtonTexture->xCord + CameraPosition->xCord - CameraExtremeLeft + Hero_size * i + 0.25 * i - 3.2,
 									yCord + CameraPosition->yCord - CameraExtremeDown,
 									scaleSizeInitial, 0, 0, 0, SoundButtonTexture->texture, SoundButtonTexture->color,
 									SoundButtonTexture->vao, SoundButtonTexture->width, SoundButtonTexture->height, SoundButtonTexture->depth, false);
@@ -1893,19 +1894,19 @@ void BSTexture::renderBackgroundNo1()
 	backgroundBush->yCord = val31;
 	backgroundHighField->yCord = val41;
 
-	BS_Renderer::renderSomeBody(backgroundSky->xCord - 1, backgroundSky->yCord - 2, -40, 0, 0, 0,
+	BS_Renderer::render_object(backgroundSky->xCord - 1, backgroundSky->yCord - 2, -40, 0, 0, 0,
 								backgroundSky->texture, backgroundSky->color, backgroundSky->vao,
 								2.4f * backgroundSky->width, 3 * backgroundSky->height + 10, 0, true);
 
-	BS_Renderer::renderSomeBody(backgroundMountain->xCord, backgroundMountain->yCord, -35, 0, 0, 0,
+	BS_Renderer::render_object(backgroundMountain->xCord, backgroundMountain->yCord, -35, 0, 0, 0,
 								backgroundMountain->texture, backgroundMountain->color, backgroundMountain->vao,
 								2 * backgroundMountain->width, 3 * backgroundMountain->height, 0, true);
 
-	BS_Renderer::renderSomeBody(backgroundBush->xCord, backgroundBush->yCord, -30, 0, 0, 0,
+	BS_Renderer::render_object(backgroundBush->xCord, backgroundBush->yCord, -30, 0, 0, 0,
 								backgroundBush->texture, backgroundBush->color, backgroundBush->vao,
 								2 * backgroundBush->width, 2 * backgroundBush->height, 0, true);
 
-	BS_Renderer::renderSomeBody(backgroundHighField->xCord - 10, backgroundHighField->yCord, -23, 0, 0, 0,
+	BS_Renderer::render_object(backgroundHighField->xCord - 10, backgroundHighField->yCord, -23, 0, 0, 0,
 								backgroundHighField->texture, backgroundHighField->color, backgroundHighField->vao,
 								2 * backgroundHighField->width, 2 * backgroundHighField->height, 0, true);
 }
@@ -1924,13 +1925,13 @@ void BSTexture::renderChuncksOfObjects(float coordX, float coordY, float coordZ,
 
 void BSTexture::loadTextures()
 {
-	BS_Renderer::loadATexture("texture.png", texture);
-	BS_Renderer::loadATexture("whiteImage.png", whiteTexture);
-	BS_Renderer::loadATexture("Animations/roundAnimation/windmillPropeller.png", textureMill);
-	BS_Renderer::loadATexture("playerTexture.png", playerTexture);
-	BS_Renderer::loadATexture("playerTexture round.png", playerTextureRound);
-	BS_Renderer::loadATexture("playerTexture Dead.png", playerTextureDead);
-	BS_Renderer::loadATexture("background.png", backgroundTexture);
+	BS_Renderer::load_texture("texture.png", texture);
+	BS_Renderer::load_texture("whiteImage.png", whiteTexture);
+	BS_Renderer::load_texture("Animations/roundAnimation/windmillPropeller.png", textureMill);
+	BS_Renderer::load_texture("playerTexture.png", playerTexture);
+	BS_Renderer::load_texture("playerTexture round.png", playerTextureRound);
+	BS_Renderer::load_texture("playerTexture Dead.png", playerTextureDead);
+	BS_Renderer::load_texture("background.png", backgroundTexture);
 }
 
 void BSTexture::loadMenuButtonsTexture(int numberOfButtons, std::string pathAndName, GLuint theButtonsTexture[])
@@ -2005,7 +2006,7 @@ void BSTexture::initTheFont()
 
 		if(!i)
 		{
-			BS_Renderer::loadATexture("Animations/Font/dataOfFont.png", letters[0]->texture);
+			BS_Renderer::load_texture("Animations/Font/dataOfFont.png", letters[0]->texture);
 		}
 
 		letters[let]->color.setColor(0, 0, 0, 1);
@@ -2085,7 +2086,7 @@ void BSTexture::renderMyFont(std::string theStringToRenderString, float xCord, f
 			lastX = pozNou;
 			lastWidth = newWidth;
 
-			BS_Renderer::renderSomeBody(pozNou, newY, scaleSizeInitial, 0, 0, 0, letters[0]->texture, newColor, letters[let]->vao, xSize, ySize, 0, can);
+			BS_Renderer::render_object(pozNou, newY, scaleSizeInitial, 0, 0, 0, letters[0]->texture, newColor, letters[let]->vao, xSize, ySize, 0, can);
 		}
 	}
 }

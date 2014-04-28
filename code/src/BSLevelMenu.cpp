@@ -37,10 +37,10 @@ void BSLevelMenu::loadLevels(std::string chapterName, ChapterLevelsStructure* th
 						name3 = "Menu Of Levels/" + chapterName + "/levelFinished.png";
 			const char *name1Char = name1.c_str(), *name2Char = name2.c_str(), *name3Char = name3.c_str();
 
-			BS_Renderer::loadATexture(name1Char, theLevelsToAdd[0]->textureOfConnectionLeftRight);
-			BS_Renderer::loadATexture(name2Char, theLevelsToAdd[0]->textureOfConnectionUpDown);
-			BS_Renderer::loadATexture(name3Char, theLevelsToAdd[0]->textureOfFinishedLevel);
-			BS_Renderer::loadATexture("Menu Of Chapters/buttons menu background.png", theLevelsToAdd[0]->textureOfLevel);
+			BS_Renderer::load_texture(name1Char, theLevelsToAdd[0]->textureOfConnectionLeftRight);
+			BS_Renderer::load_texture(name2Char, theLevelsToAdd[0]->textureOfConnectionUpDown);
+			BS_Renderer::load_texture(name3Char, theLevelsToAdd[0]->textureOfFinishedLevel);
+			BS_Renderer::load_texture("Menu Of Chapters/buttons menu background.png", theLevelsToAdd[0]->textureOfLevel);
 		}
 
 
@@ -102,7 +102,7 @@ void BSLevelMenu::loadLevels(std::string chapterName, ChapterLevelsStructure* th
 
 	std::string levelChooserTextureNameString = "Menu Of Levels/" + chapterName + "/playerTextureLevelChooser.png";
 	const char *levelChooserTextureNameChar = levelChooserTextureNameString.c_str();
-	BS_Renderer::loadATexture(levelChooserTextureNameChar, levelChoserPlayer->texture);
+	BS_Renderer::load_texture(levelChooserTextureNameChar, levelChoserPlayer->texture);
 
 	levelChoserPlayer->justFinished = false;
 }
@@ -160,13 +160,13 @@ void BSLevelMenu::loadChapters()
 		loadLevels(nameOfChapter, chaptere[i]->levelFromChapter, chaptere[i]->nrOfLevels, i);
 
 		std::string textureName = "Menu Of Chapters/The Chapters textures/chapterTexture" + BStoString(i + 1) + ".png";
-		BS_Renderer::loadATexture(textureName.c_str(), chaptere[i]->texture);
+		BS_Renderer::load_texture(textureName.c_str(), chaptere[i]->texture);
 
 		levelChoserPlayer->indexOfChapterThatItIsOn = 0;
 
-		BS_Renderer::loadATexture("Menu Of Chapters/connectionLeftRight.png", chaptere[i]->levelFromChapter[0]->textureOfConnectionLeftRightChapter);
+		BS_Renderer::load_texture("Menu Of Chapters/connectionLeftRight.png", chaptere[i]->levelFromChapter[0]->textureOfConnectionLeftRightChapter);
 
-		BS_Renderer::loadATexture("Menu Of Chapters/connectionUpDown.png", chaptere[i]->levelFromChapter[0]->textureOfConnectionUpDownChapter);
+		BS_Renderer::load_texture("Menu Of Chapters/connectionUpDown.png", chaptere[i]->levelFromChapter[0]->textureOfConnectionUpDownChapter);
 
 		levelChoserPlayer->xCord = chaptere[0]->xCord;
 		levelChoserPlayer->yCord = chaptere[0]->yCord;

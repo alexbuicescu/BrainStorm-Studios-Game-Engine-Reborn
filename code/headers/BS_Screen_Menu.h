@@ -219,7 +219,7 @@ public:
 
 	void draw(std::string _texture_name)
 	{
-		BS_Renderer22::renderSomeBody(get_location_x(), get_location_y(), 0, 0, 0, 0, BS_Renderer22::get_texture(_texture_name), get_color(), get_vao(), 1, 1, 0, 0);
+		///BS_Renderer::renderSomeBody(get_location_x(), get_location_y(), 0, 0, 0, 0, BS_Renderer::get_texture(_texture_name), get_color(), get_vao(), 1, 1, 0, 0);
 	}
 };
 

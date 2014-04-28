@@ -257,39 +257,40 @@ int main( int argc, char* args[] )
 //		renderTheMenuBeforeItBecomesFullyVisible();
 //	}
 	BS_Game_Demo::run_main_loop();
-	long long currentTime = 0, previousTime = 0, maxFPS = 60;
-	while(!quit)
-	{
+	BS_Engine::clear_engine();
+//	long long currentTime = 0, previousTime = 0, maxFPS = 60;
+//	while(!quit)
+//	{
+////		glClear( GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+////        SDL_PollEvent( &event );
+////
+////        if(event.type == SDL_QUIT)
+////        {
+////            quit = true;
+////        }
+////
+////		///randareMenu->renderTheLoadingImage(1);
+////		randareMenu->renderRainDrops();
+////		SDL_GL_SwapBuffers();
+//
 //		glClear( GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-//        SDL_PollEvent( &event );
+//		{
+//			currentTime = SDL_GetTicks();
+//			runMainLoop();
 //
-//        if(event.type == SDL_QUIT)
-//        {
-//            quit = true;
-//        }
+//			currentTime = SDL_GetTicks() - currentTime;
 //
-//		///randareMenu->renderTheLoadingImage(1);
-//		randareMenu->renderRainDrops();
+//			if(currentTime < (double)(1000 / maxFPS))
+//			{
+//				SDL_Delay((double)(1000 / maxFPS) - currentTime);
+//			}
+//		}
 //		SDL_GL_SwapBuffers();
-
-		glClear( GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-		{
-			currentTime = SDL_GetTicks();
-			runMainLoop();
-
-			currentTime = SDL_GetTicks() - currentTime;
-
-			if(currentTime < (double)(1000 / maxFPS))
-			{
-				SDL_Delay((double)(1000 / maxFPS) - currentTime);
-			}
-		}
-		SDL_GL_SwapBuffers();
-	}
-
-
-	SDL_Quit();
-	exit(0);
+//	}
+//
+//
+//	SDL_Quit();
+//	exit(0);
 
 
 	return 0;

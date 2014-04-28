@@ -3,7 +3,7 @@
 #define BSANIMATIONCLASS_H_INCLUDED
 
 #include "BSValues.h"
-#include "BSRenderer.h"
+#include "BS_Renderer.h"
 
 class BSAnimationClass
 {

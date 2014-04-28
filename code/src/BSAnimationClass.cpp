@@ -35,7 +35,7 @@ void BSAnimationClass::addAnimation(int nrOfAnimations1, int nrOfAnimations2, in
 		///Numele texturii + nr + extensie
 		std::string nameOfAnimation = name + BStoString(i) + ".png";
 		///Incarca textura
-		BS_Renderer::loadATexture(nameOfAnimation.c_str(), q->texture);
+		BS_Renderer::load_texture(nameOfAnimation.c_str(), q->texture);
 
 		///if it is the berserk, I make the animation bigger
 		if(AnimationIndex == 11 || AnimationIndex == 12 || AnimationIndex == 13 || AnimationIndex == 14)

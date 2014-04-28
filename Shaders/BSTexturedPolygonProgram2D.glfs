@@ -41,15 +41,7 @@ void main()
 
     if(isCircleGLFS == 0.0)
     {
-        //if(texture2D( BSTextureUnit, textureCoordinates ) != 0.0)
-        {
-            gl_FragColor = texture2D( BSTextureUnit, textureCoordinates ) * BSTextureColor;
-        }
-        //else
-            //daca este o culoare, randez culoarea si nu textura
-        {
-            //gl_FragColor = BSTextureColor;
-        }
+        gl_FragColor = texture2D(BSTextureUnit, textureCoordinates) * BSTextureColor;
     }
     else
         if(isCircleGLFS != 0.0)

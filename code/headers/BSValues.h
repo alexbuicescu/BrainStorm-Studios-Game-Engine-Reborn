@@ -3,8 +3,9 @@
 #define VALUES_H_INCLUDED
 
 #include "BSOpenGL.h"
-#include "BSRenderer.h"
+#include "BS_Renderer.h"
 #include "BS_Available_Shaders.h"
+#include "My_Values.h"
 #include <vector>
 #include <sstream>
 

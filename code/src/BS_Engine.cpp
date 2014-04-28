@@ -214,7 +214,7 @@ void BS_Engine::load_new_texture(std::string _texture_name)
 {
     if(textures_map[_texture_name] == 0)
     {
-        textures_map[_texture_name] = BS_Renderer::loadATexture(_texture_name);
+        textures_map[_texture_name] = BS_Renderer::load_texture(_texture_name);
     }
 }
 

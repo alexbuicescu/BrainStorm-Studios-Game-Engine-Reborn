@@ -80,7 +80,7 @@ bool BS_Game_Demo::initialize_media()
 //	gOpenGLTexture2->renderTheLoadingImage(1);
 //	SDL_GL_SwapBuffers();
 
-	my_first_object = new BS_Object(0, 0, 1, 1, "texture.png");
+	my_first_object = new BS_Object(0, 0, 1, 1, "textures.png");
 
 
 

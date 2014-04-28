@@ -1,5 +1,6 @@
 #include "BS_Object.h"
-#include "BSRenderer.h"
+#include "BS_Renderer.h"
+#include "BS_Engine.h"
 
 
 
@@ -9,7 +10,7 @@ BS_Object::BS_Object(float _coordinate_x, float _coordinate_y, float _coordinate
 	set_size(_width, _height, _depth);
 	set_rotation_angle(_rotation_angle_x, _rotation_angle_y, _rotation_angle_z);
 
-	set_color(1, 1, 1, 1);
+	set_color(1.f, 1.f, 1.f, 1.f);
 
     BS_Renderer::set_vao_data(vao, vbo, ibo, data, width, height);
 }
@@ -19,7 +20,9 @@ BS_Object::BS_Object(float _coordinate_x, float _coordinate_y, float _width, flo
 	set_coordinates(_coordinate_x, _coordinate_y);
 	set_size(_width, _height);
 
-	set_color(1, 1, 1, 1);
+	set_color(1.f, 1.f, 1.f, 1.f);
+
+	texture_name = _texture_name;
 
 	BS_Engine::load_new_texture(_texture_name);
 
@@ -140,15 +143,15 @@ float BS_Object::get_color(char _type)
 
 void BS_Object::draw()
 {
-	BS_Renderer::renderSomeBody(coordinate_x, coordinate_y, coordinate_z, rotation_angle_x, rotation_angle_y, rotation_angle_z, BS_Engine::get_texture(texture_name), color, vao, width, height, depth, false);
+	BS_Renderer::render_object(coordinate_x, coordinate_y, coordinate_z, rotation_angle_x, rotation_angle_y, rotation_angle_z, BS_Engine::get_texture(texture_name), color, vao, width, height, depth, false);
 }
 
 void BS_Object::draw(GLuint differentTexture)
 {
-	BS_Renderer::renderSomeBody(coordinate_x, coordinate_y, coordinate_z, rotation_angle_x, rotation_angle_y, rotation_angle_z, differentTexture, color, vao, width, height, depth, false);
+	BS_Renderer::render_object(coordinate_x, coordinate_y, coordinate_z, rotation_angle_x, rotation_angle_y, rotation_angle_z, differentTexture, color, vao, width, height, depth, false);
 }
 
 void BS_Object::draw(GLuint differentTexture, GLuint differentVao)
 {
-	BS_Renderer::renderSomeBody(coordinate_x, coordinate_y, coordinate_z, rotation_angle_x, rotation_angle_y, rotation_angle_z, differentTexture, color, differentVao, width, height, depth, false);
+	BS_Renderer::render_object(coordinate_x, coordinate_y, coordinate_z, rotation_angle_x, rotation_angle_y, rotation_angle_z, differentTexture, color, differentVao, width, height, depth, false);
 }

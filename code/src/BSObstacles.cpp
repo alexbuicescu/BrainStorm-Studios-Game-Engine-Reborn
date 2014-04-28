@@ -179,7 +179,7 @@ void BSObstacles::setVaoForChunckObjects(GLuint &vaoBuffer, GLuint &vboBuffer, G
 	dataToSet[3].position.y = -quadHeight;
 	dataToSet[3].position.z = scaleSizeInitial;
 
-	BS_Renderer::set_vao(vaoBuffer, dataToSet, vboBuffer, iboBuffer);
+	BS_Renderer::set_vao(vaoBuffer, vboBuffer, iboBuffer, dataToSet);
 }
 
 void BSObstacles::set_vao_data_font(BSTexturedVertex2D dataTSet[4], GLfloat widthToSet, GLfloat heightToSet, float xCord, float yCord, GLuint &vaoBuffer, GLuint &vboBuffer, GLuint &iboBuffer)
@@ -302,7 +302,7 @@ void BSObstacles::setUpOriginals()
 
 
 	///Set the coin
-	BS_Renderer::loadATexture("Animations/coin.png", originalCoin->texture);
+	BS_Renderer::load_texture("Animations/coin.png", originalCoin->texture);
 	originalCoin->width = Hero_size;
 	originalCoin->height = Hero_size;
 	originalCoin->xCord = 2;
@@ -311,7 +311,7 @@ void BSObstacles::setUpOriginals()
 
 
 	///Set the dust bodies
-	BS_Renderer::loadATexture("Animations/dust.png", originalDustBody->texture);
+	BS_Renderer::load_texture("Animations/dust.png", originalDustBody->texture);
 	originalDustBody->width = 1;
 	originalDustBody->height = 1;
 	originalDustBody->xCord = 0;
@@ -320,7 +320,7 @@ void BSObstacles::setUpOriginals()
 
 
 	///Set the fans
-	BS_Renderer::loadATexture("Animations/fan.png", originalFan->texture);
+	BS_Renderer::load_texture("Animations/fan.png", originalFan->texture);
 	originalFan->width = Hero_size * 10;
 	originalFan->height = Hero_size;
 	BS_Renderer::set_vao_data(originalFan->vao, originalFan->vbo, originalFan->ibo, originalFan->data, 1, 1);
@@ -329,7 +329,7 @@ void BSObstacles::setUpOriginals()
 
 
 	///Set the dark level light
-	BS_Renderer::loadATexture("Animations/dark.png", mainDarkTexture);
+	BS_Renderer::load_texture("Animations/dark.png", mainDarkTexture);
 	originalDarkMenu->width = (float) (SCREEN_WIDTH / scaleRatio + 2) * 2;
 	originalDarkMenu->height = (float) (SCREEN_HEIGHT / scaleRatio + 2) * 2;
 	BS_Renderer::set_vao_data(originalDarkMenu->vao, originalDarkMenu->vbo, originalDarkMenu->ibo, originalDarkMenu->data, 1, 1);
@@ -343,7 +343,7 @@ void BSObstacles::setUpOriginals()
 	originalWormHole->width = 2;
 	originalWormHole->height = 2;
 	BS_Renderer::set_vao_data(originalWormHole->vao, originalWormHole->vbo, originalWormHole->ibo, originalWormHole->data, 1, 1);
-	BS_Renderer::loadATexture("Animations/wormHole.png", originalWormHole->texture);
+	BS_Renderer::load_texture("Animations/wormHole.png", originalWormHole->texture);
 	BSColorRGBA color = {1.0f, 1.0f, 1.0f, 1.0f};
 	originalWormHole->color = color;
 
@@ -988,7 +988,7 @@ void BSObstacles::addDinamicSquare(float BodyX, float BodyY, float BodyW, float 
 	p->script = NULL;
 	p->nameOfTexture = textureName;
 
-	BS_Renderer::loadATexture(textureName, p->texture);
+	BS_Renderer::load_texture(textureName, p->texture);
 
 	p->color.setColor(1, 1, 1, 1);
 
@@ -1042,7 +1042,7 @@ void BSObstacles::addDinamicRound(float BodyX, float BodyY, float BodyR,
 	p->nameOfTexture = textureName;
 	p->script = NULL;
 
-	BS_Renderer::loadATexture(textureName, p->texture);
+	BS_Renderer::load_texture(textureName, p->texture);
 
 	p->color.setColor(1, 1, 1, 1);
 	p->isRotating = true;
@@ -1091,7 +1091,7 @@ void BSObstacles::addOnlyTexture(int squareOrCirlce, float xCoord, float yCoord,
 
 		char textureCharPath[100] = "";
 		strcpy(textureCharPath, texturePath.c_str());
-		BS_Renderer::loadATexture(textureCharPath, p->texture);
+		BS_Renderer::load_texture(textureCharPath, p->texture);
 
 		///Salvez primul corp din lista inlantuita
 		ListOfSquareTextures.push_back(p);
@@ -1109,7 +1109,7 @@ void BSObstacles::addOnlyTexture(int squareOrCirlce, float xCoord, float yCoord,
 			p->nameOfTexture = texturePath;
 			p->color.setColor(1, 1, 1, 1);
 
-			BS_Renderer::loadATexture(texturePath.c_str(), p->texture);
+			BS_Renderer::load_texture(texturePath.c_str(), p->texture);
 
 			///Salvez primul corp din lista inlantuita
 			ListOfRoundTextures.push_back(p);
@@ -1125,7 +1125,7 @@ void BSObstacles::addMessageTexture(float xCoord, float yCoord, float width, flo
 	std::cout << "animation added: " << textureName << '\n';
 	///Load the message texture
 
-	BS_Renderer::loadATexture(textureName, newMessage->textureOfMessage);
+	BS_Renderer::load_texture(textureName, newMessage->textureOfMessage);
 	int newWidth, newHeight;
 	BS_Renderer::getTextureWidthAndHeight(textureName, newWidth, newHeight);
 	newMessage->widthOfMessage = newWidth / scaleRatio;
@@ -1145,7 +1145,7 @@ void BSObstacles::addMessageTexture(float xCoord, float yCoord, float width, flo
 	///Load the message sign texture
 	std::string fullTextureName = "Animations/messageAnimation/theMessageSign.png";
 
-	BS_Renderer::loadATexture(fullTextureName.c_str(), newMessage->textureOfSign);
+	BS_Renderer::load_texture(fullTextureName.c_str(), newMessage->textureOfSign);
 	BS_Renderer::set_vao_data(newMessage->vaoBufferOfSign, newMessage->vboBufferOfSign, newMessage->iboBufferOfSign,
 				  newMessage->dataOfSign, Hero_size, Hero_size * 2.0f);
 
@@ -1230,35 +1230,35 @@ void BSObstacles::addBackgrounds()
 	backgroundSky->height = (float) SCREEN_HEIGHT / scaleRatio;
 	backgroundSky->width = (float) backgroundSky->height * ratioImage;
 	backgroundSky->color = color;
-	BS_Renderer::loadATexture("Background images/sky.png", backgroundSky->texture);
+	BS_Renderer::load_texture("Background images/sky.png", backgroundSky->texture);
 	BS_Renderer::set_vao_data(backgroundSky->vao, backgroundSky->vbo, backgroundSky->ibo,
 				  backgroundSky->data, backgroundSky->width, backgroundSky->height);
 
 	backgroundMountain->height = (float) SCREEN_HEIGHT / scaleRatio;
 	backgroundMountain->width = (float) backgroundMountain->height * ratioImage;
 	backgroundMountain->color = color;
-	BS_Renderer::loadATexture("Background images/mountains.png", backgroundMountain->texture);
+	BS_Renderer::load_texture("Background images/mountains.png", backgroundMountain->texture);
 	BS_Renderer::set_vao_data(backgroundMountain->vao, backgroundMountain->vbo, backgroundMountain->ibo,
 				  backgroundMountain->data, backgroundMountain->width, backgroundMountain->height);
 
 	backgroundBush->height = (float) SCREEN_HEIGHT / scaleRatio;
 	backgroundBush->width = (float) backgroundBush->height * ratioImage;
 	backgroundBush->color = color;
-	BS_Renderer::loadATexture("Background images/bush.png", backgroundBush->texture);
+	BS_Renderer::load_texture("Background images/bush.png", backgroundBush->texture);
 	BS_Renderer::set_vao_data(backgroundBush->vao, backgroundBush->vbo, backgroundBush->ibo,
 				  backgroundBush->data, backgroundBush->width, backgroundBush->height);
 
 	backgroundField->height = (float) SCREEN_HEIGHT / scaleRatio;
 	backgroundField->width = (float) backgroundField->height * ratioImage;
 	backgroundField->color = color;
-	BS_Renderer::loadATexture("Background images/field.png", backgroundField->texture);
+	BS_Renderer::load_texture("Background images/field.png", backgroundField->texture);
 	BS_Renderer::set_vao_data(backgroundField->vao, backgroundField->vbo, backgroundField->ibo,
 				  backgroundField->data, backgroundField->width, backgroundField->height);
 
 	backgroundHighField->height = (float) SCREEN_HEIGHT / scaleRatio;
 	backgroundHighField->width = (float) backgroundHighField->height * ratioImage;
 	backgroundHighField->color = color;
-	BS_Renderer::loadATexture("Background images/high field.png", backgroundHighField->texture);
+	BS_Renderer::load_texture("Background images/high field.png", backgroundHighField->texture);
 	BS_Renderer::set_vao_data(backgroundHighField->vao, backgroundHighField->vbo, backgroundHighField->ibo,
 				  backgroundHighField->data, backgroundHighField->width, backgroundHighField->height);
 }
@@ -1334,7 +1334,7 @@ void BSObstacles::addTheTexturesOfCloudyParticles()
 {
 	for(int i = 1; i <= 5; i++)
 	{
-		BS_Renderer::loadATexture("Background images/cloud" + BStoString(i) + ".png", clouds[i]);
+		BS_Renderer::load_texture("Background images/cloud" + BStoString(i) + ".png", clouds[i]);
 	}
 }
 
