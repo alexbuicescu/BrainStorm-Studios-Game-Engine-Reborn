@@ -145,7 +145,6 @@ bool useSnow = true, useRain = false, useAssassinsCreed = false;
 int levelHasScript = 0;
 
 
-glm::mat4 LookAtMatrix;
 
 float HeroInitialX = 3, HeroInitialY = 3, newVolumeAudio = 1.f, newVolumeSFX = 1.f, currentVolumeAudio = 1.f,
 	  currentVolumeSFX = 1.f, scaleSize = 32, theTimeHowFast = 60,

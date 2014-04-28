@@ -6,6 +6,7 @@
 
 BS_Audio *_my_sound_device;
 BSTexturedPolygonProgram2D *_my_shader_program;
+BS_Camera *_my_camera;
 
 
 bool BS_Engine::quit_engine;
@@ -27,10 +28,10 @@ BS_Engine::~BS_Engine()
 
 void BS_Engine::set_matrices_for_first_use()
 {
-    glm::vec3 m_position, m_direction = glm::vec3(0, 0, -1), m_up = glm::vec3(0, 1, 0);
-	m_position = glm::vec3(CameraPosition->xCord, CameraPosition->yCord, -CameraPosition->zCord);
+    glm::vec3 matrix_position, matrix_direction = glm::vec3(0, 0, -1), matrix_up = glm::vec3(0, 1, 0);
+	matrix_position = glm::vec3(CameraPosition->xCord, CameraPosition->yCord, -CameraPosition->zCord);
 
-	LookAtMatrix = glm::lookAt(m_position, m_position + m_direction, m_up);
+	_my_camera->LookAtMatrix = glm::lookAt(matrix_position, matrix_position + matrix_direction, matrix_up);
 
 	_my_shader_program->set_uniform(BS_Available_Shaders::is_circle(), 0);
 }
@@ -98,6 +99,7 @@ bool BS_Engine::initialize_OpenGL()
 	glDepthFunc(GL_LEQUAL);
 	glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST);
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+	///glBlendFunc(GL_ONE, GL_ONE_MINUS_SRC_ALPHA);
 
 	//Check for error
 	GLenum error = glGetError();
@@ -203,6 +205,7 @@ bool BS_Engine::initialize_everything()
 	}
 
 	load_new_texture(texture_placeholder);
+	_my_camera = new BS_Camera(0, 0, 11.34f);
 	set_matrices_for_first_use();
 
 	quit_engine = false;

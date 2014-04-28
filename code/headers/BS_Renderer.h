@@ -12,6 +12,8 @@ class BS_Renderer
 	static void bind_vbo(GLuint &theVboToBind, GLuint &theIbotoBind, BSTexturedVertex2D dataToBind[4]);
 public:
 
+    virtual ~BS_Renderer() = 0;
+
     ///remove set_vao from set_vao_for_font and you can make it private
 	static void set_vao(GLuint &theVaoBuffer, GLuint &theVboToBind, GLuint &theIbotoBind, BSTexturedVertex2D dataToBind[4]);
 	static void set_vao_data(GLuint &vaoBuffer, GLuint &vboBuffer, GLuint &iboBuffer, BSTexturedVertex2D dataToSet[4], GLfloat widthToSet, GLfloat heightToSet);

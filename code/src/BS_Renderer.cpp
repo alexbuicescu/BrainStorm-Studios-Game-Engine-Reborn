@@ -97,7 +97,7 @@ void BS_Renderer::render_object(float coordX, float coordY, float coordZ, float 
 {
 	glBindTexture(GL_TEXTURE_2D, theTextureIdToRender);
 
-	BSModelViewMatrix = glm::translate( coordX, coordY, coordZ ) * LookAtMatrix;
+	BSModelViewMatrix = glm::translate( coordX, coordY, coordZ ) * _my_camera->LookAtMatrix;
 	if(canRotate)
 	{
 		BSModelViewMatrix = glm::rotate( worldAngle, 0.0f, 0.0f, 1.0f ) * BSModelViewMatrix;

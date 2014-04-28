@@ -18,7 +18,7 @@ float redSinForCoins = 0;
 
 int nrEnding = 0;
 
-glm::vec3 m_position, m_direction = glm::vec3(0, 0, -1), m_up = glm::vec3(0, 1, 0);
+glm::vec3 matrix_position, matrix_direction = glm::vec3(0, 0, -1), matrix_up = glm::vec3(0, 1, 0);
 
 
 BSObstacles* addObstacle = new BSObstacles();
@@ -28,10 +28,10 @@ void BSTexture::loadTheLoadingImage()
 {
 	setTheValuesForShaders();
 
-	m_position = glm::vec3(CameraPosition->xCord, CameraPosition->yCord, -CameraPosition->zCord);
+	matrix_position = glm::vec3(CameraPosition->xCord, CameraPosition->yCord, -CameraPosition->zCord);
 //	m_direction = glm::vec3(0, 0, -1);
 //	m_up = glm::vec3(0, 1, 0);
-	LookAtMatrix = glm::lookAt(m_position, m_position + m_direction, m_up);
+	_my_camera->LookAtMatrix = glm::lookAt(matrix_position, matrix_position + matrix_direction, matrix_up);
 
 	theLoadingImage->width = (float) SCREEN_WIDTH / cross_platform_scale + 1;
 	theLoadingImage->height = (float) SCREEN_HEIGHT / cross_platform_scale + 1;
@@ -267,8 +267,8 @@ void BSTexture::renderVboAndVao()
 {
 	setCameraPosition();
 
-	m_position = glm::vec3(CameraPosition->xCord, CameraPosition->yCord, -CameraPosition->zCord);
-	LookAtMatrix = glm::lookAt(m_position, m_position + m_direction, m_up);
+	matrix_position = glm::vec3(CameraPosition->xCord, CameraPosition->yCord, -CameraPosition->zCord);
+	_my_camera->LookAtMatrix = glm::lookAt(matrix_position, matrix_position + matrix_direction, matrix_up);
 
 	if(showBackgr)
 	{
@@ -416,8 +416,8 @@ void BSTexture::renderRainDrops()
 	glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_LINEAR_MIPMAP_LINEAR);
 	glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_LINEAR_MIPMAP_LINEAR);
 
-	m_position = glm::vec3(CameraPosition->xCord, CameraPosition->yCord, -CameraPosition->zCord);
-	LookAtMatrix = LookAtMatrix * glm::rotate( 10.0f, 0.0f, 0.0f, 1.0f );
+	matrix_position = glm::vec3(CameraPosition->xCord, CameraPosition->yCord, -CameraPosition->zCord);
+	_my_camera->LookAtMatrix = _my_camera->LookAtMatrix * glm::rotate( 10.0f, 0.0f, 0.0f, 1.0f );
 
 	for(int i = 0; i < listOfRainDrops.size(); i++)
 	{
@@ -433,8 +433,8 @@ void BSTexture::renderRainDrops()
 			listOfRainDrops[i]->xCord = listOfRainDrops[i]->xInit;
 		}
 	}
-	m_position = glm::vec3(CameraPosition->xCord, CameraPosition->yCord, -CameraPosition->zCord);
-	LookAtMatrix = glm::lookAt(m_position, m_position + m_direction, m_up);
+	matrix_position = glm::vec3(CameraPosition->xCord, CameraPosition->yCord, -CameraPosition->zCord);
+	_my_camera->LookAtMatrix = glm::lookAt(matrix_position, matrix_position + matrix_direction, matrix_up);
 }
 
 
@@ -1913,7 +1913,7 @@ void BSTexture::renderBackgroundNo1()
 
 void BSTexture::renderChuncksOfObjects(float coordX, float coordY, float coordZ, float ScaleOnX, float ScaleOnY)
 {
-	BSModelViewMatrix = glm::translate( coordX, coordY, coordZ ) * LookAtMatrix * glm::scale( ScaleOnX, ScaleOnY, 0.0f );
+	BSModelViewMatrix = glm::translate( coordX, coordY, coordZ ) * _my_camera->LookAtMatrix * glm::scale( ScaleOnX, ScaleOnY, 0.0f );
 	BSModelViewMatrix = glm::rotate( worldAngle, 0.0f, 0.0f, 1.0f ) * BSModelViewMatrix;
 
 	glUniformMatrix4fv( _my_shader_program->get_location_from_shader(BS_Available_Shaders::model_view_matrix()), 1, GL_FALSE, glm::value_ptr( BSModelViewMatrix ) );

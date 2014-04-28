@@ -880,7 +880,7 @@
 
 1398650042 source:c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\resources\resource.rc
 
-1398721685 source:c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\src\bs_engine.cpp
+1398726233 source:c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\src\bs_engine.cpp
 	"BS_Engine.h"
 	"BSOpenGL.h"
 	"My_Values.h"
@@ -962,7 +962,7 @@
 	<AL/al.h>
 	<AL/alc.h>
 
-1398720267 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\bsvalues.h
+1398724789 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\bsvalues.h
 	"BSOpenGL.h"
 	"BS_Renderer.h"
 	"BS_Available_Shaders.h"
@@ -1632,9 +1632,10 @@
 1398650028 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\box2d\dynamics\joints\b2weldjoint.h
 	<Box2D/Dynamics/Joints/b2Joint.h>
 
-1398650023 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\my_values.h
+1398724616 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\my_values.h
 	"BS_Audio.h"
 	"BSTexturedPolygonProgram2D.h"
+	"BS_Camera.h"
 
 1398650023 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\bstexturedpolygonprogram2d.h
 	"BSShaderProgram.h"
@@ -1730,7 +1731,7 @@
 	"BSValues.h"
 	<fstream>
 
-1398720947 source:c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\src\bstexture.cpp
+1398725782 source:c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\src\bstexture.cpp
 	"BSTexture.h"
 	"My_Values.h"
 	<SOIL/SOIL.h>
@@ -1746,7 +1747,7 @@
 1398650027 source:c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\src\bsxmlfiles.cpp
 	"BSXmlFiles.h"
 
-1398723419 source:c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\src\main.cpp
+1398724522 source:c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\src\main.cpp
 	"BSValues.h"
 	"BSUtilities.h"
 	<iostream>
@@ -1768,7 +1769,7 @@
 1398719703 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\bs_screen_menu.h
 	"BS_Renderer.h"
 
-1398720946 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\bs_renderer.h
+1398724189 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\bs_renderer.h
 	<iostream>
 	"BSStructs.h"
 
@@ -1795,7 +1796,7 @@
 	"BS_Audio.h"
 	<stdio.h>
 
-1398719061 source:c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\src\bs_game_demo.cpp
+1398725413 source:c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\src\bs_game_demo.cpp
 	"BS_Game_Demo.h"
 	"BS_Engine.h"
 	"BSTexture.h"
@@ -1804,19 +1805,25 @@
 
 1398664560 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\bs_game_demo.h
 
-1398720902 source:c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\src\bs_object.cpp
+1398724468 source:c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\src\bs_object.cpp
 	"BS_Object.h"
 	"BS_Renderer.h"
 	"BS_Engine.h"
 
-1398668529 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\bs_object.h
+1398724478 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\bs_object.h
 	"BSStructs.h"
 
-1398723482 source:c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\src\bs_renderer.cpp
+1398724763 source:c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\src\bs_renderer.cpp
 	"BS_Renderer.h"
 	"My_Values.h"
 	"BSValues.h"
 	"BS_Engine.h"
 	<SOIL/SOIL.h>
 	"BS_Available_Shaders.h"
+
+1398725782 source:c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\src\bs_camera.cpp
+	"BS_Camera.h"
+
+1398727190 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\bs_camera.h
+	"BS_Object.h"
 

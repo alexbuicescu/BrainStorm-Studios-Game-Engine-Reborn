@@ -22,6 +22,8 @@ private:
 
 public:
 
+    BS_Object();
+
 	BS_Object(float _coordinate_x, float _coordinate_y, float _coordinate_z, float _width, float _height, float _depth, float _rotation_angle_x, float _rotation_angle_y, float _rotation_angle_z);
 
 	BS_Object(float _coordinate_x, float _coordinate_y, float _width, float _height, std::string _texture_name);

@@ -32,6 +32,7 @@ void BS_Game_Demo::update_game()
 {
     update_input();
     update_physics();
+    _my_camera->update_camera();
 }
 
 void BS_Game_Demo::render_game()

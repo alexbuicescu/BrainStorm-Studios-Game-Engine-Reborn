@@ -34,7 +34,7 @@ struct BSBody
 		glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_LINEAR_MIPMAP_LINEAR);
 		glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_LINEAR_MIPMAP_LINEAR);
 
-		BSModelViewMatrix = glm::translate( xCord, yCord, zCord ) * LookAtMatrix;
+		BSModelViewMatrix = glm::translate( xCord, yCord, zCord ) * _my_camera->LookAtMatrix;
 
 //        if(worldAngle != -xAngle)
 		{
@@ -75,7 +75,7 @@ struct BSBody
 		glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_LINEAR_MIPMAP_LINEAR);
 		glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_LINEAR_MIPMAP_LINEAR);
 
-		BSModelViewMatrix = glm::translate( xCord, yCord, zCord ) * LookAtMatrix;
+		BSModelViewMatrix = glm::translate( xCord, yCord, zCord ) * _my_camera->LookAtMatrix;
 		BSModelViewMatrix = glm::rotate( worldAngle, 0.0f, 0.0f, 1.0f ) * BSModelViewMatrix;
 
 		//inversez ordinea matricelor daca vreau sa se invarta in jurul originii scenei
@@ -113,7 +113,7 @@ struct BSBody
 		glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_LINEAR_MIPMAP_LINEAR);
 		glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_LINEAR_MIPMAP_LINEAR);
 
-		BSModelViewMatrix = glm::translate( xCord, yCord, zCord ) * LookAtMatrix;
+		BSModelViewMatrix = glm::translate( xCord, yCord, zCord ) * _my_camera->LookAtMatrix;
 		BSModelViewMatrix = glm::rotate( worldAngle, 0.0f, 0.0f, 1.0f ) * BSModelViewMatrix;
 
 		//inversez ordinea matricelor daca vreau sa se invarta in jurul originii scenei
