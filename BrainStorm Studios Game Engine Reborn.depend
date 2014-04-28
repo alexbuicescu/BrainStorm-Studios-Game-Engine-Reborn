@@ -878,14 +878,16 @@
 	<OpenGL/glu.h>
 	<GL/glu.h>
 
-1368090184 source:c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\resources\resource.rc
+1398650042 source:c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\resources\resource.rc
 
-1398645278 source:c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\src\bs_engine.cpp
+1398651766 source:c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\src\bs_engine.cpp
 	"BS_Engine.h"
 	"BSOpenGL.h"
 	"My_Values.h"
+	"BSValues.h"
+	"BSTexture.h"
 
-1396990349 source:c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\src\bs_screen_menu.cpp
+1398650027 source:c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\src\bs_screen_menu.cpp
 
 1398646943 source:c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\src\bs_sound.cpp
 	"BS_Sound.h"
@@ -904,7 +906,7 @@
 	<dlfcn.h>
 	<mach-o/dyld.h>
 
-1361378962 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glew\glew.h
+1398650023 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glew\glew.h
 	<stddef.h>
 	<inttypes.h>
 	<stdint.h>
@@ -931,7 +933,7 @@
 	<AGL/agl.h>
 	<GL/glxew.h>
 
-1398645242 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\bs_engine.h
+1398651574 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\bs_engine.h
 
 1398647047 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\bs_sound.h
 	<iostream>
@@ -939,15 +941,15 @@
 	<AL/alc.h>
 	<unordered_map>
 
-1165591858 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\al\al.h
+1398650027 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\al\al.h
 
-1176476568 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\al\alc.h
+1398650027 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\al\alc.h
 
-1398630993 source:c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\src\bsactionstuff.cpp
+1398650027 source:c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\src\bsactionstuff.cpp
 	"BSActionStuff.h"
 	"My_Values.h"
 
-1398630993 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\bsactionstuff.h
+1398650023 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\bsactionstuff.h
 	<iostream>
 	<fstream>
 	"BSValues.h"
@@ -958,20 +960,20 @@
 	<AL/al.h>
 	<AL/alc.h>
 
-1398630993 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\bsvalues.h
+1398650023 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\bsvalues.h
 	"BSOpenGL.h"
 	"BSRenderer.h"
 	<vector>
 	<sstream>
 
-1398644097 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\bsopengl.h
+1398650023 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\bsopengl.h
 	"Glew/glew.h"
 	"SDL/SDL_opengl.h"
 	<GL/gl.h>
 	<GL/glu.h>
 	<SDL/SDL.h>
 
-1325742240 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\sdl\sdl_opengl.h
+1398650032 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\sdl\sdl_opengl.h
 	"SDL_config.h"
 	<windows.h>
 	<OpenGL/gl.h>
@@ -983,7 +985,7 @@
 	<windows.h>
 	<stddef.h>
 
-1326114588 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\sdl\sdl_config.h
+1398650032 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\sdl\sdl_config.h
 	"SDL_platform.h"
 	"SDL_config_dreamcast.h"
 	"SDL_config_macos.h"
@@ -993,12 +995,12 @@
 	"SDL_config_os2.h"
 	"SDL_config_minimal.h"
 
-1325742240 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\sdl\sdl_platform.h
+1398650032 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\sdl\sdl_platform.h
 
-1326114594 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\sdl\sdl_config_win32.h
+1398650032 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\sdl\sdl_config_win32.h
 	"SDL_platform.h"
 
-1325742240 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\sdl\sdl.h
+1398650032 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\sdl\sdl.h
 	"SDL_main.h"
 	"SDL_stdinc.h"
 	"SDL_audio.h"
@@ -1017,14 +1019,14 @@
 	"begin_code.h"
 	"close_code.h"
 
-1325742240 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\sdl\sdl_main.h
+1398650032 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\sdl\sdl_main.h
 	"SDL_stdinc.h"
 	"begin_code.h"
 	"close_code.h"
 	"begin_code.h"
 	"close_code.h"
 
-1325742240 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\sdl\sdl_stdinc.h
+1398650032 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\sdl\sdl_stdinc.h
 	"SDL_config.h"
 	<sys/types.h>
 	<stdio.h>
@@ -1050,11 +1052,11 @@
 	<stdlib.h>
 	"close_code.h"
 
-1326114600 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\sdl\begin_code.h
+1398650032 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\sdl\begin_code.h
 
-1325742240 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\sdl\close_code.h
+1398650032 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\sdl\close_code.h
 
-1325742240 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\sdl\sdl_audio.h
+1398650032 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\sdl\sdl_audio.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"SDL_endian.h"
@@ -1064,24 +1066,24 @@
 	"begin_code.h"
 	"close_code.h"
 
-1325742240 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\sdl\sdl_error.h
+1398650032 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\sdl\sdl_error.h
 	"SDL_stdinc.h"
 	"begin_code.h"
 	"close_code.h"
 
-1325742240 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\sdl\sdl_endian.h
+1398650032 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\sdl\sdl_endian.h
 	"SDL_stdinc.h"
 	<endian.h>
 	"begin_code.h"
 	"close_code.h"
 
-1325742240 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\sdl\sdl_mutex.h
+1398650032 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\sdl\sdl_mutex.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"begin_code.h"
 	"close_code.h"
 
-1325742240 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\sdl\sdl_thread.h
+1398650032 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\sdl\sdl_thread.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"SDL_mutex.h"
@@ -1089,24 +1091,24 @@
 	<process.h>
 	"close_code.h"
 
-1325742240 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\sdl\sdl_rwops.h
+1398650032 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\sdl\sdl_rwops.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"begin_code.h"
 	"close_code.h"
 
-1325742240 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\sdl\sdl_cdrom.h
+1398650032 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\sdl\sdl_cdrom.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"begin_code.h"
 	"close_code.h"
 
-1325742240 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\sdl\sdl_cpuinfo.h
+1398650032 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\sdl\sdl_cpuinfo.h
 	"SDL_stdinc.h"
 	"begin_code.h"
 	"close_code.h"
 
-1325742240 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\sdl\sdl_events.h
+1398650032 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\sdl\sdl_events.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"SDL_active.h"
@@ -1117,76 +1119,77 @@
 	"begin_code.h"
 	"close_code.h"
 
-1325742240 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\sdl\sdl_active.h
+1398650032 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\sdl\sdl_active.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"begin_code.h"
 	"close_code.h"
 
-1325742240 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\sdl\sdl_keyboard.h
+1398650032 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\sdl\sdl_keyboard.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"SDL_keysym.h"
 	"begin_code.h"
 	"close_code.h"
 
-1325742240 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\sdl\sdl_keysym.h
+1398650032 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\sdl\sdl_keysym.h
 
-1325742240 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\sdl\sdl_mouse.h
+1398650032 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\sdl\sdl_mouse.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"SDL_video.h"
 	"begin_code.h"
 	"close_code.h"
 
-1325742240 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\sdl\sdl_video.h
+1398650032 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\sdl\sdl_video.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"SDL_rwops.h"
 	"begin_code.h"
 	"close_code.h"
 
-1325742240 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\sdl\sdl_joystick.h
+1398650032 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\sdl\sdl_joystick.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"begin_code.h"
 	"close_code.h"
 
-1325742240 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\sdl\sdl_quit.h
+1398650032 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\sdl\sdl_quit.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 
-1325742240 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\sdl\sdl_loadso.h
-	"SDL_stdinc.h"
-	"SDL_error.h"
-	"begin_code.h"
-	"close_code.h"
-
-1325742240 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\sdl\sdl_timer.h
+1398650032 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\sdl\sdl_loadso.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"begin_code.h"
 	"close_code.h"
 
-1325742240 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\sdl\sdl_version.h
+1398650032 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\sdl\sdl_timer.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1398650032 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\sdl\sdl_version.h
 	"SDL_stdinc.h"
 	"begin_code.h"
 	"close_code.h"
 
-1398643723 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\bsrenderer.h
+1398651141 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\bsrenderer.h
 	"BSStructs.h"
 	"My_Values.h"
+	"BSValues.h"
 	<SOIL/SOIL.h>
 	<iostream>
 	"BS_Available_Shaders.h"
 
-1398630993 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\bsstructs.h
+1398650023 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\bsstructs.h
 	"glm/glm.hpp"
 	"glm/gtx/transform.hpp"
 	"glm/gtc/type_ptr.hpp"
 	<Box2D/Box2D.h>
 
-1361378962 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\glm.hpp
+1398650023 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\glm.hpp
 	"core/_fixes.hpp"
 	<cmath>
 	<climits>
@@ -1208,10 +1211,10 @@
 	"./core/func_noise.hpp"
 	"./core/_swizzle.hpp"
 
-1361378964 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\core\_fixes.hpp
+1398650023 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\core\_fixes.hpp
 	<cmath>
 
-1361378962 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\core\setup.hpp
+1398650024 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\core\setup.hpp
 	<intrin.h>
 	<immintrin.h>
 	<immintrin.h>
@@ -1219,14 +1222,14 @@
 	<pmmintrin.h>
 	<emmintrin.h>
 
-1361378964 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\core\_detail.hpp
+1398650023 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\core\_detail.hpp
 	"setup.hpp"
 	<cassert>
 	<cstdint>
 
-1361378964 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\core\_vectorize.hpp
+1398650023 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\core\_vectorize.hpp
 
-1361378962 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\core\type.hpp
+1398650024 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\core\type.hpp
 	"type_half.hpp"
 	"type_float.hpp"
 	"type_int.hpp"
@@ -1245,28 +1248,28 @@
 	"type_mat4x3.hpp"
 	"type_mat4x4.hpp"
 
-1361378962 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\core\type_half.hpp
+1398650024 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\core\type_half.hpp
 	<cstdlib>
 	"type_half.inl"
 
-1361378962 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\core\type_half.inl
+1398650024 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\core\type_half.inl
 	"_detail.hpp"
 
-1361378962 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\core\type_float.hpp
+1398650024 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\core\type_float.hpp
 	"type_half.hpp"
 	"setup.hpp"
 
-1361378962 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\core\type_int.hpp
+1398650024 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\core\type_int.hpp
 	"setup.hpp"
 	"_detail.hpp"
 
-1361378962 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\core\type_gentype.hpp
+1398650024 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\core\type_gentype.hpp
 	"type_size.hpp"
 
-1361378964 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\core\type_size.hpp
+1398650024 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\core\type_size.hpp
 	<cstdlib>
 
-1361378964 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\core\type_vec1.hpp
+1398650024 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\core\type_vec1.hpp
 	"type_vec.hpp"
 	"type_float.hpp"
 	"type_int.hpp"
@@ -1274,17 +1277,17 @@
 	"_swizzle.hpp"
 	"type_vec1.inl"
 
-1361378964 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\core\type_vec.hpp
+1398650024 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\core\type_vec.hpp
 	"type_gentype.hpp"
 
-1361378964 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\core\_swizzle.hpp
+1398650023 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\core\_swizzle.hpp
 	"_swizzle_func.hpp"
 
-1361378964 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\core\_swizzle_func.hpp
+1398650023 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\core\_swizzle_func.hpp
 
-1361378964 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\core\type_vec1.inl
+1398650024 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\core\type_vec1.inl
 
-1361378964 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\core\type_vec2.hpp
+1398650025 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\core\type_vec2.hpp
 	"type_vec.hpp"
 	"type_float.hpp"
 	"type_int.hpp"
@@ -1292,9 +1295,9 @@
 	"_swizzle.hpp"
 	"type_vec2.inl"
 
-1361378964 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\core\type_vec2.inl
+1398650025 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\core\type_vec2.inl
 
-1361378964 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\core\type_vec3.hpp
+1398650025 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\core\type_vec3.hpp
 	"type_vec.hpp"
 	"type_float.hpp"
 	"type_int.hpp"
@@ -1302,9 +1305,9 @@
 	"_swizzle.hpp"
 	"type_vec3.inl"
 
-1361378964 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\core\type_vec3.inl
+1398650025 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\core\type_vec3.inl
 
-1361378964 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\core\type_vec4.hpp
+1398650025 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\core\type_vec4.hpp
 	"type_vec.hpp"
 	"type_float.hpp"
 	"type_int.hpp"
@@ -1312,158 +1315,158 @@
 	"_swizzle.hpp"
 	"type_vec4.inl"
 
-1361378964 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\core\type_vec4.inl
+1398650025 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\core\type_vec4.inl
 
-1361378962 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\core\type_mat2x2.hpp
+1398650024 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\core\type_mat2x2.hpp
 	"type_mat.hpp"
 	"type_mat2x2.inl"
 
-1361378962 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\core\type_mat.hpp
+1398650024 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\core\type_mat.hpp
 	"type_gentype.hpp"
 
-1361378962 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\core\type_mat2x2.inl
+1398650024 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\core\type_mat2x2.inl
 
-1361378962 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\core\type_mat2x3.hpp
+1398650024 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\core\type_mat2x3.hpp
 	"type_mat.hpp"
 	"type_mat2x3.inl"
 
-1361378962 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\core\type_mat2x3.inl
+1398650024 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\core\type_mat2x3.inl
 
-1361378962 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\core\type_mat2x4.hpp
+1398650024 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\core\type_mat2x4.hpp
 	"type_mat.hpp"
 	"type_mat2x4.inl"
 
-1361378962 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\core\type_mat2x4.inl
+1398650024 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\core\type_mat2x4.inl
 
-1361378962 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\core\type_mat3x2.hpp
+1398650024 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\core\type_mat3x2.hpp
 	"type_mat.hpp"
 	"type_mat3x2.inl"
 
-1361378962 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\core\type_mat3x2.inl
+1398650024 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\core\type_mat3x2.inl
 
-1361378962 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\core\type_mat3x3.hpp
+1398650024 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\core\type_mat3x3.hpp
 	"type_mat.hpp"
 	"type_mat3x3.inl"
 
-1361378962 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\core\type_mat3x3.inl
+1398650024 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\core\type_mat3x3.inl
 
-1361378962 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\core\type_mat3x4.hpp
+1398650024 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\core\type_mat3x4.hpp
 	"type_mat.hpp"
 	"type_mat3x4.inl"
 
-1361378964 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\core\type_mat3x4.inl
+1398650024 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\core\type_mat3x4.inl
 
-1361378964 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\core\type_mat4x2.hpp
+1398650024 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\core\type_mat4x2.hpp
 	"type_mat.hpp"
 	"type_mat4x2.inl"
 
-1361378964 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\core\type_mat4x2.inl
+1398650024 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\core\type_mat4x2.inl
 
-1361378964 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\core\type_mat4x3.hpp
+1398650024 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\core\type_mat4x3.hpp
 	"type_mat.hpp"
 	"type_mat4x3.inl"
 
-1361378964 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\core\type_mat4x3.inl
+1398650024 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\core\type_mat4x3.inl
 
-1361378964 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\core\type_mat4x4.hpp
+1398650024 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\core\type_mat4x4.hpp
 	"type_mat.hpp"
 	"type_mat4x4.inl"
 
-1361378964 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\core\type_mat4x4.inl
+1398650024 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\core\type_mat4x4.inl
 
-1361378962 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\core\func_trigonometric.hpp
+1398650024 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\core\func_trigonometric.hpp
 	"func_trigonometric.inl"
 
-1361378962 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\core\func_trigonometric.inl
+1398650024 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\core\func_trigonometric.inl
 
-1361378962 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\core\func_exponential.hpp
+1398650023 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\core\func_exponential.hpp
 	"func_exponential.inl"
 
-1361378962 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\core\func_exponential.inl
+1398650023 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\core\func_exponential.inl
 
-1361378962 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\core\func_common.hpp
+1398650023 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\core\func_common.hpp
 	"_fixes.hpp"
 	"func_common.inl"
 
-1361378962 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\core\func_common.inl
+1398650023 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\core\func_common.inl
 
-1361378962 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\core\func_packing.hpp
+1398650024 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\core\func_packing.hpp
 	"func_packing.inl"
 
-1361378962 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\core\func_packing.inl
+1398650024 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\core\func_packing.inl
 
-1361378962 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\core\func_geometric.hpp
+1398650023 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\core\func_geometric.hpp
 	"func_geometric.inl"
 
-1361378962 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\core\func_geometric.inl
+1398650023 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\core\func_geometric.inl
 
-1361378962 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\core\func_matrix.hpp
+1398650023 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\core\func_matrix.hpp
 	"func_matrix.inl"
 
-1361378962 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\core\func_matrix.inl
+1398650024 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\core\func_matrix.inl
 
-1361378962 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\core\func_vector_relational.hpp
+1398650024 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\core\func_vector_relational.hpp
 	"_detail.hpp"
 	"func_vector_relational.inl"
 
-1361378962 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\core\func_vector_relational.inl
+1398650024 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\core\func_vector_relational.inl
 
-1361378962 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\core\func_integer.hpp
+1398650023 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\core\func_integer.hpp
 	"func_integer.inl"
 
-1361378962 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\core\func_integer.inl
+1398650023 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\core\func_integer.inl
 	<intrin.h>
 
-1361378962 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\core\func_noise.hpp
+1398650024 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\core\func_noise.hpp
 	"func_noise.inl"
 
-1361378962 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\core\func_noise.inl
+1398650024 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\core\func_noise.inl
 
-1361378966 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\gtx\transform.hpp
+1398650026 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\gtx\transform.hpp
 	"../glm.hpp"
 	"../gtc/matrix_transform.hpp"
 	"transform.inl"
 
-1361378964 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\gtc\matrix_transform.hpp
+1398650025 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\gtc\matrix_transform.hpp
 	"../glm.hpp"
 	"matrix_transform.inl"
 
-1361378964 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\gtc\matrix_transform.inl
+1398650025 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\gtc\matrix_transform.inl
 
-1361378966 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\gtx\transform.inl
+1398650026 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\gtx\transform.inl
 
-1361378964 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\gtc\type_ptr.hpp
+1398650025 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\gtc\type_ptr.hpp
 	"../glm.hpp"
 	"../gtc/half_float.hpp"
 	"../gtc/quaternion.hpp"
 	<cstring>
 	"type_ptr.inl"
 
-1361378964 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\gtc\half_float.hpp
+1398650025 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\gtc\half_float.hpp
 	"../glm.hpp"
 	"half_float.inl"
 
-1361378964 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\gtc\half_float.inl
+1398650025 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\gtc\half_float.inl
 
-1361378964 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\gtc\quaternion.hpp
+1398650025 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\gtc\quaternion.hpp
 	"../glm.hpp"
 	"../gtc/half_float.hpp"
 	"../gtc/constants.hpp"
 	"quaternion.inl"
 
-1361378964 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\gtc\constants.hpp
+1398650025 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\gtc\constants.hpp
 	"../glm.hpp"
 	"../gtc/half_float.hpp"
 	"constants.inl"
 
-1361378964 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\gtc\constants.inl
+1398650025 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\gtc\constants.inl
 
-1361378964 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\gtc\quaternion.inl
+1398650025 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\gtc\quaternion.inl
 	<limits>
 
-1361378964 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\gtc\type_ptr.inl
+1398650025 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\glm\gtc\type_ptr.inl
 
-1315042738 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\box2d\box2d.h
+1398650027 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\box2d\box2d.h
 	<Box2D/Common/b2Settings.h>
 	<Box2D/Common/b2Draw.h>
 	<Box2D/Common/b2Timer.h>
@@ -1492,85 +1495,85 @@
 	<Box2D/Dynamics/Joints/b2RopeJoint.h>
 	<Box2D/Dynamics/Joints/b2WeldJoint.h>
 
-1315046961 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\box2d\common\b2settings.h
+1398650028 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\box2d\common\b2settings.h
 	<cassert>
 	<cmath>
 
-1301254300 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\box2d\common\b2draw.h
+1398650028 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\box2d\common\b2draw.h
 	<Box2D/Common/b2Math.h>
 
-1315104481 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\box2d\common\b2math.h
+1398650028 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\box2d\common\b2math.h
 	<Box2D/Common/b2Settings.h>
 	<cmath>
 	<cfloat>
 	<cstddef>
 	<limits>
 
-1315813595 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\box2d\common\b2timer.h
+1398650028 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\box2d\common\b2timer.h
 	<Box2D/Common/b2Settings.h>
 
-1300990618 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\box2d\collision\shapes\b2circleshape.h
+1398650027 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\box2d\collision\shapes\b2circleshape.h
 	<Box2D/Collision/Shapes/b2Shape.h>
 
-1313984992 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\box2d\collision\shapes\b2shape.h
+1398650027 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\box2d\collision\shapes\b2shape.h
 	<Box2D/Common/b2BlockAllocator.h>
 	<Box2D/Common/b2Math.h>
 	<Box2D/Collision/b2Collision.h>
 
-1300990618 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\box2d\common\b2blockallocator.h
+1398650028 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\box2d\common\b2blockallocator.h
 	<Box2D/Common/b2Settings.h>
 
-1307308961 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\box2d\collision\b2collision.h
+1398650027 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\box2d\collision\b2collision.h
 	<Box2D/Common/b2Math.h>
 	<climits>
 
-1314863586 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\box2d\collision\shapes\b2edgeshape.h
+1398650027 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\box2d\collision\shapes\b2edgeshape.h
 	<Box2D/Collision/Shapes/b2Shape.h>
 
-1314862942 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\box2d\collision\shapes\b2chainshape.h
+1398650027 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\box2d\collision\shapes\b2chainshape.h
 	<Box2D/Collision/Shapes/b2Shape.h>
 
-1300990618 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\box2d\collision\shapes\b2polygonshape.h
+1398650027 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\box2d\collision\shapes\b2polygonshape.h
 	<Box2D/Collision/Shapes/b2Shape.h>
 
-1301264602 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\box2d\collision\b2broadphase.h
+1398650027 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\box2d\collision\b2broadphase.h
 	<Box2D/Common/b2Settings.h>
 	<Box2D/Collision/b2Collision.h>
 	<Box2D/Collision/b2DynamicTree.h>
 	<algorithm>
 
-1308991589 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\box2d\collision\b2dynamictree.h
+1398650027 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\box2d\collision\b2dynamictree.h
 	<Box2D/Collision/b2Collision.h>
 	<Box2D/Common/b2GrowableStack.h>
 
-1300990618 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\box2d\common\b2growablestack.h
+1398650028 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\box2d\common\b2growablestack.h
 	<Box2D/Common/b2Settings.h>
 	<cstring>
 
-1300990618 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\box2d\collision\b2distance.h
+1398650027 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\box2d\collision\b2distance.h
 	<Box2D/Common/b2Math.h>
 
-1300990618 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\box2d\collision\b2timeofimpact.h
+1398650027 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\box2d\collision\b2timeofimpact.h
 	<Box2D/Common/b2Math.h>
 	<Box2D/Collision/b2Distance.h>
 
-1315091542 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\box2d\dynamics\b2body.h
+1398650028 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\box2d\dynamics\b2body.h
 	<Box2D/Common/b2Math.h>
 	<Box2D/Collision/Shapes/b2Shape.h>
 	<memory>
 
-1315075941 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\box2d\dynamics\b2fixture.h
+1398650028 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\box2d\dynamics\b2fixture.h
 	<Box2D/Dynamics/b2Body.h>
 	<Box2D/Collision/b2Collision.h>
 	<Box2D/Collision/Shapes/b2Shape.h>
 
-1314077200 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\box2d\dynamics\b2worldcallbacks.h
+1398650028 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\box2d\dynamics\b2worldcallbacks.h
 	<Box2D/Common/b2Settings.h>
 
-1315812730 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\box2d\dynamics\b2timestep.h
+1398650028 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\box2d\dynamics\b2timestep.h
 	<Box2D/Common/b2Math.h>
 
-1315177596 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\box2d\dynamics\b2world.h
+1398650028 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\box2d\dynamics\b2world.h
 	<Box2D/Common/b2Math.h>
 	<Box2D/Common/b2BlockAllocator.h>
 	<Box2D/Common/b2StackAllocator.h>
@@ -1578,56 +1581,56 @@
 	<Box2D/Dynamics/b2WorldCallbacks.h>
 	<Box2D/Dynamics/b2TimeStep.h>
 
-1300990618 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\box2d\common\b2stackallocator.h
+1398650028 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\box2d\common\b2stackallocator.h
 	<Box2D/Common/b2Settings.h>
 
-1300990618 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\box2d\dynamics\b2contactmanager.h
+1398650028 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\box2d\dynamics\b2contactmanager.h
 	<Box2D/Collision/b2BroadPhase.h>
 
-1305790418 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\box2d\dynamics\contacts\b2contact.h
+1398650028 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\box2d\dynamics\contacts\b2contact.h
 	<Box2D/Common/b2Math.h>
 	<Box2D/Collision/b2Collision.h>
 	<Box2D/Collision/Shapes/b2Shape.h>
 	<Box2D/Dynamics/b2Fixture.h>
 
-1315166582 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\box2d\dynamics\joints\b2distancejoint.h
+1398650028 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\box2d\dynamics\joints\b2distancejoint.h
 	<Box2D/Dynamics/Joints/b2Joint.h>
 
-1315178798 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\box2d\dynamics\joints\b2joint.h
+1398650028 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\box2d\dynamics\joints\b2joint.h
 	<Box2D/Common/b2Math.h>
 
-1315177877 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\box2d\dynamics\joints\b2frictionjoint.h
+1398650028 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\box2d\dynamics\joints\b2frictionjoint.h
 	<Box2D/Dynamics/Joints/b2Joint.h>
 
-1315178132 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\box2d\dynamics\joints\b2gearjoint.h
+1398650028 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\box2d\dynamics\joints\b2gearjoint.h
 	<Box2D/Dynamics/Joints/b2Joint.h>
 
-1315178750 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\box2d\dynamics\joints\b2wheeljoint.h
+1398650028 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\box2d\dynamics\joints\b2wheeljoint.h
 	<Box2D/Dynamics/Joints/b2Joint.h>
 
-1315178810 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\box2d\dynamics\joints\b2mousejoint.h
+1398650028 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\box2d\dynamics\joints\b2mousejoint.h
 	<Box2D/Dynamics/Joints/b2Joint.h>
 
-1315369526 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\box2d\dynamics\joints\b2prismaticjoint.h
+1398650028 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\box2d\dynamics\joints\b2prismaticjoint.h
 	<Box2D/Dynamics/Joints/b2Joint.h>
 
-1315178519 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\box2d\dynamics\joints\b2pulleyjoint.h
+1398650028 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\box2d\dynamics\joints\b2pulleyjoint.h
 	<Box2D/Dynamics/Joints/b2Joint.h>
 
-1315175972 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\box2d\dynamics\joints\b2revolutejoint.h
+1398650028 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\box2d\dynamics\joints\b2revolutejoint.h
 	<Box2D/Dynamics/Joints/b2Joint.h>
 
-1315197813 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\box2d\dynamics\joints\b2ropejoint.h
+1398650028 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\box2d\dynamics\joints\b2ropejoint.h
 	<Box2D/Dynamics/Joints/b2Joint.h>
 
-1315174263 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\box2d\dynamics\joints\b2weldjoint.h
+1398650028 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\box2d\dynamics\joints\b2weldjoint.h
 	<Box2D/Dynamics/Joints/b2Joint.h>
 
-1398647432 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\my_values.h
+1398650023 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\my_values.h
 	"BS_Audio.h"
 	"BSTexturedPolygonProgram2D.h"
 
-1398630993 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\bstexturedpolygonprogram2d.h
+1398650023 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\bstexturedpolygonprogram2d.h
 	"BSShaderProgram.h"
 	"glm/glm.hpp"
 	"glm/gtc/type_ptr.hpp"
@@ -1635,33 +1638,33 @@
 	<iostream>
 	<map>
 
-1398630993 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\bsshaderprogram.h
+1398650023 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\bsshaderprogram.h
 	"BSOpenGL.h"
 	<stdio.h>
 	<string>
 
-1215450808 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\soil\soil.h
+1398650033 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\libraries (include)\soil\soil.h
 
-1398630993 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\bs_available_shaders.h
+1398650023 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\bs_available_shaders.h
 	<iostream>
 
-1398630993 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\bsobstacles.h
+1398650023 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\bsobstacles.h
 	<iostream>
 	"BSValues.h"
 	"BSAnimationClass.h"
 	"BSXmlFiles.h"
 	<fstream>
 
-1398630993 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\bsanimationclass.h
+1398650023 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\bsanimationclass.h
 	"BSValues.h"
 	"BSRenderer.h"
 
-1398631529 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\bsxmlfiles.h
+1398650023 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\bsxmlfiles.h
 	<iostream>
 	"BSValues.h"
 	<fstream>
 
-1398630993 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\bstexture.h
+1398650023 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\bstexture.h
 	"BSOpenGL.h"
 	<stdio.h>
 	<string>
@@ -1673,13 +1676,13 @@
 	"BSLevelMenu.h"
 	"BSInputClass.h"
 
-1396989936 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\bslevelmenu.h
+1398650023 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\bslevelmenu.h
 	<iostream>
 	<fstream>
 	"BSValues.h"
 	"BSObstacles.h"
 
-1398630993 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\bsinputclass.h
+1398650023 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\bsinputclass.h
 	<iostream>
 	<SDL/SDL.h>
 	"BSValues.h"
@@ -1689,7 +1692,7 @@
 	"BSActionStuff.h"
 	"BSTexture.h"
 
-1398644319 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\bsutilities.h
+1398650023 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\bsutilities.h
 	"BSOpenGL.h"
 	<stdio.h>
 	<iostream>
@@ -1701,40 +1704,41 @@
 	"BSLevelMenu.h"
 	"BSXmlFiles.h"
 
-1398630993 source:c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\src\bsanimationclass.cpp
+1398650027 source:c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\src\bsanimationclass.cpp
 	"BSAnimationClass.h"
 
-1398630993 source:c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\src\bsinputclass.cpp
+1398651637 source:c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\src\bsinputclass.cpp
 	"BSInputClass.h"
+	"BS_Engine.h"
 
-1398630993 source:c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\src\bslevelmenu.cpp
+1398650027 source:c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\src\bslevelmenu.cpp
 	"BSLevelMenu.h"
 
-1398630993 source:c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\src\bsobstacles.cpp
+1398650027 source:c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\src\bsobstacles.cpp
 	"BSObstacles.h"
 	"My_Values.h"
 
-1398630993 source:c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\src\bsshaderprogram.cpp
+1398650027 source:c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\src\bsshaderprogram.cpp
 	"BSShaderProgram.h"
 	"BSValues.h"
 	<fstream>
 
-1398630993 source:c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\src\bstexture.cpp
+1398650027 source:c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\src\bstexture.cpp
 	"BSTexture.h"
 	"My_Values.h"
 
-1398630993 source:c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\src\bstexturedpolygonprogram2d.cpp
+1398650027 source:c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\src\bstexturedpolygonprogram2d.cpp
 	"BSTexturedPolygonProgram2D.h"
 	"BS_Available_Shaders.h"
 
-1398644045 source:c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\src\bsutilities.cpp
+1398651317 source:c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\src\bsutilities.cpp
 	"BSUtilities.h"
 	"My_Values.h"
 
-1398631529 source:c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\src\bsxmlfiles.cpp
+1398650027 source:c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\src\bsxmlfiles.cpp
 	"BSXmlFiles.h"
 
-1398647226 source:c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\src\main.cpp
+1398651649 source:c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\src\main.cpp
 	"BSValues.h"
 	"BSUtilities.h"
 	<iostream>
@@ -1751,13 +1755,13 @@
 	"BS_Screen_Menu.h"
 	"BS_Engine.h"
 
-1398630993 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\bs_screen_menu.h
+1398650023 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\bs_screen_menu.h
 	"BS_Renderer.h"
 
-1398630936 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\bs_renderer.h
+1398650023 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\bs_renderer.h
 	<unordered_map>
 
-1396990138 source:c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\src\glew\glew.c
+1398650027 source:c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\src\glew\glew.c
 	"glew.h"
 	<GL/wglew.h>
 	<GL/glxew.h>
@@ -1770,9 +1774,13 @@
 	<dlfcn.h>
 	<mach-o/dyld.h>
 
-1398647432 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\bs_audio.h
+1398650023 c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\headers\bs_audio.h
 	<iostream>
 	<AL/al.h>
 	<AL/alc.h>
 	<unordered_map>
+
+1398650027 source:c:\users\alexandru\documents\github\brainstorm-studios-game-engine-reborn\code\src\bs_audio.cpp
+	"BS_Audio.h"
+	<stdio.h>
 

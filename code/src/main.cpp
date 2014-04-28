@@ -17,8 +17,6 @@
 #include "BS_Screen_Menu.h"
 #include "BS_Engine.h"
 
-BSTexturedPolygonProgram2D *_my_shader_program;
-
 float worldAngle = 0;
 b2Vec2 worldGravity = b2Vec2(0, -40);
 int gravityIsChanging = 0, startAngle = 0;
@@ -45,7 +43,7 @@ BSObstacles *objObstacles = new BSObstacles();
 BSActionStuff *action = new BSActionStuff();
 //	BSActionStuffRound *action2 = new BSActionStuffRound();
 BSTexture* randareMenu = new BSTexture();
-BSInputClass *ibjectInputMain = new BSInputClass();
+BSInputClass *objectInputMain = new BSInputClass();
 BSTheBackgrounds *backgroundSky = new BSTheBackgrounds,
 *backgroundMountain = new BSTheBackgrounds,
 *backgroundBush = new BSTheBackgrounds,
@@ -215,8 +213,7 @@ int main( int argc, char* args[] )
 	CameraPosition->xCord = 0;
 	CameraPosition->yCord = 0;
 	CameraPosition->zCord = -scaleSize;
-	ibjectInputMain->setTheVideoDisplayAndWindow();
-	ibjectInputMain->initGamePad();
+	objectInputMain->initGamePad();
 
 
 	initialSquareTexturePath[0] = NULL, initialRoundTexturePath[0] = NULL;
@@ -224,37 +221,10 @@ int main( int argc, char* args[] )
 	strcpy(initialRoundTexturePath, "Animations/roundAnimation/windmillPropeller.png");
 
 
-
-
-
-	_my_shader_program = new BSTexturedPolygonProgram2D();
-
-	if(BS_Engine::initialize_audio() == false)
+	if(BS_Engine::initialize_everything() == false)
 	{
-		printf("Unable to initialize audio library!\n");
-		///return 1;
-	}
-
-	if(BS_Engine::initialize_graphics() == false)
-	{
-		printf("Unable to initialize graphics library!\n");
 		return 1;
 	}
-	//Load graphics programs
-	if( !objBSUtils->loadGP() )
-	{
-		printf("Unable to load shader programs!\n");
-		//return 1;
-	}
-	//objObstacles->setUpBodies();
-	if( !objBSUtils->loadMedia() )
-	{
-		printf("Unable to load media!\n");
-		//return 2;
-	}
-
-
-
 
 	for(int i = 0; i <= 255 ; i++)
 	{
@@ -392,7 +362,7 @@ void runMainLoop()
 //                        originalCoin->yCord + CameraPosition->yCord - CameraExtremeDown - 1.2f, 1, 1, black);
 
 	///Get the keyboard or gamepad input
-	ibjectInputMain->handleInput();
+	objectInputMain->handleInput();
 	action->heroTouchesObjects();
 	action->moveThePlayer();
 }

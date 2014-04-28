@@ -1,4 +1,5 @@
 #include "BSInputClass.h"
+#include "BS_Engine.h"
 ///#include <SDL/SDL_image.h>
 
 
@@ -25,34 +26,34 @@ BSInputClass::BSInputClass()
 
 }
 
-void BSInputClass::setTheVideoDisplayAndWindow()
-{
-	//This will make possible the use of std::cout
-	freopen( "CON", "w", stdout );
-	freopen( "CON", "w", stderr );
-
-	if (SDL_Init( SDL_INIT_EVERYTHING ) < 0)
-	{
-		std::cout << "Couldn't initialize SDL: " << SDL_GetError() << '\n';
-	}
-
-	SDL_EnableUNICODE( 1 );
-	SDL_EnableKeyRepeat(0, 0);
-	if(!isFullScreen)
-	{
-		SDL_SetVideoMode( SCREEN_WIDTH, SCREEN_HEIGHT, SCREEN_BPP, SDL_OPENGL);// | SDL_FULLSCREEN);
-	}
-	else
-	{
-		SDL_SetVideoMode( SCREEN_WIDTH, SCREEN_HEIGHT, SCREEN_BPP, SDL_OPENGL | SDL_FULLSCREEN);
-	}
-
-	cross_platform_scale = (float)SCREEN_HEIGHT / 19;
-
-	SDL_WM_SetCaption( "BrainStorm Studios Game Engine", NULL );
-
-//	SDL_ShowCursor(SDL_DISABLE);
-}
+//void BSInputClass::setTheVideoDisplayAndWindow()
+//{
+//	//This will make possible the use of std::cout
+//	freopen( "CON", "w", stdout );
+//	freopen( "CON", "w", stderr );
+//
+//	if (SDL_Init( SDL_INIT_EVERYTHING ) < 0)
+//	{
+//		std::cout << "Couldn't initialize SDL: " << SDL_GetError() << '\n';
+//	}
+//
+//	SDL_EnableUNICODE( 1 );
+//	SDL_EnableKeyRepeat(0, 0);
+//	if(!isFullScreen)
+//	{
+//		SDL_SetVideoMode( SCREEN_WIDTH, SCREEN_HEIGHT, SCREEN_BPP, SDL_OPENGL);// | SDL_FULLSCREEN);
+//	}
+//	else
+//	{
+//		SDL_SetVideoMode( SCREEN_WIDTH, SCREEN_HEIGHT, SCREEN_BPP, SDL_OPENGL | SDL_FULLSCREEN);
+//	}
+//
+//	cross_platform_scale = (float)SCREEN_HEIGHT / 19;
+//
+//	SDL_WM_SetCaption( "BrainStorm Studios Game Engine", NULL );
+//
+////	SDL_ShowCursor(SDL_DISABLE);
+//}
 
 void BSInputClass::initGamePad()
 {
@@ -1910,7 +1911,9 @@ void BSInputClass::refreshLevel()
 void BSInputClass::refreshShaders()
 {
 	BSUtilities *util = new BSUtilities();
-	util->loadGP();
+
+	BS_Engine::initialize_shader_program();
+	///util->loadGP();
 	delete util;
 }
 
