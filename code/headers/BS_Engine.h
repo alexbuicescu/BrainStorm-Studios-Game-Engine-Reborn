@@ -3,6 +3,7 @@
 #define BS_ENGINE_H
 
 #include "BSOpenGL.h"
+#include <unordered_map>
 
 class BS_Engine
 {
@@ -11,7 +12,12 @@ private:
 	static bool initialize_OpenGL();
 	static void load_my_songs();
 
+	static void set_matrices_for_first_use();
+
     static bool quit_engine;
+
+    static std::unordered_map<std::string, GLuint> textures_map;
+    static std::string texture_placeholder;
 
 public:
     static SDL_Event _sdl_event;
@@ -32,6 +38,9 @@ public:
 
 	static bool get_quit_game_status();
 	static void set_quit_game_status(bool _status);
+
+	static void load_new_texture(std::string _texture_name);
+	static GLuint get_texture(std::string _texture_name);
 
 	static void clear_engine();
 

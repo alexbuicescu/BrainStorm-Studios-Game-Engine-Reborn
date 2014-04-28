@@ -4,6 +4,7 @@
 
 #include "BSOpenGL.h"
 #include "BSRenderer.h"
+#include "BS_Available_Shaders.h"
 #include <vector>
 #include <sstream>
 

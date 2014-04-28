@@ -177,6 +177,35 @@ public:
 		}
 	}
 
+	static GLuint loadATexture(std::string name)
+	{
+	    GLuint theTextureId;
+		const char *nameChar = name.c_str();
+		theTextureId = SOIL_load_OGL_texture
+					   (
+						   nameChar,
+						   SOIL_LOAD_AUTO,
+						   SOIL_CREATE_NEW_ID,
+						   SOIL_FLAG_NTSC_SAFE_RGB | SOIL_FLAG_COMPRESS_TO_DXT
+					   );
+		glBindTexture(GL_TEXTURE_2D, theTextureId);
+//	glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT );
+//	glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT );
+		glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_LINEAR_MIPMAP_LINEAR);
+		glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_LINEAR_MIPMAP_LINEAR);
+
+
+		if(!theTextureId)
+		{
+            std::cout << "texture NOT loaded successfully: " << name << '\n';
+            return 0;
+		}
+		else
+        {
+            return theTextureId;
+        }
+	}
+
 	static void getTextureWidthAndHeight(std::string name, int &width, int &height)
 	{
 		int channels = 0;

@@ -17,6 +17,7 @@
 #include "BS_Screen_Menu.h"
 #include "BS_Engine.h"
 #include "BS_Game_Demo.h"
+#include "BS_Object.h"
 
 float worldAngle = 0;
 b2Vec2 worldGravity = b2Vec2(0, -40);

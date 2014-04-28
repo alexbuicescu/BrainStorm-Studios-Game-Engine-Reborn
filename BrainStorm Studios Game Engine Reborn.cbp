@@ -76,6 +76,8 @@
 		<Unit filename="code/headers/BS_Audio.h" />
 		<Unit filename="code/headers/BS_Available_Shaders.h" />
 		<Unit filename="code/headers/BS_Engine.h" />
+		<Unit filename="code/headers/BS_Game_Demo.h" />
+		<Unit filename="code/headers/BS_Object.h" />
 		<Unit filename="code/headers/BS_Renderer.h" />
 		<Unit filename="code/headers/BS_Screen_Menu.h" />
 		<Unit filename="code/headers/Glew/glew.h" />
@@ -94,6 +96,8 @@
 		<Unit filename="code/src/BSXmlFiles.cpp" />
 		<Unit filename="code/src/BS_Audio.cpp" />
 		<Unit filename="code/src/BS_Engine.cpp" />
+		<Unit filename="code/src/BS_Game_Demo.cpp" />
+		<Unit filename="code/src/BS_Object.cpp" />
 		<Unit filename="code/src/BS_Screen_Menu.cpp" />
 		<Unit filename="code/src/Glew/glew.c">
 			<Option compilerVar="CC" />

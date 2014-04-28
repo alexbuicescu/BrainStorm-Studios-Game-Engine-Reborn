@@ -11,6 +11,8 @@ BSTexturedPolygonProgram2D *_my_shader_program;
 bool BS_Engine::quit_engine;
 SDL_Event BS_Engine::_sdl_event;
 const GLuint BS_Engine::indexes_order[4] = {0, 1, 2, 3};
+std::unordered_map<std::string, GLuint> BS_Engine::textures_map;
+std::string BS_Engine::texture_placeholder = "Animations/placeholder.png";
 
 
 BS_Engine::BS_Engine()
@@ -21,6 +23,16 @@ BS_Engine::BS_Engine()
 BS_Engine::~BS_Engine()
 {
 	//dtor
+}
+
+void BS_Engine::set_matrices_for_first_use()
+{
+    glm::vec3 m_position, m_direction = glm::vec3(0, 0, -1), m_up = glm::vec3(0, 1, 0);
+	m_position = glm::vec3(CameraPosition->xCord, CameraPosition->yCord, -CameraPosition->zCord);
+
+	LookAtMatrix = glm::lookAt(m_position, m_position + m_direction, m_up);
+
+	_my_shader_program->set_uniform(BS_Available_Shaders::is_circle(), 0);
 }
 
 bool BS_Engine::initialize_window()
@@ -190,9 +202,32 @@ bool BS_Engine::initialize_everything()
 		return false;
 	}
 
+	load_new_texture(texture_placeholder);
+	set_matrices_for_first_use();
+
 	quit_engine = false;
 
 	return true;
+}
+
+void BS_Engine::load_new_texture(std::string _texture_name)
+{
+    if(textures_map[_texture_name] == 0)
+    {
+        textures_map[_texture_name] = BS_Renderer::loadATexture(_texture_name);
+    }
+}
+
+GLuint BS_Engine::get_texture(std::string _texture_name)
+{
+    if(textures_map[_texture_name] != 0)
+    {
+        return textures_map[_texture_name];
+    }
+    else
+    {
+        return textures_map[texture_placeholder];
+    }
 }
 
 bool BS_Engine::get_quit_game_status()
