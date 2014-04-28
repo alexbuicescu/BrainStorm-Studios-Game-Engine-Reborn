@@ -151,7 +151,7 @@ bool BS_Engine::initialize_shader_program()
 	_my_shader_program = new BSTexturedPolygonProgram2D();
 
 	//Load textured shader program
-	if( !_my_shader_program->loadProgram("Shaders/BSTexturedPolygonProgram2D.glvs", "Shaders/BSTexturedPolygonProgram2D.glfs") )
+	if( !_my_shader_program->loadProgram("Shaders/shader_normal.glvs", "Shaders/shader_normal.glfs") )
 	{
 		printf( "Unable to load textured polygon program!\n" );
 		return false;

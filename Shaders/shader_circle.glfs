@@ -1,0 +1,53 @@
+//Texture Color
+uniform vec4 BSTextureColor;
+
+//Texture Unit
+uniform sampler2D BSTextureUnit;
+
+#if __VERSION__ >= 130
+
+in vec2 textureCoordinates;
+in vec3 bodyCoordinates;
+in float CircleRadiusGLFS;
+
+in float ScaleSizeGLFS;
+
+//Final color
+out vec4 gl_FragColor;
+
+#else
+
+varying vec2 textureCoordinates;
+varying vec3 bodyCoordinates;
+varying float CircleRadiusGLFS;
+
+
+varying float ScaleSizeGLFS;
+
+#endif
+
+void main()
+{
+    CircleRadiusGLFS = CircleRadiusGLFS / 2.0;
+    
+    float border = 0.0;
+    float radius = CircleRadiusGLFS;
+
+    vec3 m = bodyCoordinates;
+    float dist = radius - sqrt(m.x * m.x + m.y * m.y);
+
+    float t = 0.0;
+
+    if (dist > border)
+    {
+        t = 1.0;
+    }
+    else
+        if (dist > 0.0)
+        {
+            t = dist / border;
+        }
+
+    gl_FragColor = t * texture2D( BSTextureUnit, textureCoordinates ) * BSTextureColor;
+    
+}

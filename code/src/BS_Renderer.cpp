@@ -47,7 +47,7 @@ void BS_Renderer::bind_vbo(GLuint &theVboToBind, GLuint &theIbotoBind, BSTexture
 
 
 void BS_Renderer::set_vao_data(GLuint &vaoBuffer, GLuint &vboBuffer, GLuint &iboBuffer,
-						 BSTexturedVertex2D dataToSet[4], GLfloat widthToSet, GLfloat heightToSet)
+							   BSTexturedVertex2D dataToSet[4], GLfloat widthToSet, GLfloat heightToSet)
 {
 	widthToSet = 1 / 2.0f;
 	heightToSet = 1 / 2.0f;
@@ -92,8 +92,8 @@ void BS_Renderer::set_vao_data(GLuint &vaoBuffer, GLuint &vboBuffer, GLuint &ibo
 
 
 void BS_Renderer::render_object(float coordX, float coordY, float coordZ, float angleX, float angleY, float angleZ,
-						   GLuint theTextureIdToRender, BSColorRGBA theColorOfObstacle,
-						   GLuint theVaoBuffer, float ScaleOnX, float ScaleOnY, float ScaleOnZ, bool canRotate)
+								GLuint theTextureIdToRender, BSColorRGBA theColorOfObstacle,
+								GLuint theVaoBuffer, float ScaleOnX, float ScaleOnY, float ScaleOnZ, bool canRotate)
 {
 	glBindTexture(GL_TEXTURE_2D, theTextureIdToRender);
 
@@ -166,7 +166,7 @@ void BS_Renderer::load_texture(std::string name, GLuint &theTextureId)
 
 	if(!theTextureId)
 	{
-		std::cout << "texture NOT loaded successfully: " << name << '\n';
+		std::cout << "Texture NOT loaded successfully: " << name << '\n';
 	}
 }
 
@@ -190,7 +190,7 @@ GLuint BS_Renderer::load_texture(std::string name)
 
 	if(!theTextureId)
 	{
-		std::cout << "texture NOT loaded successfully: " << name << '\n';
+		std::cout << "Texture NOT loaded successfully: " << name << '\n';
 		return 0;
 	}
 	else
