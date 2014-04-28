@@ -517,7 +517,7 @@ extern char initialSquareTexturePath[100], initialRoundTexturePath[100];
 extern float playerAnimWidth, playerAnimHeight;
 
 extern BSTextureSquare *theLoadingImage;
-extern SDL_Event event;
+///extern SDL_Event BS_Engine::_sdl_event;
 extern bool doneLoadingTheGame, canRenderGameNow;
 
 extern float gameBoundLeft, gameBoundRight, gameBoundDown, gameBoundUp;
@@ -595,7 +595,7 @@ extern short BinaryParticles; // 0000000000000100 in binary
 
 ///extern BSTexturedVertex2D particleData[4], transparentMenuBlock[4];
 
-extern GLuint iData[4];
+///extern GLuint iData[4];
 extern unsigned char* images[1000]; //for textures
 
 

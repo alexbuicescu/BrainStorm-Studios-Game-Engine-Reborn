@@ -149,9 +149,9 @@ void BSInputClass::getButtonsState(int gamePadIndex, SDL_Joystick *theJoystick)
 		joystick = SDL_JoystickOpen(gamePadIndex);
 
 		///See on which hat is pressing
-		if(event.type == SDL_JOYHATMOTION)
+		if(BS_Engine::_sdl_event.type == SDL_JOYHATMOTION)
 		{
-			if ( event.jhat.value & SDL_HAT_UP )
+			if ( BS_Engine::_sdl_event.jhat.value & SDL_HAT_UP )
 			{
 				//theGamepads[gamePadIndex]->upHat = true;
 			}
@@ -160,7 +160,7 @@ void BSInputClass::getButtonsState(int gamePadIndex, SDL_Joystick *theJoystick)
 				//theGamepads[gamePadIndex]->upHat = false;
 			}
 
-			if ( event.jhat.value & SDL_HAT_DOWN )
+			if ( BS_Engine::_sdl_event.jhat.value & SDL_HAT_DOWN )
 			{
 				//theGamepads[gamePadIndex]->downHat = true;
 			}
@@ -169,7 +169,7 @@ void BSInputClass::getButtonsState(int gamePadIndex, SDL_Joystick *theJoystick)
 				//theGamepads[gamePadIndex]->downHat = false;
 			}
 
-			if ( event.jhat.value & SDL_HAT_LEFT )
+			if ( BS_Engine::_sdl_event.jhat.value & SDL_HAT_LEFT )
 			{
 				//theGamepads[gamePadIndex]->leftHat = true;
 			}
@@ -178,7 +178,7 @@ void BSInputClass::getButtonsState(int gamePadIndex, SDL_Joystick *theJoystick)
 				//theGamepads[gamePadIndex]->leftHat = false;
 			}
 
-			if ( event.jhat.value & SDL_HAT_RIGHT )
+			if ( BS_Engine::_sdl_event.jhat.value & SDL_HAT_RIGHT )
 			{
 				//theGamepads[gamePadIndex]->rightHat = true;
 			}
@@ -320,27 +320,27 @@ void BSInputClass::getButtonsState(int gamePadIndex, SDL_Joystick *theJoystick)
 		mouseTexture->yCord -= CameraPosition->yCord - CameraExtremeDown;
 	}
 
-	if( event.jaxis.axis == 2)
+	if( BS_Engine::_sdl_event.jaxis.axis == 2)
 	{
-		if(event.jaxis.value < 0)
+		if(BS_Engine::_sdl_event.jaxis.value < 0)
 		{
 			std::cout << "right stick: left" << '\n';
 		}
 		else
-			if(event.jaxis.value > 0)
+			if(BS_Engine::_sdl_event.jaxis.value > 0)
 			{
 				std::cout << "right stick: right" << '\n';
 			}
 	}
 
-	if( event.jaxis.axis == 3)
+	if( BS_Engine::_sdl_event.jaxis.axis == 3)
 	{
-		if(event.jaxis.value < 0)
+		if(BS_Engine::_sdl_event.jaxis.value < 0)
 		{
 			std::cout << "right stick: up" << '\n';
 		}
 		else
-			if(event.jaxis.value > 0)
+			if(BS_Engine::_sdl_event.jaxis.value > 0)
 			{
 				std::cout << "right stick: down" << '\n';
 			}
@@ -1025,29 +1025,29 @@ void BSInputClass::getKeyboardState()
 		pressedKeys[heroKeyboard->Enter] = true;
 	}
 
-	if(event.type == SDL_KEYDOWN)
+	if(BS_Engine::_sdl_event.type == SDL_KEYDOWN)
 	{
 		///Daca e orice altceva in afara de enter, scriu in consola
-		if(canWriteInConsole && !pressedKeys[event.key.keysym.sym])
+		if(canWriteInConsole && !pressedKeys[BS_Engine::_sdl_event.key.keysym.sym])
 		{
-			consoleString += (char)event.key.keysym.sym;
+			consoleString += (char)BS_Engine::_sdl_event.key.keysym.sym;
 
-			if(event.key.keysym.sym == SDLK_SPACE)
+			if(BS_Engine::_sdl_event.key.keysym.sym == SDLK_SPACE)
 			{
 				std::cout << '_';
 			}
 			else
 			{
-				std::cout << (char)event.key.keysym.sym;
+				std::cout << (char)BS_Engine::_sdl_event.key.keysym.sym;
 			}
 
-			pressedKeys[event.key.keysym.sym] = true;
+			pressedKeys[BS_Engine::_sdl_event.key.keysym.sym] = true;
 		}
 	}
 	else
-		if(event.type == SDL_KEYUP)
+		if(BS_Engine::_sdl_event.type == SDL_KEYUP)
 		{
-			pressedKeys[event.key.keysym.sym] = false;
+			pressedKeys[BS_Engine::_sdl_event.key.keysym.sym] = false;
 		}
 }
 
@@ -1147,7 +1147,7 @@ void BSInputClass::controlGamePad()
 		///Check if presses left or right, so I can change sound
 		ControlAnyMenuLeftRightUpDown(0);
 
-		if((event.jhat.value & SDL_HAT_UP) && !theGamepads[0]->upHat)
+		if((BS_Engine::_sdl_event.jhat.value & SDL_HAT_UP) && !theGamepads[0]->upHat)
 		{
 			ControlAnyMenuLeftRightUpDown(1);
 			///In caz ca se misca in nivele
@@ -1160,7 +1160,7 @@ void BSInputClass::controlGamePad()
 			theGamepads[0]->rightHat = false;
 		}
 		else
-			if((event.jhat.value & SDL_HAT_DOWN) && !theGamepads[0]->downHat)
+			if((BS_Engine::_sdl_event.jhat.value & SDL_HAT_DOWN) && !theGamepads[0]->downHat)
 			{
 				ControlAnyMenuLeftRightUpDown(-1);
 				///In caz ca se misca in meniu
@@ -1174,7 +1174,7 @@ void BSInputClass::controlGamePad()
 			}
 
 		///Schimb volumul sunetului
-		if((event.jhat.value & SDL_HAT_RIGHT) && !theGamepads[0]->rightHat)
+		if((BS_Engine::_sdl_event.jhat.value & SDL_HAT_RIGHT) && !theGamepads[0]->rightHat)
 		{
 			///In caz ca se misca in meniu
 			objClassLevelMenu->walkThroughLevels(1, 0, chaptere[levelChoserPlayer->indexOfChapterThatItIsOn]->levelFromChapter);
@@ -1206,7 +1206,7 @@ void BSInputClass::controlGamePad()
 			theGamepads[0]->rightHat = true;
 		}
 		else
-			if((event.jhat.value & SDL_HAT_LEFT) && !theGamepads[0]->leftHat)
+			if((BS_Engine::_sdl_event.jhat.value & SDL_HAT_LEFT) && !theGamepads[0]->leftHat)
 			{
 				///In caz ca se misca in meniu
 				objClassLevelMenu->walkThroughLevels(-1, 0, chaptere[levelChoserPlayer->indexOfChapterThatItIsOn]->levelFromChapter);
@@ -1238,8 +1238,8 @@ void BSInputClass::controlGamePad()
 				theGamepads[0]->rightHat = false;
 			}
 			else
-				if(!(event.jhat.value & SDL_HAT_UP) && !(event.jhat.value & SDL_HAT_DOWN) &&
-						!(event.jhat.value & SDL_HAT_LEFT) && !(event.jhat.value & SDL_HAT_RIGHT))
+				if(!(BS_Engine::_sdl_event.jhat.value & SDL_HAT_UP) && !(BS_Engine::_sdl_event.jhat.value & SDL_HAT_DOWN) &&
+						!(BS_Engine::_sdl_event.jhat.value & SDL_HAT_LEFT) && !(BS_Engine::_sdl_event.jhat.value & SDL_HAT_RIGHT))
 				{
 					theGamepads[0]->upHat = false;
 					theGamepads[0]->downHat = false;
@@ -1333,9 +1333,9 @@ void BSInputClass::controlGamePad()
 
 void BSInputClass::handleInput()
 {
-	SDL_PollEvent( &event );
+	SDL_PollEvent( &BS_Engine::_sdl_event );
 
-	if(event.type == SDL_QUIT)
+	if(BS_Engine::_sdl_event.type == SDL_QUIT)
 	{
 		quit = true;
 	}
@@ -1452,41 +1452,41 @@ void BSInputClass::handleMouse()
 		}
 	}
 
-	if(event.type == SDL_MOUSEBUTTONDOWN)
+	if(BS_Engine::_sdl_event.type == SDL_MOUSEBUTTONDOWN)
 	{
-		if(event.button.button == 1)
+		if(BS_Engine::_sdl_event.button.button == 1)
 		{
 			std::cout << "left" << '\n';
 			MouseLeft = true;
 		}
 		else
-			if(event.button.button == 2)
+			if(BS_Engine::_sdl_event.button.button == 2)
 			{
 				std::cout << "middle" << '\n';
 				//MouseLeft
 			}
 			else
-				if(event.button.button == 3)
+				if(BS_Engine::_sdl_event.button.button == 3)
 				{
 					std::cout << "right" << '\n';
 					MouseRight = true;
 				}
 	}
 	else
-		if(event.type == SDL_MOUSEBUTTONUP)
+		if(BS_Engine::_sdl_event.type == SDL_MOUSEBUTTONUP)
 		{
-			if(event.button.button == 1)
+			if(BS_Engine::_sdl_event.button.button == 1)
 			{
 				MouseLeft = false;
 				canClickLeft = true;
 			}
 
-			if(event.button.button == 2)
+			if(BS_Engine::_sdl_event.button.button == 2)
 			{
 				//MouseLeft
 			}
 
-			if(event.button.button == 3)
+			if(BS_Engine::_sdl_event.button.button == 3)
 			{
 				MouseRight = false;
 				canClickRight = true;

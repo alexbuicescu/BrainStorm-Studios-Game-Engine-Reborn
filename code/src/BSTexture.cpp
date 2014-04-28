@@ -1987,10 +1987,7 @@ void BSTexture::initTheFont()
 
 	while(i < levelDetailsNew.size() && levelDetailsNew[i])
 	{
-//		char let = levelDetailsNew[i]->theCharArray2D[0][0];
 		char let = levelDetailsNew[i]->theCharArray2D[0][levelDetailsNew[i]->theCharArray2D[0].size() - 5];
-		std::cout << let << " '" << levelDetailsNew[i]->theCharArray2D[0] << "' " << levelDetailsNew[i]->theCharArray2D[1]
-				  << ' ' << levelDetailsNew[i]->theCharArray2D[2] << ' ' << levelDetailsNew[i]->theCharArray2D[3] << ' ' << levelDetailsNew[i]->theCharArray2D[4] << '\n';
 
 		letters[let] = new BSTheFontLetters;
 
@@ -2022,7 +2019,7 @@ void BSTexture::initTheFont()
 	delete doc;
 
 	NrOfTotalLetters = i;
-	std::cout << "initialized font" << '\n';
+	std::cout<<"done"<<'\n';
 }
 
 void BSTexture::renderMyFont(std::string theStringToRenderString, float xCord, float yCord, float FontSizeX, float FontSizeY,

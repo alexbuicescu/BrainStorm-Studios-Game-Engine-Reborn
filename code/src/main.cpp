@@ -16,6 +16,7 @@
 
 #include "BS_Screen_Menu.h"
 #include "BS_Engine.h"
+#include "BS_Game_Demo.h"
 
 float worldAngle = 0;
 b2Vec2 worldGravity = b2Vec2(0, -40);
@@ -67,9 +68,10 @@ GLuint mainDarkTexture, mainDarkVao, darkLevelTexture, darkLevelVao, vboMainDark
 	   coinTexture, coinVao, coinVbo, coinIbo, fanTexture, fanVao, fanVbo, fanIbo, soundPlayerTexture,// mVBOID = 0, mIBOID = 0,
 	   particleVaoBuffer, particleVboBuffer, particleIboBuffer,
 	   whenHitsGroundVaoBuffer, whenHitsGroundVboBuffer, whenHitsGroundIboBuffer,
-	   transparentMenuBlockVao, transparentMenuBlockVbo, transparentMenuBlockIbo, iData[4], gVertexBuffer = 0, texVertexBuffer = 0,
+	   transparentMenuBlockVao, transparentMenuBlockVbo, transparentMenuBlockIbo, gVertexBuffer = 0, texVertexBuffer = 0,
 																							texture, textureMill, playerTexture, playerTextureDead, playerTextureRound,
 																							starsTexture1, starsTexture2, starsTexture3, starsTexture4, backgroundTexture, clouds[6];
+///GLuint iData[4];
 
 LevelChooserPlayerTexture *levelChoserPlayer = new LevelChooserPlayerTexture;
 BSTexturedPolygonProgram2D* mainTexturedPolygonProgram2D = NULL;
@@ -166,7 +168,7 @@ float HeroInitialX = 3, HeroInitialY = 3, newVolumeAudio = 1.f, newVolumeSFX = 1
 
 
 BSTextureSquare *theLoadingImage = new BSTextureSquare;
-SDL_Event event;
+///SDL_Event BS_Engine::_sdl_event;
 bool doneLoadingTheGame = false, canRenderGameNow = false;
 
 short BinaryPlayer = -1;//0x0001;  // 0000000000000001 in binary
@@ -209,7 +211,6 @@ int main( int argc, char* args[] )
 	CameraPosition->xCord = 0;
 	CameraPosition->yCord = 0;
 	CameraPosition->zCord = -scaleSize;
-	objectInputMain->initGamePad();
 
 
 	initialSquareTexturePath[0] = NULL, initialRoundTexturePath[0] = NULL;
@@ -222,16 +223,24 @@ int main( int argc, char* args[] )
 		return 1;
 	}
 
-	for(int i = 0; i <= 255 ; i++)
+	if(BS_Game_Demo::initialize_media() == false)
 	{
-		canPressKeyAgain[i] = true;
-		wasPressed[i] = false;
+		printf("Unable to load media!\n");
+		///return false;
 	}
+	objectInputMain->initGamePad();
 
-	lastTime = SDL_GetTicks();
+
+//	for(int i = 0; i <= 255 ; i++)
+//	{
+//		canPressKeyAgain[i] = true;
+//		wasPressed[i] = false;
+//	}
+
+	///lastTime = SDL_GetTicks();
 
 
-	lastMovedX = hero->theBody->GetPosition().x;
+	///lastMovedX = hero->theBody->GetPosition().x;
 
 
 	srand(time(0));
@@ -239,13 +248,14 @@ int main( int argc, char* args[] )
 	///objObstacles->setTheVaoData(originalBody->vao, originalBody->vbo, originalBody->ibo, originalBody->data, 1.0f, 1.0f);
 //randareMenu->loadTheLoadingImage();
 //	randareMenu->buildRainDrops();
-	quit = false;
-	lastFPS = SDL_GetTicks();
+//	quit = false;
+//	lastFPS = SDL_GetTicks();
 	world->SetAllowSleeping(false);
-	while(!canRenderGameNow)
-	{
-		renderTheMenuBeforeItBecomesFullyVisible();
-	}
+//	while(!canRenderGameNow)
+//	{
+//		renderTheMenuBeforeItBecomesFullyVisible();
+//	}
+	BS_Game_Demo::run_main_loop();
 	long long currentTime = 0, previousTime = 0, maxFPS = 60;
 	while(!quit)
 	{

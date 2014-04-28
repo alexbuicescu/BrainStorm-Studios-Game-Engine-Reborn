@@ -1,5 +1,6 @@
 #include "BSObstacles.h"
 #include "My_Values.h"
+#include "BS_Engine.h"
 
 BSAnimationClass *animationsObstacleClass = new BSAnimationClass();
 
@@ -231,7 +232,7 @@ void BSObstacles::set_vao_data_font(BSTexturedVertex2D dataTSet[4], GLfloat widt
 
 	glGenBuffers(1, &iboBuffer);
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, iboBuffer);
-	glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(iData), iData, GL_DYNAMIC_DRAW);
+	glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(BS_Engine::indexes_order), BS_Engine::indexes_order, GL_DYNAMIC_DRAW);
 
 	glEnableVertexAttribArray(_my_shader_program->get_location_from_shader(BS_Available_Shaders::vertex_position()));//locationBSVertexPosition3D);
 	glVertexAttribPointer(_my_shader_program->get_location_from_shader(BS_Available_Shaders::vertex_position()), 3, GL_FLOAT, GL_FALSE, sizeof(BSTexturedVertex2D), 0);

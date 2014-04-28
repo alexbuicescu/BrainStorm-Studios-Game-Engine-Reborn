@@ -4,6 +4,7 @@
 #include "BSStructs.h"
 #include "My_Values.h"
 #include "BSValues.h"
+#include "BS_Engine.h"
 #include <SOIL/SOIL.h>
 #include <iostream>
 #include "BS_Available_Shaders.h"
@@ -39,7 +40,7 @@ public:
 
 	static void bind_vbo(BSTexturedVertex2D dataToBind[4], GLuint &theVboToBind, GLuint &theIbotoBind)
 	{
-	    GLuint iData[4] = {0, 1, 2, 3};
+	    ///GLuint iData[4] = {0, 1, 2, 3};
 		//Create VBO
 		glGenBuffers( 1, &theVboToBind );
 		glBindBuffer( GL_ARRAY_BUFFER, theVboToBind );
@@ -48,7 +49,7 @@ public:
 		//Create IBO
 		glGenBuffers( 1, &theIbotoBind );
 		glBindBuffer( GL_ELEMENT_ARRAY_BUFFER, theIbotoBind );
-		glBufferData( GL_ELEMENT_ARRAY_BUFFER, 4 * sizeof(GLuint), iData, GL_DYNAMIC_DRAW );
+		glBufferData( GL_ELEMENT_ARRAY_BUFFER, 4 * sizeof(GLuint), BS_Engine::indexes_order, GL_DYNAMIC_DRAW );
 	}
 
 

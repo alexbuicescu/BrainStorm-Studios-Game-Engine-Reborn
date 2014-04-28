@@ -73,11 +73,11 @@
 		<Unit filename="code/headers/BSUtilities.h" />
 		<Unit filename="code/headers/BSValues.h" />
 		<Unit filename="code/headers/BSXmlFiles.h" />
+		<Unit filename="code/headers/BS_Audio.h" />
 		<Unit filename="code/headers/BS_Available_Shaders.h" />
 		<Unit filename="code/headers/BS_Engine.h" />
 		<Unit filename="code/headers/BS_Renderer.h" />
 		<Unit filename="code/headers/BS_Screen_Menu.h" />
-		<Unit filename="code/headers/BS_Sound.h" />
 		<Unit filename="code/headers/Glew/glew.h" />
 		<Unit filename="code/headers/Glew/glxew.h" />
 		<Unit filename="code/headers/Glew/wglew.h" />
@@ -92,9 +92,9 @@
 		<Unit filename="code/src/BSTexturedPolygonProgram2D.cpp" />
 		<Unit filename="code/src/BSUtilities.cpp" />
 		<Unit filename="code/src/BSXmlFiles.cpp" />
+		<Unit filename="code/src/BS_Audio.cpp" />
 		<Unit filename="code/src/BS_Engine.cpp" />
 		<Unit filename="code/src/BS_Screen_Menu.cpp" />
-		<Unit filename="code/src/BS_Sound.cpp" />
 		<Unit filename="code/src/Glew/glew.c">
 			<Option compilerVar="CC" />
 		</Unit>

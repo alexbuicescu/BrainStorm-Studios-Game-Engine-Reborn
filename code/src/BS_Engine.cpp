@@ -6,9 +6,11 @@
 
 BS_Audio *_my_sound_device;
 BSTexturedPolygonProgram2D *_my_shader_program;
-BSTexture *gOpenGLTexture2 = new BSTexture;
-BSObstacles *obstacle2 = new BSObstacles();
-BSLevelMenu *theLevels2 = new BSLevelMenu;
+
+
+bool BS_Engine::quit_engine;
+SDL_Event BS_Engine::_sdl_event;
+const GLuint BS_Engine::indexes_order[4] = {0, 1, 2, 3};
 
 
 BS_Engine::BS_Engine()
@@ -161,90 +163,6 @@ bool BS_Engine::initialize_shader_program()
 
 }
 
-void BS_Engine::loadCoinsAndDeaths()
-{
-	std::ifstream coinsAndDeaths("coinsAndDeaths");
-	coinsAndDeaths >> coinsTotalNo >> deathsTotalNo;
-}
-
-
-bool BS_Engine::initialize_media()
-{
-	iData[0] = 0;
-	iData[1] = 1;
-	iData[2] = 2;
-	iData[3] = 3;
-
-	SDL_PollEvent( &event );
-
-	BS_Renderer::set_vao_data(originalBody->vao, originalBody->vbo, originalBody->ibo, originalBody->data, 1.0f, 1.0f);
-	///obstacle->setTheVaoData(originalBody->vao, originalBody->vbo, originalBody->ibo, originalBody->data, 1.0f, 1.0f);
-
-	gOpenGLTexture2->loadTheLoadingImage();
-
-
-	glClear( GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-	gOpenGLTexture2->renderTheLoadingImage(1);
-	SDL_GL_SwapBuffers();
-
-	BS_Renderer::loadATexture("blank.png", blankTexture);
-
-
-	std::cout << "Began loading some textures..." << '\n' << '\n';
-	gOpenGLTexture2->loadTextures();
-	std::cout << '\n' << "Finished loading the textures!" << '\n' << '\n';
-
-	std::cout << "Began loading backgrounds..." << '\n' << '\n';
-	obstacle2->addBackgrounds();
-	std::cout << '\n' << "Finished loading backgrounds..." << '\n' << '\n';
-
-	std::cout << "Began loading the bodies..." << '\n' << '\n';
-	obstacle2->setUpBodies();
-	std::cout << '\n' << "Finished loading the bodies!" << '\n' << '\n';
-
-	std::cout << "Began loading the snow flakes..." << '\n' << '\n';
-	obstacle2->addSnowFlakeS();///functia incarcaHarta() trebuie sa fie interogata inainte!!! pentru CameraExtremeLeft,up,right,down
-	std::cout << '\n' << "Finished loading the snow flakes!" << '\n' << '\n';
-
-	///std::cout<<"Began loading the mouse circles..."<<'\n'<<'\n';
-	///obstacle->createMouseCircles();
-	///std::cout<<'\n'<<"Finished loading the mouse circles!"<<'\n'<<'\n';
-
-	std::cout << "Began loading the cloudy particles..." << '\n' << '\n';
-	obstacle2->addCloudyParticles();
-	std::cout << '\n' << "Finished loading cloudy particles!" << '\n' << '\n';
-
-	std::cout << "Began loading the rain drops..." << '\n' << '\n';
-	gOpenGLTexture2->buildRainDrops();
-	std::cout << '\n' << "Finished loading rain drops!" << '\n' << '\n';
-
-	std::cout << "Began loading the stats of coins and deaths..." << '\n' << '\n';
-	loadCoinsAndDeaths();
-	std::cout << '\n' << "Finished loading the stats of coins and deaths!" << '\n' << '\n';
-
-	///gOpenGLTexture->initVboAndVao();
-
-	std::cout << "Began loading the chapters..." << '\n' << '\n';
-	theLevels2->loadChapters();
-	std::cout << '\n' << "Finished loading the chapters!" << '\n' << '\n';
-
-	std::cout << "Began loading the menu buttons..." << '\n' << '\n';
-	gOpenGLTexture2->initMenuButtons();
-	std::cout << '\n' << "Finished loading the menu buttons!" << '\n' << '\n';
-
-	///theLevels->loadLevels();
-	std::cout << "Began loading the menu levels..." << '\n' << '\n';
-	gOpenGLTexture2->initMenuLevels();
-	std::cout << '\n' << "Finished loading the menu levels!" << '\n' << '\n';
-
-	std::cout << "Began loading the font..." << '\n' << '\n';
-	gOpenGLTexture2->initTheFont();
-	std::cout << '\n' << "Finished loading the font!" << '\n' << '\n';
-
-	std::cout << "done utilities" << '\n';
-	return true;
-}
-
 bool BS_Engine::initialize_everything()
 {
 	if(initialize_audio() == false)
@@ -272,11 +190,23 @@ bool BS_Engine::initialize_everything()
 		return false;
 	}
 
-	if(initialize_media() == false)
-	{
-		printf("Unable to load media!\n");
-		///return false;
-	}
+	quit_engine = false;
 
 	return true;
+}
+
+bool BS_Engine::get_quit_game_status()
+{
+    return quit_engine;
+}
+
+void BS_Engine::set_quit_game_status(bool _status)
+{
+    quit_engine = _status;
+}
+
+void BS_Engine::clear_engine()
+{
+	SDL_Quit();
+	exit(0);
 }
