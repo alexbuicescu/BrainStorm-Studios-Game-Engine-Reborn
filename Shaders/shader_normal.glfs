@@ -1,5 +1,6 @@
 //Texture Color
 uniform vec4 BSTextureColor;
+uniform float time;
 
 //Texture Unit
 uniform sampler2D BSTextureUnit;
@@ -8,6 +9,7 @@ uniform sampler2D BSTextureUnit;
 
 //Texture coordinate
 in vec2 textureCoordinates;
+in vec3 bodyCoordinates;
 
 //Final color
 out vec4 gl_FragColor;
@@ -16,10 +18,55 @@ out vec4 gl_FragColor;
 
 //Texture coordinate
 varying vec2 textureCoordinates;
+varying vec3 bodyCoordinates;
 
 #endif
 
 void main()
-{
-    gl_FragColor = texture2D(BSTextureUnit, textureCoordinates) * BSTextureColor;
+{    
+    float border = 0.0;
+    float radius = 0.5;
+
+    float angle = degrees(360.0 * sin(radians(time)));
+
+    vec3 m = bodyCoordinates;
+    float dist = radius - sqrt(m.x * m.x + m.y * m.y);
+
+    float t = 0.0;
+
+    if (dist > border)
+    {
+        //t = 1.0;
+        //m.x -= 0.5;
+        //m.y -= 0.5;
+        float newAngle = atan(m.x,m.y) + 3.14;
+        float compareAngle = radians(angle);
+
+        //daca am unghiul > 180 atunci pun si conditia de la < 180
+        if((angle <= 180 && newAngle - 3.14 > radians(0) && newAngle - 3.14 < compareAngle) ||
+            (angle > 180 && ( (newAngle > radians(0) && newAngle < compareAngle - radians(180)) || (newAngle - 3.14 > radians(0) && newAngle - 3.14 < compareAngle) )))
+        {
+        	t = 0.2;
+        }
+        else
+        {
+        	t = 1.0;
+        }
+
+        /*if(m.x / m.y < sin(radians(angle)))
+        {
+        	t = 0.0;
+        }
+        else
+        {
+        	t = 1.0;
+        }*/
+    }
+    else
+        if (dist > 0.0)
+        {
+            t = dist / border;
+        }
+
+    gl_FragColor = t * texture2D(BSTextureUnit, textureCoordinates) * BSTextureColor;
 }

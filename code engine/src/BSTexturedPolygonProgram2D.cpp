@@ -88,6 +88,7 @@ bool BSTexturedPolygonProgram2D::loadProgram(std::string _path_vertex_shader, st
 	load_Shader_Uniforms_Location(BS_Available_Shaders::is_dark());
 
 	load_Shader_Uniforms_Location(BS_Available_Shaders::circle_radius());
+	load_Shader_Uniforms_Location(BS_Available_Shaders::time());
 
 	load_Shader_Uniforms_Location(BS_Available_Shaders::texture_color());
 	load_Shader_Uniforms_Location(BS_Available_Shaders::texture_unit());

@@ -33,6 +33,10 @@ public:
 	{
 		return "isDark";
 	}
+	static std::string time()
+	{
+		return "time";
+	}
 	static std::string circle_radius()
 	{
 		return "CircleRadius";
